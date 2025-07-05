@@ -394,6 +394,74 @@
     transition: transform 0.1s ease-out;
   }
 
+  /* Parallax Layer Animations */
+  .parallax-layer-1 {
+    animation: parallaxLayer1 20s linear infinite;
+  }
+
+  .parallax-layer-2 {
+    animation: parallaxLayer2 15s linear infinite;
+  }
+
+  .parallax-layer-3 {
+    animation: parallaxLayer3 10s linear infinite;
+  }
+
+  @keyframes parallaxLayer1 {
+    from { transform: translateX(0) translateY(0); }
+    to { transform: translateX(-100px) translateY(-50px); }
+  }
+
+  @keyframes parallaxLayer2 {
+    from { transform: translateX(0) translateY(0); }
+    to { transform: translateX(-150px) translateY(-75px); }
+  }
+
+  @keyframes parallaxLayer3 {
+    from { transform: translateX(0) translateY(0); }
+    to { transform: translateX(-200px) translateY(-100px); }
+  }
+
+  /* Ripple Effect */
+  .ripple-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ripple-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .ripple-effect:active::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Flip Slab Animation */
+  .flip-slab {
+    position: relative;
+    overflow: hidden;
+  }
+
+  @keyframes flipSlab {
+    0% { transform: perspective(400px) rotateY(0deg); }
+    50% { transform: perspective(400px) rotateY(180deg); }
+    100% { transform: perspective(400px) rotateY(0deg); }
+  }
+
+  .flip-slab:hover {
+    animation: flipSlab 0.6s ease-in-out;
+  }
+
   /* Progress Bar Animation */
   .progress-bar {
     position: relative;

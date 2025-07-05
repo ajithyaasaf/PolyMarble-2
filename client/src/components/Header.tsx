@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "wouter";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,41 +34,66 @@ export default function Header() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-metallic-gold to-yellow-600 flex items-center justify-center">
                 <svg className="w-6 h-6 text-rich-black" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7v10c0 5.55 3.84 9.64 9 11 5.16-1.36 9-5.45 9-11V7l-10-5z"/>
                 </svg>
               </div>
-              <h1 className="text-xl font-bold tracking-wider">POLYMARBLES 3D</h1>
-            </a>
+              <h1 className="text-xl font-bold tracking-wider">POLYMARBLE SHEET INDIA</h1>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-sm font-medium hover:text-metallic-gold transition-colors"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("gallery")}
-                className="text-sm font-medium hover:text-metallic-gold transition-colors"
-              >
-                Gallery
-              </button>
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="text-sm font-medium hover:text-metallic-gold transition-colors"
-              >
-                Projects
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-sm font-medium hover:text-metallic-gold transition-colors"
-              >
-                Contact
-              </button>
+              {location === "/" ? (
+                <>
+                  <button
+                    onClick={() => scrollToSection("about")}
+                    className="text-sm font-medium hover:text-metallic-gold transition-colors"
+                  >
+                    About
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("gallery")}
+                    className="text-sm font-medium hover:text-metallic-gold transition-colors"
+                  >
+                    Gallery
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("projects")}
+                    className="text-sm font-medium hover:text-metallic-gold transition-colors"
+                  >
+                    Case Studies
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("contact")}
+                    className="text-sm font-medium hover:text-metallic-gold transition-colors"
+                  >
+                    Contact
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link href="/" className="text-sm font-medium hover:text-metallic-gold transition-colors">
+                    Home
+                  </Link>
+                  <Link href="/#about" className="text-sm font-medium hover:text-metallic-gold transition-colors">
+                    About
+                  </Link>
+                  <Link href="/#contact" className="text-sm font-medium hover:text-metallic-gold transition-colors">
+                    Contact
+                  </Link>
+                </>
+              )}
+              <Link href="/products" className={`text-sm font-medium transition-colors ${location === '/products' ? 'text-metallic-gold' : 'hover:text-metallic-gold'}`}>
+                Products
+              </Link>
+              <Link href="/inspiration" className={`text-sm font-medium transition-colors ${location === '/inspiration' ? 'text-metallic-gold' : 'hover:text-metallic-gold'}`}>
+                Inspiration
+              </Link>
+              <Link href="/support" className={`text-sm font-medium transition-colors ${location === '/support' ? 'text-metallic-gold' : 'hover:text-metallic-gold'}`}>
+                Support
+              </Link>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -82,30 +109,55 @@ export default function Header() {
           {isMobileMenuOpen && (
             <div className="md:hidden mt-4 pt-4 border-t border-white/10">
               <nav className="flex flex-col space-y-4">
-                <button
-                  onClick={() => scrollToSection("about")}
-                  className="text-sm font-medium hover:text-metallic-gold transition-colors text-left"
-                >
-                  About
-                </button>
-                <button
-                  onClick={() => scrollToSection("gallery")}
-                  className="text-sm font-medium hover:text-metallic-gold transition-colors text-left"
-                >
-                  Gallery
-                </button>
-                <button
-                  onClick={() => scrollToSection("projects")}
-                  className="text-sm font-medium hover:text-metallic-gold transition-colors text-left"
-                >
-                  Projects
-                </button>
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="text-sm font-medium hover:text-metallic-gold transition-colors text-left"
-                >
-                  Contact
-                </button>
+                {location === "/" ? (
+                  <>
+                    <button
+                      onClick={() => scrollToSection("about")}
+                      className="text-sm font-medium hover:text-metallic-gold transition-colors text-left"
+                    >
+                      About
+                    </button>
+                    <button
+                      onClick={() => scrollToSection("gallery")}
+                      className="text-sm font-medium hover:text-metallic-gold transition-colors text-left"
+                    >
+                      Gallery
+                    </button>
+                    <button
+                      onClick={() => scrollToSection("projects")}
+                      className="text-sm font-medium hover:text-metallic-gold transition-colors text-left"
+                    >
+                      Case Studies
+                    </button>
+                    <button
+                      onClick={() => scrollToSection("contact")}
+                      className="text-sm font-medium hover:text-metallic-gold transition-colors text-left"
+                    >
+                      Contact
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link href="/" className="text-sm font-medium hover:text-metallic-gold transition-colors text-left" onClick={() => setIsMobileMenuOpen(false)}>
+                      Home
+                    </Link>
+                    <Link href="/#about" className="text-sm font-medium hover:text-metallic-gold transition-colors text-left" onClick={() => setIsMobileMenuOpen(false)}>
+                      About
+                    </Link>
+                    <Link href="/#contact" className="text-sm font-medium hover:text-metallic-gold transition-colors text-left" onClick={() => setIsMobileMenuOpen(false)}>
+                      Contact
+                    </Link>
+                  </>
+                )}
+                <Link href="/products" className={`text-sm font-medium transition-colors text-left ${location === '/products' ? 'text-metallic-gold' : 'hover:text-metallic-gold'}`} onClick={() => setIsMobileMenuOpen(false)}>
+                  Products
+                </Link>
+                <Link href="/inspiration" className={`text-sm font-medium transition-colors text-left ${location === '/inspiration' ? 'text-metallic-gold' : 'hover:text-metallic-gold'}`} onClick={() => setIsMobileMenuOpen(false)}>
+                  Inspiration
+                </Link>
+                <Link href="/support" className={`text-sm font-medium transition-colors text-left ${location === '/support' ? 'text-metallic-gold' : 'hover:text-metallic-gold'}`} onClick={() => setIsMobileMenuOpen(false)}>
+                  Support
+                </Link>
               </nav>
             </div>
           )}

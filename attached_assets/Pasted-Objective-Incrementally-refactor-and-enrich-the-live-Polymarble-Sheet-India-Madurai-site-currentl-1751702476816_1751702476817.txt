@@ -1,0 +1,134 @@
+Objective: Incrementally refactor and enrich the live Polymarble Sheet India (Madurai) site—currently a single page with Hero, About, Gallery, Projects, Contact, Footer—by injecting new content, micro‑interactions, and four deep‑dive pages, all in line with the strategic plan.
+
+1. OVERHAUL EXISTING SECTIONS
+Hero
+
+Replace headline with
+
+Your Vision, Cast in Polymer Stone
+
+Sub‑headline:
+
+Design without Limits. Install in Hours.
+
+Background: implement layered parallax of marble veins (three depth layers moving at staggered speeds).
+
+CTA Button: “Get a Free Sample” → opens sample‑request modal with micro‑interaction ripple + “clink” sound.
+
+About
+
+Convert into two‑panel horizontal timeline:
+
+Left panel: Founder’s “Aha!” moment narrative (50–75 words).
+
+Right panel: Key milestones (first 100 installs, Chennai launch, R&D lab).
+
+Styling: minimal icons + fade‑in on scroll.
+
+Gallery
+
+Swap static grid for a full‑width, auto‑playing carousel of ultra‑close‑up texture loops (MP4, muted, loop).
+
+On desktop hover: add a subtle 3D “tilt” perspective effect.
+
+Mobile: pinch‑to‑zoom enabled.
+
+Projects
+
+Rename to “Case Studies.”
+
+List three featured installs with:
+
+Project title & location.
+
+Before → During → After narrative (25–30 words each).
+
+ROI callout: “Saved ₹ X per sq.ft. vs. natural marble.”
+
+“Show me more” infinite‑scroll button with flip‑slab animation.
+
+Filtering controls at top: Residential | Commercial | Exterior | Healthcare.
+
+Contact & Footer
+
+Sticky “Quick Quote” sidebar on screens ≥ 768 px: collapsed icon that expands into a two‑field micro‑form (sq.ft. + email/phone).
+
+Footer redline: add newsletter signup—
+
+Stay Polymarble‑Informed
+[Email input] [Subscribe]
+“Get our 12‑page Guide: How to Choose the Perfect Polymarble Finish.”
+
+Local Info: ensure address, phones, email link, Instagram link are all present and click‑to‑call/mail.
+
+2. ADD NEW PAGES & SECTIONS
+Products & Configurator
+
+Interactive Configurator component:
+
+Dropdowns for “Pattern,” “Thickness (10–15 mm),” “Finish (Matt/Gloss).”
+
+Live preview of sheet mockup.
+
+“Download Spec Sheet” and “View Installation Guide” buttons.
+
+Material Specs Hub table: Material, Size (10×5 ft), Price (₹ 45/sq.ft.⁺), Features (fire‑retardant, moisture‑proof).
+
+Inspiration Lab
+
+Mood‑Board Gallery: grid of 4 “lookbooks” (Urban Minimal, Tropical Luxe, etc.)—hover reveals a 3‑second reel.
+
+Auto‑play loops of styled spaces using Polymarble.
+
+Support & Community
+
+DIY Hub: embed 3–5 short “how‑to” videos (cutting, fixing, cleaning).
+
+Architect & Builder Portal: gated login area offering bulk discounts, CAD/BIM downloads, technical FAQs.
+
+SEO Micro‑Landing Pages (configure in router):
+
+/marble-wall-sheet-madurai
+
+/lightweight-stone-walling-chennai
+
+Each with unique H1, meta description, 200 words of localized content, and product callouts.
+
+3. MICRO‑INTERACTIONS & ACCESSIBILITY
+Sounds:
+
+“Clink” on configurator “Add Finish.”
+
+Soft ripple + subtle tone on “Get Sample.”
+
+ARIA labels: for all interactive controls.
+
+Keyboard nav: ensure carousel, filters, configurator are fully keyboard‑accessible.
+
+4. SEO & ANALYTICS
+Schema Markup: inject JSON‑LD for Product, FAQ, LocalBusiness.
+
+Meta & OpenGraph: update on each new page.
+
+Google Analytics & Hotjar: verify tracking on new sections, funnels on “Get Sample” and “Quick Quote.”
+
+5. ROLLOUT PHASES
+Phase 1 (Week 1): Hero revamp, About timeline, Footer newsletter.
+
+Phase 2 (Week 2): Gallery carousel & 3D hovers, Projects → Case Studies.
+
+Phase 3 (Week 3): Build Products & Configurator page, Inspiration Lab.
+
+Phase 4 (Week 4): Support Portal + SEO micro‑landing + analytics setup.
+
+Implementation Notes:
+
+Use Tailwind CSS (or your framework) for all styling.
+
+Parallax: use CSS transform: translateZ() or JS scroll library.
+
+Configurator: React stateful component or Vanilla JS with Canvas.
+
+Videos: lazy‑load MP4 loops.
+
+Ensure mobile‑first responsive breakpoints.

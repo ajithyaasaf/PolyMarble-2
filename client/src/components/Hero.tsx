@@ -1,8 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -17,38 +23,144 @@ export default function Hero() {
     }
   };
 
+  const playClinkSound = () => {
+    // Audio will be added later - for now just a console log
+    console.log("Clink sound played");
+  };
+
+  const handleSampleRequest = () => {
+    playClinkSound();
+    setIsModalOpen(true);
+  };
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video */}
+      {/* Layered Parallax Background */}
       <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-rich-black/30 via-transparent to-rich-black/60"></div>
+        {/* Layer 1 - Slowest moving marble veins */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800 parallax-layer-1">
+          <div className="absolute inset-0 opacity-20">
+            <svg width="100%" height="100%" viewBox="0 0 1920 1080" className="absolute inset-0">
+              <defs>
+                <pattern id="marble-vein-1" patternUnits="userSpaceOnUse" width="400" height="400">
+                  <path d="M0,200 Q200,100 400,200 Q600,300 800,200" stroke="#D4AF37" strokeWidth="2" fill="none" opacity="0.3"/>
+                  <path d="M0,250 Q250,150 500,250 Q750,350 1000,250" stroke="#D4AF37" strokeWidth="1" fill="none" opacity="0.2"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#marble-vein-1)"/>
+            </svg>
+          </div>
+        </div>
+        
+        {/* Layer 2 - Medium speed marble veins */}
+        <div className="absolute inset-0 parallax-layer-2">
+          <div className="absolute inset-0 opacity-15">
+            <svg width="100%" height="100%" viewBox="0 0 1920 1080" className="absolute inset-0">
+              <defs>
+                <pattern id="marble-vein-2" patternUnits="userSpaceOnUse" width="300" height="300">
+                  <path d="M0,150 Q150,75 300,150 Q450,225 600,150" stroke="#D4AF37" strokeWidth="1.5" fill="none" opacity="0.4"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#marble-vein-2)"/>
+            </svg>
+          </div>
+        </div>
+        
+        {/* Layer 3 - Fastest moving marble veins */}
+        <div className="absolute inset-0 parallax-layer-3">
+          <div className="absolute inset-0 opacity-10">
+            <svg width="100%" height="100%" viewBox="0 0 1920 1080" className="absolute inset-0">
+              <defs>
+                <pattern id="marble-vein-3" patternUnits="userSpaceOnUse" width="200" height="200">
+                  <path d="M0,100 Q100,50 200,100 Q300,150 400,100" stroke="#D4AF37" strokeWidth="1" fill="none" opacity="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#marble-vein-3)"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div className="absolute inset-0 bg-gradient-to-b from-rich-black/40 via-transparent to-rich-black/70"></div>
       </div>
 
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h2 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up">
-          Sculpting <span className="text-metallic-gold text-shimmer">Dimensions</span>
-        </h2>
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up">
+          Your Vision, <span className="text-metallic-gold text-shimmer">Cast in Polymer Stone</span>
+        </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto reveal-fade">
-          Redefining luxury with bespoke 3D marble surfaces, where artistry meets architectural innovation.
+          Design without Limits. Install in Hours.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center stagger-group">
-          <button
-            onClick={() => scrollToSection("gallery")}
-            className="inline-flex items-center px-8 py-4 rounded-full bg-metallic-gold text-rich-black font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105 duration-300 stagger-item magnetic perspective-tilt"
-          >
-            Explore Creations
-          </button>
+          <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+            <DialogTrigger asChild>
+              <Button
+                onClick={handleSampleRequest}
+                className="inline-flex items-center px-8 py-4 rounded-full bg-metallic-gold text-rich-black font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105 duration-300 stagger-item magnetic perspective-tilt ripple-effect"
+              >
+                Get a Free Sample
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px] bg-rich-black border-metallic-gold/20">
+              <DialogHeader>
+                <DialogTitle className="text-metallic-gold">Request Your Free Sample</DialogTitle>
+              </DialogHeader>
+              <div className="grid gap-4 py-4">
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="name" className="text-right text-white">
+                    Name
+                  </Label>
+                  <Input
+                    id="name"
+                    placeholder="Your full name"
+                    className="col-span-3 bg-slate-800 border-slate-600 text-white"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="email" className="text-right text-white">
+                    Email
+                  </Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="your@email.com"
+                    className="col-span-3 bg-slate-800 border-slate-600 text-white"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="phone" className="text-right text-white">
+                    Phone
+                  </Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    placeholder="+91 98765 43210"
+                    className="col-span-3 bg-slate-800 border-slate-600 text-white"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="project" className="text-right text-white">
+                    Project
+                  </Label>
+                  <Textarea
+                    id="project"
+                    placeholder="Tell us about your project..."
+                    className="col-span-3 bg-slate-800 border-slate-600 text-white"
+                    rows={3}
+                  />
+                </div>
+              </div>
+              <div className="flex justify-end">
+                <Button 
+                  type="submit" 
+                  className="bg-metallic-gold text-rich-black hover:bg-yellow-400 font-bold"
+                >
+                  Send Sample Request
+                </Button>
+              </div>
+            </DialogContent>
+          </Dialog>
+          
           <button
             onClick={() => scrollToSection("about")}
             className="inline-flex items-center px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-rich-black transition-all duration-300 stagger-item magnetic morph-border"

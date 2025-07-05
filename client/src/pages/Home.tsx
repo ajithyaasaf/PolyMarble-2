@@ -5,6 +5,7 @@ import Gallery3D from "@/components/Gallery3D";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import QuickQuote from "@/components/QuickQuote";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <QuickQuote />
     </div>
   );
 }
