@@ -47,51 +47,51 @@ export default function FeaturedProjects() {
     <section id="projects" className="py-20 bg-dark-forest">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">Featured Projects</h3>
+          <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">Featured <span className="text-metallic-gold text-shimmer">Projects</span></h3>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto reveal-up">
             Discover how our 3D marble innovations transform architectural spaces worldwide.
           </p>
         </div>
 
-        <div className="space-y-20">
+        <div className="space-y-20 stagger-group">
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${
+              className={`grid lg:grid-cols-2 gap-12 items-center stagger-item ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
             >
-              <div className={`relative overflow-hidden rounded-2xl reveal-up ${
-                index % 2 === 1 ? "lg:order-2" : ""
-              }`}>
+              <div className={`relative overflow-hidden rounded-2xl ${
+                index % 2 === 0 ? "reveal-left" : "reveal-right"
+              } ${index % 2 === 1 ? "lg:order-2" : ""} glow-animation`}>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-96 object-cover transform hover:scale-105 transition-transform duration-500"
+                  className="w-full h-96 object-cover transform hover:scale-105 transition-transform duration-500 parallax-slow"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 text-white">
+                <div className="absolute bottom-6 left-6 text-white reveal-fade">
                   <div className="text-sm font-medium">{project.location}</div>
                   <div className="text-xs text-gray-300">{project.year}</div>
                 </div>
               </div>
               
-              <div className={`reveal-up ${
-                index % 2 === 1 ? "lg:order-1 lg:pr-8" : "lg:pl-8"
-              }`}>
-                <h4 className="text-3xl font-bold text-metallic-gold mb-4">{project.title}</h4>
+              <div className={`${
+                index % 2 === 0 ? "reveal-right" : "reveal-left"
+              } ${index % 2 === 1 ? "lg:order-1 lg:pr-8" : "lg:pl-8"}`}>
+                <h4 className="text-3xl font-bold text-metallic-gold mb-4 text-shimmer">{project.title}</h4>
                 <p className="text-gray-300 text-lg mb-6">{project.description}</p>
-                <div className="flex flex-wrap gap-3 mb-6">
+                <div className="flex flex-wrap gap-3 mb-6 stagger-group">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-4 py-2 bg-deep-jade/30 text-deep-jade border border-deep-jade/50 rounded-full text-sm"
+                      className="px-4 py-2 bg-deep-jade/30 text-deep-jade border border-deep-jade/50 rounded-full text-sm stagger-item hover:bg-deep-jade/50 transition-all duration-300"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <button className="inline-flex items-center text-metallic-gold hover:text-yellow-400 transition-colors">
+                <button className="inline-flex items-center text-metallic-gold hover:text-yellow-400 transition-all duration-300 hover:scale-105 reveal-scale">
                   View Project Details
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </button>

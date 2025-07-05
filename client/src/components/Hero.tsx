@@ -37,21 +37,21 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <h2 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up">
-          Sculpting <span className="text-metallic-gold">Dimensions</span>
+          Sculpting <span className="text-metallic-gold text-shimmer">Dimensions</span>
         </h2>
-        <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto reveal-up">
+        <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto reveal-fade">
           Redefining luxury with bespoke 3D marble surfaces, where artistry meets architectural innovation.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center reveal-up">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center stagger-group">
           <button
             onClick={() => scrollToSection("gallery")}
-            className="inline-flex items-center px-8 py-4 rounded-full bg-metallic-gold text-rich-black font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105 duration-300"
+            className="inline-flex items-center px-8 py-4 rounded-full bg-metallic-gold text-rich-black font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105 duration-300 glow-animation stagger-item"
           >
             Explore Creations
           </button>
           <button
             onClick={() => scrollToSection("about")}
-            className="inline-flex items-center px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-rich-black transition-all duration-300"
+            className="inline-flex items-center px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-rich-black transition-all duration-300 stagger-item"
           >
             Our Story
           </button>

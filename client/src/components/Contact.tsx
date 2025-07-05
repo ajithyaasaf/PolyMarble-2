@@ -51,40 +51,40 @@ export default function Contact() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">Start Your Project</h3>
-          <p className="text-xl text-gray-400 reveal-up">
+          <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">Start Your <span className="text-metallic-gold text-shimmer">Project</span></h3>
+          <p className="text-xl text-gray-400 reveal-fade">
             Ready to transform your space? Let's discuss how our 3D marble innovations can bring your vision to life.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <div className="glassmorphism rounded-2xl p-8 reveal-up">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
+          <div className="glassmorphism rounded-2xl p-8 reveal-left glow-animation">
+            <form onSubmit={handleSubmit} className="space-y-6 stagger-group">
+              <div className="grid md:grid-cols-2 gap-6 stagger-group">
+                <div className="space-y-2 stagger-item">
                   <Label htmlFor="firstName" className="text-gray-300">First Name</Label>
                   <Input
                     id="firstName"
                     value={formData.firstName}
                     onChange={(e) => handleInputChange("firstName", e.target.value)}
                     placeholder="John"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-metallic-gold focus:ring-metallic-gold/50"
+                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-metallic-gold focus:ring-metallic-gold/50 transition-all duration-300"
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 stagger-item">
                   <Label htmlFor="lastName" className="text-gray-300">Last Name</Label>
                   <Input
                     id="lastName"
                     value={formData.lastName}
                     onChange={(e) => handleInputChange("lastName", e.target.value)}
                     placeholder="Smith"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-metallic-gold focus:ring-metallic-gold/50"
+                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-metallic-gold focus:ring-metallic-gold/50 transition-all duration-300"
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2 stagger-item">
                 <Label htmlFor="email" className="text-gray-300">Email Address</Label>
                 <Input
                   id="email"
@@ -92,14 +92,14 @@ export default function Contact() {
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
                   placeholder="john@example.com"
-                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-metallic-gold focus:ring-metallic-gold/50"
+                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-metallic-gold focus:ring-metallic-gold/50 transition-all duration-300"
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2 stagger-item">
                 <Label htmlFor="projectType" className="text-gray-300">Project Type</Label>
                 <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
-                  <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-metallic-gold focus:ring-metallic-gold/50">
+                  <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-metallic-gold focus:ring-metallic-gold/50 transition-all duration-300">
                     <SelectValue placeholder="Select Project Type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -111,7 +111,7 @@ export default function Contact() {
                 </Select>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2 stagger-item">
                 <Label htmlFor="message" className="text-gray-300">Project Details</Label>
                 <Textarea
                   id="message"
@@ -119,13 +119,13 @@ export default function Contact() {
                   onChange={(e) => handleInputChange("message", e.target.value)}
                   placeholder="Tell us about your vision..."
                   rows={4}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-metallic-gold focus:ring-metallic-gold/50 resize-none"
+                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-metallic-gold focus:ring-metallic-gold/50 resize-none transition-all duration-300"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-metallic-gold text-rich-black font-bold hover:bg-yellow-400 transition-all transform hover:scale-105 duration-300"
+                className="w-full bg-metallic-gold text-rich-black font-bold hover:bg-yellow-400 transition-all transform hover:scale-105 duration-300 glow-animation stagger-item"
               >
                 Send Message
               </Button>
@@ -133,12 +133,12 @@ export default function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8 reveal-up">
+          <div className="space-y-8 reveal-right">
             <div>
-              <h4 className="text-2xl font-bold text-metallic-gold mb-6">Get in Touch</h4>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center">
+              <h4 className="text-2xl font-bold text-metallic-gold mb-6 text-shimmer">Get in Touch</h4>
+              <div className="space-y-4 stagger-group">
+                <div className="flex items-center gap-4 stagger-item">
+                  <div className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center glow-animation">
                     <MapPin className="w-6 h-6 text-metallic-gold" />
                   </div>
                   <div>
@@ -147,8 +147,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center">
+                <div className="flex items-center gap-4 stagger-item">
+                  <div className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center glow-animation">
                     <Phone className="w-6 h-6 text-metallic-gold" />
                   </div>
                   <div>
@@ -157,8 +157,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center">
+                <div className="flex items-center gap-4 stagger-item">
+                  <div className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center glow-animation">
                     <Mail className="w-6 h-6 text-metallic-gold" />
                   </div>
                   <div>

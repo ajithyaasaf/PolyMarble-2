@@ -68,17 +68,17 @@ export default function Gallery3D() {
     <section id="gallery" className="py-20 bg-rich-black">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">Interactive 3D Gallery</h3>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto reveal-up">
+          <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">Interactive <span className="text-metallic-gold text-shimmer">3D Gallery</span></h3>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto reveal-fade">
             Explore our marble collections in stunning 3D. Click and drag to rotate, zoom to examine textures.
           </p>
         </div>
 
         {/* Marble Viewers */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-3 gap-8 mb-16 stagger-group">
           {marbleTypes.map((marble, index) => (
-            <div key={marble.id} className="glassmorphism rounded-2xl p-6 reveal-up">
-              <div className="mb-6">
+            <div key={marble.id} className="glassmorphism rounded-2xl p-6 reveal-scale float-slow glow-animation stagger-item">
+              <div className="mb-6 reveal-rotate">
                 <MarbleViewer
                   color={marble.color}
                   selectedTexture={selectedTexture}
@@ -86,13 +86,13 @@ export default function Gallery3D() {
                 />
               </div>
               <div className="text-center">
-                <h4 className="text-2xl font-bold text-metallic-gold mb-2">{marble.name}</h4>
+                <h4 className="text-2xl font-bold text-metallic-gold mb-2 text-shimmer">{marble.name}</h4>
                 <p className="text-gray-400 text-sm mb-4">{marble.description}</p>
-                <div className="flex justify-center gap-2">
+                <div className="flex justify-center gap-2 stagger-group">
                   {marble.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-deep-jade/30 text-deep-jade border border-deep-jade/50 rounded-full text-xs"
+                      className="px-3 py-1 bg-deep-jade/30 text-deep-jade border border-deep-jade/50 rounded-full text-xs stagger-item hover:bg-deep-jade/50 transition-all duration-300"
                     >
                       {tag}
                     </span>
@@ -105,12 +105,12 @@ export default function Gallery3D() {
 
         {/* Texture Library */}
         <div className="reveal-up">
-          <h4 className="text-2xl font-bold text-center mb-8">Texture Library</h4>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <h4 className="text-2xl font-bold text-center mb-8 text-shimmer">Texture Library</h4>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 stagger-group">
             {textures.map((texture) => (
               <div
                 key={texture.id}
-                className={`aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 ${
+                className={`aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 reveal-scale stagger-item glow-animation ${
                   selectedTexture === texture.id ? "ring-2 ring-metallic-gold" : ""
                 }`}
                 onClick={() => setSelectedTexture(texture.id)}
@@ -118,7 +118,7 @@ export default function Gallery3D() {
                 <img
                   src={texture.src}
                   alt={texture.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover parallax-fast"
                 />
               </div>
             ))}
