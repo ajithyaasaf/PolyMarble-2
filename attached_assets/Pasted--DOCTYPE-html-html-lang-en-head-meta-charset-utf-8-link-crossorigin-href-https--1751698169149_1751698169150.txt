@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Polymarbles 3D</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    :root {
+      --slate-grey: #5A5A5A;
+      --deep-jade: #24473E;
+      --metallic-gold: #D4AF37;
+    }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .glassmorphism {
+      background: rgba(26, 50, 44, 0.2);
+      backdrop-filter: blur(15px);
+      --webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(36, 71, 62, 0.2);
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body class="bg-[#0a1412] text-white">
+<div class="relative min-h-screen flex flex-col overflow-x-hidden">
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap px-10 py-4 glassmorphism transition-all duration-300">
+<a class="flex items-center gap-3" href="#">
+<svg class="text-[var(--metallic-gold)]" fill="none" height="32" viewBox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_543)">
+<path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clipPath id="clip0_6_543"><rect fill="white" height="48" width="48"></rect></clipPath></defs>
+</svg>
+<h2 class="text-xl font-bold tracking-wider">POLYMARBLES 3D</h2>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-[var(--metallic-gold)] transition-colors" href="#about">About Us</a>
+<a class="text-sm font-medium hover:text-[var(--metallic-gold)] transition-colors" href="#gallery">Product Gallery</a>
+<a class="text-sm font-medium hover:text-[var(--metallic-gold)] transition-colors" href="#projects">Featured Projects</a>
+<a class="text-sm font-medium hover:text-[var(--metallic-gold)] transition-colors" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-white/10 transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+</button>
+<button class="p-2 rounded-full hover:bg-white/10 transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path></svg>
+</button>
+</div>
+</header>
+<main class="flex-grow">
+<section class="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+<div class="absolute inset-0 z-0" id="marble-bg">
+<video autoplay="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out" id="marble-video" loop="" muted="" playsinline="" src="https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4"></video>
+<div class="absolute inset-0 bg-black/60"></div>
+</div>
+<div class="relative z-20 flex flex-col items-center gap-6 animate-fade-in">
+<h1 class="text-5xl md:text-7xl font-black tracking-tight leading-tight text-white drop-shadow-lg">
+            Sculpting Dimensions
+          </h1>
+<p class="max-w-2xl text-lg md:text-xl text-gray-200">
+            Redefining luxury with bespoke 3D marble surfaces, where artistry meets architectural innovation.
+          </p>
+<a class="mt-4 px-10 py-4 rounded-full bg-[var(--metallic-gold)] text-black text-base font-bold tracking-wide uppercase hover:bg-white transition-all transform hover:scale-105 duration-300 shadow-lg shadow-yellow-500/30" href="#gallery">
+            Explore Creations
+          </a>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<svg class="w-8 h-8 text-white/50" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+</svg>
+</div>
+</section>
+<section class="relative py-20 sm:py-32 bg-[#0a1412]" id="about">
+<div class="absolute inset-0 h-full w-full parallax" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMsVd2eX2G4w-lCqOQ1z1Z_y0d7j4A_x6H-r-e0n-0yC9c4eC3zB-j1mY-jG2Z_eW_t_a_nF-f2iR_k-jO7e9iY-bF-cE7dO-tS9dF-uK1eA-tQ-lR-zC5sV-dE-jW9fE-hA-gB-eF-cD-bA-iG-jH-kL-mN-oP-qR-sT-uV-wX-yZ'); opacity: 0.1;"></div>
+<div class="container mx-auto px-4 relative z-10">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-6">
+<h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-[var(--metallic-gold)]">Our Story</h2>
+<p class="text-lg text-gray-300 leading-relaxed">
+                Polymarbles 3D was born from a passion for blending timeless natural beauty with futuristic technology. We saw an opportunity to transcend the limitations of traditional stonework, bringing unparalleled depth and dynamism to architectural surfaces.
+              </p>
+<p class="text-lg text-gray-300 leading-relaxed">
+                Our journey is one of relentless innovation and meticulous craftsmanship. We collaborate with architects and designers to create truly unique environments, pushing the boundaries of what's possible with marble.
+              </p>
+</div>
+<div class="flex justify-center">
+<div class="relative w-full max-w-md h-96 glassmorphism rounded-xl p-2 shadow-2xl">
+<img alt="Craftsmanship" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY3N0fAUFrH9wt3ZRUwYgpZFIjVews2R4JykHjo2cPlhwK153efXYjwtcYM6LyZFGRLUK2AaKb8YSC5Jv4mcf1PuuX8vcho699Yx2yMYOV1FA2bkeh2i4Sp5V6K-6dggxjLnPilnrg9KLAa0Oy6IgsaAlfZIgdWv-_sGcLjtN_3MhFNpBcmqEULvPBEPwvExGEDiMaG68OWhKONd0dZkM7WIUdv_thQ1FZuKbTnLuJuGBuY8XOgp-eqMjFbW14-sTtmDxFNbe1rHk"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 sm:py-32 bg-[#11221e]" id="gallery">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-4xl sm:text-5xl font-bold tracking-tight">Product Gallery</h2>
+<p class="mt-4 text-lg text-gray-400">Explore our interactive 3D marble textures. Click and drag to view from all angles.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group relative overflow-hidden rounded-lg shadow-lg h-96 cursor-pointer glassmorphism p-2">
+<div class="absolute inset-2 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110 rounded-md" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDU6GwjVfNgSqPTscMd7fMCf2-c9BAXIo75R8WKDsYhvoybCCnw74gevoT5TgTO2BcIRX6Dt7Z7UYhFtuR5MHdoojjplGiF7-m9ZDsvV_uFtuhoSss79OX2_JY3jRH9iCz-3-ffRe-6g8-awA927qUlbwVQmz0PtBKjbmsBn9aOdP8RVjXUFuYdVCSSHZY3qsDfK3rJhB7ysI9MckOeCrws5PcdEjoEKixXSEA3C59KLhcBSnin_MJBA7weLAvjCpzhwfJpXf_JTp8");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="relative p-6 flex flex-col justify-end h-full">
+<h3 class="text-2xl font-bold text-[var(--metallic-gold)] drop-shadow-md">Calacatta Lux</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-lg shadow-lg h-96 cursor-pointer glassmorphism p-2">
+<div class="absolute inset-2 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110 rounded-md" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAGHYg6y4U1WI_kfjBzVXvRLpDLYW5PrObCv0aR7nDsNnmjWwDsiwFCAZaSvBqkaYfmUyCbCU48-ewByf5QtP1oIu9uVjdmw3Uvuxitvgp8aTDj7ubj7l2gTLWJ779LjdmWJFy4e2uvL2DAktSFEvrSviYJOYPytMWQzjfuLs5QZ9so7W-H_g_lKW24IHQA-BpcBi4CqIT2dJ1Vjks0Xa9RU9-xtfKX0OZOJguRDEtFOiEa4yGXpPkM9XAcuwDz2THHYILUDszdlBA");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="relative p-6 flex flex-col justify-end h-full">
+<h3 class="text-2xl font-bold text-[var(--metallic-gold)] drop-shadow-md">Jade Serpent</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-lg shadow-lg h-96 cursor-pointer glassmorphism p-2">
+<div class="absolute inset-2 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110 rounded-md" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_EwTvrnTbDeH-w29prSQy7ursUGw9C4KlmqIuNV5QS4vrwzuFqN8MC35WxLuERUbEuu_tvXrpSfIqytsfawiGFlG-Ct_eHrPsO2ulP2NdSZZd95xE56FV7KCKyeKNHU1qFt2MMDczTgN2NPrdPf2uLkIM1-RkS_kkCULjuGgNHR_ypB0iHciPVH-6R_337IRZtZh_ImTKV2DbY16jJV_JLfqACAlZ1R-OizvtDjIV22zXmip2WOFE9MuiYL8aNmXbC52IYZ9gpms");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="relative p-6 flex flex-col justify-end h-full">
+<h3 class="text-2xl font-bold text-[var(--metallic-gold)] drop-shadow-md">Noir Grandeur</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 sm:py-32 bg-[#0a1412]" id="projects">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-4xl sm:text-5xl font-bold tracking-tight">Featured Projects</h2>
+<p class="mt-4 text-lg text-gray-400">See how our creations transform spaces.</p>
+</div>
+<div class="space-y-20">
+<div class="grid md:grid-cols-2 gap-10 items-center">
+<div class="overflow-hidden rounded-lg shadow-2xl">
+<img alt="Luxury Hotel Lobby" class="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWsfL1h-wIjjs5g2QYf0PnbwSh6-OtdouQaBjb3FrMSrOIIqpiWxLXb5etRiRFjrdE5gNJO8YyW1eSFmJ8PTfSrfkjI4NR-5pYfuB339IyPzhrO8Y1puWIEdTWVBNO-IV8S4sDnOH3Ru3v-SxWIF1poEMKbkCWOvbXPmHl7FcnJ_x4_FvPlpYtcYTVM7pkKPS6mmv4wVn3OEX8MvB7C-7jHI9SOdkUUyRUhhcAhSmThiyf97K898_bnw4I5j-UuDUznL-joDfQA-M"/>
+</div>
+<div>
+<h3 class="text-3xl font-bold text-[var(--metallic-gold)] mb-4">Luxury Hotel Lobby</h3>
+<p class="text-gray-300">A stunning feature wall in a prestigious hotel lobby, utilizing our Ethereal Series to create an atmosphere of sophisticated calm and an unforgettable first impression for guests.</p>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-10 items-center">
+<div class="md:order-2 overflow-hidden rounded-lg shadow-2xl">
+<img alt="Corporate Headquarters" class="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm4gZRn8nW5PnwPNNHuGRuCGoiDwnxxH64j-qJWKW8dq3F8LCAqdEcX_rffhiBWDh2xI-pTIzTL6K2APk4c9M5dK0KddzXcfBbgCOnO4UgY7lZeqQ702iJ6MI79Q-qSed91zYl0ZuVwaBCiqKkzBQnLhWtnys7ZldGAWke0KBNfOqabyuEut89tWaDK6jwtIY2iVjIQzX4gKmYFZr3hZ9EWr3smHTZdH0zzJ6yvFCDCHv6UFyKWYaxAKgKT0_QXrvzTpSa5zuL5NY"/>
+</div>
+<div class="md:order-1">
+<h3 class="text-3xl font-bold text-[var(--metallic-gold)] mb-4">Corporate Headquarters</h3>
+<p class="text-gray-300">A dynamic and bold reception desk crafted from our Aurora Collection, reflecting the company's innovative and forward-thinking brand identity.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="relative py-20 sm:py-32 bg-[#11221e] overflow-hidden" id="contact">
+<div class="absolute -top-1/2 -right-1/4 w-96 h-96 bg-[var(--deep-jade)] rounded-full blur-3xl opacity-20"></div>
+<div class="absolute -bottom-1/2 -left-1/4 w-96 h-96 bg-[var(--metallic-gold)] rounded-full blur-3xl opacity-10"></div>
+<div class="container mx-auto px-4 text-center max-w-2xl relative z-10">
+<h2 class="text-4xl sm:text-5xl font-bold tracking-tight">Contact Us</h2>
+<p class="mt-4 mb-12 text-lg text-gray-400">
+            Let's build the future together. Reach out for consultations, collaborations, or custom commissions.
+          </p>
+<div class="w-full glassmorphism p-8 rounded-xl shadow-2xl border border-[var(--deep-jade)]">
+<form action="#" class="space-y-6 text-left" method="POST">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-300" for="name">Full Name</label>
+<input autocomplete="name" class="mt-1 block w-full bg-white/5 border border-[var(--slate-grey)] rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-[var(--metallic-gold)] focus:border-[var(--metallic-gold)] transition" id="name" name="name" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300" for="email">Email Address</label>
+<input autocomplete="email" class="mt-1 block w-full bg-white/5 border border-[var(--slate-grey)] rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-[var(--metallic-gold)] focus:border-[var(--metallic-gold)] transition" id="email" name="email" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-300" for="message">Message</label>
+<textarea class="mt-1 block w-full bg-white/5 border border-[var(--slate-grey)] rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-[var(--metallic-gold)] focus:border-[var(--metallic-gold)] transition" id="message" name="message" rows="4"></textarea>
+</div>
+<div class="text-center">
+<button class="inline-block mt-4 px-10 py-4 rounded-full bg-[var(--metallic-gold)] text-black text-base font-bold tracking-wide uppercase hover:bg-white transition-all transform hover:scale-105 duration-300" type="submit">
+                  Send Message
+                </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#0a1412] pt-16 pb-8">
+<div class="container mx-auto px-4 text-center text-gray-400">
+<div class="flex justify-center gap-6 mb-8">
+<a class="hover:text-[var(--metallic-gold)] transition-colors" href="#"><svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg></a>
+<a class="hover:text-[var(--metallic-gold)] transition-colors" href="#"><svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path></svg></a>
+<a class="hover:text-[var(--metallic-gold)] transition-colors" href="#"><svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path></svg></a>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-6 mb-8">
+<a class="text-sm hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="text-sm hover:text-white transition-colors" href="#">FAQ</a>
+</div>
+<p class="text-sm">© 2024 Polymarbles 3D. All rights reserved.</p>
+</div>
+</footer>
+</div>
+
+</body></html>
