@@ -77,8 +77,8 @@ export default function Gallery3D() {
         {/* Marble Viewers */}
         <div className="grid lg:grid-cols-3 gap-8 mb-16 stagger-group">
           {marbleTypes.map((marble, index) => (
-            <div key={marble.id} className="glassmorphism rounded-2xl p-6 reveal-scale float-slow stagger-item">
-              <div className="mb-6 reveal-rotate">
+            <div key={marble.id} className="glassmorphism rounded-2xl p-6 reveal-flip float-slow stagger-item perspective-tilt morph-border">
+              <div className="mb-6 reveal-bounce velocity-scale">
                 <MarbleViewer
                   color={marble.color}
                   selectedTexture={selectedTexture}
@@ -86,13 +86,13 @@ export default function Gallery3D() {
                 />
               </div>
               <div className="text-center">
-                <h4 className="text-2xl font-bold text-metallic-gold mb-2 text-shimmer">{marble.name}</h4>
+                <h4 className="text-2xl font-bold text-metallic-gold mb-2 text-shimmer type-effect">{marble.name}</h4>
                 <p className="text-gray-400 text-sm mb-4">{marble.description}</p>
                 <div className="flex justify-center gap-2 stagger-group">
                   {marble.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-deep-jade/30 text-deep-jade border border-deep-jade/50 rounded-full text-xs stagger-item hover:bg-deep-jade/50 transition-all duration-300"
+                      className="px-3 py-1 bg-deep-jade/30 text-deep-jade border border-deep-jade/50 rounded-full text-xs stagger-item hover:bg-deep-jade/50 transition-all duration-300 magnetic"
                     >
                       {tag}
                     </span>

@@ -195,6 +195,159 @@
     transform: rotate(0deg) scale(1);
   }
 
+  /* Advanced Animation Types */
+  .reveal-flip {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(90deg);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-flip.in-view {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0deg);
+  }
+
+  .reveal-bounce {
+    opacity: 0;
+    transform: translateY(60px) scale(0.3);
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .reveal-bounce.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .reveal-elastic {
+    opacity: 0;
+    transform: scale(0.1) rotate(180deg);
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .reveal-elastic.in-view {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  /* Magnetic Effect */
+  .magnetic {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+  }
+
+  /* Velocity-based Effects */
+  .velocity-blur {
+    transition: filter 0.3s ease-out;
+  }
+
+  .velocity-scale {
+    transition: transform 0.3s ease-out;
+  }
+
+  /* Parallax Advanced Effects */
+  .parallax-reverse {
+    transition: transform 0.1s ease-out;
+  }
+
+  .parallax-zoom {
+    transition: transform 0.2s ease-out;
+    transform-origin: center center;
+  }
+
+  /* Scroll Progress Indicator */
+  .scroll-progress {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--scroll-progress, 0%);
+    background: linear-gradient(90deg, var(--metallic-gold), hsl(47, 70%, 64%));
+    transition: width 0.1s ease-out;
+  }
+
+  /* Typing Effect */
+  .type-effect {
+    border-right: 2px solid var(--metallic-gold);
+    animation: blink 1.5s infinite;
+  }
+
+  .type-effect.typed {
+    border-right: none;
+    animation: none;
+  }
+
+  @keyframes blink {
+    0%, 50% { border-color: var(--metallic-gold); }
+    51%, 100% { border-color: transparent; }
+  }
+
+  /* Counter Animation */
+  .counter {
+    font-variant-numeric: tabular-nums;
+    transition: all 0.3s ease;
+  }
+
+  /* 3D Perspective Effects */
+  .perspective-tilt {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+  }
+
+  .perspective-tilt:hover {
+    transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+  }
+
+  /* Morphing Border */
+  .morph-border {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(var(--background), var(--background)) padding-box,
+                linear-gradient(45deg, var(--metallic-gold), var(--deep-jade)) border-box;
+    animation: morphBorder 4s ease-in-out infinite;
+  }
+
+  @keyframes morphBorder {
+    0%, 100% { 
+      border-radius: 20px;
+      background: linear-gradient(var(--background), var(--background)) padding-box,
+                  linear-gradient(45deg, var(--metallic-gold), var(--deep-jade)) border-box;
+    }
+    25% { 
+      border-radius: 50px 20px;
+      background: linear-gradient(var(--background), var(--background)) padding-box,
+                  linear-gradient(135deg, var(--deep-jade), var(--metallic-gold)) border-box;
+    }
+    50% { 
+      border-radius: 20px 50px;
+      background: linear-gradient(var(--background), var(--background)) padding-box,
+                  linear-gradient(225deg, var(--metallic-gold), var(--deep-jade)) border-box;
+    }
+    75% { 
+      border-radius: 50px;
+      background: linear-gradient(var(--background), var(--background)) padding-box,
+                  linear-gradient(315deg, var(--deep-jade), var(--metallic-gold)) border-box;
+    }
+  }
+
+  /* Liquid Animation */
+  .liquid-blob {
+    animation: liquidBlob 8s ease-in-out infinite;
+    filter: blur(1px);
+  }
+
+  @keyframes liquidBlob {
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    50% { border-radius: 70% 30% 50% 50% / 30% 50% 50% 70%; }
+    75% { border-radius: 40% 70% 60% 30% / 70% 50% 40% 50%; }
+  }
+
   /* Staggered Animation Delays */
   .stagger-delay-0 {
     transition-delay: 0ms;
@@ -218,6 +371,14 @@
 
   .stagger-delay-5 {
     transition-delay: 500ms;
+  }
+
+  .stagger-delay-6 {
+    transition-delay: 600ms;
+  }
+
+  .stagger-delay-7 {
+    transition-delay: 700ms;
   }
 
   /* Parallax Effects */

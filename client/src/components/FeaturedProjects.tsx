@@ -77,21 +77,21 @@ export default function FeaturedProjects() {
               </div>
               
               <div className={`${
-                index % 2 === 0 ? "reveal-right" : "reveal-left"
+                index % 2 === 0 ? "reveal-elastic" : "reveal-bounce"
               } ${index % 2 === 1 ? "lg:order-1 lg:pr-8" : "lg:pl-8"}`}>
-                <h4 className="text-3xl font-bold text-metallic-gold mb-4 text-shimmer">{project.title}</h4>
-                <p className="text-gray-300 text-lg mb-6">{project.description}</p>
+                <h4 className="text-3xl font-bold text-metallic-gold mb-4 text-shimmer type-effect">{project.title}</h4>
+                <p className="text-gray-300 text-lg mb-6 velocity-blur">{project.description}</p>
                 <div className="flex flex-wrap gap-3 mb-6 stagger-group">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-4 py-2 bg-deep-jade/30 text-deep-jade border border-deep-jade/50 rounded-full text-sm stagger-item hover:bg-deep-jade/50 transition-all duration-300"
+                      className="px-4 py-2 bg-deep-jade/30 text-deep-jade border border-deep-jade/50 rounded-full text-sm stagger-item hover:bg-deep-jade/50 transition-all duration-300 magnetic liquid-blob"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <button className="inline-flex items-center text-metallic-gold hover:text-yellow-400 transition-all duration-300 hover:scale-105 reveal-scale">
+                <button className="inline-flex items-center text-metallic-gold hover:text-yellow-400 transition-all duration-300 hover:scale-105 magnetic perspective-tilt">
                   View Project Details
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </button>

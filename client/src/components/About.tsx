@@ -26,20 +26,20 @@ export default function About() {
               Our journey is one of relentless innovation and meticulous craftsmanship. We collaborate with visionary architects and designers to create truly unique environments that push the boundaries of what's possible with marble.
             </p>
             <div className="grid grid-cols-3 gap-8 pt-8 stagger-group">
-              <div className="text-center stagger-item">
-                <div className="text-3xl font-bold text-metallic-gold text-shimmer">150+</div>
+              <div className="text-center stagger-item magnetic">
+                <div className="text-3xl font-bold text-metallic-gold text-shimmer counter" data-target="150">0</div>
                 <div className="text-sm text-gray-400">Projects</div>
-                <div className="progress-bar mt-2" data-progress="85"></div>
+                <div className="progress-bar mt-2 scroll-progress" data-progress="85"></div>
               </div>
-              <div className="text-center stagger-item">
-                <div className="text-3xl font-bold text-metallic-gold text-shimmer">8</div>
+              <div className="text-center stagger-item magnetic">
+                <div className="text-3xl font-bold text-metallic-gold text-shimmer counter" data-target="8">0</div>
                 <div className="text-sm text-gray-400">Years</div>
-                <div className="progress-bar mt-2" data-progress="70"></div>
+                <div className="progress-bar mt-2 scroll-progress" data-progress="70"></div>
               </div>
-              <div className="text-center stagger-item">
-                <div className="text-3xl font-bold text-metallic-gold text-shimmer">25</div>
+              <div className="text-center stagger-item magnetic">
+                <div className="text-3xl font-bold text-metallic-gold text-shimmer counter" data-target="25">0</div>
                 <div className="text-sm text-gray-400">Countries</div>
-                <div className="progress-bar mt-2" data-progress="60"></div>
+                <div className="progress-bar mt-2 scroll-progress" data-progress="60"></div>
               </div>
             </div>
           </div>

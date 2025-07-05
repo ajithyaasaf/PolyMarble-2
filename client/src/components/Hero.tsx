@@ -45,13 +45,13 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center stagger-group">
           <button
             onClick={() => scrollToSection("gallery")}
-            className="inline-flex items-center px-8 py-4 rounded-full bg-metallic-gold text-rich-black font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105 duration-300 stagger-item"
+            className="inline-flex items-center px-8 py-4 rounded-full bg-metallic-gold text-rich-black font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105 duration-300 stagger-item magnetic perspective-tilt"
           >
             Explore Creations
           </button>
           <button
             onClick={() => scrollToSection("about")}
-            className="inline-flex items-center px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-rich-black transition-all duration-300 stagger-item"
+            className="inline-flex items-center px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-rich-black transition-all duration-300 stagger-item magnetic morph-border"
           >
             Our Story
           </button>
