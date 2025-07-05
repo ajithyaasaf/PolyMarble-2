@@ -63,11 +63,11 @@ export default function FeaturedProjects() {
             >
               <div className={`relative overflow-hidden rounded-2xl ${
                 index % 2 === 0 ? "reveal-left" : "reveal-right"
-              } ${index % 2 === 1 ? "lg:order-2" : ""} glow-animation`}>
+              } ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-96 object-cover transform hover:scale-105 transition-transform duration-500 parallax-slow"
+                  className="w-full h-96 object-cover transform hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 text-white reveal-fade">

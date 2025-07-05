@@ -77,7 +77,7 @@ export default function Gallery3D() {
         {/* Marble Viewers */}
         <div className="grid lg:grid-cols-3 gap-8 mb-16 stagger-group">
           {marbleTypes.map((marble, index) => (
-            <div key={marble.id} className="glassmorphism rounded-2xl p-6 reveal-scale float-slow glow-animation stagger-item">
+            <div key={marble.id} className="glassmorphism rounded-2xl p-6 reveal-scale float-slow stagger-item">
               <div className="mb-6 reveal-rotate">
                 <MarbleViewer
                   color={marble.color}
@@ -110,7 +110,7 @@ export default function Gallery3D() {
             {textures.map((texture) => (
               <div
                 key={texture.id}
-                className={`aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 reveal-scale stagger-item glow-animation ${
+                className={`aspect-square rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 reveal-scale stagger-item ${
                   selectedTexture === texture.id ? "ring-2 ring-metallic-gold" : ""
                 }`}
                 onClick={() => setSelectedTexture(texture.id)}
@@ -118,7 +118,7 @@ export default function Gallery3D() {
                 <img
                   src={texture.src}
                   alt={texture.alt}
-                  className="w-full h-full object-cover parallax-fast"
+                  className="w-full h-full object-cover"
                 />
               </div>
             ))}

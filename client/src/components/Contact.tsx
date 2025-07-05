@@ -59,7 +59,7 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <div className="glassmorphism rounded-2xl p-8 reveal-left glow-animation">
+          <div className="glassmorphism rounded-2xl p-8 reveal-left">
             <form onSubmit={handleSubmit} className="space-y-6 stagger-group">
               <div className="grid md:grid-cols-2 gap-6 stagger-group">
                 <div className="space-y-2 stagger-item">
@@ -125,7 +125,7 @@ export default function Contact() {
 
               <Button
                 type="submit"
-                className="w-full bg-metallic-gold text-rich-black font-bold hover:bg-yellow-400 transition-all transform hover:scale-105 duration-300 glow-animation stagger-item"
+                className="w-full bg-metallic-gold text-rich-black font-bold hover:bg-yellow-400 transition-all transform hover:scale-105 duration-300 stagger-item"
               >
                 Send Message
               </Button>
@@ -138,7 +138,7 @@ export default function Contact() {
               <h4 className="text-2xl font-bold text-metallic-gold mb-6 text-shimmer">Get in Touch</h4>
               <div className="space-y-4 stagger-group">
                 <div className="flex items-center gap-4 stagger-item">
-                  <div className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center glow-animation">
+                  <div className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-metallic-gold" />
                   </div>
                   <div>
@@ -148,7 +148,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-center gap-4 stagger-item">
-                  <div className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center glow-animation">
+                  <div className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center">
                     <Phone className="w-6 h-6 text-metallic-gold" />
                   </div>
                   <div>
@@ -158,7 +158,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-center gap-4 stagger-item">
-                  <div className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center glow-animation">
+                  <div className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center">
                     <Mail className="w-6 h-6 text-metallic-gold" />
                   </div>
                   <div>

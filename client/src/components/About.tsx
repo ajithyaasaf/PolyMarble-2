@@ -45,11 +45,11 @@ export default function About() {
           </div>
 
           <div className="relative reveal-right">
-            <div className="relative rounded-2xl overflow-hidden glassmorphism p-4 float-slow glow-animation">
+            <div className="relative rounded-2xl overflow-hidden glassmorphism p-4 float-slow">
               <img
                 src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                 alt="Marble craftsman working on luxury sculpture"
-                className="w-full h-96 object-cover rounded-xl parallax-medium"
+                className="w-full h-96 object-cover rounded-xl"
               />
               <div className="absolute inset-4 bg-gradient-to-t from-rich-black/60 to-transparent rounded-xl"></div>
               <div className="absolute bottom-8 left-8 text-white reveal-fade">
