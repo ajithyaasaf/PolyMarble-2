@@ -515,24 +515,101 @@
     100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
   }
 
-  /* Text Shimmer Animation */
+  /* Enhanced Text Shimmer Animation */
   .text-shimmer {
     background: linear-gradient(
       90deg,
-      rgba(212, 175, 55, 0.8) 0%,
+      rgba(212, 175, 55, 0.6) 0%,
+      rgba(255, 215, 0, 1) 25%,
       rgba(212, 175, 55, 1) 50%,
-      rgba(212, 175, 55, 0.8) 100%
+      rgba(255, 215, 0, 1) 75%,
+      rgba(212, 175, 55, 0.6) 100%
     );
-    background-size: 200% 100%;
+    background-size: 400% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: shimmer 3s ease-in-out infinite;
+    animation: shimmer 4s ease-in-out infinite;
   }
 
   @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+    0% { background-position: -400% 0; }
+    100% { background-position: 400% 0; }
+  }
+
+  /* Enhanced Interactive Elements */
+  .hover-lift {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3), 0 0 20px rgba(212, 175, 55, 0.1);
+  }
+
+  .magnetic {
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+  }
+
+  .magnetic:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .glow-effect {
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+    to {
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 0 30px rgba(212, 175, 55, 0.2);
+    }
+  }
+
+  /* Advanced Stagger Animation */
+  .stagger-group > .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-group > .stagger-item:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-group > .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-group > .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-group > .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-group > .stagger-item:nth-child(6) { animation-delay: 0.6s; }
+  .stagger-group > .stagger-item:nth-child(7) { animation-delay: 0.7s; }
+  .stagger-group > .stagger-item:nth-child(8) { animation-delay: 0.8s; }
+
+  /* Premium Loading States */
+  .loading-shimmer {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+      filter: brightness(1.2);
+    }
   }
 
   /* Smooth Scroll */
@@ -560,5 +637,177 @@
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+
+  /* Enhanced Button Styles */
+  .btn-premium {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, hsl(47, 70%, 54%) 0%, hsl(47, 70%, 64%) 100%);
+    transition: all 0.3s ease;
+  }
+
+  .btn-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .btn-premium:hover::before {
+    left: 100%;
+  }
+
+  .btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+  }
+
+  /* Typography Enhancements */
+  .font-display {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .font-body {
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  /* Enhanced Responsive Typography */
+  @media (max-width: 768px) {
+    .text-5xl { font-size: 2.5rem; line-height: 1.1; }
+    .text-6xl { font-size: 3rem; line-height: 1.1; }
+    .text-7xl { font-size: 3.5rem; line-height: 1.1; }
+    .text-4xl { font-size: 2rem; }
+    .text-3xl { font-size: 1.75rem; }
+    .text-2xl { font-size: 1.5rem; }
+    .text-xl { font-size: 1.25rem; }
+    .text-lg { font-size: 1.125rem; }
+    
+    /* Mobile-specific spacing */
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    /* Mobile-optimized animations */
+    .reveal-up, .reveal-left, .reveal-right, .reveal-scale {
+      transform: translateY(30px);
+      transition-duration: 0.6s;
+    }
+    
+    .reveal-up.in-view, .reveal-left.in-view, .reveal-right.in-view, .reveal-scale.in-view {
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .text-5xl { font-size: 2rem; }
+    .text-6xl { font-size: 2.25rem; }
+    .text-7xl { font-size: 2.5rem; }
+    .text-4xl { font-size: 1.75rem; }
+    .text-3xl { font-size: 1.5rem; }
+    
+    .container {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+
+  /* Enhanced Focus States */
+  .focus-ring:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(150, 20%, 4%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, hsl(47, 70%, 54%), hsl(164, 33%, 22%));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, hsl(47, 70%, 64%), hsl(164, 33%, 32%));
+  }
+
+  /* Mobile-specific optimizations */
+  @media (hover: none) and (pointer: coarse) {
+    /* Touch device optimizations */
+    .hover-lift:hover {
+      transform: none;
+    }
+    
+    .magnetic:hover {
+      transform: none;
+    }
+    
+    /* Larger touch targets */
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Reduce motion for touch devices if preferred */
+    .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade {
+      transition-duration: 0.3s;
+    }
+  }
+  
+  /* Performance optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  /* Prevent layout shift */
+  .aspect-preserve {
+    aspect-ratio: attr(width) / attr(height);
+  }
+  
+  /* Optimize for high DPI displays */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .text-shimmer {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+  
+  /* Loading state optimizations */
+  .skeleton {
+    background: linear-gradient(90deg, 
+      rgba(255, 255, 255, 0.1) 25%, 
+      rgba(255, 255, 255, 0.2) 50%, 
+      rgba(255, 255, 255, 0.1) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  /* Improve focus indicators for accessibility */
+  .focus-visible:focus-visible {
+    outline: 2px solid hsl(47, 70%, 54%);
+    outline-offset: 2px;
+  }
+  
+  /* Enhanced click feedback */
+  .click-feedback:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
   }
 }
