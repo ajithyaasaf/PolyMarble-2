@@ -241,22 +241,13 @@ export default function Inspiration() {
                   className="group bg-dark-forest/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-metallic-gold/20 reveal-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {/* Video Background */}
+                  {/* Image Background */}
                   <div className="aspect-[4/3] relative overflow-hidden">
-                    <video
+                    <img
+                      src={space.thumbnail}
+                      alt={space.title}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    >
-                      <source src={space.videoSrc} type="video/mp4" />
-                      <img
-                        src={space.thumbnail}
-                        alt={space.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </video>
+                    />
                     
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-transparent"></div>
