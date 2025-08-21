@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import heroBackgroundImage from "@assets/generated_images/Luxury_polymarble_hero_background_2c2a8ab1.png";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -35,52 +36,15 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Layered Parallax Background */}
+      {/* Hero Background Image */}
       <div className="absolute inset-0 z-0">
-        {/* Layer 1 - Slowest moving marble veins */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800 parallax-layer-1">
-          <div className="absolute inset-0 opacity-20">
-            <svg width="100%" height="100%" viewBox="0 0 1920 1080" className="absolute inset-0">
-              <defs>
-                <pattern id="marble-vein-1" patternUnits="userSpaceOnUse" width="400" height="400">
-                  <path d="M0,200 Q200,100 400,200 Q600,300 800,200" stroke="#D4AF37" strokeWidth="2" fill="none" opacity="0.3"/>
-                  <path d="M0,250 Q250,150 500,250 Q750,350 1000,250" stroke="#D4AF37" strokeWidth="1" fill="none" opacity="0.2"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#marble-vein-1)"/>
-            </svg>
-          </div>
-        </div>
-        
-        {/* Layer 2 - Medium speed marble veins */}
-        <div className="absolute inset-0 parallax-layer-2">
-          <div className="absolute inset-0 opacity-15">
-            <svg width="100%" height="100%" viewBox="0 0 1920 1080" className="absolute inset-0">
-              <defs>
-                <pattern id="marble-vein-2" patternUnits="userSpaceOnUse" width="300" height="300">
-                  <path d="M0,150 Q150,75 300,150 Q450,225 600,150" stroke="#D4AF37" strokeWidth="1.5" fill="none" opacity="0.4"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#marble-vein-2)"/>
-            </svg>
-          </div>
-        </div>
-        
-        {/* Layer 3 - Fastest moving marble veins */}
-        <div className="absolute inset-0 parallax-layer-3">
-          <div className="absolute inset-0 opacity-10">
-            <svg width="100%" height="100%" viewBox="0 0 1920 1080" className="absolute inset-0">
-              <defs>
-                <pattern id="marble-vein-3" patternUnits="userSpaceOnUse" width="200" height="200">
-                  <path d="M0,100 Q100,50 200,100 Q300,150 400,100" stroke="#D4AF37" strokeWidth="1" fill="none" opacity="0.5"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#marble-vein-3)"/>
-            </svg>
-          </div>
-        </div>
-        
-        <div className="absolute inset-0 bg-gradient-to-b from-rich-black/40 via-transparent to-rich-black/70"></div>
+        <img 
+          src={heroBackgroundImage}
+          alt="Luxury polymarble interior installation"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-rich-black/80 via-rich-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-rich-black/60"></div>
       </div>
 
       {/* Hero Content */}
