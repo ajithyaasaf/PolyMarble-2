@@ -15,7 +15,7 @@ export default function Footer() {
               <span className="text-lg font-bold">POLYMARBLE SHEET INDIA</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              Transforming spaces with innovative polymer stone solutions. Where traditional craftsmanship meets cutting-edge technology.
+              9 Years of Excellence Since 2017. Leading manufacturer of premium polymarble sheets, combining innovative technology with timeless aesthetics.
             </p>
             
             {/* Newsletter Signup */}
@@ -40,24 +40,24 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2 text-gray-400">
                 <MapPin className="w-4 h-4" />
-                <span>123 Marble Street, Madurai, Tamil Nadu 625001</span>
+                <span>No:46, Sivagangai Main Road, Melamadai, Gomathipuram, Madurai - 625020</span>
               </div>
               <div className="flex items-center gap-2 text-gray-400">
                 <Phone className="w-4 h-4" />
-                <a href="tel:+919876543210" className="hover:text-metallic-gold transition-colors">
-                  +91 98765 43210
+                <a href="tel:+919842106768" className="hover:text-metallic-gold transition-colors">
+                  +91 98421 06768
                 </a>
               </div>
               <div className="flex items-center gap-2 text-gray-400">
                 <Mail className="w-4 h-4" />
-                <a href="mailto:info@polymarblesheetindia.com" className="hover:text-metallic-gold transition-colors">
-                  info@polymarblesheetindia.com
+                <a href="mailto:polymarblesheet@gmail.com" className="hover:text-metallic-gold transition-colors">
+                  polymarblesheet@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2 text-gray-400">
                 <Instagram className="w-4 h-4" />
-                <a href="https://instagram.com/polymarblesheetindia" className="hover:text-metallic-gold transition-colors">
-                  @polymarblesheetindia
+                <a href="https://www.instagram.com/polymarblesheet_india" target="_blank" rel="noopener noreferrer" className="hover:text-metallic-gold transition-colors">
+                  @polymarblesheet_india
                 </a>
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function Footer() {
         
         <div className="border-t border-white/10 mt-8 pt-8 text-center">
           <div className="text-sm text-gray-500">
-            © 2024 Polymarble Sheet India. All rights reserved.
+            © 2025 Polymarble Sheet India. All rights reserved. | Chennai Office: Dr. Kannan Tower, Arcot Road, Porur - 116
           </div>
         </div>
       </div>

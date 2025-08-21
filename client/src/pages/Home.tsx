@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Benefits from "@/components/Benefits";
 import Gallery3D from "@/components/Gallery3D";
+import Testimonials from "@/components/Testimonials";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -18,6 +19,7 @@ export default function Home() {
         <Benefits />
         <Gallery3D />
         <FeaturedProjects />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />

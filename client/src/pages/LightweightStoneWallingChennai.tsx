@@ -220,7 +220,7 @@ export default function LightweightStoneWallingChennai() {
                 <div className="mt-6 text-center">
                   <p className="text-gray-400 text-sm">
                     <Phone className="w-4 h-4 inline mr-1" />
-                    Chennai Office: +91 98765 43210 • Email: chennai@polymarblesheetindia.com
+                    Chennai Office: +91 98421 06768 • Email: polymarblesheet@gmail.com
                   </p>
                 </div>
               </div>

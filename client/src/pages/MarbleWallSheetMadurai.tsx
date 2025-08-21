@@ -51,7 +51,7 @@ export default function MarbleWallSheetMadurai() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <Button className="bg-metallic-gold text-rich-black hover:bg-yellow-400 font-bold text-lg px-8 py-4">
                   <Phone className="w-5 h-5 mr-2" />
-                  Call +91 98765 43210
+                  Call +91 98421 06768
                 </Button>
                 <Button variant="outline" className="border-metallic-gold text-metallic-gold hover:bg-metallic-gold hover:text-rich-black font-bold text-lg px-8 py-4">
                   Get Free Sample
@@ -205,7 +205,7 @@ export default function MarbleWallSheetMadurai() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button className="bg-metallic-gold text-rich-black hover:bg-yellow-400 font-bold">
-                    Call Now: +91 98765 43210
+                    Call Now: +91 98421 06768
                   </Button>
                   <Button variant="outline" className="border-metallic-gold text-metallic-gold hover:bg-metallic-gold hover:text-rich-black">
                     WhatsApp Quote

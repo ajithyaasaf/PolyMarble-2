@@ -10,45 +10,58 @@ import { Download, FileText, Palette, Layers, Sparkles } from "lucide-react";
 export default function Products() {
   useScrollReveal();
 
-  const [selectedPattern, setSelectedPattern] = useState("calacatta");
+  const [selectedPattern, setSelectedPattern] = useState("high-gloss");
   const [selectedThickness, setSelectedThickness] = useState("12");
   const [selectedFinish, setSelectedFinish] = useState("matt");
 
   const patterns = [
-    { id: "calacatta", name: "Calacatta Gold", image: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
-    { id: "noir", name: "Noir Elegance", image: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
-    { id: "verde", name: "Verde Luxe", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
-    { id: "emperador", name: "Emperador Brown", image: "https://images.unsplash.com/photo-1615529162924-f8c8b4c7b623?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
+    { id: "high-gloss", name: "High-Gloss Premium", image: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
+    { id: "woody-panels", name: "Woody Panels", image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
+    { id: "solid-color", name: "Solid Color Range", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
+    { id: "textured-finishes", name: "Textured Finishes", image: "https://images.unsplash.com/photo-1615529162924-f8c8b4c7b623?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
+    { id: "mirror-sheets", name: "Mirror Sheets", image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
   ];
 
   const materials = [
     {
-      name: "Premium Calacatta",
-      size: "10×5 ft",
+      name: "High-Gloss Premium",
+      size: "8×4 ft",
       price: "₹45/sq.ft.⁺",
-      features: ["Fire-retardant", "Moisture-proof", "UV resistant", "Anti-bacterial"],
-      thickness: "10-15mm"
+      features: ["Water Resistant", "Fire Resistant", "Termite Proof", "Easy Installation"],
+      thickness: "10-15mm",
+      description: "Timeless elegance with authentic marble patterns and veining"
     },
     {
-      name: "Noir Collection", 
-      size: "10×5 ft",
+      name: "Woody Panels", 
+      size: "8×4 ft",
       price: "₹52/sq.ft.⁺",
-      features: ["Fire-retardant", "Moisture-proof", "Scratch resistant", "Easy clean"],
-      thickness: "12-15mm"
+      features: ["Water Resistant", "Fire Resistant", "Lightweight", "Termite Proof"],
+      thickness: "12-15mm",
+      description: "Natural wood textures with superior durability and water resistance"
     },
     {
-      name: "Verde Series",
-      size: "10×5 ft", 
-      price: "₹48/sq.ft.⁺",
-      features: ["Fire-retardant", "Moisture-proof", "Weather resistant", "Fade proof"],
-      thickness: "10-15mm"
+      name: "Solid Color Range",
+      size: "8×4 ft", 
+      price: "₹40/sq.ft.⁺",
+      features: ["Water Resistant", "Stain Resistant", "Easy Maintenance", "Cost Effective"],
+      thickness: "10-12mm",
+      description: "Clean, contemporary colors for modern architectural applications"
     },
     {
-      name: "Emperador Elite",
-      size: "10×5 ft",
+      name: "Textured Finishes",
+      size: "8×4 ft",
+      price: "₹48/sq.ft.⁺", 
+      features: ["Water Resistant", "Fire Resistant", "Anti-Slip", "Dimensional Surface"],
+      thickness: "12-15mm",
+      description: "Dimensional surfaces that add depth and character to any space"
+    },
+    {
+      name: "Mirror Sheets",
+      size: "8×4 ft",
       price: "₹55/sq.ft.⁺", 
-      features: ["Fire-retardant", "Moisture-proof", "Impact resistant", "Thermal stable"],
-      thickness: "12-15mm"
+      features: ["Water Resistant", "High Gloss", "Reflective", "Luxury Finish"],
+      thickness: "10-12mm",
+      description: "Mirror-like finish for luxurious, high-impact installations"
     }
   ];
 
