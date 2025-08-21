@@ -1,5 +1,6 @@
 import { useScrollReveal, useScrollProgress } from "@/hooks/useScrollReveal";
 import { Lightbulb, Award, Building, Microscope } from "lucide-react";
+import manufacturingImage from "@assets/generated_images/Polymarble_manufacturing_facility_58dc2199.png";
 
 export default function About() {
   useScrollReveal();
@@ -10,8 +11,8 @@ export default function About() {
       {/* Subtle marble texture overlay */}
       <div className="absolute inset-0 opacity-5">
         <img
-          src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080"
-          alt="Marble texture"
+          src={manufacturingImage}
+          alt="Polymarble manufacturing facility"
           className="w-full h-full object-cover"
         />
       </div>

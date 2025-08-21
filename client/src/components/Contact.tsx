@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Twitter, Instagram, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import heroBackground from "@assets/generated_images/Hero_background_premium_interior_4cbb0855.png";
 
 export default function Contact() {
   useScrollReveal();
@@ -43,8 +44,8 @@ export default function Contact() {
       {/* Elegant marble background texture */}
       <div className="absolute inset-0 opacity-10">
         <img
-          src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080"
-          alt="Elegant marble background texture"
+          src={heroBackground}
+          alt="Premium polymarble interior showcase"
           className="w-full h-full object-cover"
         />
       </div>

@@ -2,6 +2,13 @@ import { useState, useEffect, useRef } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 
+// Import generated product images for fallbacks
+import highGlossImage from "@assets/generated_images/High-gloss_polymarble_sheets_b1da0e5d.png";
+import woodyPanelImage from "@assets/generated_images/Woody_panel_polymarble_sheets_479b86f5.png";
+import solidColorImage from "@assets/generated_images/Solid_color_polymarble_sheets_f47ccc7d.png";
+import texturedImage from "@assets/generated_images/Textured_polymarble_surface_detail_e034d7bf.png";
+import mirrorImage from "@assets/generated_images/Mirror_finish_polymarble_sheets_1e70ee77.png";
+
 export default function Gallery3D() {
   useScrollReveal();
 
@@ -15,35 +22,35 @@ export default function Gallery3D() {
       name: "High-Gloss Premium",
       description: "Timeless elegance with authentic marble patterns and veining",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      fallbackImage: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+      fallbackImage: highGlossImage,
     },
     {
       id: "woody-panels",
       name: "Woody Panels",
       description: "Natural wood textures with superior durability and water resistance",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
-      fallbackImage: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+      fallbackImage: woodyPanelImage,
     },
     {
       id: "solid-color",
       name: "Solid Color Range",
       description: "Clean, contemporary colors for modern architectural applications",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      fallbackImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+      fallbackImage: solidColorImage,
     },
     {
       id: "textured-finishes",
       name: "Textured Finishes",
       description: "Dimensional surfaces that add depth and character to any space",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
-      fallbackImage: "https://images.unsplash.com/photo-1615529162924-f8c8b4c7b623?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+      fallbackImage: texturedImage,
     },
     {
       id: "mirror-sheets",
       name: "Mirror Sheets",
       description: "Mirror-like finish for luxurious, high-impact installations",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      fallbackImage: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+      fallbackImage: mirrorImage,
     },
   ];
 

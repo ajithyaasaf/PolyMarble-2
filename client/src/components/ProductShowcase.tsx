@@ -3,6 +3,13 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Zap, Shield, Droplets, Thermometer, Sparkles, Clock } from "lucide-react";
 
+// Import generated product images
+import highGlossImage from "@assets/generated_images/High-gloss_polymarble_sheets_b1da0e5d.png";
+import woodyPanelImage from "@assets/generated_images/Woody_panel_polymarble_sheets_479b86f5.png";
+import solidColorImage from "@assets/generated_images/Solid_color_polymarble_sheets_f47ccc7d.png";
+import texturedImage from "@assets/generated_images/Textured_polymarble_surface_detail_e034d7bf.png";
+import mirrorImage from "@assets/generated_images/Mirror_finish_polymarble_sheets_1e70ee77.png";
+
 export default function ProductShowcase() {
   useScrollReveal();
   
@@ -16,7 +23,7 @@ export default function ProductShowcase() {
       description: "Authentic marble patterns with mirror-like finish that elevates any space to luxury status.",
       price: "₹45",
       originalPrice: "₹180",
-      image: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: highGlossImage,
       features: ["Ultra-glossy finish", "Scratch resistant", "Easy maintenance", "Premium patterns"],
       specifications: {
         thickness: "10-15mm",
@@ -34,7 +41,7 @@ export default function ProductShowcase() {
       description: "Authentic wood textures with superior durability and complete water resistance.",
       price: "₹52",
       originalPrice: "₹210",
-      image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: woodyPanelImage,
       features: ["Natural wood grain", "Water resistant", "Termite proof", "UV stable"],
       specifications: {
         thickness: "12-15mm",
@@ -52,7 +59,7 @@ export default function ProductShowcase() {
       description: "Clean, contemporary colors perfect for modern architectural applications.",
       price: "₹40",
       originalPrice: "₹160",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: solidColorImage,
       features: ["Pure colors", "Stain resistant", "Cost effective", "Versatile"],
       specifications: {
         thickness: "10-12mm",
@@ -70,7 +77,7 @@ export default function ProductShowcase() {
       description: "Three-dimensional surfaces that add depth, character and tactile appeal.",
       price: "₹48",
       originalPrice: "₹190",
-      image: "https://images.unsplash.com/photo-1615529162924-f8c8b4c7b623?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: texturedImage,
       features: ["3D texture", "Anti-slip", "Unique patterns", "Dimensional appeal"],
       specifications: {
         thickness: "12-15mm",
@@ -88,7 +95,7 @@ export default function ProductShowcase() {
       description: "Mirror-like finish for high-impact installations that command attention.",
       price: "₹55",
       originalPrice: "₹220",
-      image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: mirrorImage,
       features: ["Mirror finish", "High impact", "Luxury appeal", "Light enhancing"],
       specifications: {
         thickness: "10-12mm",

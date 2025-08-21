@@ -2,6 +2,13 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ArrowRight, Filter, TrendingUp } from "lucide-react";
 import { useState } from "react";
 
+// Import generated project images
+import beforeImage from "@assets/generated_images/Before_renovation_plain_walls_0c93cace.png";
+import duringImage from "@assets/generated_images/During_installation_process_d116c398.png";
+import afterImage from "@assets/generated_images/After_renovation_luxury_walls_63ec8e29.png";
+import commercialBeforeImage from "@assets/generated_images/Commercial_building_before_renovation_f076c2f7.png";
+import commercialAfterImage from "@assets/generated_images/Commercial_building_after_renovation_77168409.png";
+
 export default function FeaturedProjects() {
   useScrollReveal();
 
@@ -16,9 +23,9 @@ export default function FeaturedProjects() {
       title: "Madurai Villa Transformation",
       location: "Madurai, Tamil Nadu",
       category: "Residential",
-      beforeImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      duringImage: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      afterImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      beforeImage: beforeImage,
+      duringImage: duringImage,
+      afterImage: afterImage,
       before: "Traditional cement walls showing age and requiring frequent maintenance with high upkeep costs.",
       during: "Our team installing lightweight polymarble sheets using advanced adhesive technology for seamless application.",
       after: "Stunning marble-finish walls that transformed the entire space with modern elegance and durability.",
@@ -31,9 +38,9 @@ export default function FeaturedProjects() {
       title: "Chennai Office Complex",
       location: "Chennai, Tamil Nadu", 
       category: "Commercial",
-      beforeImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      duringImage: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      afterImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      beforeImage: commercialBeforeImage,
+      duringImage: duringImage,
+      afterImage: commercialAfterImage,
       before: "Plain concrete walls in corporate lobby lacking visual appeal and brand representation.",
       during: "Installing premium Calacatta pattern polymarble sheets with precision cutting and professional mounting techniques.",
       after: "Luxurious marble-clad reception area that elevates the company's professional image significantly.",
@@ -46,9 +53,9 @@ export default function FeaturedProjects() {
       title: "Tirunelveli Hospital Wing",
       location: "Tirunelveli, Tamil Nadu",
       category: "Healthcare", 
-      beforeImage: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      duringImage: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      afterImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      beforeImage: beforeImage,
+      duringImage: duringImage,
+      afterImage: afterImage,
       before: "Clinical white walls requiring frequent cleaning and showing wear from constant sanitization procedures.",
       during: "Installing antimicrobial polymarble sheets designed specifically for healthcare environments with medical-grade adhesives.",
       after: "Beautiful, hygienic surfaces that maintain elegance while meeting strict healthcare facility standards.",
@@ -61,9 +68,9 @@ export default function FeaturedProjects() {
       title: "Coimbatore Restaurant Exterior",
       location: "Coimbatore, Tamil Nadu",
       category: "Exterior",
-      beforeImage: "https://images.unsplash.com/photo-1555529669-2269763671c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      duringImage: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      afterImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      beforeImage: commercialBeforeImage,
+      duringImage: duringImage,
+      afterImage: commercialAfterImage,
       before: "Weather-beaten exterior walls requiring frequent repainting and showing monsoon damage.",
       during: "Applying weather-resistant polymarble cladding system designed to withstand Tamil Nadu's tropical climate.",
       after: "Striking façade that attracts customers while resisting weather damage and maintaining appearance year-round.",
@@ -91,9 +98,9 @@ export default function FeaturedProjects() {
       title: "Thanjavur Shopping Mall",
       location: "Thanjavur, Tamil Nadu",
       category: "Commercial",
-      beforeImage: "https://images.unsplash.com/photo-1555529669-2269763671c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      duringImage: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      afterImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      beforeImage: commercialBeforeImage,
+      duringImage: duringImage,
+      afterImage: commercialAfterImage,
       before: "Plain retail spaces with generic finishes failing to attract premium brands and customers.",
       during: "Creating luxury retail environment using premium polymarble finishes throughout main corridors and storefronts.",
       after: "High-end shopping destination that successfully attracted luxury brands and increased foot traffic.",
