@@ -1,6 +1,7 @@
 import { useScrollReveal, useScrollProgress } from "@/hooks/useScrollReveal";
 import { Lightbulb, Award, Building, Microscope } from "lucide-react";
 import manufacturingImage from "@assets/generated_images/Polymarble_manufacturing_facility_58dc2199.png";
+import facilityOverview from "@assets/generated_images/Manufacturing_facility_overview_4794804a.png";
 
 export default function About() {
   useScrollReveal();
@@ -8,11 +9,11 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 bg-dark-forest relative overflow-hidden">
-      {/* Subtle marble texture overlay */}
-      <div className="absolute inset-0 opacity-5">
+      {/* Manufacturing facility showcase */}
+      <div className="absolute inset-0 opacity-10">
         <img
-          src={manufacturingImage}
-          alt="Polymarble manufacturing facility"
+          src={facilityOverview}
+          alt="Modern polymarble manufacturing facility"
           className="w-full h-full object-cover"
         />
       </div>
@@ -23,6 +24,24 @@ export default function About() {
           <p className="text-lg text-gray-300 max-w-2xl mx-auto reveal-fade">
             9 Years of Excellence Since 2017 - From Madurai to Global Markets
           </p>
+        </div>
+
+        {/* Manufacturing Excellence Banner */}
+        <div className="mb-12">
+          <div className="relative aspect-[5/2] rounded-2xl overflow-hidden border border-metallic-gold/20">
+            <img
+              src={manufacturingImage}
+              alt="State-of-the-art polymarble manufacturing facility"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-rich-black/70 via-rich-black/30 to-rich-black/70"></div>
+            <div className="absolute inset-0 flex items-center justify-center text-center">
+              <div>
+                <h4 className="text-3xl font-bold text-metallic-gold mb-3">Advanced Manufacturing Excellence</h4>
+                <p className="text-gray-300 text-lg max-w-2xl mx-auto">State-of-the-art facility equipped with precision technology and quality control processes</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Two-Panel Horizontal Timeline */}

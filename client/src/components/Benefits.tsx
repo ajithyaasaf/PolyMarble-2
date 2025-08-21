@@ -1,5 +1,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Shield, Droplets, Clock, Zap, Leaf, Flame, Bug } from "lucide-react";
+import waterResistanceDemo from "@assets/generated_images/Water_resistance_demonstration_c8332fac.png";
+import fireResistanceDemo from "@assets/generated_images/Fire_resistance_testing_demonstration_d6e65ec5.png";
 
 export default function Benefits() {
   useScrollReveal();
@@ -65,6 +67,35 @@ export default function Benefits() {
             Superior quality meets innovative technology - delivering all the beauty of natural marble 
             with none of the drawbacks.
           </p>
+        </div>
+
+        {/* Demo Images Section */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-metallic-gold/20 group">
+            <img
+              src={waterResistanceDemo}
+              alt="Water resistance testing demonstration"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-transparent"></div>
+            <div className="absolute bottom-4 left-4 right-4">
+              <h4 className="text-xl font-bold text-white mb-2">Water & Stain Resistance</h4>
+              <p className="text-gray-300 text-sm">Professional testing demonstrates superior water resistance properties</p>
+            </div>
+          </div>
+          
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-metallic-gold/20 group">
+            <img
+              src={fireResistanceDemo}
+              alt="Fire resistance testing demonstration"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-transparent"></div>
+            <div className="absolute bottom-4 left-4 right-4">
+              <h4 className="text-xl font-bold text-white mb-2">Fire Resistance Testing</h4>
+              <p className="text-gray-300 text-sm">Class A fire rating ensures maximum safety for your spaces</p>
+            </div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 stagger-group">
