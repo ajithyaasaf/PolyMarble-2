@@ -153,6 +153,11 @@ export default function FeaturedProjects() {
           ))}
         </div>
 
+        {/* Debug Info */}
+        <div className="text-center mb-8 text-sm text-gray-400">
+          Filter: {activeFilter} | Total Projects: {caseStudies.length} | Filtered: {filteredProjects.length} | Visible: {visibleProjects.length}
+        </div>
+
         <div className="grid lg:grid-cols-1 gap-12 stagger-group">
           {visibleProjects.map((study, index) => (
             <div
@@ -180,6 +185,8 @@ export default function FeaturedProjects() {
                       src={study.beforeImage}
                       alt={`${study.title} - Before`}
                       className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                      onLoad={() => console.log(`Loaded before image for ${study.title}`)}
+                      onError={(e) => console.error(`Failed to load before image for ${study.title}:`, study.beforeImage)}
                     />
                     <div className="absolute top-4 left-4">
                       <span className="bg-red-500/80 text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -197,6 +204,8 @@ export default function FeaturedProjects() {
                       src={study.duringImage}
                       alt={`${study.title} - During`}
                       className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                      onLoad={() => console.log(`Loaded during image for ${study.title}`)}
+                      onError={(e) => console.error(`Failed to load during image for ${study.title}:`, study.duringImage)}
                     />
                     <div className="absolute top-4 left-4">
                       <span className="bg-yellow-500/80 text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -214,6 +223,8 @@ export default function FeaturedProjects() {
                       src={study.afterImage}
                       alt={`${study.title} - After`}
                       className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                      onLoad={() => console.log(`Loaded after image for ${study.title}`)}
+                      onError={(e) => console.error(`Failed to load after image for ${study.title}:`, study.afterImage)}
                     />
                     <div className="absolute top-4 left-4">
                       <span className="bg-green-500/80 text-white px-3 py-1 rounded-full text-sm font-medium">
