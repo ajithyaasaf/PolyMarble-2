@@ -14,7 +14,7 @@ export default function SEOHead({
   description = "Transform your spaces with premium polymarble sheets. 80% less cost than natural marble. Fire-resistant, water-proof, 15+ year warranty. Serving Tamil Nadu since 2017.",
   keywords = "polymarble sheets, marble sheets, interior design, exterior cladding, fire resistant sheets, water resistant sheets, Tamil Nadu, Madurai, Chennai, affordable marble",
   canonicalUrl = "https://polymarblesheets.com",
-  ogImage = "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630",
+  ogImage = "/attached_assets/generated_images/High-gloss_polymarble_product_showcase_f795ab21.png",
   ogType = "website"
 }: SEOHeadProps) {
   
