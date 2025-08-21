@@ -137,7 +137,7 @@ export default function Hero() {
                   <Input
                     id="phone"
                     type="tel"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 98421 06768"
                     className="col-span-3 bg-slate-800 border-slate-600 text-white"
                   />
                 </div>
