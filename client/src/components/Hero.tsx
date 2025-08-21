@@ -41,14 +41,18 @@ export default function Hero() {
         <img 
           src={heroBackgroundImage}
           alt="Luxury polymarble interior installation"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-rich-black/80 via-rich-black/50 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-rich-black/60"></div>
+        {/* Strong overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-rich-black/95 via-rich-black/75 to-rich-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-rich-black/20 via-transparent to-rich-black/80"></div>
+        {/* Additional text backdrop */}
+        <div className="absolute inset-0 bg-rich-black/40"></div>
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-left px-6 max-w-6xl mx-auto">
+        <div className="max-w-3xl">
         <div className="inline-flex items-center px-4 py-2 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-medium mb-6 reveal-fade">
           <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
           Trusted by 2,00,000+ Customers Across 5 Countries
@@ -56,30 +60,30 @@ export default function Hero() {
         <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up">
           Transform Spaces with <span className="text-metallic-gold text-shimmer">Premium Polymarble</span>
         </h1>
-        <p className="text-xl md:text-2xl text-gray-300 mb-6 max-w-3xl mx-auto reveal-fade">
+        <p className="text-xl md:text-2xl text-gray-300 mb-6 max-w-2xl reveal-fade">
           Get the luxury of marble at 80% less cost. Fire-resistant, water-proof, and maintenance-free for 15+ years.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8 text-sm">
-          <div className="flex items-center justify-center bg-rich-black/30 backdrop-blur-sm rounded-lg py-3 px-4 border border-metallic-gold/20 reveal-up">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mb-8 text-sm">
+          <div className="flex items-center bg-rich-black/60 backdrop-blur-sm rounded-lg py-3 px-4 border border-metallic-gold/30 reveal-up">
             <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
             <span className="text-gray-300"><strong className="text-white">9 Years</strong> of Excellence Since 2017</span>
           </div>
-          <div className="flex items-center justify-center bg-rich-black/30 backdrop-blur-sm rounded-lg py-3 px-4 border border-metallic-gold/20 reveal-up">
+          <div className="flex items-center bg-rich-black/60 backdrop-blur-sm rounded-lg py-3 px-4 border border-metallic-gold/30 reveal-up">
             <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
             <span className="text-gray-300"><strong className="text-white">Same Day</strong> Installation Available</span>
           </div>
-          <div className="flex items-center justify-center bg-rich-black/30 backdrop-blur-sm rounded-lg py-3 px-4 border border-metallic-gold/20 reveal-up">
+          <div className="flex items-center bg-rich-black/60 backdrop-blur-sm rounded-lg py-3 px-4 border border-metallic-gold/30 reveal-up">
             <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
             <span className="text-gray-300"><strong className="text-white">₹40/sq.ft</strong> Starting Price</span>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center stagger-group">
+        <div className="flex flex-col sm:flex-row gap-4 stagger-group">
           <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
             <DialogTrigger asChild>
               <Button
@@ -155,6 +159,7 @@ export default function Hero() {
           >
             Our Story
           </button>
+        </div>
         </div>
       </div>
 
