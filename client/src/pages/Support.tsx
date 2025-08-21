@@ -9,6 +9,9 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Play, Download, Users, Building, Scissors, Wrench, Droplets, Lock } from "lucide-react";
+import installationTutorialImage from "@assets/generated_images/Installation_tutorial_thumbnail_0c18e321.png";
+import professionalInstallationImage from "@assets/generated_images/Professional_installation_process_image_9587fee8.png";
+import bathroomInstallationImage from "@assets/generated_images/Bathroom_polymarble_installation_example_951063c2.png";
 
 export default function Support() {
   useScrollReveal();
@@ -21,7 +24,7 @@ export default function Support() {
       id: 1,
       title: "How to Cut Polymarble Sheets",
       duration: "3:45",
-      thumbnail: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+      thumbnail: installationTutorialImage,
       description: "Learn professional cutting techniques using basic tools",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4"
     },
@@ -29,7 +32,7 @@ export default function Support() {
       id: 2,
       title: "Installing Polymarble: Step by Step",
       duration: "6:20",
-      thumbnail: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+      thumbnail: professionalInstallationImage,
       description: "Complete installation guide from preparation to finishing",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4"
     },
@@ -37,7 +40,7 @@ export default function Support() {
       id: 3,
       title: "Fixing Common Installation Issues",
       duration: "4:15",
-      thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+      thumbnail: installationTutorialImage,
       description: "Troubleshoot and fix alignment, adhesion, and joint issues",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4"
     },
@@ -45,7 +48,7 @@ export default function Support() {
       id: 4,
       title: "Cleaning and Maintenance",
       duration: "2:30",
-      thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+      thumbnail: bathroomInstallationImage,
       description: "Best practices for long-term care and maintenance",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4"
     },
@@ -53,7 +56,7 @@ export default function Support() {
       id: 5,
       title: "Advanced Pattern Matching",
       duration: "5:10",
-      thumbnail: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+      thumbnail: professionalInstallationImage,
       description: "Create seamless large-area installations",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4"
     }

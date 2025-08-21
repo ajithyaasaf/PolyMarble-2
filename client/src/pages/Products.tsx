@@ -6,6 +6,11 @@ import QuickQuote from "@/components/QuickQuote";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Download, FileText, Palette, Layers, Sparkles } from "lucide-react";
+import highGlossImage from "@assets/generated_images/High-gloss_polymarble_product_showcase_f795ab21.png";
+import woodyPanelImage from "@assets/generated_images/Woody_panel_polymarble_sheets_479b86f5.png";
+import solidColorImage from "@assets/generated_images/Solid_color_polymarble_sheets_f47ccc7d.png";
+import texturedImage from "@assets/generated_images/Textured_polymarble_variety_showcase_6af6050d.png";
+import mirrorImage from "@assets/generated_images/Mirror_finish_polymarble_sheets_1e70ee77.png";
 
 export default function Products() {
   useScrollReveal();
@@ -15,11 +20,11 @@ export default function Products() {
   const [selectedFinish, setSelectedFinish] = useState("matt");
 
   const patterns = [
-    { id: "high-gloss", name: "High-Gloss Premium", image: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
-    { id: "woody-panels", name: "Woody Panels", image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
-    { id: "solid-color", name: "Solid Color Range", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
-    { id: "textured-finishes", name: "Textured Finishes", image: "https://images.unsplash.com/photo-1615529162924-f8c8b4c7b623?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
-    { id: "mirror-sheets", name: "Mirror Sheets", image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" },
+    { id: "high-gloss", name: "High-Gloss Premium", image: highGlossImage },
+    { id: "woody-panels", name: "Woody Panels", image: woodyPanelImage },
+    { id: "solid-color", name: "Solid Color Range", image: solidColorImage },
+    { id: "textured-finishes", name: "Textured Finishes", image: texturedImage },
+    { id: "mirror-sheets", name: "Mirror Sheets", image: mirrorImage },
   ];
 
   const materials = [

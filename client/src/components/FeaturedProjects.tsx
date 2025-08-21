@@ -8,6 +8,8 @@ import duringImage from "@assets/generated_images/During_installation_process_d1
 import afterImage from "@assets/generated_images/After_renovation_luxury_walls_63ec8e29.png";
 import commercialBeforeImage from "@assets/generated_images/Commercial_building_before_renovation_f076c2f7.png";
 import commercialAfterImage from "@assets/generated_images/Commercial_building_after_renovation_77168409.png";
+import professionalInstallationImage from "@assets/generated_images/Professional_installation_process_image_9587fee8.png";
+import completedOfficeImage from "@assets/generated_images/Completed_office_installation_showcase_fdb07259.png";
 
 export default function FeaturedProjects() {
   useScrollReveal();
@@ -83,9 +85,9 @@ export default function FeaturedProjects() {
       title: "Salem Residential Complex",
       location: "Salem, Tamil Nadu",
       category: "Residential", 
-      beforeImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      duringImage: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      afterImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      beforeImage: beforeImage,
+      duringImage: professionalInstallationImage,
+      afterImage: completedOfficeImage,
       before: "Basic painted walls throughout common areas lacking visual interest and requiring frequent maintenance.",
       during: "Installing multiple polymarble patterns to create unique zones while maintaining design cohesion.",
       after: "Elegant common spaces that increased property value and resident satisfaction dramatically.",

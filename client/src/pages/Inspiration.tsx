@@ -4,6 +4,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuickQuote from "@/components/QuickQuote";
 import { Play, Pause, Eye } from "lucide-react";
+import beforeImage from "@assets/generated_images/Before_renovation_plain_walls_0c93cace.png";
+import afterImage from "@assets/generated_images/After_renovation_luxury_walls_63ec8e29.png";
+import commercialAfterImage from "@assets/generated_images/Completed_office_installation_showcase_fdb07259.png";
+import bathroomInstallationImage from "@assets/generated_images/Bathroom_polymarble_installation_example_951063c2.png";
+import highGlossImage from "@assets/generated_images/High-gloss_polymarble_product_showcase_f795ab21.png";
+import texturedImage from "@assets/generated_images/Textured_polymarble_variety_showcase_6af6050d.png";
 
 export default function Inspiration() {
   useScrollReveal();
@@ -15,7 +21,7 @@ export default function Inspiration() {
       id: "urban-minimal",
       title: "Urban Minimal",
       description: "Clean lines and sophisticated simplicity for modern city living",
-      thumbnail: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      thumbnail: afterImage,
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
       projects: ["Madurai Penthouse", "Chennai Corporate HQ", "Coimbatore Loft"]
     },
@@ -23,7 +29,7 @@ export default function Inspiration() {
       id: "tropical-luxe",
       title: "Tropical Luxe",
       description: "Rich textures and warm tones inspired by Tamil Nadu's natural beauty",
-      thumbnail: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      thumbnail: bathroomInstallationImage,
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
       projects: ["Thanjavur Resort", "Madurai Villa", "Salem Spa"]
     },
@@ -31,7 +37,7 @@ export default function Inspiration() {
       id: "heritage-modern",
       title: "Heritage Modern",
       description: "Traditional craftsmanship meets contemporary design aesthetics",
-      thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      thumbnail: commercialAfterImage,
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
       projects: ["Tirunelveli Temple Complex", "Madurai Heritage Hotel", "Chennai Museum"]
     },
@@ -39,7 +45,7 @@ export default function Inspiration() {
       id: "wellness-sanctuary",
       title: "Wellness Sanctuary",
       description: "Calming spaces designed for health, healing, and rejuvenation",
-      thumbnail: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      thumbnail: bathroomInstallationImage,
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
       projects: ["Coimbatore Wellness Center", "Salem Hospital", "Chennai Yoga Studio"]
     }
@@ -51,7 +57,7 @@ export default function Inspiration() {
       title: "Luxury Living Room",
       location: "Chennai Villa",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
-      thumbnail: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      thumbnail: afterImage,
       pattern: "Calacatta Gold",
       category: "Residential"
     },
@@ -60,7 +66,7 @@ export default function Inspiration() {
       title: "Corporate Reception",
       location: "Madurai Tech Park",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      thumbnail: commercialAfterImage,
       pattern: "Noir Elegance",
       category: "Commercial"
     },
@@ -69,7 +75,7 @@ export default function Inspiration() {
       title: "Spa Treatment Room",
       location: "Thanjavur Resort",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
-      thumbnail: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      thumbnail: bathroomInstallationImage,
       pattern: "Verde Luxe",
       category: "Wellness"
     },
@@ -78,7 +84,7 @@ export default function Inspiration() {
       title: "Restaurant Interior",
       location: "Coimbatore Fine Dining",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      thumbnail: "https://images.unsplash.com/photo-1555529669-2269763671c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      thumbnail: highGlossImage,
       pattern: "Emperador Brown",
       category: "Hospitality"
     },
@@ -87,7 +93,7 @@ export default function Inspiration() {
       title: "Master Bedroom",
       location: "Salem Residence",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
-      thumbnail: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      thumbnail: afterImage,
       pattern: "Calacatta Gold",
       category: "Residential"
     },
@@ -96,7 +102,7 @@ export default function Inspiration() {
       title: "Retail Showroom",
       location: "Tirunelveli Mall",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      thumbnail: "https://images.unsplash.com/photo-1555529669-2269763671c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      thumbnail: texturedImage,
       pattern: "Noir Elegance",
       category: "Retail"
     }

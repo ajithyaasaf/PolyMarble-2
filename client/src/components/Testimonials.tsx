@@ -1,5 +1,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Star, Quote } from "lucide-react";
+import businessOwnerImage from "@assets/generated_images/Business_owner_testimonial_headshot_57a638cf.png";
+import architectImage from "@assets/generated_images/Architect_testimonial_headshot_a03146d0.png";
 
 export default function Testimonials() {
   useScrollReveal();
@@ -12,7 +14,7 @@ export default function Testimonials() {
       type: "Kitchen Renovation",
       quote: "The polymarble sheets transformed our kitchen completely. Two years later, they still look brand new despite heavy daily use.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150"
+      image: businessOwnerImage
     },
     {
       id: 2,
@@ -21,7 +23,7 @@ export default function Testimonials() {
       type: "Hotel Project",
       quote: "We chose Polymarble for our hotel project. The durability and ease of maintenance have exceeded our expectations.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150"
+      image: businessOwnerImage
     },
     {
       id: 3,
@@ -30,7 +32,7 @@ export default function Testimonials() {
       type: "Luxury Projects",
       quote: "My go-to choice for luxury projects. Clients love the look, and I love the reliability.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150"
+      image: architectImage
     }
   ];
 

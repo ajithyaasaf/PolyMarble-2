@@ -4,6 +4,10 @@ import Footer from "@/components/Footer";
 import QuickQuote from "@/components/QuickQuote";
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Star, Clock, Shield, Award } from "lucide-react";
+import bathroomInstallationImage from "@assets/generated_images/Bathroom_polymarble_installation_example_951063c2.png";
+import highGlossImage from "@assets/generated_images/High-gloss_polymarble_product_showcase_f795ab21.png";
+import solidColorImage from "@assets/generated_images/Solid_color_polymarble_sheets_f47ccc7d.png";
+import texturedImage from "@assets/generated_images/Textured_polymarble_variety_showcase_6af6050d.png";
 
 export default function MarbleWallSheetMadurai() {
   useScrollReveal();
@@ -77,7 +81,7 @@ export default function MarbleWallSheetMadurai() {
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 <div className="reveal-left">
                   <img
-                    src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+                    src={bathroomInstallationImage}
                     alt="Polymarble installation in Madurai home"
                     className="w-full h-64 object-cover rounded-lg"
                   />
@@ -164,7 +168,7 @@ export default function MarbleWallSheetMadurai() {
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 <div className="bg-dark-forest/50 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300"
+                    src={highGlossImage}
                     alt="Calacatta Gold pattern"
                     className="w-full h-48 object-cover"
                   />
@@ -175,7 +179,7 @@ export default function MarbleWallSheetMadurai() {
                 </div>
                 <div className="bg-dark-forest/50 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300"
+                    src={solidColorImage}
                     alt="Noir Elegance pattern"
                     className="w-full h-48 object-cover"
                   />
@@ -186,7 +190,7 @@ export default function MarbleWallSheetMadurai() {
                 </div>
                 <div className="bg-dark-forest/50 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300"
+                    src={texturedImage}
                     alt="Verde Luxe pattern"
                     className="w-full h-48 object-cover"
                   />
