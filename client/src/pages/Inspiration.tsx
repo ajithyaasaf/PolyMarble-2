@@ -11,6 +11,14 @@ import bathroomInstallationImage from "@assets/generated_images/Bathroom_polymar
 import highGlossImage from "@assets/generated_images/High-gloss_polymarble_product_showcase_f795ab21.png";
 import texturedImage from "@assets/generated_images/Textured_polymarble_variety_showcase_6af6050d.png";
 
+// Styled Spaces Images
+import luxuryLivingRoomImage from "@assets/generated_images/Luxury_living_room_interior_c7a7e741.png";
+import corporateReceptionImage from "@assets/generated_images/Corporate_reception_interior_62a6f4c6.png";
+import spaTreatmentRoomImage from "@assets/generated_images/Spa_treatment_room_interior_384d935e.png";
+import restaurantInteriorImage from "@assets/generated_images/Restaurant_interior_design_f0321877.png";
+import masterBedroomImage from "@assets/generated_images/Master_bedroom_interior_ba671cf3.png";
+import retailShowroomImage from "@assets/generated_images/Retail_showroom_interior_b1fbf187.png";
+
 export default function Inspiration() {
   useScrollReveal();
 
@@ -57,7 +65,7 @@ export default function Inspiration() {
       title: "Luxury Living Room",
       location: "Chennai Villa",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
-      thumbnail: afterImage,
+      thumbnail: luxuryLivingRoomImage,
       pattern: "Calacatta Gold",
       category: "Residential"
     },
@@ -66,7 +74,7 @@ export default function Inspiration() {
       title: "Corporate Reception",
       location: "Madurai Tech Park",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      thumbnail: commercialAfterImage,
+      thumbnail: corporateReceptionImage,
       pattern: "Noir Elegance",
       category: "Commercial"
     },
@@ -75,7 +83,7 @@ export default function Inspiration() {
       title: "Spa Treatment Room",
       location: "Thanjavur Resort",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
-      thumbnail: bathroomInstallationImage,
+      thumbnail: spaTreatmentRoomImage,
       pattern: "Verde Luxe",
       category: "Wellness"
     },
@@ -84,7 +92,7 @@ export default function Inspiration() {
       title: "Restaurant Interior",
       location: "Coimbatore Fine Dining",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      thumbnail: highGlossImage,
+      thumbnail: restaurantInteriorImage,
       pattern: "Emperador Brown",
       category: "Hospitality"
     },
@@ -93,7 +101,7 @@ export default function Inspiration() {
       title: "Master Bedroom",
       location: "Salem Residence",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
-      thumbnail: afterImage,
+      thumbnail: masterBedroomImage,
       pattern: "Calacatta Gold",
       category: "Residential"
     },
@@ -102,7 +110,7 @@ export default function Inspiration() {
       title: "Retail Showroom",
       location: "Tirunelveli Mall",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      thumbnail: texturedImage,
+      thumbnail: retailShowroomImage,
       pattern: "Noir Elegance",
       category: "Retail"
     }
