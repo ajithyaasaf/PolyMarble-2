@@ -20,7 +20,7 @@ export default function About() {
         <div className="text-center mb-16">
           <h3 className="text-4xl lg:text-5xl font-bold text-metallic-gold reveal-up mb-4">Our Story</h3>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto reveal-fade">
-            From breakthrough innovation to industry leadership
+            9 Years of Excellence Since 2017 - From Madurai to Global Markets
           </p>
         </div>
 
@@ -36,10 +36,10 @@ export default function About() {
                 <h4 className="text-xl font-bold text-metallic-gold">The Breakthrough Moment</h4>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                It struck me while watching traditional marble craftsmen in Rajasthan—what if we could capture that 
-                timeless beauty but make it accessible, lightweight, and installable in hours instead of months? 
-                That 'aha!' moment in 2016 became the foundation of Polymarble Sheet India, revolutionizing how we 
-                think about luxury surfaces.
+                Polymarble sheet is a leading manufacturer of premium polymarble sheets, combining innovative 
+                technology with timeless aesthetics. We specialize in creating durable, versatile surface solutions 
+                that transform residential and commercial spaces with the elegance of natural marble at a fraction 
+                of the cost and maintenance. Our philosophy: "We don't look for products for customers - we create products for them."
               </p>
             </div>
           </div>
@@ -52,8 +52,8 @@ export default function About() {
                   <Award className="w-6 h-6 text-metallic-gold" />
                 </div>
                 <div>
-                  <h5 className="font-semibold text-white">First 100 Installations</h5>
-                  <p className="text-gray-400 text-sm">2017 - Madurai homes embraced our vision</p>
+                  <h5 className="font-semibold text-white">Founded in Madurai</h5>
+                  <p className="text-gray-400 text-sm">2017 - Started with a vision for accessible luxury</p>
                 </div>
               </div>
               
@@ -62,8 +62,8 @@ export default function About() {
                   <Building className="w-6 h-6 text-metallic-gold" />
                 </div>
                 <div>
-                  <h5 className="font-semibold text-white">Chennai Launch</h5>
-                  <p className="text-gray-400 text-sm">2019 - Expanded to Tamil Nadu's capital</p>
+                  <h5 className="font-semibold text-white">South India Expansion</h5>
+                  <p className="text-gray-400 text-sm">2019 - Expanded across Tamil Nadu, Andaman & Goa</p>
                 </div>
               </div>
               
@@ -72,8 +72,8 @@ export default function About() {
                   <Microscope className="w-6 h-6 text-metallic-gold" />
                 </div>
                 <div>
-                  <h5 className="font-semibold text-white">R&D Lab Opening</h5>
-                  <p className="text-gray-400 text-sm">2021 - Advanced polymer research facility</p>
+                  <h5 className="font-semibold text-white">Global Expansion</h5>
+                  <p className="text-gray-400 text-sm">2023 - Business operations in Malaysia and New York</p>
                 </div>
               </div>
             </div>
@@ -81,8 +81,8 @@ export default function About() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-8 stagger-group">
               <div className="text-center stagger-item magnetic">
-                <div className="text-2xl font-bold text-metallic-gold text-shimmer counter" data-target="500">0</div>
-                <div className="text-xs text-gray-400">Projects</div>
+                <div className="text-2xl font-bold text-metallic-gold text-shimmer counter" data-target="200000">0</div>
+                <div className="text-xs text-gray-400">Customers</div>
                 <div className="progress-bar mt-2 scroll-progress" data-progress="85"></div>
               </div>
               <div className="text-center stagger-item magnetic">
@@ -91,8 +91,8 @@ export default function About() {
                 <div className="progress-bar mt-2 scroll-progress" data-progress="70"></div>
               </div>
               <div className="text-center stagger-item magnetic">
-                <div className="text-2xl font-bold text-metallic-gold text-shimmer counter" data-target="12">0</div>
-                <div className="text-xs text-gray-400">Cities</div>
+                <div className="text-2xl font-bold text-metallic-gold text-shimmer counter" data-target="5">0</div>
+                <div className="text-xs text-gray-400">Countries</div>
                 <div className="progress-bar mt-2 scroll-progress" data-progress="60"></div>
               </div>
             </div>

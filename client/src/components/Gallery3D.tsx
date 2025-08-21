@@ -9,41 +9,48 @@ export default function Gallery3D() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const textureVideos = [
+  const productCategories = [
     {
-      id: "calacatta",
-      name: "Calacatta Gold",
-      description: "Ultra-close marble veining with golden highlights",
+      id: "high-gloss",
+      name: "High-Gloss Premium",
+      description: "Timeless elegance with authentic marble patterns and veining",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
       fallbackImage: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
     },
     {
-      id: "noir",
-      name: "Noir Elegance",
-      description: "Deep black marble with dramatic white veining",
+      id: "woody-panels",
+      name: "Woody Panels",
+      description: "Natural wood textures with superior durability and water resistance",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
-      fallbackImage: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+      fallbackImage: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
     },
     {
-      id: "verde",
-      name: "Verde Luxe",
-      description: "Rich green marble with flowing natural patterns",
+      id: "solid-color",
+      name: "Solid Color Range",
+      description: "Clean, contemporary colors for modern architectural applications",
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
       fallbackImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
     },
     {
-      id: "emperador",
-      name: "Emperador Brown",
-      description: "Warm brown marble with intricate fossil patterns",
+      id: "textured-finishes",
+      name: "Textured Finishes",
+      description: "Dimensional surfaces that add depth and character to any space",
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
       fallbackImage: "https://images.unsplash.com/photo-1615529162924-f8c8b4c7b623?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
+    },
+    {
+      id: "mirror-sheets",
+      name: "Mirror Sheets",
+      description: "Mirror-like finish for luxurious, high-impact installations",
+      videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
+      fallbackImage: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
     },
   ];
 
   useEffect(() => {
     if (isAutoPlaying) {
       intervalRef.current = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % textureVideos.length);
+        setCurrentSlide((prev) => (prev + 1) % productCategories.length);
       }, 5000);
     }
     return () => {
@@ -51,7 +58,7 @@ export default function Gallery3D() {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isAutoPlaying, textureVideos.length]);
+  }, [isAutoPlaying, productCategories.length]);
 
   const handleSlideChange = (index: number) => {
     setCurrentSlide(index);
@@ -61,11 +68,11 @@ export default function Gallery3D() {
   };
 
   const nextSlide = () => {
-    handleSlideChange((currentSlide + 1) % textureVideos.length);
+    handleSlideChange((currentSlide + 1) % productCategories.length);
   };
 
   const prevSlide = () => {
-    handleSlideChange((currentSlide - 1 + textureVideos.length) % textureVideos.length);
+    handleSlideChange((currentSlide - 1 + productCategories.length) % productCategories.length);
   };
 
   const toggleAutoPlay = () => {
@@ -76,7 +83,7 @@ export default function Gallery3D() {
     <section id="gallery" className="relative h-screen w-full overflow-hidden">
       {/* Full-Width Carousel */}
       <div className="relative w-full h-full">
-        {textureVideos.map((texture, index) => (
+        {productCategories.map((texture, index) => (
           <div
             key={texture.id}
             className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
@@ -175,7 +182,7 @@ export default function Gallery3D() {
       {/* Slide Indicators */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
         <div className="flex space-x-2">
-          {textureVideos.map((_, index) => (
+          {productCategories.map((_, index) => (
             <button
               key={index}
               onClick={() => handleSlideChange(index)}

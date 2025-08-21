@@ -53,7 +53,7 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">Start Your <span className="text-metallic-gold text-shimmer">Project</span></h3>
           <p className="text-xl text-gray-400 reveal-fade">
-            Ready to transform your space? Let's discuss how our 3D marble innovations can bring your vision to life.
+            Ready to transform your space? Let's discuss how our premium polymarble sheets can bring your vision to life.
           </p>
         </div>
 
@@ -103,10 +103,11 @@ export default function Contact() {
                     <SelectValue placeholder="Select Project Type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="residential">Residential</SelectItem>
-                    <SelectItem value="commercial">Commercial</SelectItem>
-                    <SelectItem value="hospitality">Hospitality</SelectItem>
-                    <SelectItem value="retail">Retail</SelectItem>
+                    <SelectItem value="residential">Residential (Kitchen/Bathroom)</SelectItem>
+                    <SelectItem value="commercial">Commercial Office</SelectItem>
+                    <SelectItem value="hospitality">Restaurant/Hotel</SelectItem>
+                    <SelectItem value="retail">Retail Store</SelectItem>
+                    <SelectItem value="dealership">Dealership Inquiry</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -142,8 +143,8 @@ export default function Contact() {
                     <MapPin className="w-6 h-6 text-metallic-gold" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">Global Headquarters</div>
-                    <div className="text-gray-400">Milano, Italy</div>
+                    <div className="text-white font-medium">Corporate Office</div>
+                    <div className="text-gray-400">No:46, Sivagangai Main Road, Melamadai, Gomathipuram, Madurai - 625020</div>
                   </div>
                 </div>
 
@@ -152,8 +153,8 @@ export default function Contact() {
                     <Phone className="w-6 h-6 text-metallic-gold" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">+39 02 1234 5678</div>
-                    <div className="text-gray-400">Mon-Fri 9AM-6PM CET</div>
+                    <div className="text-white font-medium">+91 98421 06768</div>
+                    <div className="text-gray-400">WhatsApp: +91 98421 26565</div>
                   </div>
                 </div>
 
@@ -162,8 +163,8 @@ export default function Contact() {
                     <Mail className="w-6 h-6 text-metallic-gold" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">hello@polymarbles3d.com</div>
-                    <div className="text-gray-400">We'll respond within 24 hours</div>
+                    <div className="text-white font-medium">polymarblesheet@gmail.com</div>
+                    <div className="text-gray-400">Chennai Office: Dr. Kannan Tower, Arcot Road, Porur - 116</div>
                   </div>
                 </div>
               </div>
@@ -172,14 +173,18 @@ export default function Contact() {
             <div className="pt-8 border-t border-white/10">
               <h5 className="text-lg font-medium text-white mb-4">Follow Our Journey</h5>
               <div className="flex gap-4">
-                <a href="#" className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center hover:bg-deep-jade/50 transition-colors">
-                  <Twitter className="w-6 h-6 text-metallic-gold" />
+                <a href="https://www.youtube.com/@polymarblesheet3386" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center hover:bg-deep-jade/50 transition-colors">
+                  <svg className="w-6 h-6 text-metallic-gold" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
                 </a>
-                <a href="#" className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center hover:bg-deep-jade/50 transition-colors">
+                <a href="https://www.instagram.com/polymarblesheet_india" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center hover:bg-deep-jade/50 transition-colors">
                   <Instagram className="w-6 h-6 text-metallic-gold" />
                 </a>
-                <a href="#" className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center hover:bg-deep-jade/50 transition-colors">
-                  <Linkedin className="w-6 h-6 text-metallic-gold" />
+                <a href="https://www.facebook.com/share/19aJmaJ7Nc/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-deep-jade/30 rounded-lg flex items-center justify-center hover:bg-deep-jade/50 transition-colors">
+                  <svg className="w-6 h-6 text-metallic-gold" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
                 </a>
               </div>
             </div>

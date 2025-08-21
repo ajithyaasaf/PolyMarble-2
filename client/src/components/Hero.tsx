@@ -86,10 +86,13 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up">
-          Your Vision, <span className="text-metallic-gold text-shimmer">Cast in Polymer Stone</span>
+          Premium <span className="text-metallic-gold text-shimmer">Polymarble Sheets</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto reveal-fade">
-          Design without Limits. Install in Hours.
+          A Hub of Unique Interior and Exterior Products
+        </p>
+        <p className="text-lg text-gray-400 mb-8 max-w-3xl mx-auto reveal-fade">
+          9 Years of Excellence Since 2017 • Over 2 Lakh Satisfied Customers • 80% Less Expensive Than Natural Marble
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center stagger-group">
           <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
@@ -98,12 +101,12 @@ export default function Hero() {
                 onClick={handleSampleRequest}
                 className="inline-flex items-center px-8 py-4 rounded-full bg-metallic-gold text-rich-black font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105 duration-300 stagger-item magnetic perspective-tilt ripple-effect"
               >
-                Get a Free Sample
+                Get Free Sample & Quote
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px] bg-rich-black border-metallic-gold/20">
               <DialogHeader>
-                <DialogTitle className="text-metallic-gold">Request Your Free Sample</DialogTitle>
+                <DialogTitle className="text-metallic-gold">Request Your Free Sample & Quote</DialogTitle>
               </DialogHeader>
               <div className="grid gap-4 py-4">
                 <div className="grid grid-cols-4 items-center gap-4">
