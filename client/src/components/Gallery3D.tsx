@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 
-// Import generated product images for fallbacks
+// Import generated product images
 import highGlossImage from "@assets/generated_images/High-gloss_polymarble_sheets_b1da0e5d.png";
 import woodyPanelImage from "@assets/generated_images/Woody_panel_polymarble_sheets_479b86f5.png";
 import solidColorImage from "@assets/generated_images/Solid_color_polymarble_sheets_f47ccc7d.png";
@@ -21,36 +21,31 @@ export default function Gallery3D() {
       id: "high-gloss",
       name: "High-Gloss Premium",
       description: "Timeless elegance with authentic marble patterns and veining",
-      videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      fallbackImage: highGlossImage,
+      image: highGlossImage,
     },
     {
       id: "woody-panels",
       name: "Woody Panels",
       description: "Natural wood textures with superior durability and water resistance",
-      videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
-      fallbackImage: woodyPanelImage,
+      image: woodyPanelImage,
     },
     {
       id: "solid-color",
       name: "Solid Color Range",
       description: "Clean, contemporary colors for modern architectural applications",
-      videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      fallbackImage: solidColorImage,
+      image: solidColorImage,
     },
     {
       id: "textured-finishes",
       name: "Textured Finishes",
       description: "Dimensional surfaces that add depth and character to any space",
-      videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
-      fallbackImage: texturedImage,
+      image: texturedImage,
     },
     {
       id: "mirror-sheets",
       name: "Mirror Sheets",
       description: "Mirror-like finish for luxurious, high-impact installations",
-      videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      fallbackImage: mirrorImage,
+      image: mirrorImage,
     },
   ];
 
@@ -99,33 +94,26 @@ export default function Gallery3D() {
               'transform translate-x-full'
             }`}
           >
-            {/* Video Background */}
+            {/* Image Background with 3D Hover Effect */}
             <div className="relative w-full h-full group">
-              <video
+              <img
+                src={texture.image}
+                alt={texture.name}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                autoPlay
-                loop
-                muted
-                playsInline
                 style={{ 
                   transform: 'perspective(1000px) rotateY(0deg)',
                   transition: 'transform 0.5s ease-out'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'perspective(1000px) rotateY(5deg) rotateX(2deg)';
+                  e.currentTarget.style.transform = 'perspective(1000px) rotateY(5deg) rotateX(2deg) scale(1.05)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+                  e.currentTarget.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)';
                 }}
-              >
-                <source src={texture.videoSrc} type="video/mp4" />
-                {/* Fallback image */}
-                <img
-                  src={texture.fallbackImage}
-                  alt={texture.name}
-                  className="w-full h-full object-cover"
-                />
-              </video>
+                onError={(e) => {
+                  console.log(`Failed to load image: ${texture.image}`);
+                }}
+              />
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-rich-black/30"></div>

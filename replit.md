@@ -107,6 +107,11 @@ Polymarbles 3D is a modern web application showcasing luxury marble sculptures a
 
 ## Changelog
 
+- August 21, 2025: Completed migration from Replit Agent to Replit environment
+  - Fixed Gallery3D component to use local images instead of external videos
+  - Resolved image loading issues by switching from Pexels videos to generated product images
+  - Ensured proper security practices and client/server separation
+  - Verified all dependencies are properly configured for Replit environment
 - July 05, 2025: Initial setup and migration from Replit Agent to Replit environment
 - July 05, 2025: Implemented comprehensive scroll-triggered animation system
   - Added multiple reveal animation types (up, left, right, fade, scale, rotate)
