@@ -147,7 +147,7 @@ export default function Support() {
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
                 DIY <span className="text-metallic-gold text-shimmer">Hub</span>
               </h3>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto reveal-fade">
+              <p className="text-xl text-cool-grey max-w-2xl mx-auto reveal-fade">
                 Master polymarble installation with our comprehensive video tutorials.
               </p>
             </div>
@@ -167,19 +167,19 @@ export default function Support() {
                         Watch Now
                       </Button>
                     </div>
-                    <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                    <div className="absolute bottom-2 right-2 bg-deep-charcoal/70 text-pure-white text-xs px-2 py-1 rounded">
                       {video.duration}
                     </div>
                     <div className="absolute top-2 left-2">
                       {index < 2 && (
-                        <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                        <span className="bg-green-500 text-pure-white text-xs px-2 py-1 rounded-full">
                           Popular
                         </span>
                       )}
                     </div>
                   </div>
                   <CardContent className="p-4">
-                    <h4 className="font-bold text-white mb-2 flex items-center">
+                    <h4 className="font-bold text-deep-charcoal mb-2 flex items-center">
                       {video.id === 1 && <Scissors className="w-4 h-4 mr-2 text-metallic-gold" />}
                       {video.id === 2 && <Wrench className="w-4 h-4 mr-2 text-metallic-gold" />}
                       {video.id === 3 && <Wrench className="w-4 h-4 mr-2 text-metallic-gold" />}
@@ -187,7 +187,7 @@ export default function Support() {
                       {video.id === 5 && <Building className="w-4 h-4 mr-2 text-metallic-gold" />}
                       {video.title}
                     </h4>
-                    <p className="text-gray-400 text-sm">{video.description}</p>
+                    <p className="text-cool-grey text-sm">{video.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -202,7 +202,7 @@ export default function Support() {
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
                 Architect & Builder <span className="text-metallic-gold text-shimmer">Portal</span>
               </h3>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto reveal-fade">
+              <p className="text-xl text-cool-grey max-w-2xl mx-auto reveal-fade">
                 Professional resources, bulk pricing, and technical support for industry professionals.
               </p>
             </div>
@@ -229,7 +229,7 @@ export default function Support() {
                           <div className="text-metallic-gold">{resource.icon}</div>
                         </div>
                         <CardTitle className="text-metallic-gold">{resource.title}</CardTitle>
-                        <CardDescription className="text-gray-400">{resource.description}</CardDescription>
+                        <CardDescription className="text-cool-grey">{resource.description}</CardDescription>
                       </CardHeader>
                       <CardContent>
                         <ul className="space-y-2">
@@ -259,33 +259,33 @@ export default function Support() {
                           <Lock className="w-5 h-5 mr-2" />
                           Professional Access
                         </CardTitle>
-                        <CardDescription className="text-gray-400">
+                        <CardDescription className="text-cool-grey">
                           Login to access bulk pricing, technical resources, and CAD downloads.
                         </CardDescription>
                       </CardHeader>
                       <CardContent>
                         <form onSubmit={handleLogin} className="space-y-4">
                           <div>
-                            <Label htmlFor="email" className="text-white">Email</Label>
+                            <Label htmlFor="email" className="text-deep-charcoal">Email</Label>
                             <Input
                               id="email"
                               type="email"
                               placeholder="your@company.com"
                               value={loginForm.email}
                               onChange={(e) => setLoginForm({...loginForm, email: e.target.value})}
-                              className="bg-slate-800 border-slate-600 text-white mt-1"
+                              className="bg-slate-800 border-slate-600 text-deep-charcoal mt-1"
                               required
                             />
                           </div>
                           <div>
-                            <Label htmlFor="password" className="text-white">Password</Label>
+                            <Label htmlFor="password" className="text-deep-charcoal">Password</Label>
                             <Input
                               id="password"
                               type="password"
                               placeholder="••••••••"
                               value={loginForm.password}
                               onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}
-                              className="bg-slate-800 border-slate-600 text-white mt-1"
+                              className="bg-slate-800 border-slate-600 text-deep-charcoal mt-1"
                               required
                             />
                           </div>
@@ -304,7 +304,7 @@ export default function Support() {
                     <Card className="bg-dark-forest/50 backdrop-blur-sm border-metallic-gold/20">
                       <CardHeader>
                         <CardTitle className="text-green-400">Welcome to the Professional Portal</CardTitle>
-                        <CardDescription className="text-gray-400">
+                        <CardDescription className="text-cool-grey">
                           Access to exclusive resources and bulk pricing is now available.
                         </CardDescription>
                       </CardHeader>
