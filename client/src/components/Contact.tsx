@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Twitter, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { FaInstagram } from "react-icons/fa";
 import heroBackground from "@assets/generated_images/Hero_background_premium_interior_4cbb0855.png";
 
 export default function Contact() {
@@ -180,11 +181,7 @@ export default function Contact() {
                   </svg>
                 </a>
                 <a href="https://www.instagram.com/polymarblesheet_india" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-metallic-gold/20 rounded-lg flex items-center justify-center hover:bg-metallic-gold/30 transition-colors">
-                  <svg className="w-6 h-6 text-metallic-gold" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-                    <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-                  </svg>
+                  <FaInstagram className="w-6 h-6 text-metallic-gold" />
                 </a>
                 <a href="https://www.facebook.com/share/19aJmaJ7Nc/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-metallic-gold/20 rounded-lg flex items-center justify-center hover:bg-metallic-gold/30 transition-colors">
                   <svg className="w-6 h-6 text-metallic-gold" fill="currentColor" viewBox="0 0 24 24">
