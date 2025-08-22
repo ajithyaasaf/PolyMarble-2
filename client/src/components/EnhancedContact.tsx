@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send, CheckCircle, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { FaInstagram } from "react-icons/fa";
 
 export default function EnhancedContact() {
   useScrollReveal();
@@ -304,9 +305,7 @@ export default function EnhancedContact() {
                   </svg>
                 </a>
                 <a href="https://www.instagram.com/polymarblesheet_india" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-metallic-gold/20 rounded-lg flex items-center justify-center hover:bg-metallic-gold/30 transition-all duration-300 magnetic">
-                  <svg className="w-6 h-6 text-metallic-gold" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987c6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.326-1.297l-.806-.806-.806.806c-.878.807-2.029 1.297-3.326 1.297-2.606 0-4.714-2.108-4.714-4.714s2.108-4.714 4.714-4.714c1.297 0 2.448.49 3.326 1.297l.806.806.806-.806c.878-.807 2.029-1.297 3.326-1.297 2.606 0 4.714 2.108 4.714 4.714s-2.108 4.714-4.714 4.714z"/>
-                  </svg>
+                  <FaInstagram className="w-6 h-6 text-metallic-gold" />
                 </a>
                 <a href="https://www.facebook.com/share/19aJmaJ7Nc/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-metallic-gold/20 rounded-lg flex items-center justify-center hover:bg-metallic-gold/30 transition-all duration-300 magnetic">
                   <svg className="w-6 h-6 text-metallic-gold" fill="currentColor" viewBox="0 0 24 24">
