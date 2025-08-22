@@ -122,13 +122,24 @@ export default function Inspiration() {
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-rich-black to-dark-forest">
-          <div className="container mx-auto px-6">
+        <section 
+          className="py-20 relative overflow-hidden"
+          style={{
+            backgroundImage: `url('${luxuryLivingRoomImage}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-rich-black/85 via-rich-black/75 to-dark-forest/90"></div>
+          
+          <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 reveal-up">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 reveal-up text-white drop-shadow-lg">
                 Inspiration <span className="text-metallic-gold text-shimmer">Lab</span>
               </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto reveal-fade">
+              <p className="text-xl text-gray-200 max-w-3xl mx-auto reveal-fade drop-shadow-md">
                 Explore curated design collections and see how polymarble transforms spaces across Tamil Nadu. 
                 Discover your perfect style and envision your dream space.
               </p>
