@@ -1,5 +1,4 @@
 import { Award, Shield, Users, Clock, MapPin, Star } from "lucide-react";
-import certificationBadges from "@assets/generated_images/Professional_certification_badges_43a0a2d7.png";
 
 export default function TrustIndicators() {
   const certifications = [
@@ -37,16 +36,9 @@ export default function TrustIndicators() {
       <div className="container mx-auto px-6">
         {/* Certifications */}
         <div className="mb-8">
-          <div className="relative aspect-[4/1] rounded-2xl overflow-hidden border border-metallic-gold/20 mb-8">
-            <img
-              src={certificationBadges}
-              alt="Professional certifications and quality badges"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-rich-black/60 via-transparent to-rich-black/60"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <h3 className="text-2xl font-bold text-metallic-gold">Certified Excellence & Quality Assurance</h3>
-            </div>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-metallic-gold mb-4">Certified Excellence & Quality Assurance</h3>
+            <p className="text-gray-400">Trusted certifications and industry standards compliance</p>
           </div>
         </div>
         
