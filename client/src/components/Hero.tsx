@@ -43,53 +43,54 @@ export default function Hero() {
           alt="Luxury polymarble interior installation"
           className="w-full h-full object-cover object-right"
         />
-        {/* Enhanced multi-layer overlay for superior text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-rich-black/98 via-rich-black/85 to-rich-black/50"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-rich-black/60 via-rich-black/30 to-rich-black/90"></div>
-        {/* Text area specific backdrop */}
-        <div className="absolute top-0 left-0 right-1/2 bottom-0 bg-rich-black/70"></div>
+        {/* Brand color overlay system for superior text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-rich-black/95 via-dark-forest/80 to-deep-jade/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-rich-black/50 via-transparent to-rich-black/90"></div>
+        {/* Text area specific backdrop using brand colors */}
+        <div className="absolute top-0 left-0 right-1/2 bottom-0 bg-gradient-to-r from-rich-black/85 to-dark-forest/60"></div>
       </div>
 
       {/* Hero Content */}
       <div className="relative z-10 text-left px-6 max-w-6xl mx-auto">
         <div className="max-w-3xl">
-        <div className="inline-flex items-center px-4 py-2 bg-green-500/30 backdrop-blur-sm border border-green-400/50 rounded-full text-green-300 text-sm font-semibold mb-6 reveal-fade shadow-lg">
-          <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse shadow-sm"></div>
+        <div className="inline-flex items-center px-4 py-2 bg-deep-jade/40 backdrop-blur-sm border border-deep-jade/60 rounded-full text-metallic-gold text-sm font-semibold mb-6 reveal-fade shadow-lg">
+          <div className="w-2 h-2 bg-metallic-gold rounded-full mr-2 animate-pulse shadow-sm"></div>
           Trusted by 2,00,000+ Customers Across 5 Countries
         </div>
         <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up text-white drop-shadow-2xl" 
             style={{
-              textShadow: '0 4px 8px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6), 0 8px 16px rgba(0,0,0,0.4)'
+              textShadow: `0 4px 12px hsl(150, 20%, 4%), 0 2px 6px hsl(150, 18%, 11%), 0 8px 20px hsl(164, 33%, 22%)`
             }}>
           Transform Spaces with <span className="text-metallic-gold text-shimmer drop-shadow-lg" 
             style={{
-              textShadow: '0 3px 6px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.7)'
+              textShadow: `0 3px 8px hsl(150, 20%, 4%), 0 1px 4px hsl(150, 18%, 11%), 0 6px 12px hsl(164, 33%, 22%)`
             }}>Premium Polymarble</span>
         </h1>
-        <p className="text-xl md:text-2xl text-gray-100 mb-6 max-w-2xl reveal-fade font-medium" 
+        <p className="text-xl md:text-2xl text-slate-grey mb-6 max-w-2xl reveal-fade font-medium" 
            style={{
-             textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 1px 2px rgba(0,0,0,0.6)'
+             color: 'hsl(0, 0%, 85%)',
+             textShadow: '0 2px 6px hsl(150, 20%, 4%), 0 1px 3px hsl(150, 18%, 11%)'
            }}>
           Get the luxury of marble at 80% less cost. Fire-resistant, water-proof, and maintenance-free for 15+ years.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mb-8 text-sm">
-          <div className="flex items-center bg-rich-black/80 backdrop-blur-md rounded-lg py-3 px-4 border border-metallic-gold/40 reveal-up shadow-xl">
-            <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <div className="flex items-center bg-dark-forest/90 backdrop-blur-md rounded-lg py-3 px-4 border border-deep-jade/50 reveal-up shadow-xl">
+            <svg className="w-5 h-5 text-metallic-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
-            <span className="text-gray-200 font-medium"><strong className="text-white font-bold">9 Years</strong> of Excellence Since 2017</span>
+            <span className="text-slate-grey font-medium" style={{color: 'hsl(0, 0%, 75%)'}}><strong className="text-white font-bold">9 Years</strong> of Excellence Since 2017</span>
           </div>
-          <div className="flex items-center bg-rich-black/80 backdrop-blur-md rounded-lg py-3 px-4 border border-metallic-gold/40 reveal-up shadow-xl">
-            <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <div className="flex items-center bg-dark-forest/90 backdrop-blur-md rounded-lg py-3 px-4 border border-deep-jade/50 reveal-up shadow-xl">
+            <svg className="w-5 h-5 text-metallic-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
-            <span className="text-gray-200 font-medium"><strong className="text-white font-bold">Same Day</strong> Installation Available</span>
+            <span className="text-slate-grey font-medium" style={{color: 'hsl(0, 0%, 75%)'}}><strong className="text-white font-bold">Same Day</strong> Installation Available</span>
           </div>
-          <div className="flex items-center bg-rich-black/80 backdrop-blur-md rounded-lg py-3 px-4 border border-metallic-gold/40 reveal-up shadow-xl">
-            <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <div className="flex items-center bg-dark-forest/90 backdrop-blur-md rounded-lg py-3 px-4 border border-deep-jade/50 reveal-up shadow-xl">
+            <svg className="w-5 h-5 text-metallic-gold mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
-            <span className="text-gray-200 font-medium"><strong className="text-white font-bold">₹40/sq.ft</strong> Starting Price</span>
+            <span className="text-slate-grey font-medium" style={{color: 'hsl(0, 0%, 75%)'}}><strong className="text-white font-bold">₹40/sq.ft</strong> Starting Price</span>
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 stagger-group">
