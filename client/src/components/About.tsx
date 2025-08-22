@@ -34,7 +34,8 @@ export default function About() {
               alt="State-of-the-art polymarble manufacturing facility"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-rich-black/70 via-rich-black/30 to-rich-black/70"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-rich-black/90 via-rich-black/75 to-rich-black/90"></div>
+            <div className="absolute inset-0 bg-rich-black/50"></div>
             <div className="absolute inset-0 flex items-center justify-center text-center">
               <div>
                 <h4 className="text-3xl font-bold text-metallic-gold mb-3">Advanced Manufacturing Excellence</h4>
