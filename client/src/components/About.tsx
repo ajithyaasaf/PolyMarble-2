@@ -34,12 +34,11 @@ export default function About() {
               alt="State-of-the-art polymarble manufacturing facility"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-rich-black/90 via-rich-black/75 to-rich-black/90"></div>
-            <div className="absolute inset-0 bg-rich-black/50"></div>
+            <div className="absolute inset-0 bg-rich-black/85"></div>
             <div className="absolute inset-0 flex items-center justify-center text-center">
               <div>
-                <h4 className="text-3xl font-bold text-metallic-gold mb-3">Advanced Manufacturing Excellence</h4>
-                <p className="text-gray-300 text-lg max-w-2xl mx-auto">State-of-the-art facility equipped with precision technology and quality control processes</p>
+                <h4 className="text-3xl font-bold text-metallic-gold mb-3 drop-shadow-lg">Advanced Manufacturing Excellence</h4>
+                <p className="text-white text-lg max-w-2xl mx-auto drop-shadow-md">State-of-the-art facility equipped with precision technology and quality control processes</p>
               </div>
             </div>
           </div>
