@@ -171,7 +171,7 @@ export default function ProductShowcase() {
                     />
                   </div>
                   {/* Savings Badge */}
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full font-bold shadow-lg">
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-green-600 text-pure-white px-4 py-2 rounded-full font-bold shadow-lg">
                     Save {Math.round(((parseInt(product.originalPrice.slice(1)) - parseInt(product.price.slice(1))) / parseInt(product.originalPrice.slice(1))) * 100)}%
                   </div>
                 </div>

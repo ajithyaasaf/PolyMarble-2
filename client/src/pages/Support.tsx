@@ -161,7 +161,7 @@ export default function Support() {
                       alt={video.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="absolute inset-0 bg-deep-charcoal/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                       <Button size="sm" className="bg-metallic-gold text-rich-black hover:bg-yellow-400">
                         <Play className="w-4 h-4 mr-2" />
                         Watch Now
@@ -234,7 +234,7 @@ export default function Support() {
                       <CardContent>
                         <ul className="space-y-2">
                           {resource.items.map((item, idx) => (
-                            <li key={idx} className="text-gray-300 text-sm flex items-center">
+                            <li key={idx} className="text-cool-grey text-sm flex items-center">
                               <div className="w-1.5 h-1.5 bg-metallic-gold rounded-full mr-3"></div>
                               {item}
                             </li>
@@ -333,7 +333,7 @@ export default function Support() {
                     <Card key={index} className="bg-dark-forest/50 backdrop-blur-sm border-metallic-gold/20">
                       <CardContent className="pt-6">
                         <h4 className="font-bold text-metallic-gold mb-3">{faq.question}</h4>
-                        <p className="text-gray-300">{faq.answer}</p>
+                        <p className="text-cool-grey">{faq.answer}</p>
                       </CardContent>
                     </Card>
                   ))}

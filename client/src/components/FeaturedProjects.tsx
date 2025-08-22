@@ -183,7 +183,7 @@ export default function FeaturedProjects() {
                       loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-red-500/80 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-red-500/80 text-pure-white px-3 py-1 rounded-full text-sm font-medium">
                         Before
                       </span>
                     </div>
@@ -201,7 +201,7 @@ export default function FeaturedProjects() {
                       loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-yellow-500/80 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-yellow-500/80 text-pure-white px-3 py-1 rounded-full text-sm font-medium">
                         During
                       </span>
                     </div>
@@ -219,7 +219,7 @@ export default function FeaturedProjects() {
                       loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-green-500/80 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-green-500/80 text-pure-white px-3 py-1 rounded-full text-sm font-medium">
                         After
                       </span>
                     </div>
