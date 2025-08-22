@@ -57,14 +57,14 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 text-left px-6 max-w-6xl mx-auto">
         <div className="max-w-3xl">
-        <div className="inline-flex items-center px-4 py-2 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-medium mb-6 reveal-fade">
-          <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+        <div className="inline-flex items-center px-4 py-2 bg-metallic-gold border border-metallic-gold rounded-full text-rich-black text-sm font-bold mb-6 reveal-fade">
+          <div className="w-2 h-2 bg-rich-black rounded-full mr-2 animate-pulse"></div>
           Trusted by 2,00,000+ Customers Across 5 Countries
         </div>
         <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up">
           Transform Spaces with <span className="text-metallic-gold text-shimmer">Premium Polymarble</span>
         </h1>
-        <p className="text-xl md:text-2xl text-gray-300 mb-6 max-w-2xl reveal-fade">
+        <p className="text-xl md:text-2xl text-white mb-6 max-w-2xl reveal-fade">
           Get the luxury of marble at 80% less cost. Fire-resistant, water-proof, and maintenance-free for 15+ years.
         </p>
 
