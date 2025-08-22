@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import heroBackgroundImage from "@assets/generated_images/Retail_showroom_interior_b1fbf187.png";
+import heroBackgroundVideo from "@assets/1_1755841607772.mp4";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -36,13 +36,17 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Hero Background Image */}
+      {/* Hero Background Video */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroBackgroundImage}
-          alt="Premium polymarble showroom where customers experience the quality"
-          className="w-full h-full object-cover object-right"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover object-center"
+        >
+          <source src={heroBackgroundVideo} type="video/mp4" />
+        </video>
         {/* Strong overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-rich-black/95 via-rich-black/75 to-rich-black/30"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-rich-black/20 via-transparent to-rich-black/80"></div>
