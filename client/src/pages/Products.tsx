@@ -80,7 +80,7 @@ export default function Products() {
     <div className="relative min-h-screen bg-pure-white text-deep-charcoal">
       <Header />
       
-      <main className="pt-20">
+      <main className="pt-20 scroll-smooth">
         {/* Hero Section */}
         <section 
           className="py-20 relative overflow-hidden"
@@ -108,7 +108,8 @@ export default function Products() {
         </section>
 
         {/* Interactive Configurator */}
-        <section className="relative overflow-hidden">
+        <div className="section-spacing bg-warm-cream">
+          <section className="relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               
@@ -275,7 +276,8 @@ export default function Products() {
               </table>
             </div>
           </div>
-        </section>
+          </section>
+        </div>
       </main>
 
       <Footer />

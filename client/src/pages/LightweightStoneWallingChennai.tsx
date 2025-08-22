@@ -41,7 +41,7 @@ export default function LightweightStoneWallingChennai() {
     <div className="relative min-h-screen bg-warm-cream text-deep-charcoal">
       <Header />
       
-      <main className="pt-20">
+      <main className="pt-20 scroll-smooth">
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-br from-rich-black to-dark-forest">
           <div className="container mx-auto px-6">
@@ -73,7 +73,8 @@ export default function LightweightStoneWallingChennai() {
         </section>
 
         {/* Technical Advantages */}
-        <section className="py-16 bg-light-silver/30">
+        <div className="section-spacing bg-light-silver/30">
+          <section className="relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-12 reveal-up">
@@ -145,10 +146,12 @@ export default function LightweightStoneWallingChennai() {
               </div>
             </div>
           </div>
-        </section>
+          </section>
+        </div>
 
         {/* Commercial Focus */}
-        <section className="py-16 bg-warm-cream">
+        <div className="section-spacing bg-warm-cream">
+          <section className="relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-12 reveal-up">
@@ -226,7 +229,8 @@ export default function LightweightStoneWallingChennai() {
               </div>
             </div>
           </div>
-        </section>
+          </section>
+        </div>
       </main>
 
       <Footer />

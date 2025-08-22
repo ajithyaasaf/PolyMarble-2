@@ -120,7 +120,7 @@ export default function Inspiration() {
     <div className="relative min-h-screen bg-pure-white text-deep-charcoal">
       <Header />
       
-      <main className="pt-20">
+      <main className="pt-20 scroll-smooth">
         {/* Hero Section */}
         <section 
           className="py-20 relative overflow-hidden"
@@ -148,7 +148,8 @@ export default function Inspiration() {
         </section>
 
         {/* Mood-Board Gallery */}
-        <section className="relative overflow-hidden">
+        <div className="section-spacing bg-warm-cream">
+          <section className="relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
@@ -293,7 +294,8 @@ export default function Inspiration() {
               ))}
             </div>
           </div>
-        </section>
+          </section>
+        </div>
       </main>
 
       <Footer />

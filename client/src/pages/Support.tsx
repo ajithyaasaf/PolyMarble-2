@@ -114,7 +114,7 @@ export default function Support() {
     <div className="relative min-h-screen bg-pure-white text-deep-charcoal">
       <Header />
       
-      <main className="pt-20">
+      <main className="pt-20 scroll-smooth">
         {/* Hero Section */}
         <section 
           className="py-20 relative overflow-hidden"
@@ -141,7 +141,8 @@ export default function Support() {
         </section>
 
         {/* DIY Hub */}
-        <section className="py-20 bg-warm-cream">
+        <div className="section-spacing bg-warm-cream">
+          <section className="relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
@@ -195,8 +196,11 @@ export default function Support() {
           </div>
         </section>
 
+        </div>
+        
         {/* Architect & Builder Portal */}
-        <section className="py-20 bg-light-silver/30">
+        <div className="section-spacing bg-light-silver/30">
+          <section className="relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
@@ -341,7 +345,8 @@ export default function Support() {
               </TabsContent>
             </Tabs>
           </div>
-        </section>
+          </section>
+        </div>
       </main>
 
       <Footer />
