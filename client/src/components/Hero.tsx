@@ -10,12 +10,17 @@ import heroBackgroundVideo from "@assets/1_1755841607772.mp4";
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play().catch(console.error);
     }
   }, []);
+
+  const handleVideoLoad = () => {
+    setVideoLoaded(true);
+  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -38,12 +43,25 @@ export default function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Hero Background Video */}
       <div className="absolute inset-0 z-0">
+        {/* Loading placeholder */}
+        {!videoLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-br from-warm-cream via-light-silver/50 to-metallic-gold/20 flex items-center justify-center">
+            <div className="text-center">
+              <div className="w-12 h-12 border-4 border-metallic-gold/30 border-t-metallic-gold rounded-full animate-spin mx-auto mb-4"></div>
+              <p className="text-deep-charcoal font-medium">Loading Experience...</p>
+            </div>
+          </div>
+        )}
+        
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover object-center"
+          preload="metadata"
+          onLoadedData={handleVideoLoad}
+          className={`w-full h-full object-cover object-center transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
         >
           <source src={heroBackgroundVideo} type="video/mp4" />
         </video>
