@@ -37,7 +37,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-20 bg-dark-forest relative overflow-hidden">
+    <section className="py-20 bg-warm-cream relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full bg-gradient-to-br from-metallic-gold/10 to-transparent"></div>
@@ -46,9 +46,9 @@ export default function Testimonials() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h3 className="text-4xl lg:text-5xl font-bold text-metallic-gold reveal-up mb-4">
-            What Our <span className="text-white">Customers Say</span>
+            What Our <span className="text-deep-charcoal">Customers Say</span>
           </h3>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto reveal-fade">
+          <p className="text-xl text-cool-grey max-w-3xl mx-auto reveal-fade">
             Real stories from satisfied customers across South India
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className="bg-rich-black/50 backdrop-blur-sm rounded-2xl p-8 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-300 stagger-item reveal-up group hover:transform hover:scale-105"
+              className="bg-pure-white backdrop-blur-sm rounded-2xl p-8 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-300 stagger-item reveal-up group hover:transform hover:scale-105 shadow-lg"
             >
               {/* Quote Icon */}
               <div className="w-12 h-12 bg-metallic-gold/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -72,7 +72,7 @@ export default function Testimonials() {
               </div>
 
               {/* Quote */}
-              <p className="text-gray-300 leading-relaxed mb-6 italic">
+              <p className="text-cool-grey leading-relaxed mb-6 italic">
                 "{testimonial.quote}"
               </p>
 
@@ -86,10 +86,10 @@ export default function Testimonials() {
                   />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold group-hover:text-metallic-gold transition-colors duration-300">
+                  <h4 className="text-deep-charcoal font-bold group-hover:text-metallic-gold transition-colors duration-300">
                     {testimonial.name}
                   </h4>
-                  <p className="text-gray-400 text-sm">{testimonial.type}</p>
+                  <p className="text-cool-grey text-sm">{testimonial.type}</p>
                   <p className="text-metallic-gold text-sm">{testimonial.location}</p>
                 </div>
               </div>
@@ -102,15 +102,15 @@ export default function Testimonials() {
           <div className="inline-flex flex-col sm:flex-row items-center gap-8 bg-gradient-to-r from-metallic-gold/10 to-yellow-600/10 backdrop-blur-sm rounded-2xl p-8 border border-metallic-gold/20">
             <div className="text-center">
               <div className="text-3xl font-bold text-metallic-gold mb-2">2,00,000+</div>
-              <div className="text-gray-300">Satisfied Customers</div>
+              <div className="text-cool-grey">Satisfied Customers</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-metallic-gold mb-2">9 Years</div>
-              <div className="text-gray-300">Of Excellence</div>
+              <div className="text-cool-grey">Of Excellence</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-metallic-gold mb-2">5 Countries</div>
-              <div className="text-gray-300">Global Presence</div>
+              <div className="text-cool-grey">Global Presence</div>
             </div>
           </div>
         </div>

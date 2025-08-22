@@ -9,13 +9,13 @@ export default function QuickQuote() {
 
   return (
     <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 hidden md:block">
-      <div className={`bg-rich-black/90 backdrop-blur-sm border border-metallic-gold/20 rounded-l-2xl transition-all duration-300 ${
+      <div className={`bg-pure-white/95 backdrop-blur-sm border border-metallic-gold/20 rounded-l-2xl transition-all duration-300 shadow-lg ${
         isExpanded ? 'w-80' : 'w-16'
       }`}>
         {/* Toggle Button */}
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full bg-metallic-gold text-rich-black p-2 rounded-l-lg hover:bg-yellow-400 transition-all"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full bg-metallic-gold text-pure-white p-2 rounded-l-lg hover:bg-yellow-400 transition-all"
         >
           {isExpanded ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
         </button>
@@ -24,7 +24,7 @@ export default function QuickQuote() {
         {!isExpanded && (
           <div className="p-4 flex flex-col items-center">
             <Calculator className="w-6 h-6 text-metallic-gold mb-2" />
-            <div className="text-xs text-gray-300 text-center writing-mode-vertical">
+            <div className="text-xs text-cool-grey text-center writing-mode-vertical">
               Quick Quote
             </div>
           </div>
@@ -40,33 +40,33 @@ export default function QuickQuote() {
             
             <div className="space-y-4">
               <div>
-                <Label htmlFor="sqft" className="text-white text-sm">
+                <Label htmlFor="sqft" className="text-deep-charcoal text-sm">
                   Area (sq.ft.)
                 </Label>
                 <Input
                   id="sqft"
                   type="number"
                   placeholder="Enter square feet"
-                  className="bg-slate-800 border-slate-600 text-white mt-1"
+                  className="bg-pure-white border-light-silver text-deep-charcoal mt-1"
                 />
               </div>
               
               <div>
-                <Label htmlFor="contact" className="text-white text-sm">
+                <Label htmlFor="contact" className="text-deep-charcoal text-sm">
                   Contact (Email/Phone)
                 </Label>
                 <Input
                   id="contact"
                   placeholder="your@email.com or phone"
-                  className="bg-slate-800 border-slate-600 text-white mt-1"
+                  className="bg-pure-white border-light-silver text-deep-charcoal mt-1"
                 />
               </div>
               
-              <Button className="w-full bg-metallic-gold text-rich-black hover:bg-yellow-400 font-bold">
+              <Button className="w-full bg-metallic-gold text-pure-white hover:bg-yellow-400 font-bold">
                 Get Instant Quote
               </Button>
               
-              <div className="text-xs text-gray-400 text-center">
+              <div className="text-xs text-cool-grey text-center">
                 ₹45/sq.ft. starting price
               </div>
             </div>

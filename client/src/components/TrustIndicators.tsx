@@ -32,13 +32,13 @@ export default function TrustIndicators() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-rich-black to-dark-forest">
+    <section className="py-16 bg-gradient-to-r from-warm-cream to-light-silver/50">
       <div className="container mx-auto px-6">
         {/* Certifications */}
         <div className="mb-8">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-metallic-gold mb-4">Certified Excellence & Quality Assurance</h3>
-            <p className="text-gray-400">Trusted certifications and industry standards compliance</p>
+            <p className="text-cool-grey">Trusted certifications and industry standards compliance</p>
           </div>
         </div>
         
@@ -51,8 +51,8 @@ export default function TrustIndicators() {
               <div className="w-20 h-20 bg-metallic-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-metallic-gold/20 transition-colors">
                 {cert.icon}
               </div>
-              <h4 className="font-bold text-white mb-1">{cert.title}</h4>
-              <p className="text-gray-400 text-sm">{cert.subtitle}</p>
+              <h4 className="font-bold text-deep-charcoal mb-1">{cert.title}</h4>
+              <p className="text-cool-grey text-sm">{cert.subtitle}</p>
             </div>
           ))}
         </div>
@@ -61,27 +61,27 @@ export default function TrustIndicators() {
         <div className="mb-16">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-metallic-gold mb-4">Why Choose Polymarbles</h3>
-            <p className="text-gray-400">Experience excellence with our proven track record and premium services</p>
+            <p className="text-cool-grey">Experience excellence with our proven track record and premium services</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex items-center bg-rich-black/60 backdrop-blur-sm rounded-lg py-4 px-6 border border-metallic-gold/30 hover:border-metallic-gold/50 transition-colors">
+            <div className="flex items-center bg-pure-white backdrop-blur-sm rounded-lg py-4 px-6 border border-metallic-gold/30 hover:border-metallic-gold/50 transition-colors shadow-sm">
               <svg className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
-              <span className="text-gray-300"><strong className="text-white">9 Years</strong> of Excellence Since 2017</span>
+              <span className="text-cool-grey"><strong className="text-deep-charcoal">9 Years</strong> of Excellence Since 2017</span>
             </div>
-            <div className="flex items-center bg-rich-black/60 backdrop-blur-sm rounded-lg py-4 px-6 border border-metallic-gold/30 hover:border-metallic-gold/50 transition-colors">
+            <div className="flex items-center bg-pure-white backdrop-blur-sm rounded-lg py-4 px-6 border border-metallic-gold/30 hover:border-metallic-gold/50 transition-colors shadow-sm">
               <svg className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
-              <span className="text-gray-300"><strong className="text-white">Same Day</strong> Installation Available</span>
+              <span className="text-cool-grey"><strong className="text-deep-charcoal">Same Day</strong> Installation Available</span>
             </div>
-            <div className="flex items-center bg-rich-black/60 backdrop-blur-sm rounded-lg py-4 px-6 border border-metallic-gold/30 hover:border-metallic-gold/50 transition-colors">
+            <div className="flex items-center bg-pure-white backdrop-blur-sm rounded-lg py-4 px-6 border border-metallic-gold/30 hover:border-metallic-gold/50 transition-colors shadow-sm">
               <svg className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
-              <span className="text-gray-300"><strong className="text-white">₹40/sq.ft</strong> Starting Price</span>
+              <span className="text-cool-grey"><strong className="text-deep-charcoal">₹40/sq.ft</strong> Starting Price</span>
             </div>
           </div>
         </div>
@@ -89,18 +89,18 @@ export default function TrustIndicators() {
         {/* Global Presence */}
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold text-metallic-gold mb-4">Global Presence</h3>
-          <p className="text-gray-400 mb-8">Serving customers across multiple countries with local support</p>
+          <p className="text-cool-grey mb-8">Serving customers across multiple countries with local support</p>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {locations.map((location, index) => (
             <div
               key={index}
-              className="bg-rich-black/50 backdrop-blur-sm rounded-lg p-4 border border-metallic-gold/20 text-center hover:border-metallic-gold/40 transition-colors"
+              className="bg-pure-white backdrop-blur-sm rounded-lg p-4 border border-metallic-gold/20 text-center hover:border-metallic-gold/40 transition-colors shadow-sm"
             >
               <MapPin className="w-5 h-5 text-metallic-gold mx-auto mb-2" />
-              <h5 className="font-bold text-white text-sm">{location.city}</h5>
-              <p className="text-gray-400 text-xs mb-1">{location.state}</p>
+              <h5 className="font-bold text-deep-charcoal text-sm">{location.city}</h5>
+              <p className="text-cool-grey text-xs mb-1">{location.state}</p>
               <p className="text-metallic-gold text-xs font-medium">{location.projects} Projects</p>
             </div>
           ))}
@@ -114,8 +114,8 @@ export default function TrustIndicators() {
                 <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
               ))}
             </div>
-            <span className="text-white font-medium">4.8/5 Average Rating</span>
-            <span className="text-gray-400 text-sm ml-2">(2,450+ Reviews)</span>
+            <span className="text-deep-charcoal font-medium">4.8/5 Average Rating</span>
+            <span className="text-cool-grey text-sm ml-2">(2,450+ Reviews)</span>
           </div>
         </div>
       </div>

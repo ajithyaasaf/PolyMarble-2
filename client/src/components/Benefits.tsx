@@ -52,7 +52,7 @@ export default function Benefits() {
   ];
 
   return (
-    <section className="py-20 bg-rich-black relative overflow-hidden">
+    <section className="py-20 bg-light-silver/30 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full bg-gradient-to-br from-metallic-gold/10 to-transparent"></div>
@@ -61,9 +61,9 @@ export default function Benefits() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h3 className="text-4xl lg:text-5xl font-bold text-metallic-gold reveal-up mb-4">
-            Why Choose <span className="text-white">Polymarble Sheets?</span>
+            Why Choose <span className="text-deep-charcoal">Polymarble Sheets?</span>
           </h3>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto reveal-fade">
+          <p className="text-xl text-cool-grey max-w-3xl mx-auto reveal-fade">
             Superior quality meets innovative technology - delivering all the beauty of natural marble 
             with none of the drawbacks.
           </p>
@@ -77,10 +77,10 @@ export default function Benefits() {
               alt="Water resistance testing demonstration"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/60 via-transparent to-transparent"></div>
             <div className="absolute bottom-4 left-4 right-4">
-              <h4 className="text-xl font-bold text-white mb-2">Water & Stain Resistance</h4>
-              <p className="text-gray-300 text-sm">Professional testing demonstrates superior water resistance properties</p>
+              <h4 className="text-xl font-bold text-pure-white mb-2">Water & Stain Resistance</h4>
+              <p className="text-warm-cream text-sm">Professional testing demonstrates superior water resistance properties</p>
             </div>
           </div>
           
@@ -90,10 +90,10 @@ export default function Benefits() {
               alt="Fire resistance testing demonstration"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/60 via-transparent to-transparent"></div>
             <div className="absolute bottom-4 left-4 right-4">
-              <h4 className="text-xl font-bold text-white mb-2">Fire Resistance Testing</h4>
-              <p className="text-gray-300 text-sm">Class A fire rating ensures maximum safety for your spaces</p>
+              <h4 className="text-xl font-bold text-pure-white mb-2">Fire Resistance Testing</h4>
+              <p className="text-warm-cream text-sm">Class A fire rating ensures maximum safety for your spaces</p>
             </div>
           </div>
         </div>
@@ -102,15 +102,15 @@ export default function Benefits() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-dark-forest/50 backdrop-blur-sm rounded-2xl p-6 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-300 stagger-item reveal-up group hover:transform hover:scale-105"
+              className="bg-pure-white backdrop-blur-sm rounded-2xl p-6 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-300 stagger-item reveal-up group hover:transform hover:scale-105 shadow-lg"
             >
               <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-${benefit.color.split('-')[1]}-400/20 to-${benefit.color.split('-')[1]}-600/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                 <benefit.icon className={`w-6 h-6 ${benefit.color}`} />
               </div>
-              <h4 className="text-xl font-bold text-white mb-3 group-hover:text-metallic-gold transition-colors duration-300">
+              <h4 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-metallic-gold transition-colors duration-300">
                 {benefit.title}
               </h4>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-cool-grey leading-relaxed">
                 {benefit.description}
               </p>
             </div>
@@ -124,11 +124,11 @@ export default function Benefits() {
               <h4 className="text-2xl font-bold text-metallic-gold mb-2">
                 Ready to Transform Your Space?
               </h4>
-              <p className="text-gray-300">
+              <p className="text-cool-grey">
                 Experience the perfect blend of luxury, durability, and affordability.
               </p>
             </div>
-            <button className="px-8 py-4 bg-metallic-gold text-rich-black font-bold rounded-full hover:bg-yellow-400 transition-all duration-300 hover:scale-105 whitespace-nowrap">
+            <button className="px-8 py-4 bg-metallic-gold text-pure-white font-bold rounded-full hover:bg-yellow-400 transition-all duration-300 hover:scale-105 whitespace-nowrap">
               Get Your Free Quote
             </button>
           </div>

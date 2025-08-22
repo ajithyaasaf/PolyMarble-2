@@ -72,7 +72,7 @@ export default function EnhancedContact() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-rich-black via-dark-forest to-rich-black relative overflow-hidden">
+    <section id="contact" className="py-20 bg-gradient-to-br from-warm-cream via-light-silver/30 to-warm-cream relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="w-full h-full bg-gradient-to-br from-metallic-gold/20 via-transparent to-metallic-gold/10"></div>
