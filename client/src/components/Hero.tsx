@@ -67,26 +67,7 @@ export default function Hero() {
         <p className="text-xl md:text-2xl text-gray-300 mb-6 max-w-2xl reveal-fade">
           Get the luxury of marble at 80% less cost. Fire-resistant, water-proof, and maintenance-free for 15+ years.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mb-8 text-sm">
-          <div className="flex items-center bg-rich-black/60 backdrop-blur-sm rounded-lg py-3 px-4 border border-metallic-gold/30 reveal-up">
-            <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-            <span className="text-gray-300"><strong className="text-white">9 Years</strong> of Excellence Since 2017</span>
-          </div>
-          <div className="flex items-center bg-rich-black/60 backdrop-blur-sm rounded-lg py-3 px-4 border border-metallic-gold/30 reveal-up">
-            <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-            <span className="text-gray-300"><strong className="text-white">Same Day</strong> Installation Available</span>
-          </div>
-          <div className="flex items-center bg-rich-black/60 backdrop-blur-sm rounded-lg py-3 px-4 border border-metallic-gold/30 reveal-up">
-            <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-            <span className="text-gray-300"><strong className="text-white">₹40/sq.ft</strong> Starting Price</span>
-          </div>
-        </div>
+
         <div className="flex flex-col sm:flex-row gap-4 stagger-group">
           <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
             <DialogTrigger asChild>
