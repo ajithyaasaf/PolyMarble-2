@@ -77,6 +77,38 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
   }
 
+  /* Professional Section Spacing and Visual Hierarchy */
+  .section-spacing {
+    @apply relative;
+    padding: 5rem 0; /* Consistent vertical spacing */
+  }
+
+  .section-spacing:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+  }
+
+  .section-spacing:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+  }
+
+  /* Smooth transitions between sections */
+  .section-spacing > * {
+    position: relative;
+    z-index: 1;
+  }
+
   .text-pure-white {
     color: hsl(0, 0%, 100%);
   }

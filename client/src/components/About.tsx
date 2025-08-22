@@ -8,7 +8,7 @@ export default function About() {
   useScrollProgress();
 
   return (
-    <section id="about" className="py-20 bg-warm-cream relative overflow-hidden">
+    <section id="about" className="relative overflow-hidden">
       {/* Manufacturing facility showcase */}
       <div className="absolute inset-0 opacity-10">
         <img

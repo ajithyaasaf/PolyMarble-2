@@ -17,16 +17,41 @@ export default function Home() {
     <div className="relative min-h-screen bg-pure-white text-deep-charcoal">
       <SEOHead />
       <Header />
-      <main>
+      <main className="scroll-smooth">
         <Hero />
-        <TrustIndicators />
-        <About />
-        <Benefits />
-        <ProductShowcase />
-        <Gallery3D />
-        <FeaturedProjects />
-        <Testimonials />
-        <EnhancedContact />
+        
+        {/* Content Sections with Proper Spacing */}
+        <div className="section-spacing bg-pure-white">
+          <TrustIndicators />
+        </div>
+        
+        <div className="section-spacing bg-warm-cream">
+          <About />
+        </div>
+        
+        <div className="section-spacing bg-pure-white">
+          <Benefits />
+        </div>
+        
+        <div className="section-spacing bg-gradient-to-b from-pure-white to-warm-cream">
+          <ProductShowcase />
+        </div>
+        
+        <div className="section-spacing bg-warm-cream">
+          <Gallery3D />
+        </div>
+        
+        <div className="section-spacing bg-pure-white">
+          <FeaturedProjects />
+        </div>
+        
+        <div className="section-spacing bg-gradient-to-b from-pure-white to-light-silver/20">
+          <Testimonials />
+        </div>
+        
+        <div className="section-spacing bg-gradient-to-br from-warm-cream via-light-silver/30 to-warm-cream">
+          <EnhancedContact />
+        </div>
       </main>
       <Footer />
       <QuickQuote />

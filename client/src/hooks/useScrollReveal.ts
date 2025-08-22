@@ -47,64 +47,9 @@ export function useScrollReveal() {
       rootMargin: '0px'
     });
 
-    // Magnetic hover effect
-    const magneticElements = document.querySelectorAll('.magnetic');
-    magneticElements.forEach(element => {
-      const el = element as HTMLElement;
-      
-      el.addEventListener('mousemove', (e) => {
-        const rect = el.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        const distance = Math.sqrt(x * x + y * y);
-        const maxDistance = Math.max(rect.width, rect.height);
-        
-        if (distance < maxDistance) {
-          const strength = (maxDistance - distance) / maxDistance;
-          el.style.transform = `translate(${x * strength * 0.3}px, ${y * strength * 0.3}px)`;
-        }
-      });
-      
-      el.addEventListener('mouseleave', () => {
-        el.style.transform = 'translate(0px, 0px)';
-      });
-    });
+    // Simplified hover effects - reduced magnetic distraction
 
-    // Scroll velocity detection for dynamic effects
-    let lastScrollY = window.scrollY;
-    let scrollVelocity = 0;
-    
-    const velocityElements = document.querySelectorAll('.velocity-blur, .velocity-scale');
-    
-    const updateScrollVelocity = () => {
-      const currentScrollY = window.scrollY;
-      scrollVelocity = Math.abs(currentScrollY - lastScrollY);
-      lastScrollY = currentScrollY;
-      
-      velocityElements.forEach(element => {
-        const el = element as HTMLElement;
-        const blur = Math.min(scrollVelocity * 0.1, 5);
-        const scale = Math.max(1 - scrollVelocity * 0.001, 0.95);
-        
-        if (el.classList.contains('velocity-blur')) {
-          el.style.filter = `blur(${blur}px)`;
-        }
-        if (el.classList.contains('velocity-scale')) {
-          el.style.transform = `scale(${scale})`;
-        }
-      });
-      
-      // Reset effects when scroll stops
-      setTimeout(() => {
-        if (scrollVelocity < 2) {
-          velocityElements.forEach(element => {
-            const el = element as HTMLElement;
-            el.style.filter = 'blur(0px)';
-            el.style.transform = 'scale(1)';
-          });
-        }
-      }, 100);
-    };
+    // Simplified scroll effects - removed overwhelming velocity effects
 
     // Staggered animations for groups
     const staggerElements = document.querySelectorAll('.stagger-group');
@@ -178,26 +123,16 @@ export function useScrollReveal() {
       parallaxObserverRef.current?.observe(element);
     });
 
-    // Enhanced scroll handler
+    // Simplified scroll handler - focus on content, not effects
     const handleScroll = () => {
-      updateScrollVelocity();
-      
-      // Parallax effects
+      // Minimal parallax for depth without distraction
       parallaxElements.forEach(element => {
         const rect = element.getBoundingClientRect();
         const el = element as HTMLElement;
-        const speed = el.classList.contains('parallax-slow') ? 0.3 : 
-                     el.classList.contains('parallax-medium') ? 0.6 : 
-                     el.classList.contains('parallax-fast') ? 1.2 :
-                     el.classList.contains('parallax-reverse') ? -0.5 : 0.8;
-        const offset = (window.innerHeight - rect.top) * speed * 0.05;
+        const speed = 0.3; // Consistent subtle parallax
+        const offset = (window.innerHeight - rect.top) * speed * 0.02; // Reduced intensity
         
-        if (el.classList.contains('parallax-zoom')) {
-          const scale = 1 + (window.innerHeight - rect.top) * 0.0001;
-          el.style.transform = `scale(${Math.max(0.8, Math.min(1.2, scale))})`;
-        } else {
-          el.style.transform = `translateY(${offset}px)`;
-        }
+        el.style.transform = `translateY(${offset}px)`;
       });
 
       // Scroll progress indicators
