@@ -4,8 +4,8 @@ import { Input } from "@/components/ui/input";
 
 export default function Footer() {
   return (
-    <footer className="bg-warm-cream border-t border-light-silver py-12">
-      <div className="container mx-auto px-6">
+    <footer className="bg-warm-cream border-t border-light-silver">
+      <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">

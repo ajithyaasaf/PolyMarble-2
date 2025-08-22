@@ -123,7 +123,7 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section id="projects" className="py-20 bg-warm-cream relative overflow-hidden">
+    <section id="projects" className="relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">Case <span className="text-metallic-gold text-shimmer">Studies</span></h3>

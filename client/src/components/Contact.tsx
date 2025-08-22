@@ -41,7 +41,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-warm-cream relative overflow-hidden">
+    <section id="contact" className="relative overflow-hidden">
       {/* Elegant marble background texture */}
       <div className="absolute inset-0 opacity-10">
         <img

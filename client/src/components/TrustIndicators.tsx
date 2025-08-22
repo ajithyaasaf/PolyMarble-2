@@ -32,7 +32,7 @@ export default function TrustIndicators() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-warm-cream to-light-silver/50">
+    <section className="relative overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Certifications */}
         <div className="mb-8">

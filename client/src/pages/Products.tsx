@@ -108,7 +108,7 @@ export default function Products() {
         </section>
 
         {/* Interactive Configurator */}
-        <section className="py-20 bg-warm-cream">
+        <section className="relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               
