@@ -32,7 +32,7 @@ export default function About() {
             <img
               src={manufacturingImage}
               alt="State-of-the-art polymarble manufacturing facility"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover blur-sm"
             />
             <div className="absolute inset-0 bg-rich-black/85"></div>
             <div className="absolute inset-0 flex items-center justify-center text-center">
