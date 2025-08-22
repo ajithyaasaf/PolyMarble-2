@@ -107,6 +107,12 @@ Polymarbles 3D is a modern web application showcasing luxury marble sculptures a
 
 ## Changelog
 
+- August 22, 2025: Enhanced hero section text contrast and readability
+  - Applied professional UI design principles with multi-layer gradient overlays
+  - Added comprehensive text shadows for superior contrast against light marble backgrounds
+  - Enhanced feature cards with improved backdrop blur and border treatments
+  - Upgraded typography weights and colors for better accessibility and visual hierarchy
+  - Removed debug code and optimized image loading with lazy loading attributes
 - August 21, 2025: Completed migration from Replit Agent to Replit environment
   - Fixed Gallery3D component to use local images instead of external videos
   - Resolved image loading issues by switching from Pexels videos to generated product images

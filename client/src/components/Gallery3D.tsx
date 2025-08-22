@@ -110,9 +110,7 @@ export default function Gallery3D() {
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)';
                 }}
-                onError={(e) => {
-                  console.log(`Failed to load image: ${texture.image}`);
-                }}
+                loading="lazy"
               />
               
               {/* Overlay */}
