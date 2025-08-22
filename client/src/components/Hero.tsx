@@ -43,14 +43,9 @@ export default function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Hero Background Video */}
       <div className="absolute inset-0 z-0">
-        {/* Loading placeholder */}
+        {/* Solid background while video loads */}
         {!videoLoaded && (
-          <div className="absolute inset-0 bg-gradient-to-br from-warm-cream via-light-silver/50 to-metallic-gold/20 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-12 h-12 border-4 border-metallic-gold/30 border-t-metallic-gold rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-deep-charcoal font-medium">Loading Experience...</p>
-            </div>
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-warm-cream via-light-silver/50 to-metallic-gold/20"></div>
         )}
         
         <video
