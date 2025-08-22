@@ -118,7 +118,7 @@ export default function ProductShowcase() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-dark-forest to-rich-black relative overflow-hidden">
+    <section className="py-20 bg-light-silver/30 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full bg-gradient-to-br from-metallic-gold/10 to-transparent"></div>
@@ -129,7 +129,7 @@ export default function ProductShowcase() {
           <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
             Our <span className="text-metallic-gold text-shimmer">Product Range</span>
           </h3>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto reveal-fade">
+          <p className="text-xl text-cool-grey max-w-3xl mx-auto reveal-fade">
             Five distinct categories designed for every space and style. Each engineered for superior performance.
           </p>
         </div>
@@ -142,8 +142,8 @@ export default function ProductShowcase() {
               onClick={() => setActiveProduct(index)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeProduct === index
-                  ? 'bg-metallic-gold text-rich-black transform scale-105'
-                  : 'bg-rich-black/50 text-gray-300 hover:bg-metallic-gold/20 hover:text-metallic-gold border border-metallic-gold/20'
+                  ? 'bg-metallic-gold text-pure-white transform scale-105'
+                  : 'bg-pure-white/50 text-deep-charcoal hover:bg-metallic-gold/20 hover:text-metallic-gold border border-metallic-gold/20'
               }`}
             >
               {product.name}
@@ -182,20 +182,20 @@ export default function ProductShowcase() {
                     <div className="inline-flex items-center bg-metallic-gold/20 rounded-full px-3 py-1 text-metallic-gold text-sm font-medium mb-3">
                       {product.tagline}
                     </div>
-                    <h4 className="text-3xl font-bold text-white mb-3">{product.name}</h4>
-                    <p className="text-gray-300 text-lg leading-relaxed">{product.description}</p>
+                    <h4 className="text-3xl font-bold text-deep-charcoal mb-3">{product.name}</h4>
+                    <p className="text-cool-grey text-lg leading-relaxed">{product.description}</p>
                   </div>
 
                   {/* Pricing */}
                   <div className="flex items-center gap-4">
                     <div className="text-3xl font-bold text-metallic-gold">{product.price}/sq.ft</div>
-                    <div className="text-lg text-gray-400 line-through">{product.originalPrice}/sq.ft</div>
+                    <div className="text-lg text-cool-grey line-through">{product.originalPrice}/sq.ft</div>
                   </div>
 
                   {/* Core Features */}
                   <div className="grid grid-cols-3 gap-3">
                     {coreFeatures.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-gray-300">
+                      <div key={idx} className="flex items-center text-sm text-cool-grey">
                         <div className="text-metallic-gold mr-2">{feature.icon}</div>
                         {feature.label}
                       </div>
@@ -204,10 +204,10 @@ export default function ProductShowcase() {
 
                   {/* Product Features */}
                   <div>
-                    <h5 className="font-bold text-white mb-3">Key Features:</h5>
+                    <h5 className="font-bold text-deep-charcoal mb-3">Key Features:</h5>
                     <div className="grid grid-cols-2 gap-2">
                       {product.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center text-gray-300 text-sm">
+                        <div key={idx} className="flex items-center text-cool-grey text-sm">
                           <div className="w-1.5 h-1.5 bg-metallic-gold rounded-full mr-2"></div>
                           {feature}
                         </div>
@@ -216,13 +216,13 @@ export default function ProductShowcase() {
                   </div>
 
                   {/* Specifications */}
-                  <div className="bg-rich-black/30 rounded-lg p-4 border border-metallic-gold/20">
+                  <div className="bg-pure-white/80 backdrop-blur-sm rounded-lg p-4 border border-metallic-gold/20">
                     <h5 className="font-bold text-metallic-gold mb-3">Specifications:</h5>
                     <div className="grid grid-cols-2 gap-3 text-sm">
                       {Object.entries(product.specifications).map(([key, value]) => (
                         <div key={key} className="flex justify-between">
-                          <span className="text-gray-400 capitalize">{key}:</span>
-                          <span className="text-white font-medium">{value}</span>
+                          <span className="text-cool-grey capitalize">{key}:</span>
+                          <span className="text-deep-charcoal font-medium">{value}</span>
                         </div>
                       ))}
                     </div>
@@ -230,7 +230,7 @@ export default function ProductShowcase() {
 
                   {/* Use Cases */}
                   <div>
-                    <h5 className="font-bold text-white mb-3">Perfect For:</h5>
+                    <h5 className="font-bold text-deep-charcoal mb-3">Perfect For:</h5>
                     <div className="flex flex-wrap gap-2">
                       {product.useCases.map((useCase, idx) => (
                         <span
@@ -245,12 +245,12 @@ export default function ProductShowcase() {
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button className="flex-1 bg-metallic-gold text-rich-black hover:bg-yellow-400 font-bold">
+                    <Button className="flex-1 bg-metallic-gold text-pure-white hover:bg-yellow-400 font-bold">
                       Get Free Sample
                     </Button>
                     <Button 
                       variant="outline" 
-                      className="flex-1 border-metallic-gold text-metallic-gold hover:bg-metallic-gold hover:text-rich-black font-bold"
+                      className="flex-1 border-metallic-gold text-metallic-gold hover:bg-metallic-gold hover:text-pure-white font-bold"
                     >
                       Calculate Cost
                       <ChevronRight className="w-4 h-4 ml-2" />

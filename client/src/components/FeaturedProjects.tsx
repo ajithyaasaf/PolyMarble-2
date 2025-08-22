@@ -123,11 +123,11 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section id="projects" className="py-20 bg-dark-forest">
+    <section id="projects" className="py-20 bg-warm-cream relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">Case <span className="text-metallic-gold text-shimmer">Studies</span></h3>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto reveal-up">
+          <p className="text-xl text-cool-grey max-w-2xl mx-auto reveal-up">
             Real transformations. Real savings. Real results from across Tamil Nadu.
           </p>
         </div>
@@ -143,8 +143,8 @@ export default function FeaturedProjects() {
               }}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeFilter === filter
-                  ? 'bg-metallic-gold text-rich-black'
-                  : 'bg-rich-black/50 text-gray-300 hover:bg-metallic-gold/20 hover:text-metallic-gold border border-metallic-gold/20'
+                  ? 'bg-metallic-gold text-pure-white'
+                  : 'bg-pure-white/50 text-deep-charcoal hover:bg-metallic-gold/20 hover:text-metallic-gold border border-metallic-gold/20'
               }`}
             >
               <Filter className="w-4 h-4 inline mr-2" />
@@ -157,13 +157,13 @@ export default function FeaturedProjects() {
           {visibleProjects.map((study, index) => (
             <div
               key={study.id}
-              className="bg-rich-black/50 backdrop-blur-sm rounded-2xl p-8 border border-metallic-gold/20 stagger-item reveal-up"
+              className="bg-pure-white/80 backdrop-blur-sm rounded-2xl p-8 border border-metallic-gold/20 stagger-item reveal-up shadow-lg"
             >
               {/* Header */}
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
                 <div>
                   <h4 className="text-2xl font-bold text-metallic-gold mb-2">{study.title}</h4>
-                  <p className="text-gray-400">{study.location} • {study.year}</p>
+                  <p className="text-cool-grey">{study.location} • {study.year}</p>
                 </div>
                 <div className="flex items-center gap-2 mt-4 md:mt-0">
                   <TrendingUp className="w-5 h-5 text-green-400" />
@@ -188,7 +188,7 @@ export default function FeaturedProjects() {
                       </span>
                     </div>
                   </div>
-                  <p className="text-gray-300 text-sm leading-relaxed">{study.before}</p>
+                  <p className="text-cool-grey text-sm leading-relaxed">{study.before}</p>
                 </div>
 
                 {/* During */}
@@ -206,7 +206,7 @@ export default function FeaturedProjects() {
                       </span>
                     </div>
                   </div>
-                  <p className="text-gray-300 text-sm leading-relaxed">{study.during}</p>
+                  <p className="text-cool-grey text-sm leading-relaxed">{study.during}</p>
                 </div>
 
                 {/* After */}
@@ -224,14 +224,14 @@ export default function FeaturedProjects() {
                       </span>
                     </div>
                   </div>
-                  <p className="text-gray-300 text-sm leading-relaxed">{study.after}</p>
+                  <p className="text-cool-grey text-sm leading-relaxed">{study.after}</p>
                 </div>
               </div>
 
               {/* Project Stats */}
               <div className="flex flex-wrap items-center justify-between pt-6 border-t border-metallic-gold/20">
-                <div className="flex gap-6 text-sm text-gray-400">
-                  <span>Area: <strong className="text-white">{study.sqft} sq.ft.</strong></span>
+                <div className="flex gap-6 text-sm text-cool-grey">
+                  <span>Area: <strong className="text-deep-charcoal">{study.sqft} sq.ft.</strong></span>
                   <span>Category: <strong className="text-metallic-gold">{study.category}</strong></span>
                 </div>
                 <button className="inline-flex items-center text-metallic-gold hover:text-yellow-400 transition-all duration-300 hover:scale-105 magnetic perspective-tilt mt-4 md:mt-0">
@@ -248,7 +248,7 @@ export default function FeaturedProjects() {
           <div className="text-center mt-12">
             <button
               onClick={showMore}
-              className="inline-flex items-center px-8 py-4 bg-metallic-gold text-rich-black font-bold rounded-full hover:bg-yellow-400 transition-all duration-300 hover:scale-105 magnetic flip-slab"
+              className="inline-flex items-center px-8 py-4 bg-metallic-gold text-pure-white font-bold rounded-full hover:bg-yellow-400 transition-all duration-300 hover:scale-105 magnetic flip-slab"
               style={{
                 animation: 'flipSlab 0.6s ease-in-out'
               }}

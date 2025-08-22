@@ -114,15 +114,15 @@ export default function Gallery3D() {
               />
               
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-rich-black/30"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/60 via-transparent to-deep-charcoal/30"></div>
               
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
                 <div className="max-w-4xl">
-                  <h3 className="text-4xl md:text-6xl font-bold text-white mb-4 reveal-up">
+                  <h3 className="text-4xl md:text-6xl font-bold text-pure-white mb-4 reveal-up">
                     {texture.name}
                   </h3>
-                  <p className="text-xl md:text-2xl text-gray-300 mb-6 reveal-fade">
+                  <p className="text-xl md:text-2xl text-warm-cream mb-6 reveal-fade">
                     {texture.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -147,7 +147,7 @@ export default function Gallery3D() {
       <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-10">
         <button
           onClick={prevSlide}
-          className="p-3 bg-rich-black/50 backdrop-blur-sm text-white rounded-full hover:bg-metallic-gold hover:text-rich-black transition-all duration-300 group"
+          className="p-3 bg-deep-charcoal/50 backdrop-blur-sm text-pure-white rounded-full hover:bg-metallic-gold hover:text-deep-charcoal transition-all duration-300 group"
         >
           <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform" />
         </button>
@@ -156,7 +156,7 @@ export default function Gallery3D() {
       <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10">
         <button
           onClick={nextSlide}
-          className="p-3 bg-rich-black/50 backdrop-blur-sm text-white rounded-full hover:bg-metallic-gold hover:text-rich-black transition-all duration-300 group"
+          className="p-3 bg-deep-charcoal/50 backdrop-blur-sm text-pure-white rounded-full hover:bg-metallic-gold hover:text-deep-charcoal transition-all duration-300 group"
         >
           <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform" />
         </button>
@@ -166,7 +166,7 @@ export default function Gallery3D() {
       <div className="absolute top-4 right-4 z-10">
         <button
           onClick={toggleAutoPlay}
-          className="p-2 bg-rich-black/50 backdrop-blur-sm text-white rounded-full hover:bg-metallic-gold hover:text-rich-black transition-all duration-300"
+          className="p-2 bg-deep-charcoal/50 backdrop-blur-sm text-pure-white rounded-full hover:bg-metallic-gold hover:text-deep-charcoal transition-all duration-300"
         >
           {isAutoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
         </button>
@@ -182,7 +182,7 @@ export default function Gallery3D() {
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentSlide
                   ? 'bg-metallic-gold scale-125'
-                  : 'bg-white/50 hover:bg-white/80'
+                  : 'bg-pure-white/50 hover:bg-pure-white/80'
               }`}
             />
           ))}
@@ -191,7 +191,7 @@ export default function Gallery3D() {
 
       {/* Pinch-to-zoom for mobile (placeholder - would need additional implementation) */}
       <div className="absolute top-4 left-4 z-10 md:hidden">
-        <div className="text-xs text-white/70 bg-rich-black/50 backdrop-blur-sm px-3 py-1 rounded-full">
+        <div className="text-xs text-pure-white/70 bg-deep-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">
           Pinch to zoom
         </div>
       </div>

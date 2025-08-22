@@ -48,13 +48,13 @@ export default function Footer() {
                   +91 98421 06768
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-gray-400">
+              <div className="flex items-center gap-2 text-cool-grey">
                 <Mail className="w-4 h-4" />
                 <a href="mailto:polymarblesheet@gmail.com" className="hover:text-metallic-gold transition-colors">
                   polymarblesheet@gmail.com
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-gray-400">
+              <div className="flex items-center gap-2 text-cool-grey">
                 <Instagram className="w-4 h-4" />
                 <a href="https://www.instagram.com/polymarblesheet_india" target="_blank" rel="noopener noreferrer" className="hover:text-metallic-gold transition-colors">
                   @polymarblesheet_india
