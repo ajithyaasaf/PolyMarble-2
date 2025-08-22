@@ -154,7 +154,7 @@ export default function Inspiration() {
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
                 Design <span className="text-metallic-gold text-shimmer">Lookbooks</span>
               </h3>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto reveal-fade">
+              <p className="text-xl text-cool-grey max-w-2xl mx-auto reveal-fade">
                 Curated collections showcasing different aesthetic approaches and design philosophies.
               </p>
             </div>
@@ -163,7 +163,7 @@ export default function Inspiration() {
               {lookbooks.map((lookbook, index) => (
                 <div
                   key={lookbook.id}
-                  className="relative group bg-rich-black/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-metallic-gold/20 reveal-up"
+                  className="relative group bg-pure-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-metallic-gold/20 reveal-up"
                   onMouseEnter={() => setHoveredLookbook(lookbook.id)}
                   onMouseLeave={() => setHoveredLookbook(null)}
                 >
@@ -193,11 +193,11 @@ export default function Inspiration() {
                     )}
                     
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-rich-black/80 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
                     
                     {/* Play Indicator */}
                     <div className="absolute top-4 right-4">
-                      <div className="p-2 bg-rich-black/50 backdrop-blur-sm rounded-full">
+                      <div className="p-2 bg-pure-white/80 backdrop-blur-sm rounded-full">
                         {hoveredLookbook === lookbook.id ? (
                           <Pause className="w-4 h-4 text-metallic-gold" />
                         ) : (
@@ -210,11 +210,11 @@ export default function Inspiration() {
                   {/* Content */}
                   <div className="p-6">
                     <h4 className="text-2xl font-bold text-metallic-gold mb-3">{lookbook.title}</h4>
-                    <p className="text-gray-300 mb-4 leading-relaxed">{lookbook.description}</p>
+                    <p className="text-cool-grey mb-4 leading-relaxed">{lookbook.description}</p>
                     
                     {/* Featured Projects */}
                     <div className="space-y-2">
-                      <h5 className="text-sm font-medium text-gray-400 uppercase tracking-wide">Featured Projects:</h5>
+                      <h5 className="text-sm font-medium text-cool-grey uppercase tracking-wide">Featured Projects:</h5>
                       <div className="flex flex-wrap gap-2">
                         {lookbook.projects.map((project, idx) => (
                           <span
@@ -240,7 +240,7 @@ export default function Inspiration() {
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
                 Styled <span className="text-metallic-gold text-shimmer">Spaces</span>
               </h3>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto reveal-fade">
+              <p className="text-xl text-cool-grey max-w-2xl mx-auto reveal-fade">
                 See polymarble in action across different space types and design contexts.
               </p>
             </div>
@@ -249,7 +249,7 @@ export default function Inspiration() {
               {styledSpaces.map((space, index) => (
                 <div
                   key={space.id}
-                  className="group bg-dark-forest/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-metallic-gold/20 reveal-up"
+                  className="group bg-pure-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-metallic-gold/20 reveal-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Image Background */}
@@ -261,18 +261,18 @@ export default function Inspiration() {
                     />
                     
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-rich-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/60 via-transparent to-transparent"></div>
                     
                     {/* Category Badge */}
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-metallic-gold/90 text-rich-black text-sm font-medium rounded-full">
+                      <span className="px-3 py-1 bg-metallic-gold/90 text-pure-white text-sm font-medium rounded-full">
                         {space.category}
                       </span>
                     </div>
 
                     {/* View Icon */}
                     <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="p-2 bg-rich-black/50 backdrop-blur-sm rounded-full">
+                      <div className="p-2 bg-pure-white/80 backdrop-blur-sm rounded-full">
                         <Eye className="w-4 h-4 text-metallic-gold" />
                       </div>
                     </div>
@@ -280,8 +280,8 @@ export default function Inspiration() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <h4 className="text-xl font-bold text-white mb-2">{space.title}</h4>
-                    <p className="text-gray-400 text-sm mb-3">{space.location}</p>
+                    <h4 className="text-xl font-bold text-deep-charcoal mb-2">{space.title}</h4>
+                    <p className="text-cool-grey text-sm mb-3">{space.location}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-metallic-gold text-sm font-medium">{space.pattern}</span>
                       <button className="text-metallic-gold hover:text-yellow-400 text-sm font-medium transition-colors">

@@ -129,16 +129,16 @@ export default function Products() {
                   
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Pattern:</span>
-                      <span className="text-white font-medium">{currentPattern?.name}</span>
+                      <span className="text-cool-grey">Pattern:</span>
+                      <span className="text-deep-charcoal font-medium">{currentPattern?.name}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Thickness:</span>
-                      <span className="text-white font-medium">{selectedThickness}mm</span>
+                      <span className="text-cool-grey">Thickness:</span>
+                      <span className="text-deep-charcoal font-medium">{selectedThickness}mm</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Finish:</span>
-                      <span className="text-white font-medium capitalize">{selectedFinish}</span>
+                      <span className="text-cool-grey">Finish:</span>
+                      <span className="text-deep-charcoal font-medium capitalize">{selectedFinish}</span>
                     </div>
                   </div>
                 </div>
@@ -151,17 +151,17 @@ export default function Products() {
                 <div className="space-y-8">
                   {/* Pattern Selection */}
                   <div>
-                    <label className="block text-lg font-medium text-white mb-4">
+                    <label className="block text-lg font-medium text-deep-charcoal mb-4">
                       <Palette className="w-5 h-5 inline mr-2" />
                       Pattern
                     </label>
                     <Select value={selectedPattern} onValueChange={setSelectedPattern}>
-                      <SelectTrigger className="w-full bg-slate-800 border-slate-600 text-white">
+                      <SelectTrigger className="w-full bg-pure-white border-light-silver text-deep-charcoal">
                         <SelectValue placeholder="Select a pattern" />
                       </SelectTrigger>
-                      <SelectContent className="bg-slate-800 border-slate-600">
+                      <SelectContent className="bg-pure-white border-light-silver">
                         {patterns.map((pattern) => (
-                          <SelectItem key={pattern.id} value={pattern.id} className="text-white">
+                          <SelectItem key={pattern.id} value={pattern.id} className="text-deep-charcoal">
                             {pattern.name}
                           </SelectItem>
                         ))}
@@ -171,35 +171,35 @@ export default function Products() {
 
                   {/* Thickness Selection */}
                   <div>
-                    <label className="block text-lg font-medium text-white mb-4">
+                    <label className="block text-lg font-medium text-deep-charcoal mb-4">
                       <Layers className="w-5 h-5 inline mr-2" />
                       Thickness
                     </label>
                     <Select value={selectedThickness} onValueChange={setSelectedThickness}>
-                      <SelectTrigger className="w-full bg-slate-800 border-slate-600 text-white">
+                      <SelectTrigger className="w-full bg-pure-white border-light-silver text-deep-charcoal">
                         <SelectValue placeholder="Select thickness" />
                       </SelectTrigger>
-                      <SelectContent className="bg-slate-800 border-slate-600">
-                        <SelectItem value="10" className="text-white">10mm</SelectItem>
-                        <SelectItem value="12" className="text-white">12mm</SelectItem>
-                        <SelectItem value="15" className="text-white">15mm</SelectItem>
+                      <SelectContent className="bg-pure-white border-light-silver">
+                        <SelectItem value="10" className="text-deep-charcoal">10mm</SelectItem>
+                        <SelectItem value="12" className="text-deep-charcoal">12mm</SelectItem>
+                        <SelectItem value="15" className="text-deep-charcoal">15mm</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   {/* Finish Selection */}
                   <div>
-                    <label className="block text-lg font-medium text-white mb-4">
+                    <label className="block text-lg font-medium text-deep-charcoal mb-4">
                       <Sparkles className="w-5 h-5 inline mr-2" />
                       Finish
                     </label>
                     <Select value={selectedFinish} onValueChange={setSelectedFinish}>
-                      <SelectTrigger className="w-full bg-slate-800 border-slate-600 text-white">
+                      <SelectTrigger className="w-full bg-pure-white border-light-silver text-deep-charcoal">
                         <SelectValue placeholder="Select finish" />
                       </SelectTrigger>
-                      <SelectContent className="bg-slate-800 border-slate-600">
-                        <SelectItem value="matt" className="text-white">Matt</SelectItem>
-                        <SelectItem value="gloss" className="text-white">Gloss</SelectItem>
+                      <SelectContent className="bg-pure-white border-light-silver">
+                        <SelectItem value="matt" className="text-deep-charcoal">Matt</SelectItem>
+                        <SelectItem value="gloss" className="text-deep-charcoal">Gloss</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -208,14 +208,14 @@ export default function Products() {
                   <div className="flex flex-col sm:flex-row gap-4 pt-6">
                     <Button 
                       onClick={playClinkSound}
-                      className="flex-1 bg-metallic-gold text-rich-black hover:bg-yellow-400 font-bold py-3"
+                      className="flex-1 bg-metallic-gold text-pure-white hover:bg-yellow-400 font-bold py-3"
                     >
                       <Download className="w-5 h-5 mr-2" />
                       Download Spec Sheet
                     </Button>
                     <Button 
                       variant="outline"
-                      className="flex-1 border-metallic-gold text-metallic-gold hover:bg-metallic-gold hover:text-rich-black font-bold py-3"
+                      className="flex-1 border-metallic-gold text-metallic-gold hover:bg-metallic-gold hover:text-pure-white font-bold py-3"
                     >
                       <FileText className="w-5 h-5 mr-2" />
                       View Installation Guide
@@ -234,7 +234,7 @@ export default function Products() {
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
                 Material <span className="text-metallic-gold text-shimmer">Specifications</span>
               </h3>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto reveal-fade">
+              <p className="text-xl text-cool-grey max-w-2xl mx-auto reveal-fade">
                 Comprehensive technical specifications for all our polymarble sheet collections.
               </p>
             </div>
@@ -252,11 +252,11 @@ export default function Products() {
                 </thead>
                 <tbody>
                   {materials.map((material, index) => (
-                    <tr key={index} className="border-b border-slate-700/50 hover:bg-metallic-gold/5 transition-colors">
-                      <td className="px-6 py-4 text-white font-medium">{material.name}</td>
-                      <td className="px-6 py-4 text-gray-300">{material.size}</td>
+                    <tr key={index} className="border-b border-light-silver/50 hover:bg-metallic-gold/5 transition-colors">
+                      <td className="px-6 py-4 text-deep-charcoal font-medium">{material.name}</td>
+                      <td className="px-6 py-4 text-cool-grey">{material.size}</td>
                       <td className="px-6 py-4 text-green-400 font-bold">{material.price}</td>
-                      <td className="px-6 py-4 text-gray-300">{material.thickness}</td>
+                      <td className="px-6 py-4 text-cool-grey">{material.thickness}</td>
                       <td className="px-6 py-4">
                         <div className="flex flex-wrap gap-1">
                           {material.features.map((feature, idx) => (

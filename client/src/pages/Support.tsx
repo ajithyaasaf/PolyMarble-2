@@ -141,7 +141,7 @@ export default function Support() {
         </section>
 
         {/* DIY Hub */}
-        <section className="py-20 bg-dark-forest">
+        <section className="py-20 bg-warm-cream">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
@@ -196,7 +196,7 @@ export default function Support() {
         </section>
 
         {/* Architect & Builder Portal */}
-        <section className="py-20 bg-rich-black">
+        <section className="py-20 bg-light-silver/30">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
