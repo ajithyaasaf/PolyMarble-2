@@ -77,7 +77,7 @@ export default function Products() {
   };
 
   return (
-    <div className="relative min-h-screen bg-rich-black text-white">
+    <div className="relative min-h-screen bg-pure-white text-deep-charcoal">
       <Header />
       
       <main className="pt-20">
@@ -92,14 +92,14 @@ export default function Products() {
           }}
         >
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-rich-black/85 via-rich-black/75 to-dark-forest/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-deep-charcoal/85 via-deep-charcoal/75 to-deep-charcoal/90"></div>
           
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 reveal-up text-white drop-shadow-lg">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 reveal-up text-pure-white drop-shadow-lg">
                 Products & <span className="text-metallic-gold text-shimmer">Configurator</span>
               </h1>
-              <p className="text-xl text-gray-200 max-w-3xl mx-auto reveal-fade drop-shadow-md">
+              <p className="text-xl text-warm-cream max-w-3xl mx-auto reveal-fade drop-shadow-md">
                 Design your perfect polymarble solution with our interactive configurator. 
                 Visualize, customize, and order your premium polymer stone sheets.
               </p>
@@ -108,14 +108,14 @@ export default function Products() {
         </section>
 
         {/* Interactive Configurator */}
-        <section className="py-20 bg-dark-forest">
+        <section className="py-20 bg-warm-cream">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               
               {/* Live Preview */}
               <div className="reveal-left">
                 <h3 className="text-3xl font-bold text-metallic-gold mb-6">Live Preview</h3>
-                <div className="relative bg-rich-black/50 backdrop-blur-sm rounded-2xl p-8 border border-metallic-gold/20">
+                <div className="relative bg-pure-white backdrop-blur-sm rounded-2xl p-8 border border-metallic-gold/20 shadow-lg">
                   <div className="aspect-square rounded-xl overflow-hidden mb-6">
                     <img
                       src={currentPattern?.image}
@@ -228,7 +228,7 @@ export default function Products() {
         </section>
 
         {/* Material Specs Hub */}
-        <section className="py-20 bg-rich-black">
+        <section className="py-20 bg-light-silver/30">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
@@ -240,7 +240,7 @@ export default function Products() {
             </div>
 
             <div className="overflow-x-auto">
-              <table className="w-full bg-dark-forest/50 backdrop-blur-sm rounded-2xl border border-metallic-gold/20">
+              <table className="w-full bg-pure-white backdrop-blur-sm rounded-2xl border border-metallic-gold/20 shadow-lg">
                 <thead>
                   <tr className="border-b border-metallic-gold/20">
                     <th className="px-6 py-4 text-left text-metallic-gold font-bold">Material</th>

@@ -111,7 +111,7 @@ export default function Support() {
   };
 
   return (
-    <div className="relative min-h-screen bg-rich-black text-white">
+    <div className="relative min-h-screen bg-pure-white text-deep-charcoal">
       <Header />
       
       <main className="pt-20">
@@ -126,14 +126,14 @@ export default function Support() {
           }}
         >
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-rich-black/85 via-rich-black/75 to-dark-forest/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-deep-charcoal/85 via-deep-charcoal/75 to-deep-charcoal/90"></div>
           
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 reveal-up text-white drop-shadow-lg">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 reveal-up text-pure-white drop-shadow-lg">
                 Support & <span className="text-metallic-gold text-shimmer">Community</span>
               </h1>
-              <p className="text-xl text-gray-200 max-w-3xl mx-auto reveal-fade drop-shadow-md">
+              <p className="text-xl text-warm-cream max-w-3xl mx-auto reveal-fade drop-shadow-md">
                 Everything you need to succeed with polymarble installation. From DIY guides to professional resources.
               </p>
             </div>

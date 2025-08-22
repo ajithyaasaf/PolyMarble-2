@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-rich-black/90" : ""
+        isScrolled ? "bg-pure-white/95 shadow-lg" : ""
       }`}
     >
       <div className="glassmorphism">
@@ -36,7 +36,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-metallic-gold to-yellow-600 flex items-center justify-center">
-                <svg className="w-6 h-6 text-rich-black" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-pure-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7v10c0 5.55 3.84 9.64 9 11 5.16-1.36 9-5.45 9-11V7l-10-5z"/>
                 </svg>
               </div>
@@ -98,7 +98,7 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+              className="md:hidden p-2 rounded-lg hover:bg-light-silver/30 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -107,7 +107,7 @@ export default function Header() {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden mt-4 pt-4 border-t border-white/10">
+            <div className="md:hidden mt-4 pt-4 border-t border-light-silver/30">
               <nav className="flex flex-col space-y-4">
                 {location === "/" ? (
                   <>

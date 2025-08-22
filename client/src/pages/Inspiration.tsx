@@ -117,7 +117,7 @@ export default function Inspiration() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-rich-black text-white">
+    <div className="relative min-h-screen bg-pure-white text-deep-charcoal">
       <Header />
       
       <main className="pt-20">
@@ -132,14 +132,14 @@ export default function Inspiration() {
           }}
         >
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-rich-black/85 via-rich-black/75 to-dark-forest/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-deep-charcoal/85 via-deep-charcoal/75 to-deep-charcoal/90"></div>
           
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 reveal-up text-white drop-shadow-lg">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 reveal-up text-pure-white drop-shadow-lg">
                 Inspiration <span className="text-metallic-gold text-shimmer">Lab</span>
               </h1>
-              <p className="text-xl text-gray-200 max-w-3xl mx-auto reveal-fade drop-shadow-md">
+              <p className="text-xl text-warm-cream max-w-3xl mx-auto reveal-fade drop-shadow-md">
                 Explore curated design collections and see how polymarble transforms spaces across Tamil Nadu. 
                 Discover your perfect style and envision your dream space.
               </p>
@@ -148,7 +148,7 @@ export default function Inspiration() {
         </section>
 
         {/* Mood-Board Gallery */}
-        <section className="py-20 bg-dark-forest">
+        <section className="py-20 bg-warm-cream">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
@@ -234,7 +234,7 @@ export default function Inspiration() {
         </section>
 
         {/* Auto-play Styled Spaces */}
-        <section className="py-20 bg-rich-black">
+        <section className="py-20 bg-light-silver/30">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">

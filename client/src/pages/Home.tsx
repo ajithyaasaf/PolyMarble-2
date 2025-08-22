@@ -14,7 +14,7 @@ import SEOHead from "@/components/SEOHead";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-rich-black text-white">
+    <div className="relative min-h-screen bg-pure-white text-deep-charcoal">
       <SEOHead />
       <Header />
       <main>

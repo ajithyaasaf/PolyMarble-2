@@ -3,52 +3,54 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(150, 20%, 4%);
-  --foreground: hsl(0, 0%, 98%);
-  --muted: hsl(150, 10%, 15%);
-  --muted-foreground: hsl(150, 5%, 65%);
-  --popover: hsl(150, 20%, 4%);
-  --popover-foreground: hsl(0, 0%, 98%);
-  --card: hsl(150, 20%, 4%);
-  --card-foreground: hsl(0, 0%, 98%);
-  --border: hsl(150, 10%, 15%);
-  --input: hsl(150, 10%, 15%);
-  --primary: hsl(47, 70%, 54%);
-  --primary-foreground: hsl(150, 20%, 4%);
-  --secondary: hsl(150, 10%, 15%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --accent: hsl(150, 10%, 15%);
-  --accent-foreground: hsl(0, 0%, 98%);
+  --background: hsl(0, 0%, 100%);           /* Pure White */
+  --foreground: hsl(0, 0%, 17%);            /* Deep Charcoal */
+  --muted: hsl(0, 0%, 98%);                 /* Warm Cream */
+  --muted-foreground: hsl(215, 16%, 47%);   /* Cool Grey */
+  --popover: hsl(0, 0%, 100%);              /* Pure White */
+  --popover-foreground: hsl(0, 0%, 17%);    /* Deep Charcoal */
+  --card: hsl(0, 0%, 98%);                  /* Warm Cream */
+  --card-foreground: hsl(0, 0%, 17%);       /* Deep Charcoal */
+  --border: hsl(220, 13%, 91%);             /* Light Silver */
+  --input: hsl(0, 0%, 100%);                /* Pure White */
+  --primary: hsl(47, 70%, 54%);             /* Champagne Gold */
+  --primary-foreground: hsl(0, 0%, 100%);   /* Pure White */
+  --secondary: hsl(220, 13%, 91%);          /* Light Silver */
+  --secondary-foreground: hsl(0, 0%, 17%);  /* Deep Charcoal */
+  --accent: hsl(220, 13%, 91%);             /* Light Silver */
+  --accent-foreground: hsl(0, 0%, 17%);     /* Deep Charcoal */
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 98%);
   --ring: hsl(47, 70%, 54%);
   --radius: 0.5rem;
 
-  /* Custom Polymarbles colors */
-  --rich-black: hsl(150, 20%, 4%);
-  --dark-forest: hsl(150, 18%, 11%);
-  --deep-jade: hsl(164, 33%, 22%);
-  --metallic-gold: hsl(47, 70%, 54%);
-  --slate-grey: hsl(0, 0%, 35%);
+  /* Custom Polymarbles colors - Updated for white theme */
+  --pure-white: hsl(0, 0%, 100%);           /* Pure White */
+  --warm-cream: hsl(0, 0%, 98%);            /* Warm Cream */
+  --deep-charcoal: hsl(0, 0%, 17%);         /* Deep Charcoal */
+  --metallic-gold: hsl(47, 70%, 54%);       /* Keep Champagne Gold */
+  --cool-grey: hsl(215, 16%, 47%);          /* Cool Grey */
+  --light-silver: hsl(220, 13%, 91%);       /* Light Silver */
 }
 
 .dark {
-  --background: hsl(150, 20%, 4%);
-  --foreground: hsl(0, 0%, 98%);
-  --muted: hsl(150, 10%, 15%);
-  --muted-foreground: hsl(150, 5%, 65%);
-  --popover: hsl(150, 20%, 4%);
-  --popover-foreground: hsl(0, 0%, 98%);
-  --card: hsl(150, 20%, 4%);
-  --card-foreground: hsl(0, 0%, 98%);
-  --border: hsl(150, 10%, 15%);
-  --input: hsl(150, 10%, 15%);
+  /* Dark mode removed - we're using light theme only */
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 17%);
+  --muted: hsl(0, 0%, 98%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 17%);
+  --card: hsl(0, 0%, 98%);
+  --card-foreground: hsl(0, 0%, 17%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(0, 0%, 100%);
   --primary: hsl(47, 70%, 54%);
-  --primary-foreground: hsl(150, 20%, 4%);
-  --secondary: hsl(150, 10%, 15%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --accent: hsl(150, 10%, 15%);
-  --accent-foreground: hsl(0, 0%, 98%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 13%, 91%);
+  --secondary-foreground: hsl(0, 0%, 17%);
+  --accent: hsl(220, 13%, 91%);
+  --accent-foreground: hsl(0, 0%, 17%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 98%);
   --ring: hsl(47, 70%, 54%);
@@ -68,58 +70,71 @@
 
 @layer utilities {
   .glassmorphism {
-    background: rgba(26, 50, 44, 0.15);
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(36, 71, 62, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
   }
 
-  .text-rich-black {
-    color: hsl(150, 20%, 4%);
+  .text-pure-white {
+    color: hsl(0, 0%, 100%);
   }
 
-  .text-dark-forest {
-    color: hsl(150, 18%, 11%);
+  .text-warm-cream {
+    color: hsl(0, 0%, 98%);
   }
 
-  .text-deep-jade {
-    color: hsl(164, 33%, 22%);
+  .text-deep-charcoal {
+    color: hsl(0, 0%, 17%);
   }
 
   .text-metallic-gold {
     color: hsl(47, 70%, 54%);
   }
 
-  .text-slate-grey {
-    color: hsl(0, 0%, 35%);
+  .text-cool-grey {
+    color: hsl(215, 16%, 47%);
   }
 
-  .bg-rich-black {
-    background-color: hsl(150, 20%, 4%);
+  .text-light-silver {
+    color: hsl(220, 13%, 91%);
   }
 
-  .bg-dark-forest {
-    background-color: hsl(150, 18%, 11%);
+  .bg-pure-white {
+    background-color: hsl(0, 0%, 100%);
   }
 
-  .bg-deep-jade {
-    background-color: hsl(164, 33%, 22%);
+  .bg-warm-cream {
+    background-color: hsl(0, 0%, 98%);
+  }
+
+  .bg-deep-charcoal {
+    background-color: hsl(0, 0%, 17%);
   }
 
   .bg-metallic-gold {
     background-color: hsl(47, 70%, 54%);
   }
 
-  .bg-slate-grey {
-    background-color: hsl(0, 0%, 35%);
+  .bg-cool-grey {
+    background-color: hsl(215, 16%, 47%);
   }
 
-  .border-deep-jade {
-    border-color: hsl(164, 33%, 22%);
+  .bg-light-silver {
+    background-color: hsl(220, 13%, 91%);
+  }
+
+  .border-light-silver {
+    border-color: hsl(220, 13%, 91%);
   }
 
   .border-metallic-gold {
     border-color: hsl(47, 70%, 54%);
+  }
+
+  .border-cool-grey {
+    border-color: hsl(215, 16%, 47%);
   }
 
   .hover\:bg-metallic-gold:hover {
