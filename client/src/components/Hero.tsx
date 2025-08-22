@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import heroBackgroundImage from "@assets/generated_images/Professional_installation_process_image_9587fee8.png";
+import heroBackgroundImage from "@assets/generated_images/Retail_showroom_interior_b1fbf187.png";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -40,7 +40,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <img 
           src={heroBackgroundImage}
-          alt="Professional polymarble sheet installation process"
+          alt="Premium polymarble showroom where customers experience the quality"
           className="w-full h-full object-cover object-right"
         />
         {/* Strong overlay for text readability */}
