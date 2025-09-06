@@ -60,21 +60,24 @@ export default function Hero() {
         >
           <source src={heroBackgroundVideo} type="video/mp4" />
         </video>
-        {/* Lighter overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-deep-charcoal/60 via-deep-charcoal/40 to-deep-charcoal/20"></div>
+        {/* Strategic overlay - positioned only where text appears */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-0 w-3/5 h-2/3 bg-gradient-to-r from-black/50 via-black/25 to-transparent transform -translate-y-1/2 rounded-r-3xl"></div>
+        </div>
       </div>
 
       {/* Hero Content */}
       <div className="relative z-10 text-left px-6 max-w-6xl mx-auto">
         <div className="max-w-3xl">
+          {/* Subtle positioning for natural contrast */}
         <div className="inline-flex items-center px-4 py-2 bg-metallic-gold border border-metallic-gold rounded-full text-pure-white text-sm font-bold mb-6 reveal-fade">
           <div className="w-2 h-2 bg-pure-white rounded-full mr-2 animate-pulse"></div>
           Trusted by 2,00,000+ Customers Across 5 Countries
         </div>
-        <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up text-outline-strong">
-          Transform Spaces with <span className="text-metallic-gold text-shimmer text-outline-gold">Premium Polymarble</span>
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up text-shadow-strong">
+          Transform Spaces with <span className="text-metallic-gold text-shimmer">Premium Polymarble</span>
         </h1>
-        <p className="text-xl md:text-2xl text-pure-white mb-6 max-w-2xl reveal-fade text-outline-medium">
+        <p className="text-xl md:text-2xl text-pure-white mb-6 max-w-2xl reveal-fade font-bold text-shadow-strong">
           Get the luxury of marble at 80% less cost. Fire-resistant, water-proof, and maintenance-free for 15+ years.
         </p>
 
