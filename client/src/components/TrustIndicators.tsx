@@ -1,26 +1,55 @@
-import { Award, Shield, Users, Clock, MapPin, Star } from "lucide-react";
+import { Award, Shield, Users, Clock, MapPin, Star, CheckCircle, Globe, TrendingUp, Calendar } from "lucide-react";
 
 export default function TrustIndicators() {
   const certifications = [
     {
-      icon: <Shield className="w-8 h-8 text-metallic-gold" />,
+      icon: Shield,
       title: "ISI Certified",
-      subtitle: "Quality Assured"
+      subtitle: "Quality Assured",
+      bgColor: "bg-blue-50",
+      iconColor: "text-blue-600"
     },
     {
-      icon: <Award className="w-8 h-8 text-metallic-gold" />,
+      icon: Award,
       title: "Fire Resistant",
-      subtitle: "Class A Rating"
+      subtitle: "Class A Rating",
+      bgColor: "bg-red-50",
+      iconColor: "text-red-600"
     },
     {
-      icon: <Users className="w-8 h-8 text-metallic-gold" />,
+      icon: Users,
       title: "2L+ Customers",
-      subtitle: "Trusted Nationwide"
+      subtitle: "Trusted Nationwide",
+      bgColor: "bg-green-50",
+      iconColor: "text-green-600"
     },
     {
-      icon: <Clock className="w-8 h-8 text-metallic-gold" />,
+      icon: Clock,
       title: "15+ Year Warranty",
-      subtitle: "Guaranteed Quality"
+      subtitle: "Guaranteed Quality",
+      bgColor: "bg-purple-50",
+      iconColor: "text-purple-600"
+    }
+  ];
+
+  const whyChooseFeatures = [
+    {
+      icon: TrendingUp,
+      title: "9 Years of Excellence",
+      subtitle: "Since 2017",
+      iconColor: "text-emerald-600"
+    },
+    {
+      icon: Calendar,
+      title: "Same Day Installation",
+      subtitle: "Available",
+      iconColor: "text-blue-600"
+    },
+    {
+      icon: CheckCircle,
+      title: "₹40/sq.ft",
+      subtitle: "Starting Price",
+      iconColor: "text-metallic-gold"
     }
   ];
 
@@ -32,90 +61,92 @@ export default function TrustIndicators() {
   ];
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden py-20">
       <div className="container mx-auto px-6">
         {/* Certifications */}
-        <div className="mb-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-metallic-gold mb-4">Certified Excellence & Quality Assurance</h3>
-            <p className="text-cool-grey">Trusted certifications and industry standards compliance</p>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-metallic-gold mb-6">Certified Excellence & Quality Assurance</h2>
+          <p className="text-xl text-cool-grey max-w-2xl mx-auto">Trusted certifications and industry standards compliance</p>
         </div>
         
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {certifications.map((cert, index) => (
-            <div
-              key={index}
-              className="text-center group hover:transform hover:scale-105 transition-all duration-300"
-            >
-              <div className="w-20 h-20 bg-metallic-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-metallic-gold/20 transition-colors">
-                {cert.icon}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {certifications.map((cert, index) => {
+            const IconComponent = cert.icon;
+            return (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl hover:border-metallic-gold/30 transition-all duration-500 group"
+              >
+                <div className={`w-16 h-16 ${cert.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <IconComponent className={`w-8 h-8 ${cert.iconColor}`} />
+                </div>
+                <h4 className="text-xl font-bold text-deep-charcoal mb-2 text-center">{cert.title}</h4>
+                <p className="text-cool-grey text-center">{cert.subtitle}</p>
               </div>
-              <h4 className="font-bold text-deep-charcoal mb-1">{cert.title}</h4>
-              <p className="text-cool-grey text-sm">{cert.subtitle}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Key Features */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-metallic-gold mb-4">Why Choose Polymarbles</h3>
-            <p className="text-cool-grey">Experience excellence with our proven track record and premium services</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex items-center bg-pure-white backdrop-blur-sm rounded-lg py-4 px-6 border border-metallic-gold/30 hover:border-metallic-gold/50 transition-colors shadow-sm">
-              <svg className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span className="text-cool-grey"><strong className="text-deep-charcoal">9 Years</strong> of Excellence Since 2017</span>
-            </div>
-            <div className="flex items-center bg-pure-white backdrop-blur-sm rounded-lg py-4 px-6 border border-metallic-gold/30 hover:border-metallic-gold/50 transition-colors shadow-sm">
-              <svg className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span className="text-cool-grey"><strong className="text-deep-charcoal">Same Day</strong> Installation Available</span>
-            </div>
-            <div className="flex items-center bg-pure-white backdrop-blur-sm rounded-lg py-4 px-6 border border-metallic-gold/30 hover:border-metallic-gold/50 transition-colors shadow-sm">
-              <svg className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span className="text-cool-grey"><strong className="text-deep-charcoal">₹40/sq.ft</strong> Starting Price</span>
-            </div>
-          </div>
+        {/* Why Choose Polymarbles */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-metallic-gold mb-6">Why Choose Polymarbles</h2>
+          <p className="text-xl text-cool-grey max-w-2xl mx-auto">Experience excellence with our proven track record and premium services</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {whyChooseFeatures.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <div key={index} className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 group">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-metallic-gold/20 to-yellow-400/20 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className={`w-6 h-6 ${feature.iconColor}`} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-deep-charcoal">{feature.title}</h4>
+                    <p className="text-cool-grey text-sm">{feature.subtitle}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Global Presence */}
-        <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold text-metallic-gold mb-4">Global Presence</h3>
-          <p className="text-cool-grey mb-8">Serving customers across multiple countries with local support</p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-metallic-gold mb-6">Global Presence</h2>
+          <p className="text-xl text-cool-grey max-w-2xl mx-auto mb-12">Serving customers across multiple countries with local support</p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {locations.map((location, index) => (
             <div
               key={index}
-              className="bg-pure-white backdrop-blur-sm rounded-lg p-4 border border-metallic-gold/20 text-center hover:border-metallic-gold/40 transition-colors shadow-sm"
+              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-2xl hover:border-metallic-gold/30 transition-all duration-500 group"
             >
-              <MapPin className="w-5 h-5 text-metallic-gold mx-auto mb-2" />
-              <h5 className="font-bold text-deep-charcoal text-sm">{location.city}</h5>
-              <p className="text-cool-grey text-xs mb-1">{location.state}</p>
-              <p className="text-metallic-gold text-xs font-medium">{location.projects} Projects</p>
+              <div className="w-16 h-16 bg-gradient-to-r from-metallic-gold/20 to-yellow-400/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Globe className="w-8 h-8 text-metallic-gold" />
+              </div>
+              <h5 className="text-xl font-bold text-deep-charcoal mb-2">{location.city}</h5>
+              <p className="text-cool-grey mb-3">{location.state}</p>
+              <div className="bg-gradient-to-r from-metallic-gold/10 to-yellow-400/10 rounded-lg p-3">
+                <p className="text-metallic-gold font-bold text-lg">{location.projects}</p>
+                <p className="text-cool-grey text-sm">Projects</p>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Customer Satisfaction */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 rounded-full px-6 py-3 border border-yellow-500/30">
-            <div className="flex items-center mr-4">
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-8 inline-block shadow-lg border border-yellow-200">
+            <div className="flex items-center justify-center mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                <Star key={i} className="w-8 h-8 text-yellow-400 fill-current mx-1" />
               ))}
             </div>
-            <span className="text-deep-charcoal font-medium">4.8/5 Average Rating</span>
-            <span className="text-cool-grey text-sm ml-2">(2,450+ Reviews)</span>
+            <h3 className="text-3xl font-bold text-deep-charcoal mb-2">4.8/5 Average Rating</h3>
+            <p className="text-cool-grey text-lg">(2,450+ Reviews)</p>
           </div>
         </div>
       </div>
