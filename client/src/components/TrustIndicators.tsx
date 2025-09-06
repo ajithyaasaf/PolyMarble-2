@@ -1,121 +1,174 @@
 import { Award, Shield, Users, Clock, MapPin, Star } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function TrustIndicators() {
   const certifications = [
     {
       icon: <Shield className="w-8 h-8 text-metallic-gold" />,
       title: "ISI Certified",
-      subtitle: "Quality Assured"
+      subtitle: "Quality Assured",
+      delay: 0.1,
     },
     {
       icon: <Award className="w-8 h-8 text-metallic-gold" />,
       title: "Fire Resistant",
-      subtitle: "Class A Rating"
+      subtitle: "Class A Rating",
+      delay: 0.2,
     },
     {
       icon: <Users className="w-8 h-8 text-metallic-gold" />,
       title: "2L+ Customers",
-      subtitle: "Trusted Nationwide"
+      subtitle: "Trusted Nationwide",
+      delay: 0.3,
     },
     {
       icon: <Clock className="w-8 h-8 text-metallic-gold" />,
       title: "15+ Year Warranty",
-      subtitle: "Guaranteed Quality"
-    }
+      subtitle: "Guaranteed Quality",
+      delay: 0.4,
+    },
+  ];
+
+  const features = [
+    {
+      title: "9 Years of Excellence",
+      subtitle: "Since 2017",
+      color: "from-yellow-500/10 via-yellow-500/10 to-transparent",
+      delay: 0.5,
+    },
+    {
+      title: "Same Day Installation",
+      subtitle: "Available on all products",
+      color: "from-teal-500/10 via-teal-500/10 to-transparent",
+      delay: 0.6,
+    },
+    {
+      title: "₹40/sq.ft Starting Price",
+      subtitle: "The luxury of polymarble, affordable",
+      color: "from-fuchsia-500/10 via-fuchsia-500/10 to-transparent",
+      delay: 0.7,
+    },
   ];
 
   const locations = [
-    { city: "Madurai", state: "Tamil Nadu", projects: "5000+" },
-    { city: "Chennai", state: "Tamil Nadu", projects: "3000+" },
-    { city: "Kuala Lumpur", state: "Malaysia", projects: "500+" },
-    { city: "New York", state: "USA", projects: "200+" }
+    { city: "Madurai", state: "Tamil Nadu", projects: "5000+", delay: 0.8 },
+    { city: "Chennai", state: "Tamil Nadu", projects: "3000+", delay: 0.9 },
+    { city: "Kuala Lumpur", state: "Malaysia", projects: "500+", delay: 1.0 },
+    { city: "New York", state: "USA", projects: "200+", delay: 1.1 },
   ];
 
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <section className="relative overflow-hidden">
-      <div className="container mx-auto px-6">
-        {/* Certifications */}
-        <div className="mb-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-metallic-gold mb-4">Certified Excellence & Quality Assurance</h3>
-            <p className="text-cool-grey">Trusted certifications and industry standards compliance</p>
+    <section className="relative overflow-hidden bg-gradient-to-br from-pure-white via-light-silver/10 to-warm-cream/20 py-16">
+      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Main Header with Star Rating */}
+        <motion.div
+          className="md:col-span-2 lg:col-span-4 text-center mb-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          variants={fadeInVariants}
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold text-deep-charcoal tracking-tight mb-4">
+            <span className="text-metallic-gold">Certified</span> Excellence and
+            Global Presence
+          </h2>
+          <p className="text-lg text-cool-grey max-w-2xl mx-auto">
+            Our commitment to quality is validated by industry standards and a
+            growing network of happy customers worldwide.
+          </p>
+          <div className="mt-8">
+            <div className="inline-flex items-center rounded-full px-6 py-3 border border-yellow-500/30">
+              <div className="flex items-center mr-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-5 h-5 text-yellow-400 fill-current"
+                  />
+                ))}
+              </div>
+              <span className="text-deep-charcoal font-bold">
+                4.8/5 Average Rating
+              </span>
+              <span className="text-cool-grey text-sm ml-2">
+                (2,450+ Reviews)
+              </span>
+            </div>
           </div>
-        </div>
-        
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        </motion.div>
+
+        {/* Certifications - Grid */}
+        <div className="md:col-span-1 lg:col-span-2 grid grid-cols-2 gap-6 p-4">
           {certifications.map((cert, index) => (
-            <div
+            <motion.div
               key={index}
-              className="text-center group hover:transform hover:scale-105 transition-all duration-300"
+              className="text-center p-6 bg-pure-white/80 rounded-2xl shadow-lg border border-metallic-gold/10 hover:border-metallic-gold/40 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: cert.delay }}
+              variants={fadeInVariants}
             >
-              <div className="w-20 h-20 bg-metallic-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-metallic-gold/20 transition-colors">
+              <div className="w-16 h-16 bg-metallic-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 {cert.icon}
               </div>
-              <h4 className="font-bold text-deep-charcoal mb-1">{cert.title}</h4>
+              <h4 className="font-bold text-deep-charcoal mb-1">
+                {cert.title}
+              </h4>
               <p className="text-cool-grey text-sm">{cert.subtitle}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Key Features */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-metallic-gold mb-4">Why Choose Polymarbles</h3>
-            <p className="text-cool-grey">Experience excellence with our proven track record and premium services</p>
+        {/* Overlapping Features & Global Presence */}
+        <div className="md:col-span-1 lg:col-span-2 relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 p-4">
+          {/* Overlapping Features Section */}
+          <div className="relative z-10 grid grid-cols-1 gap-4">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                className={`p-6 rounded-2xl border-l-4 border-l-yellow-500 bg-gradient-to-r ${feature.color} shadow-lg backdrop-blur-sm`}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: feature.delay }}
+                variants={fadeInVariants}
+              >
+                <div className="font-bold text-deep-charcoal text-xl mb-1">
+                  {feature.title}
+                </div>
+                <p className="text-cool-grey text-sm">{feature.subtitle}</p>
+              </motion.div>
+            ))}
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex items-center bg-pure-white backdrop-blur-sm rounded-lg py-4 px-6 border border-metallic-gold/30 hover:border-metallic-gold/50 transition-colors shadow-sm">
-              <svg className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span className="text-cool-grey"><strong className="text-deep-charcoal">9 Years</strong> of Excellence Since 2017</span>
-            </div>
-            <div className="flex items-center bg-pure-white backdrop-blur-sm rounded-lg py-4 px-6 border border-metallic-gold/30 hover:border-metallic-gold/50 transition-colors shadow-sm">
-              <svg className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span className="text-cool-grey"><strong className="text-deep-charcoal">Same Day</strong> Installation Available</span>
-            </div>
-            <div className="flex items-center bg-pure-white backdrop-blur-sm rounded-lg py-4 px-6 border border-metallic-gold/30 hover:border-metallic-gold/50 transition-colors shadow-sm">
-              <svg className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span className="text-cool-grey"><strong className="text-deep-charcoal">₹40/sq.ft</strong> Starting Price</span>
-            </div>
-          </div>
-        </div>
 
-        {/* Global Presence */}
-        <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold text-metallic-gold mb-4">Global Presence</h3>
-          <p className="text-cool-grey mb-8">Serving customers across multiple countries with local support</p>
-        </div>
-
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {locations.map((location, index) => (
-            <div
-              key={index}
-              className="bg-pure-white backdrop-blur-sm rounded-lg p-4 border border-metallic-gold/20 text-center hover:border-metallic-gold/40 transition-colors shadow-sm"
-            >
-              <MapPin className="w-5 h-5 text-metallic-gold mx-auto mb-2" />
-              <h5 className="font-bold text-deep-charcoal text-sm">{location.city}</h5>
-              <p className="text-cool-grey text-xs mb-1">{location.state}</p>
-              <p className="text-metallic-gold text-xs font-medium">{location.projects} Projects</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Customer Satisfaction */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 rounded-full px-6 py-3 border border-yellow-500/30">
-            <div className="flex items-center mr-4">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-              ))}
-            </div>
-            <span className="text-deep-charcoal font-medium">4.8/5 Average Rating</span>
-            <span className="text-cool-grey text-sm ml-2">(2,450+ Reviews)</span>
+          {/* Global Presence Section (Slightly behind and offset) */}
+          <div className="relative -mt-16 z-0 grid grid-cols-2 md:grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-4 lg:absolute lg:bottom-0 lg:left-0 lg:w-full lg:mt-0 lg:p-4 lg:translate-y-1/2">
+            {locations.map((location, index) => (
+              <motion.div
+                key={index}
+                className="bg-pure-white/90 rounded-xl p-4 border border-metallic-gold/20 text-center shadow-lg transform hover:-translate-y-2 transition-all duration-300"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: location.delay }}
+                variants={fadeInVariants}
+              >
+                <MapPin className="w-6 h-6 text-metallic-gold mx-auto mb-2" />
+                <h5 className="font-bold text-deep-charcoal text-sm">
+                  {location.city}
+                </h5>
+                <p className="text-cool-grey text-xs mb-1">{location.state}</p>
+                <p className="text-metallic-gold text-xs font-medium">
+                  {location.projects} Projects
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
