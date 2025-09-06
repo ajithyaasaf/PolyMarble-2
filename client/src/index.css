@@ -857,4 +857,45 @@
     transform: scale(0.98);
     transition: transform 0.1s ease;
   }
+
+  /* Text visibility enhancement - outline stroke technique */
+  .text-outline-strong {
+    text-shadow: 
+      -3px -3px 0 #ffffff,
+      3px -3px 0 #ffffff,
+      -3px 3px 0 #ffffff,
+      3px 3px 0 #ffffff,
+      -4px 0 0 #ffffff,
+      4px 0 0 #ffffff,
+      0 -4px 0 #ffffff,
+      0 4px 0 #ffffff,
+      -2px -2px 0 #ffffff,
+      2px -2px 0 #ffffff,
+      -2px 2px 0 #ffffff,
+      2px 2px 0 #ffffff;
+  }
+
+  .text-outline-medium {
+    text-shadow: 
+      -2px -2px 0 #ffffff,
+      2px -2px 0 #ffffff,
+      -2px 2px 0 #ffffff,
+      2px 2px 0 #ffffff,
+      -3px 0 0 #ffffff,
+      3px 0 0 #ffffff,
+      0 -3px 0 #ffffff,
+      0 3px 0 #ffffff;
+  }
+
+  .text-outline-gold {
+    text-shadow: 
+      -2px -2px 0 #D4AF37,
+      2px -2px 0 #D4AF37,
+      -2px 2px 0 #D4AF37,
+      2px 2px 0 #D4AF37,
+      -3px 0 0 #D4AF37,
+      3px 0 0 #D4AF37,
+      0 -3px 0 #D4AF37,
+      0 3px 0 #D4AF37;
+  }
 }
