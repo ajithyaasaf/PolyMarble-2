@@ -88,13 +88,13 @@ export default function Hero() {
                 "Durable Walls",
                 "Stunning Slabs",
               ]}
-              mainClassName="inline-block text-metallic-gold"
+              mainClassName="inline-block text-metallic-gold overflow-hidden" // Keep overflow-hidden here
               staggerFrom="last"
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: "-120%", opacity: 0 }}
               staggerDuration={0.025}
-              splitLevelClassName="overflow-hidden"
+              splitLevelClassName="" // Removed overflow-hidden from here
               elementLevelClassName="inline-block"
               rotationInterval={3000}
             />
