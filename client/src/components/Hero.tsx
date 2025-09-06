@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import heroBackgroundVideo from "@assets/1_1755841607772.mp4";
+import RotatingText from "./RotatingText";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -79,7 +80,24 @@ export default function Hero() {
             Trusted by 2,00,000+ Customers Across 5 Countries
           </div>
           <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up text-white">
-            Transform Spaces with <span className="text-metallic-gold">Premium Polymarble</span>
+            Transform Spaces with{" "}
+            <RotatingText
+              texts={[
+                "Premium Polymarble",
+                "Luxury Finishes",
+                "Durable Walls",
+                "Stunning Slabs",
+              ]}
+              mainClassName="inline-block text-metallic-gold"
+              staggerFrom="last"
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-120%", opacity: 0 }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden"
+              elementLevelClassName="inline-block"
+              rotationInterval={3000}
+            />
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-6 max-w-2xl reveal-fade font-medium">
             Get the luxury of marble at 80% less cost. Fire-resistant,
