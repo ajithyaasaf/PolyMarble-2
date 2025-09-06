@@ -60,10 +60,8 @@ export default function Hero() {
         >
           <source src={heroBackgroundVideo} type="video/mp4" />
         </video>
-        {/* Strategic overlay - positioned only where text appears */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-0 w-3/5 h-2/3 bg-gradient-to-r from-black/50 via-black/25 to-transparent transform -translate-y-1/2 rounded-r-3xl"></div>
-        </div>
+        {/* Professional overlay - full height from left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
       </div>
 
       {/* Hero Content */}
@@ -74,10 +72,10 @@ export default function Hero() {
           <div className="w-2 h-2 bg-pure-white rounded-full mr-2 animate-pulse"></div>
           Trusted by 2,00,000+ Customers Across 5 Countries
         </div>
-        <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up text-shadow-strong">
-          Transform Spaces with <span className="text-metallic-gold text-shimmer">Premium Polymarble</span>
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up text-white">
+          Transform Spaces with <span className="text-metallic-gold">Premium Polymarble</span>
         </h1>
-        <p className="text-xl md:text-2xl text-pure-white mb-6 max-w-2xl reveal-fade font-bold text-shadow-strong">
+        <p className="text-xl md:text-2xl text-white/90 mb-6 max-w-2xl reveal-fade font-medium">
           Get the luxury of marble at 80% less cost. Fire-resistant, water-proof, and maintenance-free for 15+ years.
         </p>
 
