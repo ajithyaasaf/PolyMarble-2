@@ -99,6 +99,9 @@ export default function Hero() {
               rotationInterval={3000}
             />
           </h1>
+          <p className="text-lg md:text-xl text-brand-peach/90 mb-2 reveal-fade font-semibold italic">
+            A Hub of Unique Interior and Exterior Products
+          </p>
           <p className="text-xl md:text-2xl text-white/90 mb-6 max-w-2xl reveal-fade font-medium">
             Get the luxury of marble at 80% less cost. Fire-resistant,
             water-proof, and maintenance-free for 15+ years.

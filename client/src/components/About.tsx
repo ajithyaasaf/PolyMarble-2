@@ -1,5 +1,5 @@
 import { useScrollReveal, useScrollProgress } from "@/hooks/useScrollReveal";
-import { Lightbulb, Award, Building, Microscope } from "lucide-react";
+import { Lightbulb, Award, Building, Microscope, Target } from "lucide-react";
 import manufacturingImage from "@assets/generated_images/Polymarble_manufacturing_facility_58dc2199.png";
 import facilityOverview from "@assets/generated_images/Manufacturing_facility_overview_4794804a.png";
 
@@ -74,6 +74,20 @@ export default function About() {
                 customers - we create products for them."
               </p>
             </div>
+
+            <div className="bg-gradient-to-br from-brand-teal/10 to-brand-peach/10 backdrop-blur-sm rounded-2xl p-8 border border-brand-teal/20 shadow-lg">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-brand-teal/20 rounded-full">
+                  <Target className="w-6 h-6 text-brand-teal" />
+                </div>
+                <h4 className="text-xl font-bold text-brand-teal">
+                  Our Mission
+                </h4>
+              </div>
+              <p className="text-cool-grey leading-relaxed italic">
+                "To provide superior quality polymarble solutions that blend beauty, durability, and affordability, satisfying our customers by providing stunning interiors without compromise."
+              </p>
+            </div>
           </div>
 
           {/* Right Panel - Key Milestones */}
@@ -123,12 +137,12 @@ export default function About() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-8 stagger-group" key="stats-5000">
+            <div className="grid grid-cols-3 gap-4 pt-8 stagger-group" key="stats-200000">
               <div className="text-center stagger-item magnetic">
                 <div
                   className="text-2xl font-bold text-brand-teal text-shimmer counter"
-                  data-target="5000"
-                  key="customer-counter-5000"
+                  data-target="200000"
+                  key="customer-counter-200000"
                 >
                   0
                 </div>

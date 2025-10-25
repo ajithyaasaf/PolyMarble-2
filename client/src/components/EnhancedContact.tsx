@@ -314,6 +314,34 @@ export default function EnhancedContact() {
                 </a>
               </div>
             </div>
+
+            {/* Google Maps */}
+            <div className="pt-8 border-t border-light-silver/30">
+              <h5 className="text-lg font-medium text-deep-charcoal mb-4">Visit Our Showroom</h5>
+              <div className="rounded-xl overflow-hidden border border-brand-teal/20 shadow-lg">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.2074839862524!2d78.10638647501712!3d9.90901899012835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5bd87f8e87d%3A0x4c4c4c4c4c4c4c4c!2sGomathipuram%2C%20Madurai%2C%20Tamil%20Nadu%20625020!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Polymarble Sheet India - Madurai Office Location"
+                ></iframe>
+              </div>
+              <div className="mt-4 text-center">
+                <a 
+                  href="https://maps.app.goo.gl/MZTH5XRDhkxR1MMN7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-brand-teal hover:text-brand-teal/80 transition-colors font-medium"
+                >
+                  <MapPin className="w-4 h-4" />
+                  Open in Google Maps
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
