@@ -147,8 +147,8 @@ export default function TrustIndicators() {
             ))}
           </div>
 
-          {/* Global Presence Section (Slightly behind and offset) */}
-          <div className="relative -mt-16 z-0 grid grid-cols-2 md:grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-4 lg:absolute lg:bottom-0 lg:left-0 lg:w-full lg:mt-0 lg:p-4 lg:translate-y-1/2">
+          {/* Global Presence Section */}
+          <div className="relative mt-6 md:mt-0 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-4">
             {locations.map((location, index) => (
               <motion.div
                 key={index}
