@@ -191,13 +191,6 @@ export default function Hero() {
                 </div>
               </DialogContent>
             </Dialog>
-
-            <button
-              onClick={() => scrollToSection("about")}
-              className="inline-flex items-center px-8 py-4 rounded-full border-2 border-pure-white text-pure-white font-bold text-lg hover:bg-pure-white hover:text-deep-charcoal transition-all duration-300 stagger-item magnetic morph-border"
-            >
-              Our Story
-            </button>
           </div>
         </div>
       </div>
