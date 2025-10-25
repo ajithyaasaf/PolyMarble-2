@@ -11,19 +11,19 @@ export default function Benefits() {
       icon: Droplets,
       title: "Water & Stain Resistant",
       description: "Non-porous surface prevents water damage and staining",
-      color: "text-blue-400",
+      color: "text-brand-teal",
     },
     {
       icon: Clock,
       title: "Easy Maintenance",
       description: "Simple cleaning with no special treatments required",
-      color: "text-green-400",
+      color: "text-brand-teal",
     },
     {
       icon: Zap,
       title: "Seamless Installation",
       description: "Large format sheets minimize joints for a continuous look",
-      color: "text-yellow-400",
+      color: "text-brand-peach",
     },
     {
       icon: Shield,
@@ -37,19 +37,19 @@ export default function Benefits() {
       title: "Lightweight & Strong",
       description:
         "40% lighter than natural stone, easier to handle and install",
-      color: "text-emerald-400",
+      color: "text-brand-brown",
     },
     {
       icon: Bug,
       title: "Termite Proof",
       description: "Prevents termite entry and moisture build up",
-      color: "text-orange-400",
+      color: "text-brand-brown",
     },
     {
       icon: Flame,
       title: "Fire Resistant",
       description: "Doesn't allow transit of heat for enhanced safety",
-      color: "text-red-400",
+      color: "text-brand-brown",
     },
   ];
 
@@ -117,7 +117,7 @@ export default function Benefits() {
               className="bg-pure-white backdrop-blur-sm rounded-2xl p-6 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-300 stagger-item reveal-up group hover:transform hover:scale-105 shadow-lg"
             >
               <div
-                className={`w-12 h-12 rounded-full bg-gradient-to-br from-${benefit.color.split("-")[1]}-400/20 to-${benefit.color.split("-")[1]}-600/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                className="w-12 h-12 rounded-full bg-brand-teal/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
               >
                 <benefit.icon className={`w-6 h-6 ${benefit.color}`} />
               </div>

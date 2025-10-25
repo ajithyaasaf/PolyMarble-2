@@ -33,19 +33,19 @@ export default function TrustIndicators() {
     {
       title: "9 Years of Excellence",
       subtitle: "Since 2017",
-      color: "from-yellow-500/10 via-yellow-500/10 to-transparent",
+      color: "from-brand-teal/10 via-brand-teal/10 to-transparent",
       delay: 0.5,
     },
     {
       title: "Same Day Installation",
       subtitle: "Available on all products",
-      color: "from-teal-500/10 via-teal-500/10 to-transparent",
+      color: "from-brand-brown/10 via-brand-brown/10 to-transparent",
       delay: 0.6,
     },
     {
       title: "₹40/sq.ft Starting Price",
       subtitle: "The luxury of polymarble, affordable",
-      color: "from-fuchsia-500/10 via-fuchsia-500/10 to-transparent",
+      color: "from-brand-peach/10 via-brand-peach/10 to-transparent",
       delay: 0.7,
     },
   ];
@@ -83,12 +83,12 @@ export default function TrustIndicators() {
             growing network of happy customers worldwide.
           </p>
           <div className="mt-8">
-            <div className="inline-flex items-center rounded-full px-6 py-3 border border-yellow-500/30">
+            <div className="inline-flex items-center rounded-full px-6 py-3 border border-brand-peach/30 bg-brand-peach/5">
               <div className="flex items-center mr-4">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-5 h-5 text-yellow-400 fill-current"
+                    className="w-5 h-5 text-brand-peach fill-current"
                   />
                 ))}
               </div>
