@@ -289,7 +289,7 @@ export default function EnhancedContact() {
                   <div>
                     <div className="text-deep-charcoal font-bold mb-1">Email Us</div>
                     <div className="text-brand-teal">polymarblesheet@gmail.com</div>
-                    <div className="text-cool-grey text-sm">Chennai Office: Dr. Kannan Tower, Arcot Road, Porur - 116</div>
+                    <div className="text-cool-grey text-sm">Chennai Office: Dr. Kannan Tower, Arcot Road, Opp to Naidu Hall, Porur - 116</div>
                   </div>
                 </div>
               </div>

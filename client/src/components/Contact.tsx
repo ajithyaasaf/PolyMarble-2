@@ -166,7 +166,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-deep-charcoal font-medium">polymarblesheet@gmail.com</div>
-                    <div className="text-cool-grey">Chennai Office: Dr. Kannan Tower, Arcot Road, Porur - 116</div>
+                    <div className="text-cool-grey">Chennai Office: Dr. Kannan Tower, Arcot Road, Opp to Naidu Hall, Porur - 116</div>
                   </div>
                 </div>
               </div>

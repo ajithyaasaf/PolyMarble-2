@@ -86,7 +86,7 @@ export default function Footer() {
         
         <div className="border-t border-light-silver mt-8 pt-8 text-center">
           <div className="text-sm text-cool-grey">
-            © 2025 Polymarble Sheet India. All rights reserved. | Chennai Office: Dr. Kannan Tower, Arcot Road, Porur - 116
+            © 2025 Polymarble Sheet India. All rights reserved. | Chennai Office: Dr. Kannan Tower, Arcot Road, Opp to Naidu Hall, Porur - 116
           </div>
         </div>
       </div>
