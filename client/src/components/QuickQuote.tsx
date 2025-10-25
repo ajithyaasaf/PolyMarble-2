@@ -9,14 +9,13 @@ export default function QuickQuote() {
 
   return (
     <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 hidden md:block">
-      <div className={`bg-pure-white/95 backdrop-blur-sm border-2 border-brand-brown/30 rounded-l-2xl transition-all duration-300 shadow-lg ${
+      <div className={`bg-pure-white/95 backdrop-blur-sm border border-brand-teal/20 rounded-l-2xl transition-all duration-300 shadow-lg ${
         isExpanded ? 'w-80' : 'w-16'
       }`}>
         {/* Toggle Button */}
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full bg-brand-brown text-pure-white p-2 rounded-l-lg hover:bg-brand-peach transition-all"
-          data-testid="button-toggle-quick-quote"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full bg-brand-teal text-pure-white p-2 rounded-l-lg hover:bg-brand-teal/90 transition-all"
         >
           {isExpanded ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
         </button>
@@ -24,7 +23,7 @@ export default function QuickQuote() {
         {/* Collapsed Icon */}
         {!isExpanded && (
           <div className="p-4 flex flex-col items-center">
-            <Calculator className="w-6 h-6 text-brand-peach mb-2" />
+            <Calculator className="w-6 h-6 text-brand-teal mb-2" />
             <div className="text-xs text-cool-grey text-center writing-mode-vertical">
               Quick Quote
             </div>
@@ -35,8 +34,8 @@ export default function QuickQuote() {
         {isExpanded && (
           <div className="p-6">
             <div className="flex items-center gap-2 mb-4">
-              <Calculator className="w-5 h-5 text-brand-peach" />
-              <h4 className="text-lg font-bold text-brand-brown">Quick Quote</h4>
+              <Calculator className="w-5 h-5 text-brand-teal" />
+              <h4 className="text-lg font-bold text-brand-teal">Quick Quote</h4>
             </div>
             
             <div className="space-y-4">
@@ -63,7 +62,7 @@ export default function QuickQuote() {
                 />
               </div>
               
-              <Button className="w-full bg-brand-brown text-pure-white hover:bg-brand-peach font-bold transition-colors" data-testid="button-get-instant-quote">
+              <Button className="w-full bg-brand-teal text-pure-white hover:bg-brand-teal/90 font-bold">
                 Get Instant Quote
               </Button>
               
