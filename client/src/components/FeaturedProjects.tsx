@@ -166,8 +166,8 @@ export default function FeaturedProjects() {
                   <p className="text-cool-grey">{study.location} • {study.year}</p>
                 </div>
                 <div className="flex items-center gap-2 mt-4 md:mt-0">
-                  <TrendingUp className="w-5 h-5 text-green-400" />
-                  <span className="text-green-400 font-bold text-lg">Saved {study.roiSavings}/sq.ft. vs. natural marble</span>
+                  <TrendingUp className="w-5 h-5 text-brand-teal" />
+                  <span className="text-brand-teal font-bold text-lg">Saved {study.roiSavings}/sq.ft. vs. natural marble</span>
                 </div>
               </div>
 
@@ -183,7 +183,7 @@ export default function FeaturedProjects() {
                       loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-red-500/80 text-pure-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-brand-brown/80 text-pure-white px-3 py-1 rounded-full text-sm font-medium">
                         Before
                       </span>
                     </div>
@@ -201,7 +201,7 @@ export default function FeaturedProjects() {
                       loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-yellow-500/80 text-pure-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-brand-peach/80 text-pure-white px-3 py-1 rounded-full text-sm font-medium">
                         During
                       </span>
                     </div>
@@ -219,7 +219,7 @@ export default function FeaturedProjects() {
                       loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-green-500/80 text-pure-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-brand-teal/80 text-pure-white px-3 py-1 rounded-full text-sm font-medium">
                         After
                       </span>
                     </div>
@@ -234,7 +234,7 @@ export default function FeaturedProjects() {
                   <span>Area: <strong className="text-deep-charcoal">{study.sqft} sq.ft.</strong></span>
                   <span>Category: <strong className="text-brand-teal">{study.category}</strong></span>
                 </div>
-                <button className="inline-flex items-center text-brand-teal hover:text-yellow-400 transition-all duration-300 hover:scale-105 magnetic perspective-tilt mt-4 md:mt-0">
+                <button className="inline-flex items-center text-brand-teal hover:text-brand-peach transition-all duration-300 hover:scale-105 magnetic perspective-tilt mt-4 md:mt-0">
                   View Full Case Study
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </button>

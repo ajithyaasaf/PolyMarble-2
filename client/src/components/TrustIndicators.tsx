@@ -132,7 +132,7 @@ export default function TrustIndicators() {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className={`p-6 rounded-2xl border-l-4 border-l-yellow-500 bg-gradient-to-r ${feature.color} shadow-lg backdrop-blur-sm`}
+                className={`p-6 rounded-2xl border-l-4 border-l-brand-teal bg-gradient-to-r ${feature.color} shadow-lg backdrop-blur-sm`}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}

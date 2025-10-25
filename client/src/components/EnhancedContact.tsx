@@ -81,9 +81,9 @@ export default function EnhancedContact() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center bg-gradient-to-r from-green-500/20 to-green-600/20 rounded-full px-4 py-2 border border-green-500/30 mb-6">
-            <MessageCircle className="w-4 h-4 text-green-400 mr-2" />
-            <span className="text-green-400 font-medium">Ready to Transform Your Space?</span>
+          <div className="inline-flex items-center bg-gradient-to-r from-brand-teal/20 to-brand-teal/20 rounded-full px-4 py-2 border border-brand-teal/30 mb-6">
+            <MessageCircle className="w-4 h-4 text-brand-teal mr-2" />
+            <span className="text-brand-teal font-medium">Ready to Transform Your Space?</span>
           </div>
           <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
             Let's <span className="text-brand-teal text-shimmer">Start Your Project</span>
