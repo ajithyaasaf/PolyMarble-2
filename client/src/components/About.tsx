@@ -20,7 +20,7 @@ export default function About() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h3 className="text-4xl lg:text-5xl font-bold text-brand-teal reveal-up mb-4" data-testid="heading-our-story">
+          <h3 className="text-4xl lg:text-5xl font-bold text-brand-brown reveal-up mb-4" data-testid="heading-our-story">
             Our Story
           </h3>
           <p className="text-lg text-cool-grey max-w-2xl mx-auto reveal-fade">
@@ -39,7 +39,7 @@ export default function About() {
             <div className="absolute inset-0 bg-deep-charcoal/85"></div>
             <div className="absolute inset-0 flex items-center justify-center text-center">
               <div>
-                <h4 className="text-3xl font-bold text-brand-teal mb-3 drop-shadow-lg">
+                <h4 className="text-3xl font-bold text-brand-peach mb-3 drop-shadow-lg">
                   Advanced Manufacturing Excellence
                 </h4>
                 <p className="text-pure-white text-lg max-w-2xl mx-auto drop-shadow-md">
@@ -55,12 +55,12 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Panel - Founder's "Aha!" Moment */}
           <div className="space-y-6 reveal-left">
-            <div className="bg-pure-white/80 backdrop-blur-sm rounded-2xl p-8 border border-brand-teal/20 shadow-lg">
+            <div className="bg-pure-white/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-brand-peach/30 shadow-lg">
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-brand-teal/20 rounded-full">
-                  <Lightbulb className="w-6 h-6 text-brand-teal" />
+                <div className="p-3 bg-brand-peach/20 rounded-full">
+                  <Lightbulb className="w-6 h-6 text-brand-brown" />
                 </div>
-                <h4 className="text-xl font-bold text-brand-teal">
+                <h4 className="text-xl font-bold text-brand-brown">
                   The Breakthrough Moment
                 </h4>
               </div>
@@ -75,12 +75,12 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-brand-teal/10 to-brand-peach/10 backdrop-blur-sm rounded-2xl p-8 border border-brand-teal/20 shadow-lg">
+            <div className="bg-gradient-to-br from-brand-brown/10 to-brand-peach/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-brand-brown/30 shadow-lg">
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-brand-teal/20 rounded-full">
-                  <Target className="w-6 h-6 text-brand-teal" />
+                <div className="p-3 bg-brand-brown/20 rounded-full">
+                  <Target className="w-6 h-6 text-brand-peach" />
                 </div>
-                <h4 className="text-xl font-bold text-brand-teal">
+                <h4 className="text-xl font-bold text-brand-brown">
                   Our Mission
                 </h4>
               </div>
@@ -94,8 +94,8 @@ export default function About() {
           <div className="space-y-6 reveal-right">
             <div className="space-y-4">
               <div className="flex items-start gap-4 fade-in">
-                <div className="flex-shrink-0 w-12 h-12 bg-brand-teal/20 rounded-full flex items-center justify-center">
-                  <Award className="w-6 h-6 text-brand-teal" />
+                <div className="flex-shrink-0 w-12 h-12 bg-brand-peach/20 rounded-full flex items-center justify-center border-2 border-brand-brown/20">
+                  <Award className="w-6 h-6 text-brand-brown" />
                 </div>
                 <div>
                   <h5 className="font-semibold text-deep-charcoal">
@@ -108,8 +108,8 @@ export default function About() {
               </div>
 
               <div className="flex items-start gap-4 fade-in">
-                <div className="flex-shrink-0 w-12 h-12 bg-brand-teal/20 rounded-full flex items-center justify-center">
-                  <Building className="w-6 h-6 text-brand-teal" />
+                <div className="flex-shrink-0 w-12 h-12 bg-brand-brown/20 rounded-full flex items-center justify-center border-2 border-brand-peach/30">
+                  <Building className="w-6 h-6 text-brand-peach" />
                 </div>
                 <div>
                   <h5 className="font-semibold text-deep-charcoal">
@@ -122,8 +122,8 @@ export default function About() {
               </div>
 
               <div className="flex items-start gap-4 fade-in">
-                <div className="flex-shrink-0 w-12 h-12 bg-brand-teal/20 rounded-full flex items-center justify-center">
-                  <Microscope className="w-6 h-6 text-brand-teal" />
+                <div className="flex-shrink-0 w-12 h-12 bg-brand-peach/20 rounded-full flex items-center justify-center border-2 border-brand-brown/20">
+                  <Microscope className="w-6 h-6 text-brand-brown" />
                 </div>
                 <div>
                   <h5 className="font-semibold text-deep-charcoal">
@@ -138,9 +138,9 @@ export default function About() {
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-8 stagger-group" key="stats-200000">
-              <div className="text-center stagger-item magnetic">
+              <div className="text-center stagger-item magnetic bg-brand-peach/10 rounded-xl p-4 border border-brand-brown/20">
                 <div
-                  className="text-2xl font-bold text-brand-teal text-shimmer counter"
+                  className="text-2xl font-bold text-brand-brown text-shimmer counter"
                   data-target="200000"
                   key="customer-counter-200000"
                 >
@@ -152,9 +152,9 @@ export default function About() {
                   data-progress="85"
                 ></div>
               </div>
-              <div className="text-center stagger-item magnetic">
+              <div className="text-center stagger-item magnetic bg-brand-peach/10 rounded-xl p-4 border border-brand-brown/20">
                 <div
-                  className="text-2xl font-bold text-brand-teal text-shimmer counter"
+                  className="text-2xl font-bold text-brand-brown text-shimmer counter"
                   data-target="8"
                 >
                   0
@@ -165,9 +165,9 @@ export default function About() {
                   data-progress="70"
                 ></div>
               </div>
-              <div className="text-center stagger-item magnetic">
+              <div className="text-center stagger-item magnetic bg-brand-peach/10 rounded-xl p-4 border border-brand-brown/20">
                 <div
-                  className="text-2xl font-bold text-brand-teal text-shimmer counter"
+                  className="text-2xl font-bold text-brand-brown text-shimmer counter"
                   data-target="5"
                 >
                   0

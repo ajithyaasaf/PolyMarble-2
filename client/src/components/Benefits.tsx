@@ -62,9 +62,9 @@ export default function Benefits() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h3 className="text-4xl lg:text-5xl font-bold text-brand-teal reveal-up mb-4">
+          <h3 className="text-4xl lg:text-5xl font-bold text-brand-brown reveal-up mb-4">
             Why Choose{" "}
-            <span className="text-deep-charcoal">Polymarble Sheets?</span>
+            <span className="text-brand-peach">Polymarble Sheets?</span>
           </h3>
           <p className="text-xl text-cool-grey max-w-3xl mx-auto reveal-fade">
             Superior quality meets innovative technology - delivering all the
@@ -114,14 +114,22 @@ export default function Benefits() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-pure-white backdrop-blur-sm rounded-2xl p-6 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-300 stagger-item reveal-up group hover:transform hover:scale-105 shadow-lg"
+              className={`bg-pure-white backdrop-blur-sm rounded-2xl p-6 border-2 ${
+                benefit.color === 'text-brand-peach' ? 'border-brand-peach/30 hover:border-brand-peach/60' :
+                benefit.color === 'text-brand-brown' ? 'border-brand-brown/30 hover:border-brand-brown/60' :
+                'border-brand-teal/30 hover:border-brand-teal/60'
+              } transition-all duration-300 stagger-item reveal-up group hover:transform hover:scale-105 shadow-lg`}
             >
               <div
-                className="w-12 h-12 rounded-full bg-brand-teal/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                className={`w-12 h-12 rounded-full ${
+                  benefit.color === 'text-brand-peach' ? 'bg-brand-peach/10' :
+                  benefit.color === 'text-brand-brown' ? 'bg-brand-brown/10' :
+                  'bg-brand-teal/10'
+                } flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
               >
                 <benefit.icon className={`w-6 h-6 ${benefit.color}`} />
               </div>
-              <h4 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-brand-teal transition-colors duration-300">
+              <h4 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-brand-brown transition-colors duration-300">
                 {benefit.title}
               </h4>
               <p className="text-cool-grey leading-relaxed">
@@ -133,9 +141,9 @@ export default function Benefits() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-gradient-to-r from-brand-teal/10 to-brand-teal/10 backdrop-blur-sm rounded-2xl p-8 border border-brand-teal/20">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-gradient-to-r from-brand-peach/10 via-brand-brown/5 to-brand-peach/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-brand-brown/30">
             <div className="text-center sm:text-left">
-              <h4 className="text-2xl font-bold text-brand-teal mb-2">
+              <h4 className="text-2xl font-bold text-brand-brown mb-2">
                 Ready to Transform Your Space?
               </h4>
               <p className="text-cool-grey">
@@ -143,7 +151,7 @@ export default function Benefits() {
                 affordability.
               </p>
             </div>
-            <button className="px-8 py-4 bg-brand-teal text-pure-white font-bold rounded-full hover:bg-brand-teal/90 transition-all duration-300 hover:scale-105 whitespace-nowrap">
+            <button className="px-8 py-4 bg-brand-brown text-pure-white font-bold rounded-full hover:bg-brand-peach hover:scale-105 transition-all duration-300 whitespace-nowrap" data-testid="button-get-quote">
               Get Your Free Quote
             </button>
           </div>

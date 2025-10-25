@@ -34,11 +34,11 @@ export default function Header() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3" data-testid="link-home-logo">
+            <Link href="/" className="flex items-center gap-3 group" data-testid="link-home-logo">
               <img 
                 src="/logo.png" 
                 alt="Polymarble Sheet Logo" 
-                className="h-12 w-auto"
+                className="h-12 w-auto group-hover:drop-shadow-[0_0_8px_rgba(243,171,141,0.5)] transition-all duration-300"
               />
             </Link>
 
@@ -48,14 +48,14 @@ export default function Header() {
                 <>
                   <button
                     onClick={() => scrollToSection("about")}
-                    className="text-sm font-medium hover:text-brand-teal transition-colors"
+                    className="text-sm font-medium hover:text-brand-peach transition-colors"
                     data-testid="button-about"
                   >
                     About
                   </button>
                   <button
                     onClick={() => scrollToSection("gallery")}
-                    className="text-sm font-medium hover:text-brand-teal transition-colors"
+                    className="text-sm font-medium hover:text-brand-brown transition-colors"
                     data-testid="button-gallery"
                   >
                     Gallery
@@ -69,7 +69,7 @@ export default function Header() {
                   </button>
                   <button
                     onClick={() => scrollToSection("contact")}
-                    className="text-sm font-medium hover:text-brand-teal transition-colors"
+                    className="text-sm font-medium hover:text-brand-peach transition-colors"
                     data-testid="button-contact"
                   >
                     Contact
@@ -77,21 +77,21 @@ export default function Header() {
                 </>
               ) : (
                 <>
-                  <Link href="/" className="text-sm font-medium hover:text-brand-teal transition-colors" data-testid="link-home">
+                  <Link href="/" className="text-sm font-medium hover:text-brand-peach transition-colors" data-testid="link-home">
                     Home
                   </Link>
-                  <Link href="/#about" className="text-sm font-medium hover:text-brand-teal transition-colors" data-testid="link-about">
+                  <Link href="/#about" className="text-sm font-medium hover:text-brand-brown transition-colors" data-testid="link-about">
                     About
                   </Link>
-                  <Link href="/#contact" className="text-sm font-medium hover:text-brand-teal transition-colors" data-testid="link-contact">
+                  <Link href="/#contact" className="text-sm font-medium hover:text-brand-peach transition-colors" data-testid="link-contact">
                     Contact
                   </Link>
                 </>
               )}
-              <Link href="/products" className={`text-sm font-medium transition-colors ${location === '/products' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} data-testid="link-products">
+              <Link href="/products" className={`text-sm font-medium transition-colors ${location === '/products' ? 'text-brand-brown' : 'hover:text-brand-brown'}`} data-testid="link-products">
                 Products
               </Link>
-              <Link href="/inspiration" className={`text-sm font-medium transition-colors ${location === '/inspiration' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} data-testid="link-inspiration">
+              <Link href="/inspiration" className={`text-sm font-medium transition-colors ${location === '/inspiration' ? 'text-brand-peach' : 'hover:text-brand-peach'}`} data-testid="link-inspiration">
                 Inspiration
               </Link>
               <Link href="/support" className={`text-sm font-medium transition-colors ${location === '/support' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} data-testid="link-support">

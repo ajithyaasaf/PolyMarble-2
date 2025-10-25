@@ -8,24 +8,28 @@ export default function TrustIndicators() {
       title: "ISI Certified",
       subtitle: "Quality Assured",
       delay: 0.1,
+      color: "teal",
     },
     {
-      icon: <Award className="w-8 h-8 text-brand-teal" />,
+      icon: <Award className="w-8 h-8 text-brand-peach" />,
       title: "Fire Resistant",
       subtitle: "Class A Rating",
       delay: 0.2,
+      color: "peach",
     },
     {
-      icon: <Users className="w-8 h-8 text-brand-teal" />,
+      icon: <Users className="w-8 h-8 text-brand-brown" />,
       title: "2L+ Customers",
       subtitle: "Trusted Nationwide",
       delay: 0.3,
+      color: "brown",
     },
     {
       icon: <Clock className="w-8 h-8 text-brand-teal" />,
       title: "15+ Year Warranty",
       subtitle: "Guaranteed Quality",
       delay: 0.4,
+      color: "teal",
     },
   ];
 
@@ -33,19 +37,22 @@ export default function TrustIndicators() {
     {
       title: "9 Years of Excellence",
       subtitle: "Since 2017",
-      color: "from-brand-teal/10 via-brand-teal/10 to-transparent",
+      color: "from-brand-peach/10 via-brand-peach/10 to-transparent",
+      borderColor: "border-l-brand-brown",
       delay: 0.5,
     },
     {
       title: "Same Day Installation",
       subtitle: "Available on all products",
       color: "from-brand-brown/10 via-brand-brown/10 to-transparent",
+      borderColor: "border-l-brand-brown",
       delay: 0.6,
     },
     {
       title: "₹40/sq.ft Starting Price",
       subtitle: "The luxury of polymarble, affordable",
       color: "from-brand-peach/10 via-brand-peach/10 to-transparent",
+      borderColor: "border-l-brand-brown",
       delay: 0.7,
     },
   ];
@@ -83,12 +90,12 @@ export default function TrustIndicators() {
             growing network of happy customers worldwide.
           </p>
           <div className="mt-8">
-            <div className="inline-flex items-center rounded-full px-6 py-3 border border-brand-peach/30 bg-brand-peach/5">
+            <div className="inline-flex items-center rounded-full px-6 py-3 border-2 border-brand-brown/30 bg-brand-peach/10">
               <div className="flex items-center mr-4">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-5 h-5 text-brand-peach fill-current"
+                    className="w-5 h-5 text-brand-peach fill-brand-peach drop-shadow-sm"
                   />
                 ))}
               </div>
@@ -107,14 +114,22 @@ export default function TrustIndicators() {
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
-              className="text-center p-6 bg-pure-white/80 rounded-2xl shadow-lg border border-brand-teal/10 hover:border-brand-teal/40 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl"
+              className={`text-center p-6 bg-pure-white/80 rounded-2xl shadow-lg border ${
+                cert.color === "teal" ? "border-brand-teal/10 hover:border-brand-teal/40" :
+                cert.color === "peach" ? "border-brand-peach/10 hover:border-brand-peach/40" :
+                "border-brand-brown/10 hover:border-brand-brown/40"
+              } transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl`}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: cert.delay }}
               variants={fadeInVariants}
             >
-              <div className="w-16 h-16 bg-brand-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className={`w-16 h-16 ${
+                cert.color === "teal" ? "bg-brand-teal/10" :
+                cert.color === "peach" ? "bg-brand-peach/10" :
+                "bg-brand-brown/10"
+              } rounded-full flex items-center justify-center mx-auto mb-4`}>
                 {cert.icon}
               </div>
               <h4 className="font-bold text-deep-charcoal mb-1">
@@ -132,7 +147,7 @@ export default function TrustIndicators() {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className={`p-6 rounded-2xl border-l-4 border-l-brand-teal bg-gradient-to-r ${feature.color} shadow-lg backdrop-blur-sm`}
+                className={`p-6 rounded-2xl border-l-4 ${feature.borderColor} bg-gradient-to-r ${feature.color} shadow-lg backdrop-blur-sm`}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -152,19 +167,19 @@ export default function TrustIndicators() {
             {locations.map((location, index) => (
               <motion.div
                 key={index}
-                className="bg-pure-white/90 rounded-xl p-4 border border-brand-teal/20 text-center shadow-lg transform hover:-translate-y-2 transition-all duration-300"
+                className="bg-brand-peach/10 backdrop-blur-sm rounded-xl p-4 border-2 border-brand-brown/20 text-center shadow-lg transform hover:-translate-y-2 hover:bg-brand-peach/20 hover:border-brand-peach/40 transition-all duration-300"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: location.delay }}
                 variants={fadeInVariants}
               >
-                <MapPin className="w-6 h-6 text-brand-teal mx-auto mb-2" />
+                <MapPin className="w-6 h-6 text-brand-brown mx-auto mb-2" />
                 <h5 className="font-bold text-deep-charcoal text-sm">
                   {location.city}
                 </h5>
                 <p className="text-cool-grey text-xs mb-1">{location.state}</p>
-                <p className="text-brand-teal text-xs font-medium">
+                <p className="text-brand-brown text-xs font-medium">
                   {location.projects} Projects
                 </p>
               </motion.div>

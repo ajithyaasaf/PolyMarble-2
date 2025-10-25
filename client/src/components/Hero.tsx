@@ -75,8 +75,8 @@ export default function Hero() {
       <div className="relative z-10 text-left px-6 max-w-6xl mx-auto">
         <div className="max-w-3xl">
           {/* Subtle positioning for natural contrast */}
-          <div className="inline-flex items-center px-4 py-2 bg-brand-teal border border-brand-teal rounded-full text-pure-white text-sm font-bold mb-6 reveal-fade" data-testid="badge-trust">
-            <div className="w-2 h-2 bg-pure-white rounded-full mr-2 animate-pulse"></div>
+          <div className="inline-flex items-center px-4 py-2 bg-brand-peach border-2 border-brand-brown rounded-full text-deep-charcoal text-sm font-bold mb-6 reveal-fade shadow-lg" data-testid="badge-trust">
+            <div className="w-2 h-2 bg-brand-brown rounded-full mr-2 animate-pulse"></div>
             Trusted by 2,00,000+ Customers Across 5 Countries
           </div>
           <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up text-white" data-testid="text-hero-heading">
@@ -88,7 +88,7 @@ export default function Hero() {
                 "Durable Walls",
                 "Stunning Slabs",
               ]}
-              mainClassName="inline-block text-brand-teal overflow-hidden" // Keep overflow-hidden here
+              mainClassName="inline-block text-brand-peach overflow-hidden" // Keep overflow-hidden here
               staggerFrom="last"
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -194,7 +194,8 @@ export default function Hero() {
 
             <button
               onClick={() => scrollToSection("about")}
-              className="inline-flex items-center px-8 py-4 rounded-full border-2 border-pure-white text-pure-white font-bold text-lg hover:bg-pure-white hover:text-deep-charcoal transition-all duration-300 stagger-item magnetic morph-border"
+              className="inline-flex items-center px-8 py-4 rounded-full bg-brand-brown border-2 border-brand-brown text-pure-white font-bold text-lg hover:bg-brand-peach hover:border-brand-peach transition-all duration-300 transform hover:scale-105 stagger-item magnetic"
+              data-testid="button-our-story"
             >
               Our Story
             </button>
@@ -205,10 +206,11 @@ export default function Hero() {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 float-animation">
         <div
-          className="w-6 h-10 border-2 border-pure-white/50 rounded-full flex justify-center cursor-pointer"
+          className="w-6 h-10 border-2 border-brand-brown/80 rounded-full flex justify-center cursor-pointer hover:border-brand-peach transition-colors"
           onClick={() => scrollToSection("about")}
+          data-testid="button-scroll-indicator"
         >
-          <div className="w-1 h-3 bg-pure-white/50 rounded-full mt-2 animate-pulse"></div>
+          <div className="w-1 h-3 bg-brand-brown/80 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
