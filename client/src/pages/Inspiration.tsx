@@ -39,7 +39,7 @@ export default function Inspiration() {
       description: "Rich textures and warm tones inspired by Tamil Nadu's natural beauty",
       thumbnail: bathroomInstallationImage,
       videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4",
-      projects: ["Thanjavur Resort", "Madurai Villa", "Salem Spa"]
+      projects: ["Thanjavur Resort", "Trichy Villa", "Salem Spa"]
     },
     {
       id: "heritage-modern",
@@ -47,7 +47,7 @@ export default function Inspiration() {
       description: "Traditional craftsmanship meets contemporary design aesthetics",
       thumbnail: commercialAfterImage,
       videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4",
-      projects: ["Tirunelveli Temple Complex", "Madurai Heritage Hotel", "Chennai Museum"]
+      projects: ["Tirunelveli Temple Complex", "Coimbatore Heritage Hotel", "Chennai Museum"]
     },
     {
       id: "wellness-sanctuary",

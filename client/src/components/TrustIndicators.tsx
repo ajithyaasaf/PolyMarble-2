@@ -17,7 +17,7 @@ export default function TrustIndicators() {
     },
     {
       icon: <Users className="w-8 h-8 text-brand-teal" />,
-      title: "2L+ Customers",
+      title: "1500+ Customers",
       subtitle: "Trusted Nationwide",
       delay: 0.3,
     },
@@ -51,10 +51,10 @@ export default function TrustIndicators() {
   ];
 
   const locations = [
-    { city: "Madurai", state: "Tamil Nadu", projects: "5000+", delay: 0.8 },
-    { city: "Chennai", state: "Tamil Nadu", projects: "3000+", delay: 0.9 },
-    { city: "Kuala Lumpur", state: "Malaysia", projects: "500+", delay: 1.0 },
-    { city: "New York", state: "USA", projects: "200+", delay: 1.1 },
+    { city: "Madurai", state: "Tamil Nadu", projects: "800+", delay: 0.8 },
+    { city: "Chennai", state: "Tamil Nadu", projects: "500+", delay: 0.9 },
+    { city: "Kuala Lumpur", state: "Malaysia", projects: "100+", delay: 1.0 },
+    { city: "New York", state: "USA", projects: "50+", delay: 1.1 },
   ];
 
   const fadeInVariants = {

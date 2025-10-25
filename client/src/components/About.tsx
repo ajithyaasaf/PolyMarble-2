@@ -127,7 +127,7 @@ export default function About() {
               <div className="text-center stagger-item magnetic">
                 <div
                   className="text-2xl font-bold text-brand-teal text-shimmer counter"
-                  data-target="200000"
+                  data-target="1500"
                 >
                   0
                 </div>
