@@ -4,25 +4,25 @@ import { motion } from "framer-motion";
 export default function TrustIndicators() {
   const certifications = [
     {
-      icon: <Shield className="w-8 h-8 text-metallic-gold" />,
+      icon: <Shield className="w-8 h-8 text-brand-teal" />,
       title: "ISI Certified",
       subtitle: "Quality Assured",
       delay: 0.1,
     },
     {
-      icon: <Award className="w-8 h-8 text-metallic-gold" />,
+      icon: <Award className="w-8 h-8 text-brand-teal" />,
       title: "Fire Resistant",
       subtitle: "Class A Rating",
       delay: 0.2,
     },
     {
-      icon: <Users className="w-8 h-8 text-metallic-gold" />,
+      icon: <Users className="w-8 h-8 text-brand-teal" />,
       title: "2L+ Customers",
       subtitle: "Trusted Nationwide",
       delay: 0.3,
     },
     {
-      icon: <Clock className="w-8 h-8 text-metallic-gold" />,
+      icon: <Clock className="w-8 h-8 text-brand-teal" />,
       title: "15+ Year Warranty",
       subtitle: "Guaranteed Quality",
       delay: 0.4,
@@ -75,7 +75,7 @@ export default function TrustIndicators() {
           variants={fadeInVariants}
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-deep-charcoal tracking-tight mb-4">
-            <span className="text-metallic-gold">Certified</span> Excellence and
+            <span className="text-brand-teal">Certified</span> Excellence and
             Global Presence
           </h2>
           <p className="text-lg text-cool-grey max-w-2xl mx-auto">
@@ -107,14 +107,14 @@ export default function TrustIndicators() {
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
-              className="text-center p-6 bg-pure-white/80 rounded-2xl shadow-lg border border-metallic-gold/10 hover:border-metallic-gold/40 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl"
+              className="text-center p-6 bg-pure-white/80 rounded-2xl shadow-lg border border-brand-teal/10 hover:border-brand-teal/40 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: cert.delay }}
               variants={fadeInVariants}
             >
-              <div className="w-16 h-16 bg-metallic-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-brand-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 {cert.icon}
               </div>
               <h4 className="font-bold text-deep-charcoal mb-1">
@@ -152,19 +152,19 @@ export default function TrustIndicators() {
             {locations.map((location, index) => (
               <motion.div
                 key={index}
-                className="bg-pure-white/90 rounded-xl p-4 border border-metallic-gold/20 text-center shadow-lg transform hover:-translate-y-2 transition-all duration-300"
+                className="bg-pure-white/90 rounded-xl p-4 border border-brand-teal/20 text-center shadow-lg transform hover:-translate-y-2 transition-all duration-300"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: location.delay }}
                 variants={fadeInVariants}
               >
-                <MapPin className="w-6 h-6 text-metallic-gold mx-auto mb-2" />
+                <MapPin className="w-6 h-6 text-brand-teal mx-auto mb-2" />
                 <h5 className="font-bold text-deep-charcoal text-sm">
                   {location.city}
                 </h5>
                 <p className="text-cool-grey text-xs mb-1">{location.state}</p>
-                <p className="text-metallic-gold text-xs font-medium">
+                <p className="text-brand-teal text-xs font-medium">
                   {location.projects} Projects
                 </p>
               </motion.div>

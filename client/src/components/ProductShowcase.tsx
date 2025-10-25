@@ -121,13 +121,13 @@ export default function ProductShowcase() {
     <section className="relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="w-full h-full bg-gradient-to-br from-metallic-gold/10 to-transparent"></div>
+        <div className="w-full h-full bg-gradient-to-br from-brand-teal/10 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
-            Our <span className="text-metallic-gold text-shimmer">Product Range</span>
+            Our <span className="text-brand-teal text-shimmer">Product Range</span>
           </h3>
           <p className="text-xl text-cool-grey max-w-3xl mx-auto reveal-fade">
             Five distinct categories designed for every space and style. Each engineered for superior performance.
@@ -142,8 +142,8 @@ export default function ProductShowcase() {
               onClick={() => setActiveProduct(index)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeProduct === index
-                  ? 'bg-metallic-gold text-pure-white transform scale-105'
-                  : 'bg-pure-white/50 text-deep-charcoal hover:bg-metallic-gold/20 hover:text-metallic-gold border border-metallic-gold/20'
+                  ? 'bg-brand-teal text-pure-white transform scale-105'
+                  : 'bg-pure-white/50 text-deep-charcoal hover:bg-brand-teal/20 hover:text-brand-teal border border-brand-teal/20'
               }`}
             >
               {product.name}
@@ -163,7 +163,7 @@ export default function ProductShowcase() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* Product Image */}
                 <div className="relative group">
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-metallic-gold/20">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-brand-teal/20">
                     <img
                       src={product.image}
                       alt={product.name}
@@ -179,7 +179,7 @@ export default function ProductShowcase() {
                 {/* Product Details */}
                 <div className="space-y-6">
                   <div>
-                    <div className="inline-flex items-center bg-metallic-gold/20 rounded-full px-3 py-1 text-metallic-gold text-sm font-medium mb-3">
+                    <div className="inline-flex items-center bg-brand-teal/20 rounded-full px-3 py-1 text-brand-teal text-sm font-medium mb-3">
                       {product.tagline}
                     </div>
                     <h4 className="text-3xl font-bold text-deep-charcoal mb-3">{product.name}</h4>
@@ -188,7 +188,7 @@ export default function ProductShowcase() {
 
                   {/* Pricing */}
                   <div className="flex items-center gap-4">
-                    <div className="text-3xl font-bold text-metallic-gold">{product.price}/sq.ft</div>
+                    <div className="text-3xl font-bold text-brand-teal">{product.price}/sq.ft</div>
                     <div className="text-lg text-cool-grey line-through">{product.originalPrice}/sq.ft</div>
                   </div>
 
@@ -196,7 +196,7 @@ export default function ProductShowcase() {
                   <div className="grid grid-cols-3 gap-3">
                     {coreFeatures.map((feature, idx) => (
                       <div key={idx} className="flex items-center text-sm text-cool-grey">
-                        <div className="text-metallic-gold mr-2">{feature.icon}</div>
+                        <div className="text-brand-teal mr-2">{feature.icon}</div>
                         {feature.label}
                       </div>
                     ))}
@@ -208,7 +208,7 @@ export default function ProductShowcase() {
                     <div className="grid grid-cols-2 gap-2">
                       {product.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center text-cool-grey text-sm">
-                          <div className="w-1.5 h-1.5 bg-metallic-gold rounded-full mr-2"></div>
+                          <div className="w-1.5 h-1.5 bg-brand-teal rounded-full mr-2"></div>
                           {feature}
                         </div>
                       ))}
@@ -216,8 +216,8 @@ export default function ProductShowcase() {
                   </div>
 
                   {/* Specifications */}
-                  <div className="bg-pure-white/80 backdrop-blur-sm rounded-lg p-4 border border-metallic-gold/20">
-                    <h5 className="font-bold text-metallic-gold mb-3">Specifications:</h5>
+                  <div className="bg-pure-white/80 backdrop-blur-sm rounded-lg p-4 border border-brand-teal/20">
+                    <h5 className="font-bold text-brand-teal mb-3">Specifications:</h5>
                     <div className="grid grid-cols-2 gap-3 text-sm">
                       {Object.entries(product.specifications).map(([key, value]) => (
                         <div key={key} className="flex justify-between">
@@ -235,7 +235,7 @@ export default function ProductShowcase() {
                       {product.useCases.map((useCase, idx) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 bg-metallic-gold/20 text-metallic-gold text-sm rounded-full"
+                          className="px-3 py-1 bg-brand-teal/20 text-brand-teal text-sm rounded-full"
                         >
                           {useCase}
                         </span>
@@ -245,12 +245,12 @@ export default function ProductShowcase() {
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button className="flex-1 bg-metallic-gold text-pure-white hover:bg-yellow-400 font-bold">
+                    <Button className="flex-1 bg-brand-teal text-pure-white hover:bg-brand-teal/90 font-bold">
                       Get Free Sample
                     </Button>
                     <Button 
                       variant="outline" 
-                      className="flex-1 border-metallic-gold text-metallic-gold hover:bg-metallic-gold hover:text-pure-white font-bold"
+                      className="flex-1 border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-pure-white font-bold"
                     >
                       Calculate Cost
                       <ChevronRight className="w-4 h-4 ml-2" />

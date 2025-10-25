@@ -128,7 +128,7 @@ export default function MarbleViewer({ color, selectedTexture, marbleType }: Mar
   if (isLoading) {
     return (
       <div className="w-full h-96 flex items-center justify-center bg-light-silver/30 rounded-xl">
-        <div className="w-8 h-8 border-4 border-metallic-gold/30 border-t-metallic-gold rounded-full animate-spin"></div>
+        <div className="w-8 h-8 border-4 border-brand-teal/30 border-t-metallic-gold rounded-full animate-spin"></div>
       </div>
     );
   }

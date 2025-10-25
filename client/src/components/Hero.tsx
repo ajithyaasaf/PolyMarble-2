@@ -52,7 +52,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         {/* Solid background while video loads */}
         {!videoLoaded && (
-          <div className="absolute inset-0 bg-gradient-to-br from-warm-cream via-light-silver/50 to-metallic-gold/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-warm-cream via-light-silver/50 to-brand-peach/20"></div>
         )}
 
         <video
@@ -75,11 +75,11 @@ export default function Hero() {
       <div className="relative z-10 text-left px-6 max-w-6xl mx-auto">
         <div className="max-w-3xl">
           {/* Subtle positioning for natural contrast */}
-          <div className="inline-flex items-center px-4 py-2 bg-metallic-gold border border-metallic-gold rounded-full text-pure-white text-sm font-bold mb-6 reveal-fade">
+          <div className="inline-flex items-center px-4 py-2 bg-brand-teal border border-brand-teal rounded-full text-pure-white text-sm font-bold mb-6 reveal-fade" data-testid="badge-trust">
             <div className="w-2 h-2 bg-pure-white rounded-full mr-2 animate-pulse"></div>
             Trusted by 2,00,000+ Customers Across 5 Countries
           </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up text-white">
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up text-white" data-testid="text-hero-heading">
             Transform Spaces with{" "}
             <RotatingText
               texts={[
@@ -88,7 +88,7 @@ export default function Hero() {
                 "Durable Walls",
                 "Stunning Slabs",
               ]}
-              mainClassName="inline-block text-metallic-gold overflow-hidden" // Keep overflow-hidden here
+              mainClassName="inline-block text-brand-teal overflow-hidden" // Keep overflow-hidden here
               staggerFrom="last"
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -109,14 +109,15 @@ export default function Hero() {
               <DialogTrigger asChild>
                 <Button
                   onClick={handleSampleRequest}
-                  className="inline-flex items-center px-8 py-4 rounded-full bg-metallic-gold text-pure-white font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105 duration-300 stagger-item magnetic perspective-tilt ripple-effect"
+                  className="inline-flex items-center px-8 py-4 rounded-full bg-brand-teal text-pure-white font-bold text-lg hover:bg-brand-teal/90 transition-all transform hover:scale-105 duration-300 stagger-item magnetic perspective-tilt ripple-effect"
+                  data-testid="button-sample-quote"
                 >
                   Get Free Sample & Quote
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px] bg-pure-white border-metallic-gold/20">
+              <DialogContent className="sm:max-w-[425px] bg-pure-white border-brand-teal/20">
                 <DialogHeader>
-                  <DialogTitle className="text-metallic-gold">
+                  <DialogTitle className="text-brand-teal">
                     Request Your Free Sample & Quote
                   </DialogTitle>
                 </DialogHeader>
@@ -180,7 +181,7 @@ export default function Hero() {
                 <div className="flex justify-end">
                   <Button
                     type="submit"
-                    className="bg-metallic-gold text-pure-white hover:bg-yellow-400 font-bold"
+                    className="bg-brand-teal text-pure-white hover:bg-brand-teal/90 font-bold"
                   >
                     Send Sample Request
                   </Button>

@@ -126,7 +126,7 @@ export default function FeaturedProjects() {
     <section id="projects" className="relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">Case <span className="text-metallic-gold text-shimmer">Studies</span></h3>
+          <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">Case <span className="text-brand-teal text-shimmer">Studies</span></h3>
           <p className="text-xl text-cool-grey max-w-2xl mx-auto reveal-up">
             Real transformations. Real savings. Real results from across Tamil Nadu.
           </p>
@@ -143,8 +143,8 @@ export default function FeaturedProjects() {
               }}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeFilter === filter
-                  ? 'bg-metallic-gold text-pure-white'
-                  : 'bg-pure-white/50 text-deep-charcoal hover:bg-metallic-gold/20 hover:text-metallic-gold border border-metallic-gold/20'
+                  ? 'bg-brand-teal text-pure-white'
+                  : 'bg-pure-white/50 text-deep-charcoal hover:bg-brand-teal/20 hover:text-brand-teal border border-brand-teal/20'
               }`}
             >
               <Filter className="w-4 h-4 inline mr-2" />
@@ -157,12 +157,12 @@ export default function FeaturedProjects() {
           {visibleProjects.map((study, index) => (
             <div
               key={study.id}
-              className="bg-pure-white/80 backdrop-blur-sm rounded-2xl p-8 border border-metallic-gold/20 stagger-item reveal-up shadow-lg"
+              className="bg-pure-white/80 backdrop-blur-sm rounded-2xl p-8 border border-brand-teal/20 stagger-item reveal-up shadow-lg"
             >
               {/* Header */}
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
                 <div>
-                  <h4 className="text-2xl font-bold text-metallic-gold mb-2">{study.title}</h4>
+                  <h4 className="text-2xl font-bold text-brand-teal mb-2">{study.title}</h4>
                   <p className="text-cool-grey">{study.location} • {study.year}</p>
                 </div>
                 <div className="flex items-center gap-2 mt-4 md:mt-0">
@@ -229,12 +229,12 @@ export default function FeaturedProjects() {
               </div>
 
               {/* Project Stats */}
-              <div className="flex flex-wrap items-center justify-between pt-6 border-t border-metallic-gold/20">
+              <div className="flex flex-wrap items-center justify-between pt-6 border-t border-brand-teal/20">
                 <div className="flex gap-6 text-sm text-cool-grey">
                   <span>Area: <strong className="text-deep-charcoal">{study.sqft} sq.ft.</strong></span>
-                  <span>Category: <strong className="text-metallic-gold">{study.category}</strong></span>
+                  <span>Category: <strong className="text-brand-teal">{study.category}</strong></span>
                 </div>
-                <button className="inline-flex items-center text-metallic-gold hover:text-yellow-400 transition-all duration-300 hover:scale-105 magnetic perspective-tilt mt-4 md:mt-0">
+                <button className="inline-flex items-center text-brand-teal hover:text-yellow-400 transition-all duration-300 hover:scale-105 magnetic perspective-tilt mt-4 md:mt-0">
                   View Full Case Study
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </button>
@@ -248,7 +248,7 @@ export default function FeaturedProjects() {
           <div className="text-center mt-12">
             <button
               onClick={showMore}
-              className="inline-flex items-center px-8 py-4 bg-metallic-gold text-pure-white font-bold rounded-full hover:bg-yellow-400 transition-all duration-300 hover:scale-105 magnetic flip-slab"
+              className="inline-flex items-center px-8 py-4 bg-brand-teal text-pure-white font-bold rounded-full hover:bg-brand-teal/90 transition-all duration-300 hover:scale-105 magnetic flip-slab"
               style={{
                 animation: 'flipSlab 0.6s ease-in-out'
               }}

@@ -126,13 +126,13 @@ export default function Gallery3D() {
                     {texture.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-4 py-2 bg-metallic-gold/20 text-metallic-gold rounded-full text-sm font-medium">
+                    <span className="px-4 py-2 bg-brand-teal/20 text-brand-teal rounded-full text-sm font-medium">
                       Premium Quality
                     </span>
-                    <span className="px-4 py-2 bg-metallic-gold/20 text-metallic-gold rounded-full text-sm font-medium">
+                    <span className="px-4 py-2 bg-brand-teal/20 text-brand-teal rounded-full text-sm font-medium">
                       Fire Resistant
                     </span>
-                    <span className="px-4 py-2 bg-metallic-gold/20 text-metallic-gold rounded-full text-sm font-medium">
+                    <span className="px-4 py-2 bg-brand-teal/20 text-brand-teal rounded-full text-sm font-medium">
                       Easy Installation
                     </span>
                   </div>
@@ -147,7 +147,7 @@ export default function Gallery3D() {
       <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-10">
         <button
           onClick={prevSlide}
-          className="p-3 bg-deep-charcoal/50 backdrop-blur-sm text-pure-white rounded-full hover:bg-metallic-gold hover:text-deep-charcoal transition-all duration-300 group"
+          className="p-3 bg-deep-charcoal/50 backdrop-blur-sm text-pure-white rounded-full hover:bg-brand-teal hover:text-deep-charcoal transition-all duration-300 group"
         >
           <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform" />
         </button>
@@ -156,7 +156,7 @@ export default function Gallery3D() {
       <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10">
         <button
           onClick={nextSlide}
-          className="p-3 bg-deep-charcoal/50 backdrop-blur-sm text-pure-white rounded-full hover:bg-metallic-gold hover:text-deep-charcoal transition-all duration-300 group"
+          className="p-3 bg-deep-charcoal/50 backdrop-blur-sm text-pure-white rounded-full hover:bg-brand-teal hover:text-deep-charcoal transition-all duration-300 group"
         >
           <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform" />
         </button>
@@ -166,7 +166,7 @@ export default function Gallery3D() {
       <div className="absolute top-4 right-4 z-10">
         <button
           onClick={toggleAutoPlay}
-          className="p-2 bg-deep-charcoal/50 backdrop-blur-sm text-pure-white rounded-full hover:bg-metallic-gold hover:text-deep-charcoal transition-all duration-300"
+          className="p-2 bg-deep-charcoal/50 backdrop-blur-sm text-pure-white rounded-full hover:bg-brand-teal hover:text-deep-charcoal transition-all duration-300"
         >
           {isAutoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
         </button>
@@ -181,7 +181,7 @@ export default function Gallery3D() {
               onClick={() => handleSlideChange(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentSlide
-                  ? 'bg-metallic-gold scale-125'
+                  ? 'bg-brand-teal scale-125'
                   : 'bg-pure-white/50 hover:bg-pure-white/80'
               }`}
             />

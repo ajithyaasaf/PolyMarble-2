@@ -30,7 +30,7 @@ export default function Benefits() {
       title: "Cost-Effective",
       description:
         "80% less expensive than natural marble with superior durability",
-      color: "text-metallic-gold",
+      color: "text-brand-teal",
     },
     {
       icon: Leaf,
@@ -57,12 +57,12 @@ export default function Benefits() {
     <section className="relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="w-full h-full bg-gradient-to-br from-metallic-gold/10 to-transparent"></div>
+        <div className="w-full h-full bg-gradient-to-br from-brand-teal/10 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h3 className="text-4xl lg:text-5xl font-bold text-metallic-gold reveal-up mb-4">
+          <h3 className="text-4xl lg:text-5xl font-bold text-brand-teal reveal-up mb-4">
             Why Choose{" "}
             <span className="text-deep-charcoal">Polymarble Sheets?</span>
           </h3>
@@ -74,7 +74,7 @@ export default function Benefits() {
 
         {/* Demo Images Section */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-metallic-gold/20 group">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-brand-teal/20 group">
             <img
               src={waterResistanceDemo}
               alt="Water resistance testing demonstration"
@@ -92,7 +92,7 @@ export default function Benefits() {
             </div>
           </div>
 
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-metallic-gold/20 group">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-brand-teal/20 group">
             <img
               src={fireResistanceDemo}
               alt="Fire resistance testing demonstration"
@@ -114,14 +114,14 @@ export default function Benefits() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-pure-white backdrop-blur-sm rounded-2xl p-6 border border-metallic-gold/20 hover:border-metallic-gold/40 transition-all duration-300 stagger-item reveal-up group hover:transform hover:scale-105 shadow-lg"
+              className="bg-pure-white backdrop-blur-sm rounded-2xl p-6 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-300 stagger-item reveal-up group hover:transform hover:scale-105 shadow-lg"
             >
               <div
                 className={`w-12 h-12 rounded-full bg-gradient-to-br from-${benefit.color.split("-")[1]}-400/20 to-${benefit.color.split("-")[1]}-600/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
               >
                 <benefit.icon className={`w-6 h-6 ${benefit.color}`} />
               </div>
-              <h4 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-metallic-gold transition-colors duration-300">
+              <h4 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-brand-teal transition-colors duration-300">
                 {benefit.title}
               </h4>
               <p className="text-cool-grey leading-relaxed">
@@ -133,9 +133,9 @@ export default function Benefits() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-gradient-to-r from-metallic-gold/10 to-yellow-600/10 backdrop-blur-sm rounded-2xl p-8 border border-metallic-gold/20">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-gradient-to-r from-brand-teal/10 to-brand-teal/10 backdrop-blur-sm rounded-2xl p-8 border border-brand-teal/20">
             <div className="text-center sm:text-left">
-              <h4 className="text-2xl font-bold text-metallic-gold mb-2">
+              <h4 className="text-2xl font-bold text-brand-teal mb-2">
                 Ready to Transform Your Space?
               </h4>
               <p className="text-cool-grey">
@@ -143,7 +143,7 @@ export default function Benefits() {
                 affordability.
               </p>
             </div>
-            <button className="px-8 py-4 bg-metallic-gold text-pure-white font-bold rounded-full hover:bg-yellow-400 transition-all duration-300 hover:scale-105 whitespace-nowrap">
+            <button className="px-8 py-4 bg-brand-teal text-pure-white font-bold rounded-full hover:bg-brand-teal/90 transition-all duration-300 hover:scale-105 whitespace-nowrap">
               Get Your Free Quote
             </button>
           </div>

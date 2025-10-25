@@ -34,13 +34,12 @@ export default function Header() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-metallic-gold to-yellow-600 flex items-center justify-center">
-                <svg className="w-6 h-6 text-pure-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2L2 7v10c0 5.55 3.84 9.64 9 11 5.16-1.36 9-5.45 9-11V7l-10-5z"/>
-                </svg>
-              </div>
-              <h1 className="text-xl font-bold tracking-wider">POLYMARBLE SHEET INDIA</h1>
+            <Link href="/" className="flex items-center gap-3" data-testid="link-home-logo">
+              <img 
+                src="/logo.png" 
+                alt="Polymarble Sheet Logo" 
+                className="h-12 w-auto"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -49,49 +48,53 @@ export default function Header() {
                 <>
                   <button
                     onClick={() => scrollToSection("about")}
-                    className="text-sm font-medium hover:text-metallic-gold transition-colors"
+                    className="text-sm font-medium hover:text-brand-teal transition-colors"
+                    data-testid="button-about"
                   >
                     About
                   </button>
                   <button
                     onClick={() => scrollToSection("gallery")}
-                    className="text-sm font-medium hover:text-metallic-gold transition-colors"
+                    className="text-sm font-medium hover:text-brand-teal transition-colors"
+                    data-testid="button-gallery"
                   >
                     Gallery
                   </button>
                   <button
                     onClick={() => scrollToSection("projects")}
-                    className="text-sm font-medium hover:text-metallic-gold transition-colors"
+                    className="text-sm font-medium hover:text-brand-teal transition-colors"
+                    data-testid="button-projects"
                   >
                     Case Studies
                   </button>
                   <button
                     onClick={() => scrollToSection("contact")}
-                    className="text-sm font-medium hover:text-metallic-gold transition-colors"
+                    className="text-sm font-medium hover:text-brand-teal transition-colors"
+                    data-testid="button-contact"
                   >
                     Contact
                   </button>
                 </>
               ) : (
                 <>
-                  <Link href="/" className="text-sm font-medium hover:text-metallic-gold transition-colors">
+                  <Link href="/" className="text-sm font-medium hover:text-brand-teal transition-colors" data-testid="link-home">
                     Home
                   </Link>
-                  <Link href="/#about" className="text-sm font-medium hover:text-metallic-gold transition-colors">
+                  <Link href="/#about" className="text-sm font-medium hover:text-brand-teal transition-colors" data-testid="link-about">
                     About
                   </Link>
-                  <Link href="/#contact" className="text-sm font-medium hover:text-metallic-gold transition-colors">
+                  <Link href="/#contact" className="text-sm font-medium hover:text-brand-teal transition-colors" data-testid="link-contact">
                     Contact
                   </Link>
                 </>
               )}
-              <Link href="/products" className={`text-sm font-medium transition-colors ${location === '/products' ? 'text-metallic-gold' : 'hover:text-metallic-gold'}`}>
+              <Link href="/products" className={`text-sm font-medium transition-colors ${location === '/products' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} data-testid="link-products">
                 Products
               </Link>
-              <Link href="/inspiration" className={`text-sm font-medium transition-colors ${location === '/inspiration' ? 'text-metallic-gold' : 'hover:text-metallic-gold'}`}>
+              <Link href="/inspiration" className={`text-sm font-medium transition-colors ${location === '/inspiration' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} data-testid="link-inspiration">
                 Inspiration
               </Link>
-              <Link href="/support" className={`text-sm font-medium transition-colors ${location === '/support' ? 'text-metallic-gold' : 'hover:text-metallic-gold'}`}>
+              <Link href="/support" className={`text-sm font-medium transition-colors ${location === '/support' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} data-testid="link-support">
                 Support
               </Link>
             </nav>
@@ -113,49 +116,53 @@ export default function Header() {
                   <>
                     <button
                       onClick={() => scrollToSection("about")}
-                      className="text-sm font-medium hover:text-metallic-gold transition-colors text-left"
+                      className="text-sm font-medium hover:text-brand-teal transition-colors text-left"
+                      data-testid="button-mobile-about"
                     >
                       About
                     </button>
                     <button
                       onClick={() => scrollToSection("gallery")}
-                      className="text-sm font-medium hover:text-metallic-gold transition-colors text-left"
+                      className="text-sm font-medium hover:text-brand-teal transition-colors text-left"
+                      data-testid="button-mobile-gallery"
                     >
                       Gallery
                     </button>
                     <button
                       onClick={() => scrollToSection("projects")}
-                      className="text-sm font-medium hover:text-metallic-gold transition-colors text-left"
+                      className="text-sm font-medium hover:text-brand-teal transition-colors text-left"
+                      data-testid="button-mobile-projects"
                     >
                       Case Studies
                     </button>
                     <button
                       onClick={() => scrollToSection("contact")}
-                      className="text-sm font-medium hover:text-metallic-gold transition-colors text-left"
+                      className="text-sm font-medium hover:text-brand-teal transition-colors text-left"
+                      data-testid="button-mobile-contact"
                     >
                       Contact
                     </button>
                   </>
                 ) : (
                   <>
-                    <Link href="/" className="text-sm font-medium hover:text-metallic-gold transition-colors text-left" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link href="/" className="text-sm font-medium hover:text-brand-teal transition-colors text-left" onClick={() => setIsMobileMenuOpen(false)} data-testid="link-mobile-home">
                       Home
                     </Link>
-                    <Link href="/#about" className="text-sm font-medium hover:text-metallic-gold transition-colors text-left" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link href="/#about" className="text-sm font-medium hover:text-brand-teal transition-colors text-left" onClick={() => setIsMobileMenuOpen(false)} data-testid="link-mobile-about">
                       About
                     </Link>
-                    <Link href="/#contact" className="text-sm font-medium hover:text-metallic-gold transition-colors text-left" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link href="/#contact" className="text-sm font-medium hover:text-brand-teal transition-colors text-left" onClick={() => setIsMobileMenuOpen(false)} data-testid="link-mobile-contact">
                       Contact
                     </Link>
                   </>
                 )}
-                <Link href="/products" className={`text-sm font-medium transition-colors text-left ${location === '/products' ? 'text-metallic-gold' : 'hover:text-metallic-gold'}`} onClick={() => setIsMobileMenuOpen(false)}>
+                <Link href="/products" className={`text-sm font-medium transition-colors text-left ${location === '/products' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} onClick={() => setIsMobileMenuOpen(false)} data-testid="link-mobile-products">
                   Products
                 </Link>
-                <Link href="/inspiration" className={`text-sm font-medium transition-colors text-left ${location === '/inspiration' ? 'text-metallic-gold' : 'hover:text-metallic-gold'}`} onClick={() => setIsMobileMenuOpen(false)}>
+                <Link href="/inspiration" className={`text-sm font-medium transition-colors text-left ${location === '/inspiration' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} onClick={() => setIsMobileMenuOpen(false)} data-testid="link-mobile-inspiration">
                   Inspiration
                 </Link>
-                <Link href="/support" className={`text-sm font-medium transition-colors text-left ${location === '/support' ? 'text-metallic-gold' : 'hover:text-metallic-gold'}`} onClick={() => setIsMobileMenuOpen(false)}>
+                <Link href="/support" className={`text-sm font-medium transition-colors text-left ${location === '/support' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} onClick={() => setIsMobileMenuOpen(false)} data-testid="link-mobile-support">
                   Support
                 </Link>
               </nav>
