@@ -17,7 +17,7 @@ export default function TrustIndicators() {
     },
     {
       icon: <Users className="w-8 h-8 text-brand-teal" />,
-      title: "1500+ Customers",
+      title: "5000+ Customers",
       subtitle: "Trusted Nationwide",
       delay: 0.3,
     },

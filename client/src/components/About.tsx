@@ -123,12 +123,12 @@ export default function About() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-8 stagger-group" key="stats-1500">
+            <div className="grid grid-cols-3 gap-4 pt-8 stagger-group" key="stats-5000">
               <div className="text-center stagger-item magnetic">
                 <div
                   className="text-2xl font-bold text-brand-teal text-shimmer counter"
-                  data-target="1500"
-                  key="customer-counter-1500"
+                  data-target="5000"
+                  key="customer-counter-5000"
                 >
                   0
                 </div>
