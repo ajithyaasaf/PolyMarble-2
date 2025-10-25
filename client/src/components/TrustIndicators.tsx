@@ -126,7 +126,7 @@ export default function TrustIndicators() {
         </div>
 
         {/* Overlapping Features & Global Presence */}
-        <div className="md:col-span-1 lg:col-span-2 relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 p-4">
+        <div className="md:col-span-1 lg:col-span-2 relative grid grid-cols-1 gap-6 p-4 pb-8 lg:pb-16">
           {/* Overlapping Features Section */}
           <div className="relative z-10 grid grid-cols-1 gap-4">
             {features.map((feature, index) => (
@@ -147,8 +147,8 @@ export default function TrustIndicators() {
             ))}
           </div>
 
-          {/* Global Presence Section */}
-          <div className="relative mt-6 md:mt-0 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-4">
+          {/* Global Presence Section (Layered effect with controlled offset) */}
+          <div className="relative z-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 -mt-8 md:-mt-4 lg:-mt-6">
             {locations.map((location, index) => (
               <motion.div
                 key={index}
