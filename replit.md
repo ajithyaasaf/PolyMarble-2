@@ -107,10 +107,14 @@ Polymarbles 3D is a modern web application showcasing luxury marble sculptures a
 
 ## Changelog
 
+- November 05, 2025: Updated Gallery page banner to match other pages' professional hero style
+  - Added marble background image with dark gradient overlay for text readability
+  - Updated text styling to white with drop shadows matching Products page banner
+  - Improved visual consistency across all page banners
 - November 05, 2025: Fixed unwanted spacing gap between Gallery3D and Customer Installations sections
-  - Applied `!pb-0` and `!pt-0` important modifiers to override high-specificity `.section-spacing` padding
-  - Eliminated 6rem gap caused by custom utility class precedence over standard Tailwind utilities
-  - Sections now sit flush as intended with proper visual flow
+  - Removed `.section-spacing` class from both Gallery3D wrapper and Customer Installations section
+  - Replaced with standard Tailwind utilities (py-24) to avoid CSS specificity conflicts
+  - Sections now sit flush with no unwanted gap
 - November 05, 2025: Created dedicated Gallery page with video playback functionality
   - Moved VideoGallery component from Home page to new standalone Gallery page at /gallery route
   - Fixed video playback by implementing proper Vite asset imports using @assets alias for all 18 customer installation videos
