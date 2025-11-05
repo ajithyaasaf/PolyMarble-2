@@ -82,7 +82,7 @@ export default function Gallery3D() {
   };
 
   return (
-    <section id="gallery" className="relative h-screen w-full overflow-hidden">
+    <section id="gallery" className="relative h-[600px] md:h-[700px] w-full overflow-hidden">
       {/* Full-Width Carousel */}
       <div className="relative w-full h-full">
         {productCategories.map((texture, index) => (

@@ -82,7 +82,7 @@
   /* Professional Section Spacing and Visual Hierarchy */
   .section-spacing {
     @apply relative;
-    padding: 5rem 0; /* Consistent vertical spacing */
+    padding: 3rem 0; /* Consistent vertical spacing */
   }
 
   .section-spacing:before {
