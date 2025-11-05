@@ -72,7 +72,7 @@ export default function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-left px-6 max-w-6xl mx-auto">
+      <div className="relative z-10 text-left px-6 max-w-6xl mx-auto pt-20 md:pt-0">
         <div className="max-w-3xl">
           {/* Subtle positioning for natural contrast */}
           <div className="inline-flex items-center px-4 py-2 bg-brand-teal border border-brand-teal rounded-full text-pure-white text-sm font-bold mb-6 reveal-fade" data-testid="badge-trust">
