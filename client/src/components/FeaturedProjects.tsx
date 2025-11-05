@@ -123,10 +123,20 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section id="projects" className="relative overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="relative overflow-hidden py-20">
+      {/* Ambient Background with Parallax */}
+      <div className="absolute inset-0 bg-gradient-to-br from-warm-cream via-pure-white to-light-silver/20"></div>
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div className="parallax-slow absolute top-20 right-20 w-96 h-96 bg-brand-teal/5 rounded-full blur-3xl"></div>
+        <div className="parallax-medium absolute bottom-40 left-10 w-80 h-80 bg-brand-peach/5 rounded-full blur-3xl"></div>
+        <div className="parallax-fast absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-light-silver/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">Case <span className="text-brand-teal text-shimmer">Studies</span></h3>
+          <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
+            Case <span className="text-brand-teal text-shimmer">Studies</span>
+          </h3>
           <p className="text-xl text-cool-grey max-w-2xl mx-auto reveal-up">
             Real transformations. Real savings. Real results from across Tamil Nadu.
           </p>
@@ -157,74 +167,101 @@ export default function FeaturedProjects() {
           {visibleProjects.map((study, index) => (
             <div
               key={study.id}
-              className="bg-pure-white/80 backdrop-blur-sm rounded-2xl p-8 border border-brand-teal/20 stagger-item reveal-up shadow-lg"
+              className="bg-pure-white/80 backdrop-blur-xl rounded-3xl p-8 border border-brand-teal/30 stagger-item reveal-up shadow-2xl hover:shadow-3xl transition-all duration-500 group"
+              style={{
+                transform: `perspective(1000px) rotateX(${index % 2 === 0 ? '1deg' : '-1deg'})`,
+              }}
             >
+              {/* Decorative Accent */}
+              <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-brand-teal via-brand-peach to-brand-teal rounded-l-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
               {/* Header */}
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 reveal-left">
                 <div>
-                  <h4 className="text-2xl font-bold text-brand-teal mb-2">{study.title}</h4>
+                  <div className="inline-flex items-center gap-2 bg-brand-teal/10 px-3 py-1 rounded-full mb-3">
+                    <span className="text-xs font-bold text-brand-teal uppercase tracking-wide">Project {index + 1}</span>
+                  </div>
+                  <h4 className="text-3xl font-bold text-brand-teal mb-2 group-hover:text-shimmer transition-all">
+                    {study.title}
+                  </h4>
                   <p className="text-cool-grey">{study.location} • {study.year}</p>
                 </div>
-                <div className="flex items-center gap-2 mt-4 md:mt-0">
-                  <TrendingUp className="w-5 h-5 text-brand-teal" />
-                  <span className="text-brand-teal font-bold text-lg">Saved {study.roiSavings}/sq.ft. vs. natural marble</span>
+                <div className="flex items-center gap-2 mt-4 md:mt-0 bg-gradient-to-r from-brand-teal/10 to-brand-peach/10 p-4 rounded-xl">
+                  <TrendingUp className="w-5 h-5 text-brand-teal animate-pulse" />
+                  <span className="text-brand-teal font-bold text-lg">Saved {study.roiSavings}/sq.ft.</span>
                 </div>
               </div>
 
-              {/* Before → During → After */}
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
+              {/* Scrollytelling Timeline: Before → During → After */}
+              <div className="grid md:grid-cols-3 gap-6 mb-8 relative">
+                {/* Timeline Line */}
+                <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-brown via-brand-peach to-brand-teal opacity-30"></div>
+                
                 {/* Before */}
-                <div className="group">
-                  <div className="relative overflow-hidden rounded-xl mb-4">
+                <div className="group/stage relative reveal-left">
+                  <div className="relative overflow-hidden rounded-2xl mb-4 border-2 border-brand-brown/30 shadow-lg">
                     <img
                       src={study.beforeImage}
                       alt={`${study.title} - Before`}
-                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-56 object-cover transition-all duration-700 group-hover/stage:scale-110 group-hover/stage:rotate-1"
                       loading="lazy"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/50 to-transparent opacity-0 group-hover/stage:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-brand-brown/80 text-pure-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-brand-brown text-pure-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
                         Before
                       </span>
                     </div>
+                    {/* Timeline Marker */}
+                    <div className="hidden md:block absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-brand-brown rounded-full border-4 border-pure-white shadow-lg"></div>
                   </div>
-                  <p className="text-cool-grey text-sm leading-relaxed">{study.before}</p>
+                  <p className="text-cool-grey text-sm leading-relaxed bg-pure-white/50 p-4 rounded-lg">{study.before}</p>
                 </div>
 
                 {/* During */}
-                <div className="group">
-                  <div className="relative overflow-hidden rounded-xl mb-4">
+                <div className="group/stage relative reveal-scale">
+                  <div className="relative overflow-hidden rounded-2xl mb-4 border-2 border-brand-peach/30 shadow-lg">
                     <img
                       src={study.duringImage}
                       alt={`${study.title} - During`}
-                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-56 object-cover transition-all duration-700 group-hover/stage:scale-110 group-hover/stage:rotate-1"
                       loading="lazy"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/50 to-transparent opacity-0 group-hover/stage:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-brand-peach/80 text-pure-white px-3 py-1 rounded-full text-sm font-medium">
-                        During
+                      <span className="bg-brand-peach text-pure-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                        During Installation
                       </span>
                     </div>
+                    {/* Timeline Marker */}
+                    <div className="hidden md:block absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-brand-peach rounded-full border-4 border-pure-white shadow-lg"></div>
                   </div>
-                  <p className="text-cool-grey text-sm leading-relaxed">{study.during}</p>
+                  <p className="text-cool-grey text-sm leading-relaxed bg-pure-white/50 p-4 rounded-lg">{study.during}</p>
                 </div>
 
                 {/* After */}
-                <div className="group">
-                  <div className="relative overflow-hidden rounded-xl mb-4">
+                <div className="group/stage relative reveal-right">
+                  <div className="relative overflow-hidden rounded-2xl mb-4 border-2 border-brand-teal/30 shadow-lg">
                     <img
                       src={study.afterImage}
                       alt={`${study.title} - After`}
-                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-56 object-cover transition-all duration-700 group-hover/stage:scale-110 group-hover/stage:rotate-1"
                       loading="lazy"
                     />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-brand-teal/80 text-pure-white px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/50 to-transparent opacity-0 group-hover/stage:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute top-4 left-4 flex items-center gap-2">
+                      <span className="bg-brand-teal text-pure-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
                         After
                       </span>
                     </div>
+                    {/* Timeline Marker */}
+                    <div className="hidden md:block absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-brand-teal rounded-full border-4 border-pure-white shadow-lg"></div>
+                    {/* Success Badge */}
+                    <div className="absolute bottom-4 right-4 bg-pure-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-lg">
+                      <span className="text-xs font-bold text-brand-teal">✓ Completed</span>
+                    </div>
                   </div>
-                  <p className="text-cool-grey text-sm leading-relaxed">{study.after}</p>
+                  <p className="text-cool-grey text-sm leading-relaxed bg-pure-white/50 p-4 rounded-lg">{study.after}</p>
                 </div>
               </div>
 
