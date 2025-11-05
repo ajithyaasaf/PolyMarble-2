@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
 import Home from "@/pages/Home";
 import Products from "@/pages/Products";
+import Gallery from "@/pages/Gallery";
 import Inspiration from "@/pages/Inspiration";
 import Support from "@/pages/Support";
 import MarbleWallSheetMadurai from "@/pages/MarbleWallSheetMadurai";
@@ -17,6 +18,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/products" component={Products} />
+      <Route path="/gallery" component={Gallery} />
       <Route path="/inspiration" component={Inspiration} />
       <Route path="/support" component={Support} />
       <Route path="/marble-wall-sheet-madurai" component={MarbleWallSheetMadurai} />

@@ -2,6 +2,25 @@ import { useState } from "react";
 import { Play, X, MapPin, Filter } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
+import video1 from "@assets/IMG_7687-optimized_1762339119496.mp4";
+import video2 from "@assets/IMG_7689-optimized_1762339119497.mp4";
+import video3 from "@assets/IMG_7694-optimized_1762339119497.mp4";
+import video4 from "@assets/IMG_7701-optimized_1762339119497.mp4";
+import video5 from "@assets/IMG_7707-optimized_1762339119497.mp4";
+import video6 from "@assets/IMG_4476-optimized_1762339251996.mp4";
+import video7 from "@assets/IMG_4477-optimized_1762339251996.mp4";
+import video8 from "@assets/IMG_4478-optimized_1762339251996.mp4";
+import video9 from "@assets/IMG_4480-optimized_1762339251997.mp4";
+import video10 from "@assets/IMG_4488-optimized_1762339251997.mp4";
+import video11 from "@assets/IMG_4490-optimized_1762339251997.mp4";
+import video12 from "@assets/IMG_4495-optimized_1762339251997.mp4";
+import video13 from "@assets/IMG_4496-optimized_1762339251997.mp4";
+import video14 from "@assets/IMG_4500-optimized_1762339251997.mp4";
+import video15 from "@assets/IMG_4506-optimized_1762339251998.mp4";
+import video16 from "@assets/IMG_4519-optimized_1762339251998.mp4";
+import video17 from "@assets/IMG_4526-optimized_1762339251998.mp4";
+import video18 from "@assets/IMG_4528-optimized_1762339251998.mp4";
+
 interface Video {
   id: string;
   src: string;
@@ -16,24 +35,24 @@ export default function VideoGallery() {
   const [activeFilter, setActiveFilter] = useState<string>("All");
 
   const videos: Video[] = [
-    { id: "1", src: "/attached_assets/IMG_7687-optimized_1762339119496.mp4", location: "Achampathu" },
-    { id: "2", src: "/attached_assets/IMG_7689-optimized_1762339119497.mp4", location: "Achampathu" },
-    { id: "3", src: "/attached_assets/IMG_7694-optimized_1762339119497.mp4", location: "Achampathu" },
-    { id: "4", src: "/attached_assets/IMG_7701-optimized_1762339119497.mp4", location: "Achampathu" },
-    { id: "5", src: "/attached_assets/IMG_7707-optimized_1762339119497.mp4", location: "Achampathu" },
-    { id: "6", src: "/attached_assets/IMG_4476-optimized_1762339251996.mp4", location: "Maathur" },
-    { id: "7", src: "/attached_assets/IMG_4477-optimized_1762339251996.mp4", location: "Maathur" },
-    { id: "8", src: "/attached_assets/IMG_4478-optimized_1762339251996.mp4", location: "Maathur" },
-    { id: "9", src: "/attached_assets/IMG_4480-optimized_1762339251997.mp4", location: "Maathur" },
-    { id: "10", src: "/attached_assets/IMG_4488-optimized_1762339251997.mp4", location: "Maathur" },
-    { id: "11", src: "/attached_assets/IMG_4490-optimized_1762339251997.mp4", location: "Maathur" },
-    { id: "12", src: "/attached_assets/IMG_4495-optimized_1762339251997.mp4", location: "Maathur" },
-    { id: "13", src: "/attached_assets/IMG_4496-optimized_1762339251997.mp4", location: "Maathur" },
-    { id: "14", src: "/attached_assets/IMG_4500-optimized_1762339251997.mp4", location: "Maathur" },
-    { id: "15", src: "/attached_assets/IMG_4506-optimized_1762339251998.mp4", location: "Maathur" },
-    { id: "16", src: "/attached_assets/IMG_4519-optimized_1762339251998.mp4", location: "Maathur" },
-    { id: "17", src: "/attached_assets/IMG_4526-optimized_1762339251998.mp4", location: "Maathur" },
-    { id: "18", src: "/attached_assets/IMG_4528-optimized_1762339251998.mp4", location: "Maathur" },
+    { id: "1", src: video1, location: "Achampathu" },
+    { id: "2", src: video2, location: "Achampathu" },
+    { id: "3", src: video3, location: "Achampathu" },
+    { id: "4", src: video4, location: "Achampathu" },
+    { id: "5", src: video5, location: "Achampathu" },
+    { id: "6", src: video6, location: "Maathur" },
+    { id: "7", src: video7, location: "Maathur" },
+    { id: "8", src: video8, location: "Maathur" },
+    { id: "9", src: video9, location: "Maathur" },
+    { id: "10", src: video10, location: "Maathur" },
+    { id: "11", src: video11, location: "Maathur" },
+    { id: "12", src: video12, location: "Maathur" },
+    { id: "13", src: video13, location: "Maathur" },
+    { id: "14", src: video14, location: "Maathur" },
+    { id: "15", src: video15, location: "Maathur" },
+    { id: "16", src: video16, location: "Maathur" },
+    { id: "17", src: video17, location: "Maathur" },
+    { id: "18", src: video18, location: "Maathur" },
   ];
 
   const filteredVideos = activeFilter === "All" 

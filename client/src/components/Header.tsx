@@ -54,13 +54,6 @@ export default function Header() {
                     About
                   </button>
                   <button
-                    onClick={() => scrollToSection("gallery")}
-                    className="text-sm font-medium hover:text-brand-teal transition-colors"
-                    data-testid="button-gallery"
-                  >
-                    Gallery
-                  </button>
-                  <button
                     onClick={() => scrollToSection("projects")}
                     className="text-sm font-medium hover:text-brand-teal transition-colors"
                     data-testid="button-projects"
@@ -90,6 +83,9 @@ export default function Header() {
               )}
               <Link href="/products" className={`text-sm font-medium transition-colors ${location === '/products' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} data-testid="link-products">
                 Products
+              </Link>
+              <Link href="/gallery" className={`text-sm font-medium transition-colors ${location === '/gallery' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} data-testid="link-gallery">
+                Gallery
               </Link>
               <Link href="/inspiration" className={`text-sm font-medium transition-colors ${location === '/inspiration' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} data-testid="link-inspiration">
                 Inspiration
@@ -122,13 +118,6 @@ export default function Header() {
                       About
                     </button>
                     <button
-                      onClick={() => scrollToSection("gallery")}
-                      className="text-sm font-medium hover:text-brand-teal transition-colors text-left"
-                      data-testid="button-mobile-gallery"
-                    >
-                      Gallery
-                    </button>
-                    <button
                       onClick={() => scrollToSection("projects")}
                       className="text-sm font-medium hover:text-brand-teal transition-colors text-left"
                       data-testid="button-mobile-projects"
@@ -158,6 +147,9 @@ export default function Header() {
                 )}
                 <Link href="/products" className={`text-sm font-medium transition-colors text-left ${location === '/products' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} onClick={() => setIsMobileMenuOpen(false)} data-testid="link-mobile-products">
                   Products
+                </Link>
+                <Link href="/gallery" className={`text-sm font-medium transition-colors text-left ${location === '/gallery' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} onClick={() => setIsMobileMenuOpen(false)} data-testid="link-mobile-gallery">
+                  Gallery
                 </Link>
                 <Link href="/inspiration" className={`text-sm font-medium transition-colors text-left ${location === '/inspiration' ? 'text-brand-teal' : 'hover:text-brand-teal'}`} onClick={() => setIsMobileMenuOpen(false)} data-testid="link-mobile-inspiration">
                   Inspiration
