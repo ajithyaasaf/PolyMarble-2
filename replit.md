@@ -107,6 +107,13 @@ Polymarbles 3D is a modern web application showcasing luxury marble sculptures a
 
 ## Changelog
 
+- November 05, 2025: Created dedicated Gallery page with video playback functionality
+  - Moved VideoGallery component from Home page to new standalone Gallery page at /gallery route
+  - Fixed video playback by implementing proper Vite asset imports using @assets alias for all 18 customer installation videos
+  - Updated navigation (Header component) to include Gallery link for desktop and mobile with active state styling
+  - Replaced VideoGallery section on Home page with elegant CTA preview section linking to Gallery page
+  - Added SEO metadata to Gallery page for better search engine optimization
+  - Verified all videos now load and play correctly using Vite's asset handling system
 - August 22, 2025: Enhanced hero section text contrast and readability
   - Applied professional UI design principles with multi-layer gradient overlays
   - Added comprehensive text shadows for superior contrast against light marble backgrounds
