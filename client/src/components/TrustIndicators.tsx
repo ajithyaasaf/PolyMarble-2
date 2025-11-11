@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 export default function TrustIndicators() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     const observerOptions = {
@@ -31,7 +31,7 @@ export default function TrustIndicators() {
     const elements = sectionRef.current?.querySelectorAll(
       ".reveal-up, .reveal-left, .reveal-right, .reveal-scale",
     );
-    elements?.forEach((el: Element) => observer.observe(el));
+    elements?.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
