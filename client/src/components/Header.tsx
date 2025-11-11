@@ -159,53 +159,51 @@ export default function Header() {
       >
         <div className="bg-brand-teal text-pure-white">
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="flex items-center justify-between py-2.5 sm:py-2 text-xs">
+            <div className="flex items-center justify-between py-2 sm:py-2 text-xs min-h-[40px]">
               <div className="flex items-center gap-3 sm:gap-6">
                 <a
                   href="tel:+919842106768"
                   className="flex items-center gap-1.5 sm:gap-2 hover:text-brand-peach transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5 sm:w-3 sm:h-3 flex-shrink-0" />
-                  <span className="font-medium text-[11px] sm:text-xs">+91 98421 06768</span>
+                  <span className="font-medium text-[11px] sm:text-xs whitespace-nowrap">+91 98421 06768</span>
                 </a>
                 <span className="hidden sm:flex items-center gap-2">
                   <MapPin className="w-3 h-3" />
                   <span>Madurai, India</span>
                 </span>
               </div>
-              <div className="flex items-center gap-2 sm:gap-4">
-                <div className="flex items-center gap-2.5 sm:gap-3">
-                  <a
-                    href="https://www.instagram.com/polymarblesheet_india?igsh=MXZoczNwcWxleWl6bw=="
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-pure-white hover:text-brand-peach transition-colors"
-                    aria-label="Instagram"
-                    data-testid="link-header-social-instagram"
-                  >
-                    <Instagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
-                  </a>
-                  <a
-                    href="https://www.facebook.com/polymarblesheets"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-pure-white hover:text-brand-peach transition-colors"
-                    aria-label="Facebook"
-                    data-testid="link-header-social-facebook"
-                  >
-                    <Facebook className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
-                  </a>
-                  <a
-                    href="https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-pure-white hover:text-brand-peach transition-colors"
-                    aria-label="Youtube"
-                    data-testid="link-header-social-youtube"
-                  >
-                    <Youtube className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
-                  </a>
-                </div>
+              <div className="flex items-center gap-2.5 sm:gap-3">
+                <a
+                  href="https://www.instagram.com/polymarblesheet_india?igsh=MXZoczNwcWxleWl6bw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pure-white hover:text-brand-peach transition-colors"
+                  aria-label="Instagram"
+                  data-testid="link-header-social-instagram"
+                >
+                  <Instagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                </a>
+                <a
+                  href="https://www.facebook.com/polymarblesheets"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pure-white hover:text-brand-peach transition-colors"
+                  aria-label="Facebook"
+                  data-testid="link-header-social-facebook"
+                >
+                  <Facebook className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                </a>
+                <a
+                  href="https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pure-white hover:text-brand-peach transition-colors"
+                  aria-label="Youtube"
+                  data-testid="link-header-social-youtube"
+                >
+                  <Youtube className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                </a>
               </div>
             </div>
           </div>
@@ -217,18 +215,18 @@ export default function Header() {
         className={`fixed left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
             ? "top-0 bg-pure-white/95 backdrop-blur-xl shadow-lg"
-            : "top-[42px] sm:top-9 bg-pure-white/80 backdrop-blur-md"
+            : "top-[40px] sm:top-9 bg-pure-white/80 backdrop-blur-md"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-14 sm:h-20">
+          <div className="flex items-center justify-between h-16 sm:h-20 py-2">
             {/* Logo */}
             <Link href="/" className="group flex items-center gap-3 relative">
               <div className="relative">
                 <img
                   src="/logo.png"
                   alt="Polymarble"
-                  className="h-12 sm:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
+                  className="h-11 sm:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
                   data-testid="img-logo"
                 />
                 <div className="absolute -inset-2 bg-gradient-to-r from-brand-teal/20 to-brand-peach/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -365,10 +363,10 @@ export default function Header() {
         <div
           className={`lg:hidden fixed inset-x-0 bg-pure-white shadow-2xl transition-all duration-500 ${
             isMobileMenuOpen
-              ? "top-[98px] sm:top-20 opacity-100 translate-y-0"
-              : "top-[98px] sm:top-20 opacity-0 -translate-y-full pointer-events-none"
+              ? "top-[96px] sm:top-20 opacity-100 translate-y-0"
+              : "top-[96px] sm:top-20 opacity-0 -translate-y-full pointer-events-none"
           }`}
-          style={{ maxHeight: "calc(100vh - 98px)" }}
+          style={{ maxHeight: "calc(100vh - 96px)" }}
         >
           <div className="overflow-y-auto">
             {/* Mobile Navigation */}
