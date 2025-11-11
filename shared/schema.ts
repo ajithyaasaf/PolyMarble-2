@@ -15,3 +15,22 @@ export const insertUserSchema = createInsertSchema(users).pick({
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
+
+export interface Product {
+  id: string;
+  name: string;
+  category: string;
+  tagline: string;
+  description: string;
+  images: string[];
+  material?: string;
+  size?: string;
+  thickness?: string;
+  width?: string;
+  height?: string;
+  finish?: string;
+  features: string[];
+  useCases: string[];
+  warranty?: string;
+  isFeatured: boolean;
+}
