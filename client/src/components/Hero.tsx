@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ArrowRight, Sparkles, Play, Star, Shield, Globe } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -18,11 +18,19 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [activeMetric, setActiveMetric] = useState(0);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play().catch(console.error);
     }
+
+    // Rotate through metrics
+    const interval = setInterval(() => {
+      setActiveMetric((prev) => (prev + 1) % 3);
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const handleVideoLoad = () => {
@@ -36,181 +44,317 @@ export default function Hero() {
     }
   };
 
-  const playClinkSound = () => {
-    // Audio will be added later - for now just a console log
-    console.log("Clink sound played");
-  };
-
-  const handleSampleRequest = () => {
-    playClinkSound();
-    setIsModalOpen(true);
-  };
+  const metrics = [
+    { value: "200K+", label: "Happy Customers", icon: Star },
+    { value: "5", label: "Countries Served", icon: Globe },
+    { value: "15+", label: "Years Warranty", icon: Shield },
+  ];
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Hero Background Video */}
+    /* *** THIS IS THE FIX ***
+      - Reduced top padding from 'pt-32' to 'pt-28' (112px) to tighten the gap.
+    */
+    <section className="relative min-h-screen flex overflow-hidden bg-gradient-to-br from-warm-cream via-pure-white to-warm-cream pt-28">
+      {/* Architectural Grid Pattern Background */}
       <div className="absolute inset-0 z-0">
-        {/* Solid background while video loads */}
-        {!videoLoaded && (
-          <div className="absolute inset-0 bg-gradient-to-br from-warm-cream via-light-silver/50 to-brand-peach/20"></div>
-        )}
-
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          onLoadedData={handleVideoLoad}
-          className={`w-full h-full object-cover object-center transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
-        >
-          <source src={heroBackgroundVideo} type="video/mp4" />
-        </video>
-        {/* Professional overlay - full height from left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
-      </div>
-
-      {/* Hero Content */}
-      <div className="relative z-10 text-left px-6 max-w-6xl mx-auto pt-20 md:pt-0">
-        <div className="max-w-3xl">
-          {/* Subtle positioning for natural contrast */}
-          <div className="inline-flex items-center px-4 py-2 bg-brand-teal border border-brand-teal rounded-full text-pure-white text-sm font-bold mb-6 reveal-fade" data-testid="badge-trust">
-            <div className="w-2 h-2 bg-pure-white rounded-full mr-2 animate-pulse"></div>
-            Trusted by 2,00,000+ Customers Across 5 Countries
-          </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 reveal-up text-white" data-testid="text-hero-heading">
-            Transform Spaces with{" "}
-            <RotatingText
-              texts={[
-                "Premium Polymarble",
-                "Luxury Finishes",
-                "Durable Walls",
-                "Stunning Slabs",
-              ]}
-              mainClassName="inline-block text-brand-teal overflow-hidden" // Keep overflow-hidden here
-              staggerFrom="last"
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: "-120%", opacity: 0 }}
-              staggerDuration={0.025}
-              splitLevelClassName="" // Removed overflow-hidden from here
-              elementLevelClassName="inline-block"
-              rotationInterval={3000}
+        <div className="absolute inset-0 opacity-5">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute h-px bg-brand-teal"
+              style={{
+                top: `${i * 5}%`,
+                left: 0,
+                right: 0,
+                transform: `rotate(${i % 2 === 0 ? 0.5 : -0.5}deg)`,
+              }}
             />
-          </h1>
-          <p className="text-lg md:text-xl text-brand-peach/90 mb-2 reveal-fade font-semibold italic">
-            A Hub of Unique Interior and Exterior Products
-          </p>
-          <p className="text-xl md:text-2xl text-white/90 mb-6 max-w-2xl reveal-fade font-medium">
-            Get the luxury of marble at 80% less cost. Fire-resistant,
-            water-proof, and maintenance-free for 15+ years.
-          </p>
+          ))}
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={`v-${i}`}
+              className="absolute w-px bg-brand-brown"
+              style={{
+                left: `${i * 5}%`,
+                top: 0,
+                bottom: 0,
+                transform: `rotate(${i % 2 === 0 ? 0.5 : -0.5}deg)`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 stagger-group">
-            <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-              <DialogTrigger asChild>
-                <Button
-                  onClick={handleSampleRequest}
-                  className="inline-flex items-center px-8 py-4 rounded-full bg-brand-teal text-pure-white font-bold text-lg hover:bg-brand-teal/90 transition-all transform hover:scale-105 duration-300 stagger-item magnetic perspective-tilt ripple-effect"
-                  data-testid="button-sample-quote"
-                >
-                  Get Free Sample & Quote
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px] bg-pure-white border-brand-teal/20">
-                <DialogHeader>
-                  <DialogTitle className="text-brand-teal">
-                    Request Your Free Sample & Quote
-                  </DialogTitle>
-                </DialogHeader>
-                <div className="grid gap-4 py-4">
-                  <div className="grid grid-cols-4 items-center gap-4">
-                    <Label
-                      htmlFor="name"
-                      className="text-right text-deep-charcoal"
-                    >
-                      Name
-                    </Label>
-                    <Input
-                      id="name"
-                      placeholder="Your full name"
-                      className="col-span-3 bg-pure-white border-light-silver text-deep-charcoal"
+      {/* Floating Shapes */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-brand-teal/5 rounded-full blur-3xl float-slow" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-brand-peach/10 rounded-full blur-3xl float-animation" />
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-brand-brown/5 rounded-full blur-2xl float-fast" />
+      </div>
+
+      {/* Main Content Container 
+          - Adjusted 'py-20' to 'pt-16 pb-20' for better balance
+      */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-16 pb-20">
+        <div className="grid lg:grid-cols-12 gap-8 items-center">
+          {/* Left Content - 7 columns */}
+          <div className="lg:col-span-7 space-y-8">
+            {/* Premium Badge with Animation */}
+            <div className="inline-flex items-center group">
+              <div className="flex items-center gap-3 px-5 py-2.5 bg-gradient-to-r from-brand-teal/10 to-brand-peach/10 border border-brand-teal/20 rounded-full backdrop-blur-sm reveal-scale">
+                <Sparkles className="w-4 h-4 text-brand-teal animate-pulse" />
+                <span className="text-sm font-semibold text-deep-charcoal">
+                  India's Most Trusted Interior Brand
+                </span>
+                <div className="flex -space-x-2">
+                  {[...Array(5)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-2 h-2 rounded-full bg-brand-teal opacity-60"
+                      style={{ animationDelay: `${i * 0.1}s` }}
                     />
-                  </div>
-                  <div className="grid grid-cols-4 items-center gap-4">
-                    <Label
-                      htmlFor="email"
-                      className="text-right text-deep-charcoal"
-                    >
-                      Email
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="your@email.com"
-                      className="col-span-3 bg-pure-white border-light-silver text-deep-charcoal"
-                    />
-                  </div>
-                  <div className="grid grid-cols-4 items-center gap-4">
-                    <Label
-                      htmlFor="phone"
-                      className="text-right text-deep-charcoal"
-                    >
-                      Phone
-                    </Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="+91 98421 06768"
-                      className="col-span-3 bg-pure-white border-light-silver text-deep-charcoal"
-                    />
-                  </div>
-                  <div className="grid grid-cols-4 items-center gap-4">
-                    <Label
-                      htmlFor="project"
-                      className="text-right text-deep-charcoal"
-                    >
-                      Project
-                    </Label>
-                    <Textarea
-                      id="project"
-                      placeholder="Tell us about your project..."
-                      className="col-span-3 bg-pure-white border-light-silver text-deep-charcoal"
-                      rows={3}
-                    />
-                  </div>
+                  ))}
                 </div>
-                <div className="flex justify-end">
-                  <Button
-                    type="submit"
-                    className="bg-brand-teal text-pure-white hover:bg-brand-teal/90 font-bold"
-                  >
-                    Send Sample Request
+              </div>
+            </div>
+
+            {/* Main Headline with Creative Typography */}
+            <div className="space-y-4">
+              <h1 className="reveal-up">
+                <span className="block text-6xl lg:text-7xl font-black text-deep-charcoal leading-none">
+                  Transform
+                </span>
+                <span className="block text-6xl lg:text-8xl font-black leading-none mt-2">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-brown to-brand-peach animate-gradient">
+                    Spaces
+                  </span>
+                </span>
+                <span className="block text-4xl lg:text-5xl font-light text-cool-grey mt-4">
+                  with{" "}
+                  <RotatingText
+                    texts={[
+                      "Premium Polymarble",
+                      "Luxury Finishes",
+                      "Timeless Beauty",
+                      "Modern Innovation",
+                    ]}
+                    mainClassName="inline-block font-black text-brand-teal"
+                    staggerFrom="random"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0, opacity: 0 }}
+                    staggerDuration={0.03}
+                    elementLevelClassName="inline-block"
+                    rotationInterval={3000}
+                  />
+                </span>
+              </h1>
+            </div>
+
+            {/* Value Proposition */}
+            <div className="space-y-3 reveal-fade">
+              <p className="text-xl text-deep-charcoal/80 font-medium leading-relaxed">
+                Experience the luxury of Italian marble at{" "}
+                <span className="text-brand-teal font-bold">80% less cost</span>
+                .
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {["Fire Resistant", "Waterproof", "15+ Years Warranty"].map(
+                  (feature, i) => (
+                    <div
+                      key={feature}
+                      className="flex items-center gap-2 px-4 py-2 bg-pure-white border border-light-silver rounded-full stagger-item"
+                      style={{ animationDelay: `${i * 0.1}s` }}
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-brand-teal" />
+                      <span className="text-sm font-medium text-deep-charcoal">
+                        {feature}
+                      </span>
+                    </div>
+                  ),
+                )}
+              </div>
+            </div>
+
+            {/* CTA Buttons with Premium Design */}
+            <div className="flex flex-wrap gap-4 items-center reveal-up">
+              <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+                <DialogTrigger asChild>
+                  <Button className="group relative px-8 py-6 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white rounded-2xl font-bold text-lg overflow-hidden hover-lift">
+                    <span className="relative z-10 flex items-center gap-3">
+                      Get Free Sample
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-brand-brown to-brand-teal opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </Button>
-                </div>
-              </DialogContent>
-            </Dialog>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[500px] bg-pure-white border-0 rounded-3xl p-0 overflow-hidden">
+                  {/* Modal Header with Gradient */}
+                  <div className="bg-gradient-to-br from-brand-teal to-brand-teal/80 p-6 text-pure-white">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-bold text-pure-white">
+                        Your Premium Experience Awaits
+                      </DialogTitle>
+                      <p className="text-pure-white/80 text-sm mt-2">
+                        Get exclusive samples and personalized quotes
+                      </p>
+                    </DialogHeader>
+                  </div>
 
-            <button
-              onClick={() => scrollToSection("about")}
-              className="inline-flex items-center px-6 py-3 rounded-full bg-brand-peach text-deep-charcoal font-semibold text-base hover:bg-brand-peach/90 transition-all duration-300 stagger-item"
-              data-testid="button-our-story"
-            >
-              Our Story
-            </button>
+                  {/* Modal Form with Better Design */}
+                  <div className="p-6 space-y-4">
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="name"
+                        className="text-deep-charcoal font-medium"
+                      >
+                        Full Name
+                      </Label>
+                      <Input
+                        id="name"
+                        placeholder="John Doe"
+                        className="border-light-silver focus:border-brand-teal transition-colors rounded-xl h-12"
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label
+                          htmlFor="email"
+                          className="text-deep-charcoal font-medium"
+                        >
+                          Email
+                        </Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="john@example.com"
+                          className="border-light-silver focus:border-brand-teal transition-colors rounded-xl h-12"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label
+                          htmlFor="phone"
+                          className="text-deep-charcoal font-medium"
+                        >
+                          Phone
+                        </Label>
+                        <Input
+                          id="phone"
+                          type="tel"
+                          placeholder="+91 98421 06768"
+                          className="border-light-silver focus:border-brand-teal transition-colors rounded-xl h-12"
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="project"
+                        className="text-deep-charcoal font-medium"
+                      >
+                        Project Details
+                      </Label>
+                      <Textarea
+                        id="project"
+                        placeholder="Tell us about your dream space..."
+                        className="border-light-silver focus:border-brand-teal transition-colors rounded-xl min-h-[100px] resize-none"
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white hover:from-brand-teal/90 hover:to-brand-teal font-bold h-12 rounded-xl text-lg"
+                    >
+                      Send My Request
+                    </Button>
+                  </div>
+                </DialogContent>
+              </Dialog>
+
+              <button
+                onClick={() => scrollToSection("portfolio")}
+                className="group px-8 py-6 bg-pure-white border-2 border-brand-teal/20 rounded-2xl font-bold text-brand-teal hover:bg-brand-teal hover:text-pure-white transition-all duration-300"
+              >
+                <span className="flex items-center gap-3">
+                  <Play className="w-5 h-5" />
+                  View Portfolio
+                </span>
+              </button>
+            </div>
+
+            {/* Animated Metrics */}
+            <div className="flex items-center gap-8 pt-4 reveal-fade">
+              {metrics.map((metric, index) => {
+                const Icon = metric.icon;
+                return (
+                  <div
+                    key={index}
+                    className={`flex items-center gap-3 transition-all duration-500 ${
+                      activeMetric === index
+                        ? "scale-110 opacity-100"
+                        : "scale-100 opacity-60"
+                    }`}
+                  >
+                    <Icon className="w-8 h-8 text-brand-teal" />
+                    <div>
+                      <div className="text-2xl font-black text-deep-charcoal">
+                        {metric.value}
+                      </div>
+                      <div className="text-xs text-cool-grey uppercase tracking-wider">
+                        {metric.label}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Right Visual Element - 5 columns */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden reveal-scale">
+              {/* Video Container with Premium Frame */}
+              <div className="absolute inset-4 rounded-2xl overflow-hidden glassmorphism">
+                <video
+                  ref={videoRef}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  onLoadedData={handleVideoLoad}
+                  className="w-full h-full object-cover"
+                >
+                  <source src={heroBackgroundVideo} type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/20 via-transparent to-transparent" />
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 -right-4 w-32 h-32 bg-brand-peach/20 rounded-full blur-2xl" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-brand-teal/20 rounded-full blur-2xl" />
+
+              {/* Floating Badge */}
+              <div className="absolute top-8 right-8 px-4 py-3 bg-pure-white/90 backdrop-blur-md rounded-2xl shadow-xl">
+                <div className="text-3xl font-black text-brand-teal">80%</div>
+                <div className="text-xs text-deep-charcoal">Cost Savings</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 float-animation">
-        <div
-          className="w-6 h-10 border-2 border-pure-white/50 rounded-full flex justify-center cursor-pointer"
+      {/* Modern Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <button
           onClick={() => scrollToSection("about")}
+          className="group flex flex-col items-center gap-2 text-cool-grey hover:text-brand-teal transition-colors"
         >
-          <div className="w-1 h-3 bg-pure-white/50 rounded-full mt-2 animate-pulse"></div>
-        </div>
+          <span className="text-xs uppercase tracking-widest">
+            Scroll to Explore
+          </span>
+          <div className="relative w-6 h-10 border-2 border-current rounded-full">
+            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-current rounded-full animate-bounce" />
+          </div>
+        </button>
       </div>
     </section>
   );
