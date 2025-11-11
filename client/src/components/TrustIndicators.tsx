@@ -3,10 +3,8 @@ import {
   Shield,
   Users,
   Clock,
-  MapPin,
   Star,
   CheckCircle2,
-  Sparkles,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -38,12 +36,12 @@ export default function TrustIndicators() {
 
   const stats = [
     {
-      value: "2L+",
+      value: "2000+",
       label: "Happy Customers",
       icon: <Users className="w-5 h-5" />,
     },
     {
-      value: "15+",
+      value: "15",
       label: "Years Warranty",
       icon: <Shield className="w-5 h-5" />,
     },
@@ -51,11 +49,6 @@ export default function TrustIndicators() {
       value: "4.8/5",
       label: "Customer Rating",
       icon: <Star className="w-5 h-5" />,
-    },
-    {
-      value: "₹40",
-      label: "Per sq.ft Starting",
-      icon: <Sparkles className="w-5 h-5" />,
     },
   ];
 
@@ -73,14 +66,6 @@ export default function TrustIndicators() {
       description: "Superior fire safety rating for complete peace of mind",
       delay: "stagger-delay-2",
     },
-  ];
-
-  // This is the correct data for the right-hand column
-  const globalPresence = [
-    { city: "Madurai", projects: 800, featured: true },
-    { city: "Chennai", projects: 500, featured: true },
-    { city: "Kuala Lumpur", projects: 100, featured: false },
-    { city: "New York", projects: 50, featured: false },
   ];
 
   return (
@@ -115,7 +100,7 @@ export default function TrustIndicators() {
 
         {/* Stats Bar with Premium Glass Effect */}
         <div className="bg-pure-white/80 backdrop-blur-md rounded-3xl p-8 mb-16 shadow-2xl reveal-scale border border-light-silver/50">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
               <div
                 key={index}
@@ -206,56 +191,30 @@ export default function TrustIndicators() {
             </motion.div>
           </div>
 
-          {/* *** THIS IS THE FIX ***
-             This is the correct "Global Presence" column.
-             The "review form" box has been removed and replaced with this.
-          */}
-          <div className="bg-gradient-to-br from-brand-teal to-brand-teal/90 rounded-3xl p-8 text-pure-white reveal-right glass-effect glow-effect">
-            <div className="flex items-center gap-2 mb-6">
-              <MapPin className="w-6 h-6 float-animation" />
-              <h3 className="text-2xl font-display">Global Presence</h3>
-            </div>
-
-            <div className="space-y-4 mb-8 stagger-group">
-              {globalPresence.map((location, index) => (
-                <motion.div
-                  key={index}
-                  className={`flex items-center justify-between p-4 rounded-xl stagger-item ${
-                    location.featured
-                      ? "bg-pure-white/20 backdrop-blur-sm glass-effect"
-                      : "bg-pure-white/10"
-                  } hover:bg-pure-white/25 transition-all cursor-pointer click-feedback`}
-                  whileHover={{ x: 10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+          {/* Customer Testimonial Video */}
+          <div className="reveal-right">
+            <div className="bg-gradient-to-br from-brand-teal/10 to-brand-peach/10 rounded-3xl p-6 glass-effect">
+              <h3 className="text-2xl font-display text-deep-charcoal mb-4">
+                Customer Testimonial
+              </h3>
+              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
+                <video
+                  controls
+                  className="w-full h-full object-cover"
+                  data-testid="video-testimonial"
                 >
-                  <div>
-                    <h4 className="font-bold text-lg">{location.city}</h4>
-                    <p className="text-pure-white/80 text-sm">
-                      {location.projects}+ Projects
-                    </p>
-                  </div>
-                  {location.featured && (
-                    <Star className="w-5 h-5 text-brand-peach fill-current glow-animation" />
-                  )}
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Customer Reviews Summary with Enhanced Design */}
-            <div className="bg-pure-white/20 backdrop-blur-sm rounded-xl p-6 text-center glass-effect">
-              <div className="flex justify-center mb-3">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-6 h-6 text-brand-peach fill-current float-animation"
-                    style={{ animationDelay: `${i * 0.1}s` }}
+                  <source
+                    src="/attached_assets/customer_testimonial_1762845564449.mp4"
+                    type="video/mp4"
                   />
-                ))}
+                  Your browser does not support the video tag.
+                </video>
               </div>
-              <p className="text-lg font-bold mb-1">2,450+ Verified Reviews</p>
-              <p className="text-pure-white/80 text-sm">
-                Trusted by customers worldwide
-              </p>
+              <div className="mt-4 text-center">
+                <p className="text-cool-grey text-sm">
+                  Hear what our satisfied customers have to say
+                </p>
+              </div>
             </div>
           </div>
         </div>

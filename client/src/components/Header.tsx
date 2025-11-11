@@ -2,15 +2,13 @@ import { useEffect, useState } from "react";
 import {
   Menu,
   X,
-  Search,
   Phone,
   MapPin,
-  ChevronDown,
   Sparkles,
   ArrowRight,
   Home,
   Package,
-  Image,
+  Image as ImageIcon,
   Lightbulb,
   HeadphonesIcon,
   Mail,
@@ -43,7 +41,6 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
@@ -124,7 +121,7 @@ export default function Header() {
     {
       label: "Gallery",
       href: "/gallery",
-      icon: Image,
+      icon: ImageIcon,
       description: "Stunning installations",
     },
     {
@@ -148,17 +145,12 @@ export default function Header() {
 
   return (
     <>
-      {/* Top Bar - Premium Touch */}
+      {/* Top Bar */}
       <div
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled ? "translate-y-[-100%]" : "translate-y-0"
         }`}
       >
-        {/* *** THIS IS THE FIX ***
-          Removed the gradient 'bg-gradient-to-r from-brand-teal via-brand-teal/90 to-brand-brown/80'
-          and replaced it with a solid 'bg-brand-teal'.
-          Also added 'text-pure-white' to fix text color.
-        */}
         <div className="bg-brand-teal text-pure-white">
           <div className="container mx-auto px-6">
             <div className="flex items-center justify-between py-2 text-xs">
@@ -172,7 +164,7 @@ export default function Header() {
                 </a>
                 <span className="hidden sm:flex items-center gap-2">
                   <MapPin className="w-3 h-3" />
-                  <span>Chennai, India</span>
+                  <span>Madurai, India</span>
                 </span>
               </div>
               <div className="flex items-center gap-4">
@@ -180,7 +172,6 @@ export default function Header() {
                   <Sparkles className="w-3 h-3 animate-pulse" />
                   <span className="font-medium">Free Samples Available</span>
                 </span>
-                {/* Social Media Icons - Clean without overlay */}
                 <div className="flex items-center gap-3">
                   <a
                     href="#"
@@ -220,7 +211,7 @@ export default function Header() {
       >
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
-            {/* Logo with Animation */}
+            {/* Logo */}
             <Link href="/" className="group flex items-center gap-3 relative">
               <div className="relative">
                 <img
@@ -270,13 +261,7 @@ export default function Header() {
                             {item.badge}
                           </span>
                         )}
-                        {item.submenu && (
-                          <ChevronDown
-                            className={`w-3 h-3 transition-transform duration-300 ${
-                              activeDropdown === item.label ? "rotate-180" : ""
-                            }`}
-                          />
-                        )}
+                        {/* Chevron for submenu REMOVED as requested */}
                       </Link>
                     ) : (
                       <button
@@ -346,25 +331,7 @@ export default function Header() {
 
             {/* Right Side Actions */}
             <div className="flex items-center gap-3">
-              {/* Search Bar */}
-              <div className="hidden md:block relative">
-                <div
-                  className={`relative transition-all duration-300 ${
-                    isSearchFocused ? "w-64" : "w-44"
-                  }`}
-                >
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-cool-grey" />
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    onFocus={() => setIsSearchFocused(true)}
-                    onBlur={() => setIsSearchFocused(false)}
-                    className="w-full pl-10 pr-4 py-2.5 bg-warm-cream border border-transparent focus:border-brand-teal/30 rounded-xl text-sm placeholder-cool-grey focus:outline-none transition-all duration-300"
-                  />
-                </div>
-              </div>
-
-              {/* CTA Button (Already Fixed) */}
+              {/* CTA Button — routes to contact page */}
               <Link
                 href="/contact"
                 className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-brand-teal text-pure-white rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 hover-lift"
@@ -373,34 +340,24 @@ export default function Header() {
                 Get Quote
               </Link>
 
-              {/* Mobile Menu Button */}
+              {/* Mobile Menu Button (fixed placement & alignment) */}
               <button
-                className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-xl bg-warm-cream hover:bg-brand-teal/10 transition-colors group"
+                className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-xl bg-warm-cream hover:bg-brand-teal/10 transition-colors"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle navigation"
+                aria-expanded={isMobileMenuOpen}
               >
-                <div className="relative w-6 h-5">
-                  <span
-                    className={`absolute w-full h-0.5 bg-deep-charcoal transition-all duration-300 ${
-                      isMobileMenuOpen ? "top-2.5 rotate-45" : "top-0"
-                    }`}
-                  ></span>
-                  <span
-                    className={`absolute w-full h-0.5 bg-deep-charcoal top-2.5 transition-all duration-300 ${
-                      isMobileMenuOpen ? "opacity-0" : "opacity-100"
-                    }`}
-                  ></span>
-                  <span
-                    className={`absolute w-full h-0.5 bg-deep-charcoal transition-all duration-300 ${
-                      isMobileMenuOpen ? "top-2.5 -rotate-45" : "top-5"
-                    }`}
-                  ></span>
-                </div>
+                {isMobileMenuOpen ? (
+                  <X className="w-6 h-6 text-deep-charcoal" />
+                ) : (
+                  <Menu className="w-6 h-6 text-deep-charcoal" />
+                )}
               </button>
             </div>
           </div>
         </div>
 
-        {/* Mobile Menu - Premium Design */}
+        {/* Mobile Menu */}
         <div
           className={`lg:hidden fixed inset-x-0 bg-pure-white shadow-2xl transition-all duration-500 ${
             isMobileMenuOpen
@@ -410,18 +367,6 @@ export default function Header() {
           style={{ maxHeight: "calc(100vh - 80px)" }}
         >
           <div className="overflow-y-auto">
-            {/* Mobile Search */}
-            <div className="p-4 border-b border-light-silver/20">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-cool-grey" />
-                <input
-                  type="text"
-                  placeholder="Search products..."
-                  className="w-full pl-10 pr-4 py-3 bg-warm-cream rounded-xl text-sm placeholder-cool-grey focus:outline-none"
-                />
-              </div>
-            </div>
-
             {/* Mobile Navigation */}
             <nav className="p-4">
               {navigationItems.map((item, index) => (
@@ -474,7 +419,7 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Mobile CTA */}
+            {/* Mobile CTA — routes to contact page */}
             <div className="p-4 bg-gradient-to-br from-warm-cream to-light-silver/20">
               <Link
                 href="/contact"
@@ -518,12 +463,17 @@ export default function Header() {
         <div
           className="h-full bg-gradient-to-r from-brand-teal to-brand-peach transition-all duration-300"
           style={{
-            width: `${Math.min(
-              (window.scrollY /
-                (document.documentElement.scrollHeight - window.innerHeight)) *
-                100,
-              100,
-            )}%`,
+            width: `${
+              typeof window !== "undefined"
+                ? Math.min(
+                    (window.scrollY /
+                      (document.documentElement.scrollHeight -
+                        window.innerHeight)) *
+                      100,
+                    100,
+                  )
+                : 0
+            }%`,
           }}
         />
       </div>
