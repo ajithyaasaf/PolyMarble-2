@@ -159,21 +159,19 @@ export default function Header() {
       >
         <div className="bg-brand-teal text-pure-white">
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="flex items-center justify-between py-2 sm:py-2 text-xs min-h-[40px]">
-              <div className="flex items-center gap-3 sm:gap-6">
-                <a
-                  href="tel:+919842106768"
-                  className="flex items-center gap-1.5 sm:gap-2 hover:text-brand-peach transition-colors"
-                >
-                  <Phone className="w-3.5 h-3.5 sm:w-3 sm:h-3 flex-shrink-0" />
-                  <span className="font-medium text-[11px] sm:text-xs whitespace-nowrap">+91 98421 06768</span>
-                </a>
-                <span className="hidden sm:flex items-center gap-2">
-                  <MapPin className="w-3 h-3" />
-                  <span>Madurai, India</span>
-                </span>
-              </div>
-              <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="flex flex-nowrap items-center justify-between py-2 text-xs min-h-[40px] gap-2">
+              <a
+                href="tel:+919842106768"
+                className="flex items-center gap-1.5 sm:gap-2 hover:text-brand-peach transition-colors flex-shrink-0"
+              >
+                <Phone className="w-3.5 h-3.5 sm:w-3 sm:h-3 flex-shrink-0" />
+                <span className="font-medium text-[11px] sm:text-xs whitespace-nowrap">+91 98421 06768</span>
+              </a>
+              <span className="hidden sm:flex items-center gap-2 flex-shrink-0">
+                <MapPin className="w-3 h-3" />
+                <span className="whitespace-nowrap">Madurai, India</span>
+              </span>
+              <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 ml-auto">
                 <a
                   href="https://www.instagram.com/polymarblesheet_india?igsh=MXZoczNwcWxleWl6bw=="
                   target="_blank"
@@ -182,7 +180,7 @@ export default function Header() {
                   aria-label="Instagram"
                   data-testid="link-header-social-instagram"
                 >
-                  <Instagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                  <Instagram className="w-4 h-4 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
                 </a>
                 <a
                   href="https://www.facebook.com/polymarblesheets"
@@ -192,7 +190,7 @@ export default function Header() {
                   aria-label="Facebook"
                   data-testid="link-header-social-facebook"
                 >
-                  <Facebook className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                  <Facebook className="w-4 h-4 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
                 </a>
                 <a
                   href="https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca"
@@ -202,7 +200,7 @@ export default function Header() {
                   aria-label="Youtube"
                   data-testid="link-header-social-youtube"
                 >
-                  <Youtube className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                  <Youtube className="w-4 h-4 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
                 </a>
               </div>
             </div>
