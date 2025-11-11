@@ -57,7 +57,8 @@ export default function Contact() {
     if (!form.email.trim()) e.email = "Please enter your email";
     if (!/^\S+@\S+\.\S+$/.test(form.email)) e.email = "Enter a valid email";
     if (!form.phone.trim()) e.phone = "Please enter your phone";
-    if (!form.message.trim()) e.message = "Please tell us a bit about your project";
+    if (!form.message.trim())
+      e.message = "Please tell us a bit about your project";
     return e;
     // Optional: you could enforce subject/projectType/budget if needed
   };
@@ -81,7 +82,9 @@ export default function Contact() {
       // await fetch("/api/contact", { method: "POST", body });
 
       // Demo success feedback:
-      setSuccess("Thanks! We’ve received your request and will get back shortly.");
+      setSuccess(
+        "Thanks! We’ve received your request and will get back shortly.",
+      );
       setForm({
         name: "",
         email: "",
@@ -411,7 +414,9 @@ export default function Contact() {
                             }
                           />
                           <span className="text-xs text-cool-grey truncate max-w-[180px]">
-                            {form.file ? form.file.name : "PDF/JPG/PNG up to 10MB"}
+                            {form.file
+                              ? form.file.name
+                              : "PDF/JPG/PNG up to 10MB"}
                           </span>
                         </div>
                       </div>
@@ -439,7 +444,10 @@ export default function Contact() {
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <p className="text-xs text-cool-grey">
                         By submitting, you agree to our{" "}
-                        <a href="/privacy" className="text-brand-teal underline">
+                        <a
+                          href="/privacy"
+                          className="text-brand-teal underline"
+                        >
                           Privacy Policy
                         </a>
                         .
@@ -479,8 +487,10 @@ export default function Contact() {
                           <MessageSquare className="w-4 h-4 text-brand-teal" />
                         </span>
                         <span>
-                          <span className="font-medium">Consultative approach</span> for
-                          the right material selection and finish.
+                          <span className="font-medium">
+                            Consultative approach
+                          </span>{" "}
+                          for the right material selection and finish.
                         </span>
                       </li>
                       <li className="flex gap-2">
@@ -488,7 +498,9 @@ export default function Contact() {
                           <Building2 className="w-4 h-4 text-brand-teal" />
                         </span>
                         <span>
-                          <span className="font-medium">Residential & Commercial</span>{" "}
+                          <span className="font-medium">
+                            Residential & Commercial
+                          </span>{" "}
                           expertise across South India.
                         </span>
                       </li>
@@ -497,8 +509,8 @@ export default function Contact() {
                           <Clock className="w-4 h-4 text-brand-teal" />
                         </span>
                         <span>
-                          <span className="font-medium">Quick turnaround</span> on quotes
-                          and deliveries.
+                          <span className="font-medium">Quick turnaround</span>{" "}
+                          on quotes and deliveries.
                         </span>
                       </li>
                     </ul>
@@ -543,13 +555,19 @@ export default function Contact() {
                   </div>
                   <div className="flex items-start gap-2">
                     <Phone className="w-4 h-4 mt-0.5 text-brand-teal" />
-                    <a href="tel:+919842106768" className="text-brand-teal hover:underline">
+                    <a
+                      href="tel:+919842106768"
+                      className="text-brand-teal hover:underline"
+                    >
                       +91 98421 06768
                     </a>
                   </div>
                   <div className="flex items-start gap-2">
                     <Mail className="w-4 h-4 mt-0.5 text-brand-teal" />
-                    <a href="mailto:hello@polymarbles.in" className="text-brand-teal hover:underline">
+                    <a
+                      href="mailto:hello@polymarbles.in"
+                      className="text-brand-teal hover:underline"
+                    >
                       hello@polymarbles.in
                     </a>
                   </div>
@@ -559,7 +577,9 @@ export default function Contact() {
               <Card className="border-light-silver/60">
                 <CardHeader>
                   <CardTitle>Warehouse & Logistics</CardTitle>
-                  <CardDescription>Order processing & large consignments</CardDescription>
+                  <CardDescription>
+                    Order processing & large consignments
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="flex items-start gap-2">
@@ -603,7 +623,8 @@ export default function Contact() {
                     How soon will I get a quote?
                   </h4>
                   <p className="text-cool-grey">
-                    Most quotes go out within 1 business hour during working time.
+                    Most quotes go out within 1 business hour during working
+                    time.
                   </p>
                 </CardContent>
               </Card>
@@ -613,15 +634,19 @@ export default function Contact() {
                     Do you offer site visits?
                   </h4>
                   <p className="text-cool-grey">
-                    Yes—available in and around Chennai, and on request for other cities.
+                    Yes—available in and around Chennai, and on request for
+                    other cities.
                   </p>
                 </CardContent>
               </Card>
               <Card className="border-light-silver/60">
                 <CardContent className="pt-6">
-                  <h4 className="font-semibold mb-2">Do you install as well?</h4>
+                  <h4 className="font-semibold mb-2">
+                    Do you install as well?
+                  </h4>
                   <p className="text-cool-grey">
-                    We work with vetted installation partners for turnkey delivery.
+                    We work with vetted installation partners for turnkey
+                    delivery.
                   </p>
                 </CardContent>
               </Card>
@@ -631,7 +656,8 @@ export default function Contact() {
                     Can I get free samples?
                   </h4>
                   <p className="text-cool-grey">
-                    Absolutely. Tell us your preferred finishes and we’ll arrange samples.
+                    Absolutely. Tell us your preferred finishes and we’ll
+                    arrange samples.
                   </p>
                 </CardContent>
               </Card>

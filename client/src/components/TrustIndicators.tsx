@@ -106,16 +106,17 @@ export default function TrustIndicators() {
               <div
                 key={index}
                 className={`text-center stagger-delay-${index + 1}`}
+                data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
               >
-                <div className="flex items-center justify-center gap-2 mb-2 group">
+                <div className="flex items-center justify-center gap-3 mb-2 group">
                   <div className="text-brand-teal group-hover:scale-110 transition-transform">
                     {stat.icon}
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold text-deep-charcoal counter">
+                  <div className="text-4xl md:text-5xl font-bold text-deep-charcoal" data-testid={`stat-value-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}>
                     {stat.value}
                   </div>
                 </div>
-                <p className="text-cool-grey text-sm">{stat.label}</p>
+                <p className="text-cool-grey text-sm font-medium">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -198,10 +199,10 @@ export default function TrustIndicators() {
               <h3 className="text-2xl font-display text-deep-charcoal mb-4">
                 Customer Testimonial
               </h3>
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative aspect-[9/16] max-h-[600px] rounded-2xl overflow-hidden shadow-2xl mx-auto">
                 <video
                   controls
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-black"
                   data-testid="video-testimonial"
                   src={testimonialVideo}
                 >

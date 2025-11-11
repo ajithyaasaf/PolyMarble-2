@@ -20,6 +20,7 @@ function Router() {
       <Route path="/products" component={Products} />
       <Route path="/gallery" component={Gallery} />
       <Route path="/inspiration" component={Inspiration} />
+      <Route path="/contact" component={Support} />
       <Route path="/support" component={Support} />
       <Route path="/marble-wall-sheet-madurai" component={MarbleWallSheetMadurai} />
       <Route path="/lightweight-stone-walling-chennai" component={LightweightStoneWallingChennai} />

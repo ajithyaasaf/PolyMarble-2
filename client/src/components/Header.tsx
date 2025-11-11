@@ -136,10 +136,10 @@ export default function Header() {
       description: "Success stories",
     },
     {
-      label: "Support",
-      href: "/support",
+      label: "Contact",
+      href: "/contact",
       icon: HeadphonesIcon,
-      description: "Help center",
+      description: "Get in touch",
     },
   ];
 
