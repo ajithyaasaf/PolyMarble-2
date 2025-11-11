@@ -27,9 +27,9 @@ export default function Benefits() {
     },
     {
       icon: Shield,
-      title: "Cost-Effective",
+      title: "Superior Quality",
       description:
-        "80% less expensive than natural marble with superior durability",
+        "Premium materials with superior durability and long-lasting performance",
       color: "text-brand-teal",
     },
     {
@@ -140,7 +140,7 @@ export default function Benefits() {
               </h4>
               <p className="text-cool-grey">
                 Experience the perfect blend of luxury, durability, and
-                affordability.
+                quality.
               </p>
             </div>
             <button className="px-8 py-4 bg-brand-teal text-pure-white font-bold rounded-full hover:bg-brand-teal/90 transition-all duration-300 hover:scale-105 whitespace-nowrap">

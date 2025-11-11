@@ -17,7 +17,7 @@ export default function MarbleWallSheetMadurai() {
     "Install in hours, not days",
     "Fire-resistant & moisture-proof", 
     "Maintenance-free for 10+ years",
-    "Affordable premium pricing"
+    "Premium quality materials"
   ];
 
   const localTestimonials = [
@@ -49,7 +49,7 @@ export default function MarbleWallSheetMadurai() {
               </h1>
               <p className="text-xl text-cool-grey mb-8 reveal-fade max-w-3xl mx-auto">
                 Premium polymarble wall sheets for Madurai homes and businesses. Get the luxury look of marble 
-                without the weight, cost, or installation hassles. Local installation & support available.
+                without the weight or installation hassles. Local installation & support available.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -188,7 +188,7 @@ export default function MarbleWallSheetMadurai() {
                   />
                   <div className="p-4">
                     <h4 className="font-bold text-metallic-gold mb-2">Noir Elegance</h4>
-                    <p className="text-cool-grey text-sm">₹52/sq.ft • Premium choice</p>
+                    <p className="text-cool-grey text-sm">Premium choice</p>
                   </div>
                 </div>
                 <div className="bg-light-silver/30/50 rounded-lg overflow-hidden">
@@ -199,7 +199,7 @@ export default function MarbleWallSheetMadurai() {
                   />
                   <div className="p-4">
                     <h4 className="font-bold text-metallic-gold mb-2">Verde Luxe</h4>
-                    <p className="text-cool-grey text-sm">₹48/sq.ft • Natural appeal</p>
+                    <p className="text-cool-grey text-sm">Natural appeal</p>
                   </div>
                 </div>
               </div>
@@ -207,8 +207,7 @@ export default function MarbleWallSheetMadurai() {
               <div className="bg-gradient-to-r from-metallic-gold/20 to-metallic-gold/10 rounded-lg p-8 border border-metallic-gold/30">
                 <h3 className="text-2xl font-bold text-metallic-gold mb-4">Special Offer for Madurai</h3>
                 <p className="text-cool-grey mb-6 text-lg">
-                  Book your consultation this month and get <strong>free installation</strong> for orders above 500 sq.ft. 
-                  Plus, enjoy our special pricing for Madurai residents.
+                  Book your consultation this month and get <strong>free installation</strong> for orders above 500 sq.ft.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button className="bg-metallic-gold text-pure-white hover:bg-yellow-400 font-bold">

@@ -31,7 +31,6 @@ export default function Products() {
     {
       name: "High-Gloss Premium",
       size: "8×4 ft",
-      price: "₹52/sq.ft.⁺",
       features: ["Water Resistant", "Fire Resistant", "Termite Proof", "Easy Installation"],
       thickness: "10-15mm",
       description: "Timeless elegance with authentic marble patterns and veining"
@@ -39,7 +38,6 @@ export default function Products() {
     {
       name: "Woody Panels", 
       size: "8×4 ft",
-      price: "₹52/sq.ft.⁺",
       features: ["Water Resistant", "Fire Resistant", "Lightweight", "Termite Proof"],
       thickness: "12-15mm",
       description: "Natural wood textures with superior durability and water resistance"
@@ -47,15 +45,13 @@ export default function Products() {
     {
       name: "Solid Color Range",
       size: "8×4 ft", 
-      price: "₹40/sq.ft.⁺",
-      features: ["Water Resistant", "Stain Resistant", "Easy Maintenance", "Cost Effective"],
+      features: ["Water Resistant", "Stain Resistant", "Easy Maintenance", "Highly Durable"],
       thickness: "10-12mm",
       description: "Clean, contemporary colors for modern architectural applications"
     },
     {
       name: "Textured Finishes",
       size: "8×4 ft",
-      price: "₹48/sq.ft.⁺", 
       features: ["Water Resistant", "Fire Resistant", "Anti-Slip", "Dimensional Surface"],
       thickness: "12-15mm",
       description: "Dimensional surfaces that add depth and character to any space"
@@ -63,7 +59,6 @@ export default function Products() {
     {
       name: "Mirror Sheets",
       size: "8×4 ft",
-      price: "₹55/sq.ft.⁺", 
       features: ["Water Resistant", "High Gloss", "Reflective", "Luxury Finish"],
       thickness: "10-12mm",
       description: "Mirror-like finish for luxurious, high-impact installations"
@@ -246,7 +241,6 @@ export default function Products() {
                   <tr className="border-b border-metallic-gold/20">
                     <th className="px-6 py-4 text-left text-metallic-gold font-bold">Material</th>
                     <th className="px-6 py-4 text-left text-metallic-gold font-bold">Size</th>
-                    <th className="px-6 py-4 text-left text-metallic-gold font-bold">Price</th>
                     <th className="px-6 py-4 text-left text-metallic-gold font-bold">Thickness</th>
                     <th className="px-6 py-4 text-left text-metallic-gold font-bold">Features</th>
                   </tr>
@@ -256,7 +250,6 @@ export default function Products() {
                     <tr key={index} className="border-b border-light-silver/50 hover:bg-metallic-gold/5 transition-colors">
                       <td className="px-6 py-4 text-deep-charcoal font-medium">{material.name}</td>
                       <td className="px-6 py-4 text-cool-grey">{material.size}</td>
-                      <td className="px-6 py-4 text-green-400 font-bold">{material.price}</td>
                       <td className="px-6 py-4 text-cool-grey">{material.thickness}</td>
                       <td className="px-6 py-4">
                         <div className="flex flex-wrap gap-1">

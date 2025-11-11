@@ -67,7 +67,7 @@ export default function QuickQuote() {
               </Button>
               
               <div className="text-xs text-cool-grey text-center">
-                Competitive pricing available
+                Free consultation available
               </div>
             </div>
           </div>

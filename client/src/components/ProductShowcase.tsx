@@ -21,8 +21,6 @@ export default function ProductShowcase() {
       name: "High-Gloss Premium",
       tagline: "Timeless Elegance",
       description: "Authentic marble patterns with mirror-like finish that elevates any space to luxury status.",
-      price: "₹52",
-      originalPrice: "₹180",
       image: highGlossImage,
       features: ["Ultra-glossy finish", "Scratch resistant", "Easy maintenance", "Premium patterns"],
       specifications: {
@@ -39,8 +37,6 @@ export default function ProductShowcase() {
       name: "Woody Panels",
       tagline: "Natural Warmth",
       description: "Authentic wood textures with superior durability and complete water resistance.",
-      price: "₹52",
-      originalPrice: "₹210",
       image: woodyPanelImage,
       features: ["Natural wood grain", "Water resistant", "Termite proof", "UV stable"],
       specifications: {
@@ -57,10 +53,8 @@ export default function ProductShowcase() {
       name: "Solid Color Range",
       tagline: "Modern Minimalism", 
       description: "Clean, contemporary colors perfect for modern architectural applications.",
-      price: "₹40",
-      originalPrice: "₹160",
       image: solidColorImage,
-      features: ["Pure colors", "Stain resistant", "Cost effective", "Versatile"],
+      features: ["Pure colors", "Stain resistant", "Highly durable", "Versatile"],
       specifications: {
         thickness: "10-12mm",
         size: "8×4 ft",
@@ -75,8 +69,6 @@ export default function ProductShowcase() {
       name: "Textured Finishes",
       tagline: "Dimensional Beauty",
       description: "Three-dimensional surfaces that add depth, character and tactile appeal.",
-      price: "₹48",
-      originalPrice: "₹190",
       image: texturedImage,
       features: ["3D texture", "Anti-slip", "Unique patterns", "Dimensional appeal"],
       specifications: {
@@ -93,8 +85,6 @@ export default function ProductShowcase() {
       name: "Mirror Sheets",
       tagline: "Luxury Reflection",
       description: "Mirror-like finish for high-impact installations that command attention.",
-      price: "₹55",
-      originalPrice: "₹220",
       image: mirrorImage,
       features: ["Mirror finish", "High impact", "Luxury appeal", "Light enhancing"],
       specifications: {
@@ -170,10 +160,6 @@ export default function ProductShowcase() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                  {/* Savings Badge */}
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white px-4 py-2 rounded-full font-bold shadow-lg">
-                    Save {Math.round(((parseInt(product.originalPrice.slice(1)) - parseInt(product.price.slice(1))) / parseInt(product.originalPrice.slice(1))) * 100)}%
-                  </div>
                 </div>
 
                 {/* Product Details */}
@@ -184,12 +170,6 @@ export default function ProductShowcase() {
                     </div>
                     <h4 className="text-3xl font-bold text-deep-charcoal mb-3">{product.name}</h4>
                     <p className="text-cool-grey text-lg leading-relaxed">{product.description}</p>
-                  </div>
-
-                  {/* Pricing */}
-                  <div className="flex items-center gap-4">
-                    <div className="text-3xl font-bold text-brand-teal">{product.price}/sq.ft</div>
-                    <div className="text-lg text-cool-grey line-through">{product.originalPrice}/sq.ft</div>
                   </div>
 
                   {/* Core Features */}
@@ -252,7 +232,7 @@ export default function ProductShowcase() {
                       variant="outline" 
                       className="flex-1 border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-pure-white font-bold"
                     >
-                      Calculate Cost
+                      Request Quote
                       <ChevronRight className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
