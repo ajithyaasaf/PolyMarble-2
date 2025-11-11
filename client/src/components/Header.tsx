@@ -158,20 +158,22 @@ export default function Header() {
         }`}
       >
         <div className="bg-brand-teal text-pure-white">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="flex flex-nowrap items-center justify-between py-2 text-xs min-h-[40px] gap-2">
-              <a
-                href="tel:+919842106768"
-                className="flex items-center gap-1.5 sm:gap-2 hover:text-brand-peach transition-colors flex-shrink-0"
-              >
-                <Phone className="w-3.5 h-3.5 sm:w-3 sm:h-3 flex-shrink-0" />
-                <span className="font-medium text-[11px] sm:text-xs whitespace-nowrap">+91 98421 06768</span>
-              </a>
-              <span className="hidden sm:flex items-center gap-2 flex-shrink-0">
+          <div className="container mx-auto px-3 sm:px-6">
+            <div className="grid grid-cols-[1fr_auto] sm:grid-cols-[max-content_1fr_max-content] items-center w-full gap-2 sm:gap-4 h-10 text-xs">
+              <div className="flex items-center gap-2">
+                <a
+                  href="tel:+919842106768"
+                  className="flex items-center gap-1.5 hover:text-brand-peach transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 sm:w-3 sm:h-3 flex-shrink-0" />
+                  <span className="font-medium text-[11px] sm:text-xs whitespace-nowrap">+91 98421 06768</span>
+                </a>
+              </div>
+              <span className="hidden sm:flex items-center gap-2">
                 <MapPin className="w-3 h-3" />
                 <span className="whitespace-nowrap">Madurai, India</span>
               </span>
-              <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 ml-auto">
+              <div className="flex items-center gap-2 sm:gap-3 justify-self-end">
                 <a
                   href="https://www.instagram.com/polymarblesheet_india?igsh=MXZoczNwcWxleWl6bw=="
                   target="_blank"
@@ -180,7 +182,7 @@ export default function Header() {
                   aria-label="Instagram"
                   data-testid="link-header-social-instagram"
                 >
-                  <Instagram className="w-4 h-4 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+                  <Instagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
                 </a>
                 <a
                   href="https://www.facebook.com/polymarblesheets"
@@ -190,7 +192,7 @@ export default function Header() {
                   aria-label="Facebook"
                   data-testid="link-header-social-facebook"
                 >
-                  <Facebook className="w-4 h-4 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+                  <Facebook className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
                 </a>
                 <a
                   href="https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca"
@@ -200,7 +202,7 @@ export default function Header() {
                   aria-label="Youtube"
                   data-testid="link-header-social-youtube"
                 >
-                  <Youtube className="w-4 h-4 sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+                  <Youtube className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
                 </a>
               </div>
             </div>
@@ -213,11 +215,11 @@ export default function Header() {
         className={`fixed left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
             ? "top-0 bg-pure-white/95 backdrop-blur-xl shadow-lg"
-            : "top-[40px] sm:top-9 bg-pure-white/80 backdrop-blur-md"
+            : "top-10 sm:top-9 bg-pure-white/80 backdrop-blur-md"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16 sm:h-20 py-2">
+          <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
             <Link href="/" className="group flex items-center gap-3 relative">
               <div className="relative">
@@ -361,10 +363,10 @@ export default function Header() {
         <div
           className={`lg:hidden fixed inset-x-0 bg-pure-white shadow-2xl transition-all duration-500 ${
             isMobileMenuOpen
-              ? "top-[96px] sm:top-20 opacity-100 translate-y-0"
-              : "top-[96px] sm:top-20 opacity-0 -translate-y-full pointer-events-none"
+              ? "top-[104px] sm:top-20 opacity-100 translate-y-0"
+              : "top-[104px] sm:top-20 opacity-0 -translate-y-full pointer-events-none"
           }`}
-          style={{ maxHeight: "calc(100vh - 96px)" }}
+          style={{ maxHeight: "calc(100vh - 104px)" }}
         >
           <div className="overflow-y-auto">
             {/* Mobile Navigation */}
