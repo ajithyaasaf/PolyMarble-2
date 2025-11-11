@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -29,42 +30,70 @@ import {
   Instagram,
   Facebook,
   Youtube,
+  CheckCircle,
+  XCircle,
 } from "lucide-react";
+
+type FormState = {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  city: string;
+  subject: string;
+  projectType: string;
+  budget: string;
+  message: string;
+  file: File | null;
+};
+
+const initialForm: FormState = {
+  name: "",
+  email: "",
+  phone: "",
+  company: "",
+  city: "",
+  subject: "",
+  projectType: "",
+  budget: "",
+  message: "",
+  file: null,
+};
+
+const fadeUp = {
+  initial: { opacity: 0, y: 18 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.45 } },
+};
 
 export default function Contact() {
   useScrollReveal();
 
-  const [submitting, setSubmitting] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    city: "",
-    subject: "",
-    projectType: "",
-    budget: "",
-    message: "",
-    file: null as File | null,
-  });
-
+  const [form, setForm] = useState<FormState>(initialForm);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
+  const [toastOpen, setToastOpen] = useState(false);
 
-  const validate = () => {
+  useEffect(() => {
+    if (success) {
+      setToastOpen(true);
+      const t = setTimeout(() => setToastOpen(false), 3500);
+      return () => clearTimeout(t);
+    }
+  }, [success]);
+
+  const validate = (): Record<string, string> => {
     const e: Record<string, string> = {};
     if (!form.name.trim()) e.name = "Please enter your name";
     if (!form.email.trim()) e.email = "Please enter your email";
-    if (!/^\S+@\S+\.\S+$/.test(form.email)) e.email = "Enter a valid email";
+    else if (!/^\S+@\S+\.\S+$/.test(form.email)) e.email = "Enter a valid email";
     if (!form.phone.trim()) e.phone = "Please enter your phone";
-    if (!form.message.trim())
-      e.message = "Please tell us a bit about your project";
+    if (!form.message.trim()) e.message = "Please tell us about your project";
     return e;
-    // Optional: you could enforce subject/projectType/budget if needed
   };
 
-  const handleSubmit = async (ev: React.FormEvent) => {
-    ev.preventDefault();
+  const handleSubmit = async (ev?: React.FormEvent) => {
+    if (ev) ev.preventDefault();
     setSuccess(null);
     const v = validate();
     setErrors(v);
@@ -73,30 +102,17 @@ export default function Contact() {
     try {
       setSubmitting(true);
 
-      // Example: POST to your API route (adjust as needed)
+      // <-- Replace with your API call. Example below is commented.
       // const body = new FormData();
       // Object.entries(form).forEach(([k, val]) => {
-      //   if (k === "file" && val) body.append(k, val as File);
-      //   else if (typeof val === "string") body.append(k, val);
+      //   if (k === "file" && val) body.append(k, val);
+      //   else body.append(k, (val as any) ?? "");
       // });
       // await fetch("/api/contact", { method: "POST", body });
 
-      // Demo success feedback:
-      setSuccess(
-        "Thanks! We’ve received your request and will get back shortly.",
-      );
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        city: "",
-        subject: "",
-        projectType: "",
-        budget: "",
-        message: "",
-        file: null,
-      });
+      // Demo success
+      setSuccess("Thanks! We’ve received your request and will get back shortly.");
+      setForm(initialForm);
     } catch (err) {
       setSuccess("Something went wrong. Please try again.");
     } finally {
@@ -104,22 +120,72 @@ export default function Contact() {
     }
   };
 
+  // Small inline validation helpers for real-time ticks
+  const isValidEmail = (s: string) => /^\S+@\S+\.\S+$/.test(s);
+  const showValidTick = (field: keyof FormState) => {
+    if (field === "email") return form.email && isValidEmail(form.email);
+    return !!(form[field] && (form[field] as string).toString().trim());
+  };
+
+  // Simple accessible accordion for FAQs
+  const FAQS: { q: string; a: string }[] = [
+    {
+      q: "How soon will I get a quote?",
+      a: "Most quotes go out within 1 business hour during working times. Complex projects may take slightly longer.",
+    },
+    {
+      q: "Do you offer site visits?",
+      a: "Yes—available in and around Chennai. For other cities we arrange visits on request.",
+    },
+    {
+      q: "Do you install as well?",
+      a: "We partner with vetted installation teams for turnkey delivery.",
+    },
+    {
+      q: "Can I get free samples?",
+      a: "Yes — tell us your preferred finishes and we’ll arrange samples.",
+    },
+  ];
+
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <div className="relative min-h-screen bg-pure-white text-deep-charcoal">
       <Header />
 
+      {/* Floating success toast */}
+      {toastOpen && success && (
+        <div className="fixed right-5 top-6 z-50">
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 24 }}
+            className="rounded-xl px-4 py-3 shadow-xl bg-gradient-to-r from-brand-teal to-brand-peach text-pure-white"
+            role="status"
+            aria-live="polite"
+          >
+            {success}
+          </motion.div>
+        </div>
+      )}
+
       <main className="pt-20">
-        {/* Hero */}
+        {/* HERO */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-brand-teal/10 via-warm-cream/30 to-brand-peach/10" />
-          <div className="container mx-auto px-6 py-20 relative">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div className="reveal-up">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-deep-charcoal">
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-brand-teal/8 via-warm-cream/20 to-brand-peach/6" />
+          <div className="container mx-auto px-6 py-24 relative">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                {...fadeUp}
+                className="reveal-up max-w-2xl"
+                initial="initial"
+                animate="animate"
+              >
+                <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
                   Let’s talk about your{" "}
                   <span className="text-brand-teal">project</span>
                 </h1>
-                <p className="mt-4 text-cool-grey text-lg max-w-2xl">
+                <p className="mt-4 text-cool-grey text-lg">
                   Get a tailored quote or expert guidance for your polymarble
                   installation. We typically respond within{" "}
                   <span className="font-semibold text-deep-charcoal">
@@ -127,140 +193,161 @@ export default function Contact() {
                   </span>
                   .
                 </p>
+
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
                     href="tel:+919842106768"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-teal text-pure-white font-medium hover:shadow-lg transition-all hover-lift"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-teal text-pure-white font-medium hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+                    aria-label="Call +91 98421 06768"
                   >
                     <Phone className="w-4 h-4" />
                     Call +91 98421 06768
                   </a>
                   <a
-                    href="mailto:hello@polymarbles.in"
+                    href="#form"
+                    onClick={() => {
+                      const el = document.getElementById("form");
+                      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }}
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-warm-cream text-deep-charcoal font-medium hover:bg-brand-teal/10 transition-all"
+                    aria-label="Open contact form"
                   >
-                    <Mail className="w-4 h-4" />
-                    Email Us
+                    <Send className="w-4 h-4" />
+                    Send a Message
                   </a>
                 </div>
-              </div>
 
-              {/* Quick Info Card */}
-              <Card className="bg-pure-white/80 backdrop-blur-sm border-light-silver/60 reveal-fade">
-                <CardHeader>
-                  <CardTitle>Contact Information</CardTitle>
-                  <CardDescription>
-                    Reach us through any of the channels below.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-warm-cream flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-brand-teal" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Phone</p>
-                      <a
-                        href="tel:+919842106768"
-                        className="text-brand-teal hover:underline"
-                      >
-                        +91 98421 06768
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-warm-cream flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-brand-teal" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Email</p>
-                      <a
-                        href="mailto:hello@polymarbles.in"
-                        className="text-brand-teal hover:underline"
-                      >
-                        hello@polymarbles.in
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-warm-cream flex items-center justify-center">
-                      <Clock className="w-5 h-5 text-brand-teal" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Business Hours</p>
-                      <p className="text-cool-grey">
-                        Mon–Sat: 9:30 AM – 7:00 PM
-                      </p>
-                      <p className="text-cool-grey">Sun: Closed</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-warm-cream flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-brand-teal" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Address (HQ)</p>
-                      <p className="text-cool-grey">
-                        Polymarbles Pvt. Ltd.
-                        <br />
-                        Chennai, India
-                      </p>
-                      <a
-                        href="https://maps.google.com/?q=Chennai%20India"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-brand-teal hover:underline mt-1"
-                      >
-                        Get Directions <ArrowRight className="w-4 h-4" />
-                      </a>
-                    </div>
-                  </div>
+                {/* Trust strip (compact) */}
+                <div className="mt-8 flex items-center gap-6 text-sm text-cool-grey">
+                  <span className="inline-flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-brand-teal" />
+                    <strong>300+</strong> projects completed
+                  </span>
+                  <span className="inline-flex items-center gap-2">
+                    <Building2 className="w-4 h-4 text-brand-teal" />
+                    Pan-South India deliveries
+                  </span>
+                </div>
+              </motion.div>
 
-                  <div className="pt-2 flex items-center gap-4">
-                    <a
-                      href="#"
-                      aria-label="Instagram"
-                      className="text-cool-grey hover:text-brand-teal"
-                    >
-                      <Instagram className="w-5 h-5" />
-                    </a>
-                    <a
-                      href="#"
-                      aria-label="Facebook"
-                      className="text-cool-grey hover:text-brand-teal"
-                    >
-                      <Facebook className="w-5 h-5" />
-                    </a>
-                    <a
-                      href="#"
-                      aria-label="YouTube"
-                      className="text-cool-grey hover:text-brand-teal"
-                    >
-                      <Youtube className="w-5 h-5" />
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
+              {/* Floating Contact Info Card */}
+              <motion.div
+                {...fadeUp}
+                className="reveal-fade"
+                initial="initial"
+                animate="animate"
+              >
+                <Card className="bg-white/80 backdrop-blur-xl border border-white/30 shadow-stronger rounded-2xl">
+                  <CardHeader>
+                    <CardTitle>Contact Information</CardTitle>
+                    <CardDescription>
+                      Reach us through any of the channels below.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-warm-cream flex items-center justify-center">
+                        <Phone className="w-5 h-5 text-brand-teal" />
+                      </div>
+                      <div>
+                        <p className="font-semibold">Phone</p>
+                        <a
+                          href="tel:+919842106768"
+                          className="text-brand-teal hover:underline"
+                        >
+                          +91 98421 06768
+                        </a>
+                        <p className="text-xs text-cool-grey mt-1">
+                          Available Mon–Sat 9:30–19:00
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-warm-cream flex items-center justify-center">
+                        <Mail className="w-5 h-5 text-brand-teal" />
+                      </div>
+                      <div>
+                        <p className="font-semibold">Email</p>
+                        <a
+                          href="mailto:hello@polymarbles.in"
+                          className="text-brand-teal hover:underline"
+                        >
+                          hello@polymarbles.in
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-warm-cream flex items-center justify-center">
+                        <MapPin className="w-5 h-5 text-brand-teal" />
+                      </div>
+                      <div>
+                        <p className="font-semibold">Address (HQ)</p>
+                        <p className="text-cool-grey">Chennai, Tamil Nadu, India</p>
+                        <a
+                          href="https://maps.google.com/?q=Chennai%20India"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1 text-brand-teal hover:underline mt-1"
+                        >
+                          Get Directions <ArrowRight className="w-4 h-4" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="pt-2 flex items-center gap-4">
+                      <a
+                        href="#"
+                        aria-label="Instagram"
+                        className="text-cool-grey hover:text-brand-teal"
+                      >
+                        <Instagram className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="#"
+                        aria-label="Facebook"
+                        className="text-cool-grey hover:text-brand-teal"
+                      >
+                        <Facebook className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="#"
+                        aria-label="YouTube"
+                        className="text-cool-grey hover:text-brand-teal"
+                      >
+                        <Youtube className="w-5 h-5" />
+                      </a>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Contact Form + Sidebar */}
+        {/* FORM + SIDEBAR */}
         <section className="py-16">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-3 gap-8">
-              {/* Form */}
-              <Card className="lg:col-span-2 border-light-silver/60">
+              {/* FORM */}
+              <Card
+                id="form"
+                className="lg:col-span-2 border-light-silver/60"
+                asChild={false}
+              >
                 <CardHeader>
                   <CardTitle>Send us a message</CardTitle>
                   <CardDescription>
                     Share your requirements and we’ll craft a tailored quote.
                   </CardDescription>
                 </CardHeader>
+
                 <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                    {/* Personal Info */}
                     <div className="grid md:grid-cols-2 gap-4">
-                      <div>
+                      <div className="relative">
                         <Label htmlFor="name">Full Name *</Label>
                         <Input
                           id="name"
@@ -269,15 +356,21 @@ export default function Contact() {
                           onChange={(e) =>
                             setForm((f) => ({ ...f, name: e.target.value }))
                           }
-                          className={errors.name ? "border-red-500" : ""}
+                          aria-invalid={!!errors.name}
+                          aria-describedby={errors.name ? "err-name" : undefined}
+                          className={`pr-10 ${errors.name ? "border-red-500" : ""}`}
                         />
+                        {showValidTick("name") && !errors.name && (
+                          <CheckCircle className="absolute right-3 top-9 w-5 h-5 text-brand-teal" />
+                        )}
                         {errors.name && (
-                          <p className="mt-1 text-xs text-red-600">
+                          <p id="err-name" className="mt-1 text-xs text-red-600">
                             {errors.name}
                           </p>
                         )}
                       </div>
-                      <div>
+
+                      <div className="relative">
                         <Label htmlFor="email">Email *</Label>
                         <Input
                           id="email"
@@ -287,10 +380,17 @@ export default function Contact() {
                           onChange={(e) =>
                             setForm((f) => ({ ...f, email: e.target.value }))
                           }
-                          className={errors.email ? "border-red-500" : ""}
+                          aria-invalid={!!errors.email}
+                          aria-describedby={errors.email ? "err-email" : undefined}
+                          className={`pr-10 ${errors.email ? "border-red-500" : ""}`}
                         />
+                        {showValidTick("email") && !errors.email ? (
+                          <CheckCircle className="absolute right-3 top-9 w-5 h-5 text-brand-teal" />
+                        ) : form.email && !isValidEmail(form.email) ? (
+                          <XCircle className="absolute right-3 top-9 w-5 h-5 text-red-500" />
+                        ) : null}
                         {errors.email && (
-                          <p className="mt-1 text-xs text-red-600">
+                          <p id="err-email" className="mt-1 text-xs text-red-600">
                             {errors.email}
                           </p>
                         )}
@@ -298,7 +398,7 @@ export default function Contact() {
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-4">
-                      <div>
+                      <div className="relative">
                         <Label htmlFor="phone">Phone *</Label>
                         <Input
                           id="phone"
@@ -307,14 +407,20 @@ export default function Contact() {
                           onChange={(e) =>
                             setForm((f) => ({ ...f, phone: e.target.value }))
                           }
-                          className={errors.phone ? "border-red-500" : ""}
+                          aria-invalid={!!errors.phone}
+                          aria-describedby={errors.phone ? "err-phone" : undefined}
+                          className={`pr-10 ${errors.phone ? "border-red-500" : ""}`}
                         />
+                        {showValidTick("phone") && !errors.phone && (
+                          <CheckCircle className="absolute right-3 top-9 w-5 h-5 text-brand-teal" />
+                        )}
                         {errors.phone && (
-                          <p className="mt-1 text-xs text-red-600">
+                          <p id="err-phone" className="mt-1 text-xs text-red-600">
                             {errors.phone}
                           </p>
                         )}
                       </div>
+
                       <div>
                         <Label htmlFor="company">Company (Optional)</Label>
                         <Input
@@ -361,10 +467,7 @@ export default function Contact() {
                           className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm"
                           value={form.projectType}
                           onChange={(e) =>
-                            setForm((f) => ({
-                              ...f,
-                              projectType: e.target.value,
-                            }))
+                            setForm((f) => ({ ...f, projectType: e.target.value }))
                           }
                         >
                           <option value="">Select</option>
@@ -375,6 +478,7 @@ export default function Contact() {
                           <option value="Other">Other</option>
                         </select>
                       </div>
+
                       <div className="md:col-span-1">
                         <Label htmlFor="budget">Approx. Budget</Label>
                         <select
@@ -392,6 +496,7 @@ export default function Contact() {
                           <option value="10L+">{`> ₹10 Lakhs`}</option>
                         </select>
                       </div>
+
                       <div className="md:col-span-1">
                         <Label htmlFor="file">Attachment (Optional)</Label>
                         <div className="flex items-center gap-3">
@@ -414,9 +519,7 @@ export default function Contact() {
                             }
                           />
                           <span className="text-xs text-cool-grey truncate max-w-[180px]">
-                            {form.file
-                              ? form.file.name
-                              : "PDF/JPG/PNG up to 10MB"}
+                            {form.file ? form.file.name : "PDF/JPG/PNG up to 10MB"}
                           </span>
                         </div>
                       </div>
@@ -433,21 +536,29 @@ export default function Contact() {
                           setForm((f) => ({ ...f, message: e.target.value }))
                         }
                         className={errors.message ? "border-red-500" : ""}
+                        aria-invalid={!!errors.message}
+                        aria-describedby={errors.message ? "err-message" : undefined}
                       />
                       {errors.message && (
-                        <p className="mt-1 text-xs text-red-600">
+                        <p id="err-message" className="mt-1 text-xs text-red-600">
                           {errors.message}
                         </p>
                       )}
                     </div>
 
+                    {/* subtle reassurance */}
+                    <div className="flex items-start gap-3 p-4 bg-warm-cream/40 rounded-xl text-sm">
+                      <MessageSquare className="w-5 h-5 text-brand-teal mt-1" />
+                      <p>
+                        We’ll review details and follow up with a clear next step —
+                        either a quote, site-visit proposal or materials sample.
+                      </p>
+                    </div>
+
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <p className="text-xs text-cool-grey">
                         By submitting, you agree to our{" "}
-                        <a
-                          href="/privacy"
-                          className="text-brand-teal underline"
-                        >
+                        <a href="/privacy" className="text-brand-teal underline">
                           Privacy Policy
                         </a>
                         .
@@ -461,18 +572,12 @@ export default function Contact() {
                         {submitting ? "Sending..." : "Send Message"}
                       </Button>
                     </div>
-
-                    {success && (
-                      <div className="mt-4 text-sm text-brand-teal">
-                        {success}
-                      </div>
-                    )}
                   </form>
                 </CardContent>
               </Card>
 
-              {/* Sidebar: Why contact us */}
-              <div className="space-y-6">
+              {/* SIDEBAR */}
+              <div className="space-y-6 lg:sticky lg:top-24">
                 <Card className="border-light-silver/60">
                   <CardHeader>
                     <CardTitle>Why choose Polymarbles?</CardTitle>
@@ -487,9 +592,7 @@ export default function Contact() {
                           <MessageSquare className="w-4 h-4 text-brand-teal" />
                         </span>
                         <span>
-                          <span className="font-medium">
-                            Consultative approach
-                          </span>{" "}
+                          <span className="font-medium">Consultative approach</span>{" "}
                           for the right material selection and finish.
                         </span>
                       </li>
@@ -498,9 +601,7 @@ export default function Contact() {
                           <Building2 className="w-4 h-4 text-brand-teal" />
                         </span>
                         <span>
-                          <span className="font-medium">
-                            Residential & Commercial
-                          </span>{" "}
+                          <span className="font-medium">Residential & Commercial</span>{" "}
                           expertise across South India.
                         </span>
                       </li>
@@ -509,8 +610,8 @@ export default function Contact() {
                           <Clock className="w-4 h-4 text-brand-teal" />
                         </span>
                         <span>
-                          <span className="font-medium">Quick turnaround</span>{" "}
-                          on quotes and deliveries.
+                          <span className="font-medium">Quick turnaround</span> on
+                          quotes and deliveries.
                         </span>
                       </li>
                     </ul>
@@ -538,12 +639,33 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* Offices */}
+        {/* TRUSTED BY / Logos */}
+        <section className="py-8 bg-gradient-to-r from-brand-teal/6 via-white to-brand-peach/6">
+          <div className="container mx-auto px-6 text-center">
+            <p className="text-sm text-cool-grey uppercase tracking-wide mb-4">
+              Trusted by
+            </p>
+            <div className="flex flex-wrap justify-center gap-10 items-center">
+              {/* Replace with real logos */}
+              <div className="h-10 w-28 flex items-center justify-center opacity-80">
+                <img src="/placeholders/logo-1.svg" alt="Client 1" className="h-8 object-contain" />
+              </div>
+              <div className="h-10 w-28 flex items-center justify-center opacity-80">
+                <img src="/placeholders/logo-2.svg" alt="Client 2" className="h-8 object-contain" />
+              </div>
+              <div className="h-10 w-28 flex items-center justify-center opacity-80">
+                <img src="/placeholders/logo-3.svg" alt="Client 3" className="h-8 object-contain" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Offices (map cards) */}
         <section className="py-10 bg-warm-cream/40">
           <div className="container mx-auto px-6">
             <h2 className="text-2xl font-bold mb-6">Our Offices</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <Card className="border-light-silver/60">
+              <Card className="border-light-silver/60 hover:shadow-lg transition-transform transform hover:-translate-y-1">
                 <CardHeader>
                   <CardTitle>Chennai (Head Office)</CardTitle>
                   <CardDescription>Primary support & dispatch</CardDescription>
@@ -555,31 +677,31 @@ export default function Contact() {
                   </div>
                   <div className="flex items-start gap-2">
                     <Phone className="w-4 h-4 mt-0.5 text-brand-teal" />
-                    <a
-                      href="tel:+919842106768"
-                      className="text-brand-teal hover:underline"
-                    >
+                    <a href="tel:+919842106768" className="text-brand-teal hover:underline">
                       +91 98421 06768
                     </a>
                   </div>
                   <div className="flex items-start gap-2">
                     <Mail className="w-4 h-4 mt-0.5 text-brand-teal" />
-                    <a
-                      href="mailto:hello@polymarbles.in"
-                      className="text-brand-teal hover:underline"
-                    >
+                    <a href="mailto:hello@polymarbles.in" className="text-brand-teal hover:underline">
                       hello@polymarbles.in
                     </a>
                   </div>
                 </CardContent>
+                <div className="h-44 border-t border-light-silver/40 overflow-hidden">
+                  <iframe
+                    title="Chennai map"
+                    src="https://www.google.com/maps?q=Chennai%20India&output=embed"
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                  />
+                </div>
               </Card>
 
-              <Card className="border-light-silver/60">
+              <Card className="border-light-silver/60 hover:shadow-lg transition-transform transform hover:-translate-y-1">
                 <CardHeader>
                   <CardTitle>Warehouse & Logistics</CardTitle>
-                  <CardDescription>
-                    Order processing & large consignments
-                  </CardDescription>
+                  <CardDescription>Order processing & large consignments</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="flex items-start gap-2">
@@ -591,12 +713,21 @@ export default function Contact() {
                     <p>Mon–Sat: 9:30 AM – 7:00 PM</p>
                   </div>
                 </CardContent>
+                <div className="h-44 border-t border-light-silver/40 overflow-hidden">
+                  {/* small map or image */}
+                  <iframe
+                    title="Warehouse map"
+                    src="https://www.google.com/maps?q=Chennai%20India&output=embed"
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                  />
+                </div>
               </Card>
             </div>
           </div>
         </section>
 
-        {/* Map */}
+        {/* MAP (full) */}
         <section className="py-10">
           <div className="container mx-auto px-6">
             <Card className="overflow-hidden border-light-silver/60">
@@ -612,62 +743,49 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* FAQs (lightweight) */}
+        {/* FAQ accordion */}
         <section className="py-10 bg-light-silver/20">
           <div className="container mx-auto px-6">
             <h2 className="text-2xl font-bold mb-6">FAQs</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <Card className="border-light-silver/60">
-                <CardContent className="pt-6">
-                  <h4 className="font-semibold mb-2">
-                    How soon will I get a quote?
-                  </h4>
-                  <p className="text-cool-grey">
-                    Most quotes go out within 1 business hour during working
-                    time.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-light-silver/60">
-                <CardContent className="pt-6">
-                  <h4 className="font-semibold mb-2">
-                    Do you offer site visits?
-                  </h4>
-                  <p className="text-cool-grey">
-                    Yes—available in and around Chennai, and on request for
-                    other cities.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-light-silver/60">
-                <CardContent className="pt-6">
-                  <h4 className="font-semibold mb-2">
-                    Do you install as well?
-                  </h4>
-                  <p className="text-cool-grey">
-                    We work with vetted installation partners for turnkey
-                    delivery.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-light-silver/60">
-                <CardContent className="pt-6">
-                  <h4 className="font-semibold mb-2">
-                    Can I get free samples?
-                  </h4>
-                  <p className="text-cool-grey">
-                    Absolutely. Tell us your preferred finishes and we’ll
-                    arrange samples.
-                  </p>
-                </CardContent>
-              </Card>
+              {FAQS.map((f, i) => (
+                <Card key={i} className="border-light-silver/60">
+                  <CardContent className="pt-6">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      aria-expanded={openFaq === i}
+                      className="w-full text-left flex items-center justify-between gap-4"
+                    >
+                      <h4 className="font-semibold mb-2">{f.q}</h4>
+                      <span className="text-brand-teal">{openFaq === i ? "−" : "+"}</span>
+                    </button>
+                    {openFaq === i && <p className="text-cool-grey mt-3">{f.a}</p>}
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Quick Quote Anchor */}
         <div id="quick-quote" className="scroll-mt-24" />
         <QuickQuote />
+
+        {/* Closing CTA */}
+        <section className="py-16 text-center bg-brand-teal text-white rounded-t-3xl mt-12">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold mb-4">Let’s start something timeless.</h2>
+            <p className="text-white/90 mb-6 max-w-2xl mx-auto">
+              Whether it’s a signature commercial fit-out or a cozy residential finish — we’ll help
+              you build it beautifully.
+            </p>
+            <a
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-brand-teal font-semibold hover:shadow-lg transition"
+              href="#form"
+            >
+              Get in Touch <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </section>
       </main>
 
       <Footer />
