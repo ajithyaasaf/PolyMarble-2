@@ -8,9 +8,10 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import testimonialVideo from "@assets/customer_testimonial_1762845564449.mp4";
 
 export default function TrustIndicators() {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observerOptions = {
@@ -29,7 +30,7 @@ export default function TrustIndicators() {
     const elements = sectionRef.current?.querySelectorAll(
       ".reveal-up, .reveal-left, .reveal-right, .reveal-scale",
     );
-    elements?.forEach((el) => observer.observe(el));
+    elements?.forEach((el: Element) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
@@ -202,11 +203,8 @@ export default function TrustIndicators() {
                   controls
                   className="w-full h-full object-cover"
                   data-testid="video-testimonial"
+                  src={testimonialVideo}
                 >
-                  <source
-                    src="/attached_assets/customer_testimonial_1762845564449.mp4"
-                    type="video/mp4"
-                  />
                   Your browser does not support the video tag.
                 </video>
               </div>

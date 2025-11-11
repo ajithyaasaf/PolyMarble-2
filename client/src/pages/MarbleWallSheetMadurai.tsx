@@ -17,7 +17,7 @@ export default function MarbleWallSheetMadurai() {
     "Install in hours, not days",
     "Fire-resistant & moisture-proof", 
     "Maintenance-free for 10+ years",
-    "Starting at ₹45/sq.ft only"
+    "Affordable premium pricing"
   ];
 
   const localTestimonials = [
@@ -177,7 +177,7 @@ export default function MarbleWallSheetMadurai() {
                   />
                   <div className="p-4">
                     <h4 className="font-bold text-metallic-gold mb-2">Calacatta Gold</h4>
-                    <p className="text-cool-grey text-sm">₹45/sq.ft • Most popular choice</p>
+                    <p className="text-cool-grey text-sm">Most popular choice</p>
                   </div>
                 </div>
                 <div className="bg-light-silver/30/50 rounded-lg overflow-hidden">

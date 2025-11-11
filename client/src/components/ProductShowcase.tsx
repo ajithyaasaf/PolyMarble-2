@@ -21,7 +21,7 @@ export default function ProductShowcase() {
       name: "High-Gloss Premium",
       tagline: "Timeless Elegance",
       description: "Authentic marble patterns with mirror-like finish that elevates any space to luxury status.",
-      price: "₹45",
+      price: "₹52",
       originalPrice: "₹180",
       image: highGlossImage,
       features: ["Ultra-glossy finish", "Scratch resistant", "Easy maintenance", "Premium patterns"],

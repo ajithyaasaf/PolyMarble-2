@@ -31,7 +31,7 @@ export default function Products() {
     {
       name: "High-Gloss Premium",
       size: "8×4 ft",
-      price: "₹45/sq.ft.⁺",
+      price: "₹52/sq.ft.⁺",
       features: ["Water Resistant", "Fire Resistant", "Termite Proof", "Easy Installation"],
       thickness: "10-15mm",
       description: "Timeless elegance with authentic marble patterns and veining"
