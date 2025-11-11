@@ -165,7 +165,7 @@ export default function About() {
     },
     { icon: Shield, text: "Fire & water resistant", highlight: "water resistant" },
     { icon: Clock, text: "48-hour installation", highlight: "48-hour" },
-    { icon: Palette, text: "500+ design options", highlight: "500+ design" },
+    { icon: Palette, text: "50+ design options", highlight: "50+ design" },
     { icon: Users, text: "24/7 customer support", highlight: "24/7 customer" },
   ];
 
