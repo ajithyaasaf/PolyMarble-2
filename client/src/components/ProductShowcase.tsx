@@ -1,102 +1,20 @@
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Zap, Shield, Droplets, Thermometer, Sparkles, Clock } from "lucide-react";
-
-// Import generated product images
-import highGlossImage from "@assets/generated_images/High-gloss_polymarble_sheets_b1da0e5d.png";
-import woodyPanelImage from "@assets/generated_images/Woody_panel_polymarble_sheets_479b86f5.png";
-import solidColorImage from "@assets/generated_images/Solid_color_polymarble_sheets_f47ccc7d.png";
-import texturedImage from "@assets/generated_images/Textured_polymarble_surface_detail_e034d7bf.png";
-import mirrorImage from "@assets/generated_images/Mirror_finish_polymarble_sheets_1e70ee77.png";
+import { Badge } from "@/components/ui/badge";
+import { ChevronRight, Zap, Shield, Droplets, Thermometer, Sparkles, Clock, ArrowRight } from "lucide-react";
+import { getFeaturedProducts } from "@shared/productData";
+import { Link } from "wouter";
 
 export default function ProductShowcase() {
   useScrollReveal();
   
+  const featuredProducts = getFeaturedProducts();
   const [activeProduct, setActiveProduct] = useState(0);
 
-  const products = [
-    {
-      id: "high-gloss",
-      name: "High-Gloss Premium",
-      tagline: "Timeless Elegance",
-      description: "Authentic marble patterns with mirror-like finish that elevates any space to luxury status.",
-      image: highGlossImage,
-      features: ["Ultra-glossy finish", "Scratch resistant", "Easy maintenance", "Premium patterns"],
-      specifications: {
-        thickness: "10-15mm",
-        size: "8×4 ft",
-        weight: "12 kg/sheet",
-        finish: "High-gloss",
-        warranty: "15 years"
-      },
-      useCases: ["Living rooms", "Bedrooms", "Office reception", "Luxury interiors"]
-    },
-    {
-      id: "woody-panels",
-      name: "Woody Panels",
-      tagline: "Natural Warmth",
-      description: "Authentic wood textures with superior durability and complete water resistance.",
-      image: woodyPanelImage,
-      features: ["Natural wood grain", "Water resistant", "Termite proof", "UV stable"],
-      specifications: {
-        thickness: "12-15mm",
-        size: "8×4 ft", 
-        weight: "14 kg/sheet",
-        finish: "Wood texture",
-        warranty: "15 years"
-      },
-      useCases: ["Accent walls", "Restaurants", "Cafes", "Warm interiors"]
-    },
-    {
-      id: "solid-color",
-      name: "Solid Color Range",
-      tagline: "Modern Minimalism", 
-      description: "Clean, contemporary colors perfect for modern architectural applications.",
-      image: solidColorImage,
-      features: ["Pure colors", "Stain resistant", "Cost effective", "Versatile"],
-      specifications: {
-        thickness: "10-12mm",
-        size: "8×4 ft",
-        weight: "11 kg/sheet", 
-        finish: "Matte/Satin",
-        warranty: "12 years"
-      },
-      useCases: ["Modern homes", "Offices", "Schools", "Hospitals"]
-    },
-    {
-      id: "textured-finishes",
-      name: "Textured Finishes",
-      tagline: "Dimensional Beauty",
-      description: "Three-dimensional surfaces that add depth, character and tactile appeal.",
-      image: texturedImage,
-      features: ["3D texture", "Anti-slip", "Unique patterns", "Dimensional appeal"],
-      specifications: {
-        thickness: "12-15mm",
-        size: "8×4 ft",
-        weight: "13 kg/sheet",
-        finish: "Textured",
-        warranty: "15 years"
-      },
-      useCases: ["Feature walls", "Bathrooms", "Exteriors", "Commercial"]
-    },
-    {
-      id: "mirror-sheets", 
-      name: "Mirror Sheets",
-      tagline: "Luxury Reflection",
-      description: "Mirror-like finish for high-impact installations that command attention.",
-      image: mirrorImage,
-      features: ["Mirror finish", "High impact", "Luxury appeal", "Light enhancing"],
-      specifications: {
-        thickness: "10-12mm",
-        size: "8×4 ft",
-        weight: "12 kg/sheet",
-        finish: "Mirror",
-        warranty: "12 years"
-      },
-      useCases: ["Luxury hotels", "Showrooms", "Boutiques", "Premium spaces"]
-    }
-  ];
+  if (featuredProducts.length === 0) {
+    return null;
+  }
 
   const coreFeatures = [
     { icon: <Droplets className="w-5 h-5" />, label: "Water Resistant" },
@@ -107,33 +25,34 @@ export default function ProductShowcase() {
     { icon: <Clock className="w-5 h-5" />, label: "15+ Year Life" }
   ];
 
+  const currentProduct = featuredProducts[activeProduct];
+
   return (
-    <section className="relative overflow-hidden">
-      {/* Background Pattern */}
+    <section className="relative overflow-hidden py-20" data-testid="section-product-showcase">
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full bg-gradient-to-br from-brand-teal/10 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
+        <div className="text-center mb-16 reveal-up">
+          <h3 className="text-4xl lg:text-5xl font-bold mb-6">
             Our <span className="text-brand-teal text-shimmer">Product Range</span>
           </h3>
-          <p className="text-xl text-cool-grey max-w-3xl mx-auto reveal-fade">
-            Five distinct categories designed for every space and style. Each engineered for superior performance.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Premium polymarble solutions designed for every space and style. Each engineered for superior performance.
           </p>
         </div>
 
-        {/* Product Navigation */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {products.map((product, index) => (
+        <div className="flex flex-wrap justify-center gap-3 mb-12 reveal-fade">
+          {featuredProducts.map((product, index) => (
             <button
               key={product.id}
               onClick={() => setActiveProduct(index)}
+              data-testid={`button-product-${product.id}`}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeProduct === index
-                  ? 'bg-brand-teal text-pure-white transform scale-105'
-                  : 'bg-pure-white/50 text-deep-charcoal hover:bg-brand-teal/20 hover:text-brand-teal border border-brand-teal/20'
+                  ? 'bg-brand-teal text-white transform scale-105'
+                  : 'bg-card text-foreground hover-elevate active-elevate-2 border'
               }`}
             >
               {product.name}
@@ -141,105 +60,137 @@ export default function ProductShowcase() {
           ))}
         </div>
 
-        {/* Active Product Showcase */}
-        <div className="max-w-6xl mx-auto">
-          {products.map((product, index) => (
-            <div
-              key={product.id}
-              className={`transition-all duration-500 ${
-                activeProduct === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 absolute pointer-events-none'
-              }`}
-            >
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                {/* Product Image */}
-                <div className="relative group">
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-brand-teal/20">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
+        <div className="max-w-6xl mx-auto reveal-up">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative group order-2 lg:order-1">
+              <div className="aspect-[4/3] rounded-md overflow-hidden border">
+                <img
+                  src={currentProduct.images[0]}
+                  alt={currentProduct.name}
+                  data-testid={`img-product-${currentProduct.id}`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              {currentProduct.images.length > 1 && (
+                <div className="absolute bottom-4 right-4">
+                  <Badge variant="secondary" className="bg-background/90 backdrop-blur-sm">
+                    +{currentProduct.images.length - 1} more {currentProduct.images.length === 2 ? 'view' : 'views'}
+                  </Badge>
                 </div>
+              )}
+            </div>
 
-                {/* Product Details */}
-                <div className="space-y-6">
-                  <div>
-                    <div className="inline-flex items-center bg-brand-teal/20 rounded-full px-3 py-1 text-brand-teal text-sm font-medium mb-3">
-                      {product.tagline}
+            <div className="space-y-6 order-1 lg:order-2">
+              <div>
+                <div className="inline-flex items-center bg-brand-teal/10 rounded-full px-3 py-1 text-brand-teal text-sm font-medium mb-3">
+                  {currentProduct.tagline}
+                </div>
+                <h4 className="text-3xl font-bold mb-3" data-testid={`text-product-name-${currentProduct.id}`}>
+                  {currentProduct.name}
+                </h4>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  {currentProduct.description}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3">
+                {coreFeatures.map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="text-brand-teal">{feature.icon}</div>
+                    <span className="hidden sm:inline">{feature.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-card/50 backdrop-blur-sm rounded-md p-4 border">
+                <h5 className="font-bold text-brand-teal mb-3">Specifications:</h5>
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  {currentProduct.material && (
+                    <div className="flex justify-between gap-2">
+                      <span className="text-muted-foreground">Material:</span>
+                      <span className="font-medium text-right">{currentProduct.material}</span>
                     </div>
-                    <h4 className="text-3xl font-bold text-deep-charcoal mb-3">{product.name}</h4>
-                    <p className="text-cool-grey text-lg leading-relaxed">{product.description}</p>
-                  </div>
-
-                  {/* Core Features */}
-                  <div className="grid grid-cols-3 gap-3">
-                    {coreFeatures.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-cool-grey">
-                        <div className="text-brand-teal mr-2">{feature.icon}</div>
-                        {feature.label}
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Product Features */}
-                  <div>
-                    <h5 className="font-bold text-deep-charcoal mb-3">Key Features:</h5>
-                    <div className="grid grid-cols-2 gap-2">
-                      {product.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center text-cool-grey text-sm">
-                          <div className="w-1.5 h-1.5 bg-brand-teal rounded-full mr-2"></div>
-                          {feature}
-                        </div>
-                      ))}
+                  )}
+                  {currentProduct.size && (
+                    <div className="flex justify-between gap-2">
+                      <span className="text-muted-foreground">Size:</span>
+                      <span className="font-medium text-right">{currentProduct.size}</span>
                     </div>
-                  </div>
-
-                  {/* Specifications */}
-                  <div className="bg-pure-white/80 backdrop-blur-sm rounded-lg p-4 border border-brand-teal/20">
-                    <h5 className="font-bold text-brand-teal mb-3">Specifications:</h5>
-                    <div className="grid grid-cols-2 gap-3 text-sm">
-                      {Object.entries(product.specifications).map(([key, value]) => (
-                        <div key={key} className="flex justify-between">
-                          <span className="text-cool-grey capitalize">{key}:</span>
-                          <span className="text-deep-charcoal font-medium">{value}</span>
-                        </div>
-                      ))}
+                  )}
+                  {currentProduct.thickness && (
+                    <div className="flex justify-between gap-2">
+                      <span className="text-muted-foreground">Thickness:</span>
+                      <span className="font-medium text-right">{currentProduct.thickness}</span>
                     </div>
-                  </div>
-
-                  {/* Use Cases */}
-                  <div>
-                    <h5 className="font-bold text-deep-charcoal mb-3">Perfect For:</h5>
-                    <div className="flex flex-wrap gap-2">
-                      {product.useCases.map((useCase, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 bg-brand-teal/20 text-brand-teal text-sm rounded-full"
-                        >
-                          {useCase}
-                        </span>
-                      ))}
+                  )}
+                  {currentProduct.height && (
+                    <div className="flex justify-between gap-2">
+                      <span className="text-muted-foreground">Height:</span>
+                      <span className="font-medium text-right">{currentProduct.height}</span>
                     </div>
-                  </div>
-
-                  {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button className="flex-1 bg-brand-teal text-pure-white hover:bg-brand-teal/90 font-bold">
-                      Get Free Sample
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      className="flex-1 border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-pure-white font-bold"
-                    >
-                      Calculate Cost
-                      <ChevronRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </div>
+                  )}
+                  {currentProduct.width && (
+                    <div className="flex justify-between gap-2">
+                      <span className="text-muted-foreground">Width:</span>
+                      <span className="font-medium text-right">{currentProduct.width}</span>
+                    </div>
+                  )}
+                  {currentProduct.warranty && (
+                    <div className="flex justify-between gap-2">
+                      <span className="text-muted-foreground">Warranty:</span>
+                      <span className="font-medium text-right">{currentProduct.warranty}</span>
+                    </div>
+                  )}
                 </div>
               </div>
+
+              <div>
+                <h5 className="font-bold mb-3">Key Features:</h5>
+                <div className="grid grid-cols-2 gap-2">
+                  {currentProduct.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-muted-foreground text-sm">
+                      <div className="w-1.5 h-1.5 bg-brand-teal rounded-full flex-shrink-0"></div>
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h5 className="font-bold mb-3">Perfect For:</h5>
+                <div className="flex flex-wrap gap-2">
+                  {currentProduct.useCases.map((useCase, idx) => (
+                    <Badge
+                      key={idx}
+                      variant="secondary"
+                      className="bg-brand-teal/10 text-brand-teal"
+                    >
+                      {useCase}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button 
+                  className="flex-1 bg-brand-teal text-white"
+                  data-testid="button-get-sample"
+                >
+                  Get Free Sample
+                </Button>
+                <Link href="/products" className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-brand-teal text-brand-teal"
+                    data-testid="button-view-all-products"
+                  >
+                    View All Products
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
