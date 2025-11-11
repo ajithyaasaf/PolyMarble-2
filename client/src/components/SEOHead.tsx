@@ -96,7 +96,7 @@ export default function SEOHead({
         "longitude": "78.1198"
       },
       "openingHours": "Mo-Sa 09:00-19:00",
-      "priceRange": "₹40-55 per sq.ft",
+      "priceRange": "$$",
       "areaServed": [
         {
           "@type": "State",
