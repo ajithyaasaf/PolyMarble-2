@@ -216,13 +216,13 @@ export default function Footer() {
             </div>
           </div>
           <div className="text-center mt-4">
-            <div className="text-xs text-warm-cream">
+            <div className="text-sm text-warm-cream">
               Designed & Developed by{" "}
               <a
                 href="https://www.godivatech.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-brand-peach font-medium hover:text-brand-teal transition-colors"
+                className="text-brand-peach font-semibold hover:text-brand-teal transition-colors"
               >
                 GodivaTech
               </a>

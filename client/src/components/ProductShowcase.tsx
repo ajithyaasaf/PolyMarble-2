@@ -172,12 +172,14 @@ export default function ProductShowcase() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button 
-                  className="flex-1 bg-brand-teal text-white"
-                  data-testid="button-get-sample"
-                >
-                  Get Free Sample
-                </Button>
+                <Link href="/contact" className="flex-1">
+                  <Button 
+                    className="w-full bg-brand-teal text-white"
+                    data-testid="button-get-sample"
+                  >
+                    Get Quote
+                  </Button>
+                </Link>
                 <Link href="/products" className="flex-1">
                   <Button 
                     variant="outline" 

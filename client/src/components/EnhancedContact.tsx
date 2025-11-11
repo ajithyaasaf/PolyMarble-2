@@ -89,7 +89,7 @@ export default function EnhancedContact() {
             Let's <span className="text-brand-teal text-shimmer">Start Your Project</span>
           </h3>
           <p className="text-xl text-cool-grey reveal-fade max-w-3xl mx-auto">
-            Get a personalized quote, free samples, and expert consultation. 
+            Get a personalized quote and expert consultation. 
             Our team will guide you through every step of your transformation.
           </p>
         </div>
@@ -246,7 +246,7 @@ export default function EnhancedContact() {
                 ) : (
                   <div className="flex items-center justify-center">
                     <Send className="w-4 h-4 mr-2" />
-                    Get Free Quote & Samples
+                    Get Quote
                   </div>
                 )}
               </Button>

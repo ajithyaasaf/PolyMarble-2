@@ -1,22 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Sparkles, Play, Star, Shield, Globe } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { ArrowRight, Play, Star, Shield, Globe, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Link } from "wouter";
 import heroBackgroundVideo from "@assets/1_1755841607772.mp4";
 import RotatingText from "./RotatingText";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [activeMetric, setActiveMetric] = useState(0);
 
@@ -178,106 +168,25 @@ export default function Hero() {
 
             {/* CTA Buttons with Premium Design */}
             <div className="flex flex-wrap gap-4 items-center reveal-up">
-              <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-                <DialogTrigger asChild>
-                  <Button className="group relative px-8 py-6 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white rounded-2xl font-bold text-lg overflow-hidden hover-lift">
-                    <span className="relative z-10 flex items-center gap-3">
-                      Get Free Sample
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-brand-brown to-brand-teal opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[500px] bg-pure-white border-0 rounded-3xl p-0 overflow-hidden">
-                  {/* Modal Header with Gradient */}
-                  <div className="bg-gradient-to-br from-brand-teal to-brand-teal/80 p-6 text-pure-white">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold text-pure-white">
-                        Your Premium Experience Awaits
-                      </DialogTitle>
-                      <p className="text-pure-white/80 text-sm mt-2">
-                        Get exclusive samples and personalized quotes
-                      </p>
-                    </DialogHeader>
-                  </div>
+              <Link href="/contact">
+                <Button className="group relative px-8 py-6 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white rounded-2xl font-bold text-lg overflow-hidden hover-lift">
+                  <span className="relative z-10 flex items-center gap-3">
+                    Get Quote
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-brand-brown to-brand-teal opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </Button>
+              </Link>
 
-                  {/* Modal Form with Better Design */}
-                  <div className="p-6 space-y-4">
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="name"
-                        className="text-deep-charcoal font-medium"
-                      >
-                        Full Name
-                      </Label>
-                      <Input
-                        id="name"
-                        placeholder="John Doe"
-                        className="border-light-silver focus:border-brand-teal transition-colors rounded-xl h-12"
-                      />
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label
-                          htmlFor="email"
-                          className="text-deep-charcoal font-medium"
-                        >
-                          Email
-                        </Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          placeholder="john@example.com"
-                          className="border-light-silver focus:border-brand-teal transition-colors rounded-xl h-12"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label
-                          htmlFor="phone"
-                          className="text-deep-charcoal font-medium"
-                        >
-                          Phone
-                        </Label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          placeholder="+91 98421 06768"
-                          className="border-light-silver focus:border-brand-teal transition-colors rounded-xl h-12"
-                        />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="project"
-                        className="text-deep-charcoal font-medium"
-                      >
-                        Project Details
-                      </Label>
-                      <Textarea
-                        id="project"
-                        placeholder="Tell us about your dream space..."
-                        className="border-light-silver focus:border-brand-teal transition-colors rounded-xl min-h-[100px] resize-none"
-                      />
-                    </div>
-                    <Button
-                      type="submit"
-                      className="w-full bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white hover:from-brand-teal/90 hover:to-brand-teal font-bold h-12 rounded-xl text-lg"
-                    >
-                      Send My Request
-                    </Button>
-                  </div>
-                </DialogContent>
-              </Dialog>
-
-              <button
-                onClick={() => scrollToSection("portfolio")}
-                className="group px-8 py-6 bg-pure-white border-2 border-brand-teal/20 rounded-2xl font-bold text-brand-teal hover:bg-brand-teal hover:text-pure-white transition-all duration-300"
+              <Link
+                href="/products"
+                className="group px-8 py-6 bg-pure-white border-2 border-brand-teal/20 rounded-2xl font-bold text-brand-teal hover:bg-brand-teal hover:text-pure-white transition-all duration-300 inline-flex"
               >
                 <span className="flex items-center gap-3">
                   <Play className="w-5 h-5" />
                   View Portfolio
                 </span>
-              </button>
+              </Link>
             </div>
 
             {/* Animated Metrics */}

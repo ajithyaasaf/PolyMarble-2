@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import QuickQuote from "@/components/QuickQuote";
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Star, Clock, Shield, Award } from "lucide-react";
+import { Link } from "wouter";
 import bathroomInstallationImage from "@assets/generated_images/Bathroom_polymarble_installation_example_951063c2.png";
 import highGlossImage from "@assets/generated_images/High-gloss_polymarble_product_showcase_f795ab21.png";
 import solidColorImage from "@assets/generated_images/Solid_color_polymarble_sheets_f47ccc7d.png";
@@ -57,9 +58,11 @@ export default function MarbleWallSheetMadurai() {
                   <Phone className="w-5 h-5 mr-2" />
                   Call +91 98421 06768
                 </Button>
-                <Button variant="outline" className="border-metallic-gold text-metallic-gold hover:bg-metallic-gold hover:text-pure-white font-bold text-lg px-8 py-4">
-                  Get Free Sample
-                </Button>
+                <Link href="/contact">
+                  <Button variant="outline" className="border-metallic-gold text-metallic-gold hover:bg-metallic-gold hover:text-pure-white font-bold text-lg px-8 py-4">
+                    Get Quote
+                  </Button>
+                </Link>
               </div>
 
               <div className="flex items-center justify-center gap-2 text-sm text-cool-grey">

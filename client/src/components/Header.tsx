@@ -63,8 +63,14 @@ export default function Header() {
 
   const navigationItems: NavItem[] = [
     {
+      label: "Home",
+      href: "/",
+      icon: Home,
+      description: "Homepage",
+    },
+    {
       label: "About",
-      action: () => scrollToSection("about"),
+      href: "/about",
       icon: Home,
       description: "Our story and values",
     },
@@ -124,17 +130,17 @@ export default function Header() {
       icon: ImageIcon,
       description: "Stunning installations",
     },
-    {
-      label: "Inspiration",
-      href: "/inspiration",
-      icon: Lightbulb,
-      description: "Design ideas",
-    },
-    {
-      label: "Case Studies",
-      action: () => scrollToSection("projects"),
-      description: "Success stories",
-    },
+    // {
+    //   label: "Inspiration",
+    //   href: "/inspiration",
+    //   icon: Lightbulb,
+    //   description: "Design ideas",
+    // },
+    // {
+    //   label: "Case Studies",
+    //   action: () => scrollToSection("projects"),
+    //   description: "Success stories",
+    // },
     {
       label: "Contact",
       href: "/contact",
@@ -168,10 +174,6 @@ export default function Header() {
                 </span>
               </div>
               <div className="flex items-center gap-4">
-                <span className="hidden md:flex items-center gap-2">
-                  <Sparkles className="w-3 h-3 animate-pulse" />
-                  <span className="font-medium">Free Samples Available</span>
-                </span>
                 <div className="flex items-center gap-3">
                   <a
                     href="https://www.instagram.com/polymarblesheet_india?igsh=MXZoczNwcWxleWl6bw=="
@@ -429,7 +431,7 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Mail className="w-5 h-5" />
-                Get Free Quote
+                Get Quote
               </Link>
               <div className="flex items-center justify-center gap-4 mt-4">
                 <a
