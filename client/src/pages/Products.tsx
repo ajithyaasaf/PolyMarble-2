@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -6,10 +6,28 @@ import QuickQuote from "@/components/QuickQuote";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Download, Info, ArrowRight, Package, Ruler, Award, Shield } from "lucide-react";
-import { products, productCategories, getProductsByCategory } from "@shared/productData";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import {
+  Download,
+  Info,
+  ArrowRight,
+  Package,
+  Ruler,
+  Award,
+  Shield,
+  Filter,
+} from "lucide-react";
+import {
+  products,
+  productCategories,
+  getProductsByCategory,
+} from "@shared/productData";
 import { Product } from "@shared/schema";
 
 export default function Products() {
@@ -18,8 +36,20 @@ export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [showDetailsDialog, setShowDetailsDialog] = useState(false);
+  const [query, setQuery] = useState("");
 
-  const displayProducts = getProductsByCategory(selectedCategory);
+  const displayProducts = useMemo(() => {
+    const base = getProductsByCategory(selectedCategory);
+    if (!query.trim()) return base;
+    const q = query.toLowerCase();
+    return base.filter(
+      (p) =>
+        p.name.toLowerCase().includes(q) ||
+        p.tagline?.toLowerCase().includes(q) ||
+        p.description?.toLowerCase().includes(q) ||
+        p.features?.some((f) => f.toLowerCase().includes(q))
+    );
+  }, [selectedCategory, query]);
 
   const handleProductClick = (product: Product) => {
     setSelectedProduct(product);
@@ -29,13 +59,14 @@ export default function Products() {
   return (
     <div className="relative min-h-screen">
       <Header />
-      
+
       <main className="pt-20 scroll-smooth">
+        {/* Hero / Stat Cards */}
         <section className="py-20 bg-gradient-to-br from-brand-teal/5 to-transparent relative overflow-hidden">
           <div className="absolute inset-0 opacity-5">
-            <div className="w-full h-full bg-gradient-to-br from-brand-teal/20 to-transparent"></div>
+            <div className="w-full h-full bg-gradient-to-br from-brand-teal/20 to-transparent" />
           </div>
-          
+
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-16 reveal-up">
               <h1 className="text-5xl lg:text-6xl font-bold mb-6">
@@ -79,115 +110,179 @@ export default function Products() {
           </div>
         </section>
 
-        <section className="py-16">
+        {/* Filter Bar (replaces Tabs) */}
+        <section className="py-6 border-y bg-background/50">
           <div className="container mx-auto px-6">
-            <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
-              <div className="flex justify-center mb-12 reveal-up">
-                <TabsList className="flex-wrap h-auto gap-2 bg-muted/50 p-2">
-                  {productCategories.map((category) => (
-                    <TabsTrigger
-                      key={category.id}
-                      value={category.id}
-                      data-testid={`tab-category-${category.id}`}
-                      className="data-[state=active]:bg-brand-teal data-[state=active]:text-white"
-                    >
-                      {category.name}
-                      <Badge variant="secondary" className="ml-2">
-                        {category.count}
-                      </Badge>
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between reveal-up">
+              {/* Category chips */}
+              <div className="flex flex-wrap gap-2 items-center">
+                <div className="inline-flex items-center gap-2 text-muted-foreground">
+                  <Filter className="w-4 h-4" />
+                  <span className="text-sm">Filter by category:</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {productCategories.map((category) => {
+                    const active = selectedCategory === category.id;
+                    return (
+                      <button
+                        key={category.id}
+                        type="button"
+                        onClick={() => setSelectedCategory(category.id)}
+                        aria-pressed={active}
+                        className={[
+                          "inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition",
+                          active
+                            ? "bg-brand-teal text-white border-brand-teal"
+                            : "bg-card text-foreground border-border hover:bg-muted/60",
+                        ].join(" ")}
+                      >
+                        {category.name}
+                        <Badge
+                          variant={active ? "secondary" : "outline"}
+                          className={active ? "bg-white/20 text-white" : "text-muted-foreground"}
+                        >
+                          {category.count}
+                        </Badge>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
-              {productCategories.map((category) => (
-                <TabsContent key={category.id} value={category.id} className="mt-0">
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-fade">
-                    {displayProducts.map((product) => (
-                      <Card
-                        key={product.id}
-                        className="group overflow-hidden hover-elevate active-elevate-2 cursor-pointer"
-                        onClick={() => handleProductClick(product)}
-                        data-testid={`card-product-${product.id}`}
-                      >
-                        <div className="aspect-[4/3] overflow-hidden bg-muted">
-                          <img
-                            src={product.images[0]}
-                            alt={product.name}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                          />
-                        </div>
-                        <CardContent className="p-6 space-y-4">
-                          <div>
-                            <div className="flex items-start justify-between gap-2 mb-2">
-                              <h3 className="font-bold text-xl" data-testid={`text-product-name-${product.id}`}>
-                                {product.name}
-                              </h3>
-                              {product.isFeatured && (
-                                <Badge className="bg-brand-teal text-white flex-shrink-0">
-                                  Featured
-                                </Badge>
-                              )}
-                            </div>
-                            <p className="text-sm text-brand-teal font-medium mb-2">
-                              {product.tagline}
-                            </p>
-                            <p className="text-sm text-muted-foreground line-clamp-2">
-                              {product.description}
-                            </p>
-                          </div>
+              {/* Search + Reset */}
+              <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                <input
+                  type="search"
+                  placeholder="Search by name, feature, description..."
+                  className="w-full sm:w-80 rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+                <Button
+                  variant="outline"
+                  className="border-brand-teal text-brand-teal"
+                  onClick={() => {
+                    setSelectedCategory("all");
+                    setQuery("");
+                  }}
+                >
+                  Reset
+                </Button>
+              </div>
+            </div>
 
-                          <div className="space-y-2 text-sm">
-                            {product.material && (
-                              <div className="flex justify-between">
-                                <span className="text-muted-foreground">Material:</span>
-                                <span className="font-medium">{product.material}</span>
-                              </div>
-                            )}
-                            {product.size && (
-                              <div className="flex justify-between">
-                                <span className="text-muted-foreground">Size:</span>
-                                <span className="font-medium">{product.size}</span>
-                              </div>
-                            )}
-                            {product.warranty && (
-                              <div className="flex justify-between">
-                                <span className="text-muted-foreground">Warranty:</span>
-                                <span className="font-medium">{product.warranty}</span>
-                              </div>
-                            )}
-                          </div>
-
-                          <div className="flex flex-wrap gap-2">
-                            {product.features.slice(0, 3).map((feature, idx) => (
-                              <Badge key={idx} variant="outline" className="text-xs">
-                                {feature}
-                              </Badge>
-                            ))}
-                            {product.features.length > 3 && (
-                              <Badge variant="outline" className="text-xs">
-                                +{product.features.length - 3} more
-                              </Badge>
-                            )}
-                          </div>
-
-                          <Button
-                            className="w-full bg-brand-teal text-white"
-                            data-testid={`button-view-details-${product.id}`}
-                          >
-                            View Details
-                            <Info className="w-4 h-4 ml-2" />
-                          </Button>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </TabsContent>
-              ))}
-            </Tabs>
+            {/* Result count */}
+            <div className="mt-3 text-sm text-muted-foreground">
+              Showing <span className="font-medium text-foreground">{displayProducts.length}</span> result{displayProducts.length === 1 ? "" : "s"}
+              {selectedCategory !== "all" && (
+                <>
+                  {" "}in <span className="font-medium text-foreground">
+                    {productCategories.find((c) => c.id === selectedCategory)?.name}
+                  </span>
+                </>
+              )}
+              {query && <> for “{query}”</>}
+            </div>
           </div>
         </section>
 
+        {/* Product Grid */}
+        <section className="py-16">
+          <div className="container mx-auto px-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-fade">
+              {displayProducts.map((product) => (
+                <Card
+                  key={product.id}
+                  className="group overflow-hidden hover-elevate active-elevate-2 cursor-pointer"
+                  onClick={() => handleProductClick(product)}
+                  data-testid={`card-product-${product.id}`}
+                >
+                  <div className="aspect-[4/3] overflow-hidden bg-muted">
+                    <img
+                      src={product.images[0]}
+                      alt={product.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <CardContent className="p-6 space-y-4">
+                    <div>
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <h3
+                          className="font-bold text-xl"
+                          data-testid={`text-product-name-${product.id}`}
+                        >
+                          {product.name}
+                        </h3>
+                        {product.isFeatured && (
+                          <Badge className="bg-brand-teal text-white flex-shrink-0">
+                            Featured
+                          </Badge>
+                        )}
+                      </div>
+                      <p className="text-sm text-brand-teal font-medium mb-2">
+                        {product.tagline}
+                      </p>
+                      <p className="text-sm text-muted-foreground line-clamp-2">
+                        {product.description}
+                      </p>
+                    </div>
+
+                    <div className="space-y-2 text-sm">
+                      {product.material && (
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Material:</span>
+                          <span className="font-medium">{product.material}</span>
+                        </div>
+                      )}
+                      {product.size && (
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Size:</span>
+                          <span className="font-medium">{product.size}</span>
+                        </div>
+                      )}
+                      {product.warranty && (
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Warranty:</span>
+                          <span className="font-medium">{product.warranty}</span>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                      {product.features.slice(0, 3).map((feature, idx) => (
+                        <Badge key={idx} variant="outline" className="text-xs">
+                          {feature}
+                        </Badge>
+                      ))}
+                      {product.features.length > 3 && (
+                        <Badge variant="outline" className="text-xs">
+                          +{product.features.length - 3} more
+                        </Badge>
+                      )}
+                    </div>
+
+                    <Button
+                      className="w-full bg-brand-teal text-white"
+                      data-testid={`button-view-details-${product.id}`}
+                    >
+                      View Details
+                      <Info className="w-4 h-4 ml-2" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Empty state */}
+            {displayProducts.length === 0 && (
+              <div className="text-center text-muted-foreground mt-16">
+                No products found. Try adjusting your filters.
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* CTA */}
         <section className="py-16 bg-gradient-to-br from-brand-teal/5 to-transparent">
           <div className="container mx-auto px-6 text-center reveal-up">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
@@ -201,7 +296,12 @@ export default function Products() {
                 Contact Our Experts
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-              <Button size="lg" variant="outline" className="border-brand-teal text-brand-teal" data-testid="button-download-catalog">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-brand-teal text-brand-teal"
+                data-testid="button-download-catalog"
+              >
                 <Download className="w-4 h-4 mr-2" />
                 Download Catalog
               </Button>
@@ -210,8 +310,12 @@ export default function Products() {
         </section>
       </main>
 
+      {/* Product Details Dialog */}
       <Dialog open={showDetailsDialog} onOpenChange={setShowDetailsDialog}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto" data-testid="dialog-product-details">
+        <DialogContent
+          className="max-w-4xl max-h-[90vh] overflow-y-auto"
+          data-testid="dialog-product-details"
+        >
           {selectedProduct && (
             <>
               <DialogHeader>
@@ -298,8 +402,11 @@ export default function Products() {
                     <h3 className="font-bold text-lg mb-3">Key Features</h3>
                     <div className="grid grid-cols-2 gap-2">
                       {selectedProduct.features.map((feature: string, idx: number) => (
-                        <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-brand-teal rounded-full flex-shrink-0"></div>
+                        <div
+                          key={idx}
+                          className="flex items-center gap-2 text-sm text-muted-foreground"
+                        >
+                          <div className="w-1.5 h-1.5 bg-brand-teal rounded-full flex-shrink-0" />
                           <span>{feature}</span>
                         </div>
                       ))}
@@ -322,10 +429,17 @@ export default function Products() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                    <Button className="flex-1 bg-brand-teal text-white" data-testid="button-dialog-get-quote">
+                    <Button
+                      className="flex-1 bg-brand-teal text-white"
+                      data-testid="button-dialog-get-quote"
+                    >
                       Get Quote
                     </Button>
-                    <Button variant="outline" className="flex-1 border-brand-teal text-brand-teal" data-testid="button-dialog-request-sample">
+                    <Button
+                      variant="outline"
+                      className="flex-1 border-brand-teal text-brand-teal"
+                      data-testid="button-dialog-request-sample"
+                    >
                       Request Sample
                     </Button>
                   </div>
