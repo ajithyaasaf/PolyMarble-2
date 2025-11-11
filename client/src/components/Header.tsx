@@ -217,18 +217,18 @@ export default function Header() {
         className={`fixed left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
             ? "top-0 bg-pure-white/95 backdrop-blur-xl shadow-lg"
-            : "top-9 sm:top-9 bg-pure-white/80 backdrop-blur-md"
+            : "top-[42px] sm:top-9 bg-pure-white/80 backdrop-blur-md"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16 sm:h-20">
+          <div className="flex items-center justify-between h-14 sm:h-20">
             {/* Logo */}
             <Link href="/" className="group flex items-center gap-3 relative">
               <div className="relative">
                 <img
                   src="/logo.png"
                   alt="Polymarble"
-                  className="h-14 sm:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
+                  className="h-12 sm:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
                   data-testid="img-logo"
                 />
                 <div className="absolute -inset-2 bg-gradient-to-r from-brand-teal/20 to-brand-peach/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -365,10 +365,10 @@ export default function Header() {
         <div
           className={`lg:hidden fixed inset-x-0 bg-pure-white shadow-2xl transition-all duration-500 ${
             isMobileMenuOpen
-              ? "top-16 sm:top-20 opacity-100 translate-y-0"
-              : "top-16 sm:top-20 opacity-0 -translate-y-full pointer-events-none"
+              ? "top-[98px] sm:top-20 opacity-100 translate-y-0"
+              : "top-[98px] sm:top-20 opacity-0 -translate-y-full pointer-events-none"
           }`}
-          style={{ maxHeight: "calc(100vh - 64px)" }}
+          style={{ maxHeight: "calc(100vh - 98px)" }}
         >
           <div className="overflow-y-auto">
             {/* Mobile Navigation */}
