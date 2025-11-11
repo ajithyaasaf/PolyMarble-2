@@ -3,354 +3,648 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuickQuote from "@/components/QuickQuote";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Play, Download, Users, Building, Scissors, Wrench, Droplets, Lock } from "lucide-react";
-import installationTutorialImage from "@assets/generated_images/Installation_tutorial_thumbnail_0c18e321.png";
-import professionalInstallationImage from "@assets/generated_images/Professional_installation_process_image_9587fee8.png";
-import bathroomInstallationImage from "@assets/generated_images/Bathroom_polymarble_installation_example_951063c2.png";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
 
-export default function Support() {
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  Building2,
+  FileUp,
+  MessageSquare,
+  ArrowRight,
+  Instagram,
+  Facebook,
+  Youtube,
+} from "lucide-react";
+
+export default function Contact() {
   useScrollReveal();
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loginForm, setLoginForm] = useState({ email: "", password: "" });
+  const [submitting, setSubmitting] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    city: "",
+    subject: "",
+    projectType: "",
+    budget: "",
+    message: "",
+    file: null as File | null,
+  });
 
-  const diyVideos = [
-    {
-      id: 1,
-      title: "How to Cut Polymarble Sheets",
-      duration: "3:45",
-      thumbnail: installationTutorialImage,
-      description: "Learn professional cutting techniques using basic tools",
-      videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4"
-    },
-    {
-      id: 2,
-      title: "Installing Polymarble: Step by Step",
-      duration: "6:20",
-      thumbnail: professionalInstallationImage,
-      description: "Complete installation guide from preparation to finishing",
-      videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4"
-    },
-    {
-      id: 3,
-      title: "Fixing Common Installation Issues",
-      duration: "4:15",
-      thumbnail: installationTutorialImage,
-      description: "Troubleshoot and fix alignment, adhesion, and joint issues",
-      videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4"
-    },
-    {
-      id: 4,
-      title: "Cleaning and Maintenance",
-      duration: "2:30",
-      thumbnail: bathroomInstallationImage,
-      description: "Best practices for long-term care and maintenance",
-      videoSrc: "https://videos.pexels.com/video-files/8419207/8419207-hd_1920_1080_30fps.mp4"
-    },
-    {
-      id: 5,
-      title: "Advanced Pattern Matching",
-      duration: "5:10",
-      thumbnail: professionalInstallationImage,
-      description: "Create seamless large-area installations",
-      videoSrc: "https://videos.pexels.com/video-files/8068779/8068779-hd_1920_1080_30fps.mp4"
-    }
-  ];
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [success, setSuccess] = useState<string | null>(null);
 
-  const builderResources = [
-    {
-      title: "CAD/BIM Downloads",
-      description: "3D models, specifications, and technical drawings",
-      icon: <Building className="w-6 h-6" />,
-      items: ["AutoCAD Blocks", "Revit Families", "SketchUp Models", "Technical Specs"]
-    },
-    {
-      title: "Bulk Pricing Calculator",
-      description: "Instant quotes for large projects (500+ sq.ft.)",
-      icon: <Users className="w-6 h-6" />,
-      items: ["Volume Discounts", "Project Timelines", "Delivery Schedules", "Payment Terms"]
-    },
-    {
-      title: "Technical Support",
-      description: "Direct access to our engineering team",
-      icon: <Wrench className="w-6 h-6" />,
-      items: ["Structural Analysis", "Load Calculations", "Installation Guidance", "Quality Assurance"]
-    }
-  ];
+  const validate = () => {
+    const e: Record<string, string> = {};
+    if (!form.name.trim()) e.name = "Please enter your name";
+    if (!form.email.trim()) e.email = "Please enter your email";
+    if (!/^\S+@\S+\.\S+$/.test(form.email)) e.email = "Enter a valid email";
+    if (!form.phone.trim()) e.phone = "Please enter your phone";
+    if (!form.message.trim()) e.message = "Please tell us a bit about your project";
+    return e;
+    // Optional: you could enforce subject/projectType/budget if needed
+  };
 
-  const faqs = [
-    {
-      question: "What's the minimum order quantity for bulk pricing?",
-      answer: "Bulk pricing starts at 500 sq.ft. Contact our builder portal for custom quotes."
-    },
-    {
-      question: "Do you provide installation training for contractors?",
-      answer: "Yes, we offer certified training programs in Chennai, Madurai, and Coimbatore."
-    },
-    {
-      question: "What are the structural requirements for polymarble installation?",
-      answer: "Our sheets require minimal structural support. Download detailed specs from the portal."
-    },
-    {
-      question: "Can polymarble be used in exterior applications?",
-      answer: "Yes, our weather-resistant series is specifically designed for exterior use in tropical climates."
-    }
-  ];
+  const handleSubmit = async (ev: React.FormEvent) => {
+    ev.preventDefault();
+    setSuccess(null);
+    const v = validate();
+    setErrors(v);
+    if (Object.keys(v).length) return;
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simple demo login
-    if (loginForm.email && loginForm.password) {
-      setIsLoggedIn(true);
+    try {
+      setSubmitting(true);
+
+      // Example: POST to your API route (adjust as needed)
+      // const body = new FormData();
+      // Object.entries(form).forEach(([k, val]) => {
+      //   if (k === "file" && val) body.append(k, val as File);
+      //   else if (typeof val === "string") body.append(k, val);
+      // });
+      // await fetch("/api/contact", { method: "POST", body });
+
+      // Demo success feedback:
+      setSuccess("Thanks! We’ve received your request and will get back shortly.");
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        city: "",
+        subject: "",
+        projectType: "",
+        budget: "",
+        message: "",
+        file: null,
+      });
+    } catch (err) {
+      setSuccess("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
   return (
     <div className="relative min-h-screen bg-pure-white text-deep-charcoal">
       <Header />
-      
-      <main className="pt-20 scroll-smooth">
-        {/* Hero Section */}
-        <section 
-          className="py-20 relative overflow-hidden"
-          style={{
-            backgroundImage: `url('${professionalInstallationImage}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-deep-charcoal/85 via-deep-charcoal/75 to-deep-charcoal/90"></div>
-          
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 reveal-up text-pure-white drop-shadow-lg">
-                Support & <span className="text-metallic-gold text-shimmer">Community</span>
-              </h1>
-              <p className="text-xl text-warm-cream max-w-3xl mx-auto reveal-fade drop-shadow-md">
-                Everything you need to succeed with polymarble installation. From DIY guides to professional resources.
-              </p>
-            </div>
-          </div>
-        </section>
 
-        {/* DIY Hub */}
-        <div className="section-spacing bg-warm-cream">
-          <section className="relative overflow-hidden">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
-                DIY <span className="text-metallic-gold text-shimmer">Hub</span>
-              </h3>
-              <p className="text-xl text-cool-grey max-w-2xl mx-auto reveal-fade">
-                Master polymarble installation with our comprehensive video tutorials.
-              </p>
-            </div>
+      <main className="pt-20">
+        {/* Hero */}
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-brand-teal/10 via-warm-cream/30 to-brand-peach/10" />
+          <div className="container mx-auto px-6 py-20 relative">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
+              <div className="reveal-up">
+                <h1 className="text-4xl md:text-5xl font-extrabold text-deep-charcoal">
+                  Let’s talk about your{" "}
+                  <span className="text-brand-teal">project</span>
+                </h1>
+                <p className="mt-4 text-cool-grey text-lg max-w-2xl">
+                  Get a tailored quote or expert guidance for your polymarble
+                  installation. We typically respond within{" "}
+                  <span className="font-semibold text-deep-charcoal">
+                    1 business hour
+                  </span>
+                  .
+                </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a
+                    href="tel:+919842106768"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-teal text-pure-white font-medium hover:shadow-lg transition-all hover-lift"
+                  >
+                    <Phone className="w-4 h-4" />
+                    Call +91 98421 06768
+                  </a>
+                  <a
+                    href="mailto:hello@polymarbles.in"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-warm-cream text-deep-charcoal font-medium hover:bg-brand-teal/10 transition-all"
+                  >
+                    <Mail className="w-4 h-4" />
+                    Email Us
+                  </a>
+                </div>
+              </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {diyVideos.map((video, index) => (
-                <Card key={video.id} className="bg-rich-black/50 backdrop-blur-sm border-metallic-gold/20 reveal-up group">
-                  <div className="relative aspect-video overflow-hidden rounded-t-lg">
-                    <img
-                      src={video.thumbnail}
-                      alt={video.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-deep-charcoal/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Button size="sm" className="bg-metallic-gold text-rich-black hover:bg-yellow-400">
-                        <Play className="w-4 h-4 mr-2" />
-                        Watch Now
-                      </Button>
+              {/* Quick Info Card */}
+              <Card className="bg-pure-white/80 backdrop-blur-sm border-light-silver/60 reveal-fade">
+                <CardHeader>
+                  <CardTitle>Contact Information</CardTitle>
+                  <CardDescription>
+                    Reach us through any of the channels below.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-warm-cream flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-brand-teal" />
                     </div>
-                    <div className="absolute bottom-2 right-2 bg-deep-charcoal/70 text-pure-white text-xs px-2 py-1 rounded">
-                      {video.duration}
-                    </div>
-                    <div className="absolute top-2 left-2">
-                      {index < 2 && (
-                        <span className="bg-green-500 text-pure-white text-xs px-2 py-1 rounded-full">
-                          Popular
-                        </span>
-                      )}
+                    <div>
+                      <p className="font-semibold">Phone</p>
+                      <a
+                        href="tel:+919842106768"
+                        className="text-brand-teal hover:underline"
+                      >
+                        +91 98421 06768
+                      </a>
                     </div>
                   </div>
-                  <CardContent className="p-4">
-                    <h4 className="font-bold text-deep-charcoal mb-2 flex items-center">
-                      {video.id === 1 && <Scissors className="w-4 h-4 mr-2 text-metallic-gold" />}
-                      {video.id === 2 && <Wrench className="w-4 h-4 mr-2 text-metallic-gold" />}
-                      {video.id === 3 && <Wrench className="w-4 h-4 mr-2 text-metallic-gold" />}
-                      {video.id === 4 && <Droplets className="w-4 h-4 mr-2 text-metallic-gold" />}
-                      {video.id === 5 && <Building className="w-4 h-4 mr-2 text-metallic-gold" />}
-                      {video.title}
-                    </h4>
-                    <p className="text-cool-grey text-sm">{video.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-warm-cream flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-brand-teal" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Email</p>
+                      <a
+                        href="mailto:hello@polymarbles.in"
+                        className="text-brand-teal hover:underline"
+                      >
+                        hello@polymarbles.in
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-warm-cream flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-brand-teal" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Business Hours</p>
+                      <p className="text-cool-grey">
+                        Mon–Sat: 9:30 AM – 7:00 PM
+                      </p>
+                      <p className="text-cool-grey">Sun: Closed</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-warm-cream flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-brand-teal" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Address (HQ)</p>
+                      <p className="text-cool-grey">
+                        Polymarbles Pvt. Ltd.
+                        <br />
+                        Chennai, India
+                      </p>
+                      <a
+                        href="https://maps.google.com/?q=Chennai%20India"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 text-brand-teal hover:underline mt-1"
+                      >
+                        Get Directions <ArrowRight className="w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 flex items-center gap-4">
+                    <a
+                      href="#"
+                      aria-label="Instagram"
+                      className="text-cool-grey hover:text-brand-teal"
+                    >
+                      <Instagram className="w-5 h-5" />
+                    </a>
+                    <a
+                      href="#"
+                      aria-label="Facebook"
+                      className="text-cool-grey hover:text-brand-teal"
+                    >
+                      <Facebook className="w-5 h-5" />
+                    </a>
+                    <a
+                      href="#"
+                      aria-label="YouTube"
+                      className="text-cool-grey hover:text-brand-teal"
+                    >
+                      <Youtube className="w-5 h-5" />
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
 
-        </div>
-        
-        {/* Architect & Builder Portal */}
-        <div className="section-spacing bg-light-silver/30">
-          <section className="relative overflow-hidden">
+        {/* Contact Form + Sidebar */}
+        <section className="py-16">
           <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
-                Architect & Builder <span className="text-metallic-gold text-shimmer">Portal</span>
-              </h3>
-              <p className="text-xl text-cool-grey max-w-2xl mx-auto reveal-fade">
-                Professional resources, bulk pricing, and technical support for industry professionals.
-              </p>
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Form */}
+              <Card className="lg:col-span-2 border-light-silver/60">
+                <CardHeader>
+                  <CardTitle>Send us a message</CardTitle>
+                  <CardDescription>
+                    Share your requirements and we’ll craft a tailored quote.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="name">Full Name *</Label>
+                        <Input
+                          id="name"
+                          placeholder="Jane Doe"
+                          value={form.name}
+                          onChange={(e) =>
+                            setForm((f) => ({ ...f, name: e.target.value }))
+                          }
+                          className={errors.name ? "border-red-500" : ""}
+                        />
+                        {errors.name && (
+                          <p className="mt-1 text-xs text-red-600">
+                            {errors.name}
+                          </p>
+                        )}
+                      </div>
+                      <div>
+                        <Label htmlFor="email">Email *</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="you@company.com"
+                          value={form.email}
+                          onChange={(e) =>
+                            setForm((f) => ({ ...f, email: e.target.value }))
+                          }
+                          className={errors.email ? "border-red-500" : ""}
+                        />
+                        {errors.email && (
+                          <p className="mt-1 text-xs text-red-600">
+                            {errors.email}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="phone">Phone *</Label>
+                        <Input
+                          id="phone"
+                          placeholder="+91 98XXXXXXXX"
+                          value={form.phone}
+                          onChange={(e) =>
+                            setForm((f) => ({ ...f, phone: e.target.value }))
+                          }
+                          className={errors.phone ? "border-red-500" : ""}
+                        />
+                        {errors.phone && (
+                          <p className="mt-1 text-xs text-red-600">
+                            {errors.phone}
+                          </p>
+                        )}
+                      </div>
+                      <div>
+                        <Label htmlFor="company">Company (Optional)</Label>
+                        <Input
+                          id="company"
+                          placeholder="Your company"
+                          value={form.company}
+                          onChange={(e) =>
+                            setForm((f) => ({ ...f, company: e.target.value }))
+                          }
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="city">City</Label>
+                        <Input
+                          id="city"
+                          placeholder="Chennai"
+                          value={form.city}
+                          onChange={(e) =>
+                            setForm((f) => ({ ...f, city: e.target.value }))
+                          }
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="subject">Subject</Label>
+                        <Input
+                          id="subject"
+                          placeholder="Quotation / Site visit / Partnership"
+                          value={form.subject}
+                          onChange={(e) =>
+                            setForm((f) => ({ ...f, subject: e.target.value }))
+                          }
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-4">
+                      <div className="md:col-span-1">
+                        <Label htmlFor="projectType">Project Type</Label>
+                        <select
+                          id="projectType"
+                          className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm"
+                          value={form.projectType}
+                          onChange={(e) =>
+                            setForm((f) => ({
+                              ...f,
+                              projectType: e.target.value,
+                            }))
+                          }
+                        >
+                          <option value="">Select</option>
+                          <option value="Residential">Residential</option>
+                          <option value="Commercial">Commercial</option>
+                          <option value="Hospitality">Hospitality</option>
+                          <option value="Healthcare">Healthcare</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                      <div className="md:col-span-1">
+                        <Label htmlFor="budget">Approx. Budget</Label>
+                        <select
+                          id="budget"
+                          className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm"
+                          value={form.budget}
+                          onChange={(e) =>
+                            setForm((f) => ({ ...f, budget: e.target.value }))
+                          }
+                        >
+                          <option value="">Select</option>
+                          <option value="<2L">{`< ₹2 Lakhs`}</option>
+                          <option value="2-5L">₹2–5 Lakhs</option>
+                          <option value="5-10L">₹5–10 Lakhs</option>
+                          <option value="10L+">{`> ₹10 Lakhs`}</option>
+                        </select>
+                      </div>
+                      <div className="md:col-span-1">
+                        <Label htmlFor="file">Attachment (Optional)</Label>
+                        <div className="flex items-center gap-3">
+                          <label
+                            htmlFor="file"
+                            className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-light-silver/60 cursor-pointer hover:bg-warm-cream transition"
+                          >
+                            <FileUp className="w-4 h-4" />
+                            <span>Upload</span>
+                          </label>
+                          <input
+                            id="file"
+                            type="file"
+                            className="hidden"
+                            onChange={(e) =>
+                              setForm((f) => ({
+                                ...f,
+                                file: e.target.files?.[0] ?? null,
+                              }))
+                            }
+                          />
+                          <span className="text-xs text-cool-grey truncate max-w-[180px]">
+                            {form.file ? form.file.name : "PDF/JPG/PNG up to 10MB"}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="message">Message *</Label>
+                      <Textarea
+                        id="message"
+                        placeholder="Tell us about your space, dimensions, timeline, and any design preferences…"
+                        rows={6}
+                        value={form.message}
+                        onChange={(e) =>
+                          setForm((f) => ({ ...f, message: e.target.value }))
+                        }
+                        className={errors.message ? "border-red-500" : ""}
+                      />
+                      {errors.message && (
+                        <p className="mt-1 text-xs text-red-600">
+                          {errors.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <p className="text-xs text-cool-grey">
+                        By submitting, you agree to our{" "}
+                        <a href="/privacy" className="text-brand-teal underline">
+                          Privacy Policy
+                        </a>
+                        .
+                      </p>
+                      <Button
+                        type="submit"
+                        disabled={submitting}
+                        className="inline-flex items-center gap-2 bg-brand-teal text-pure-white hover:shadow-lg"
+                      >
+                        <Send className="w-4 h-4" />
+                        {submitting ? "Sending..." : "Send Message"}
+                      </Button>
+                    </div>
+
+                    {success && (
+                      <div className="mt-4 text-sm text-brand-teal">
+                        {success}
+                      </div>
+                    )}
+                  </form>
+                </CardContent>
+              </Card>
+
+              {/* Sidebar: Why contact us */}
+              <div className="space-y-6">
+                <Card className="border-light-silver/60">
+                  <CardHeader>
+                    <CardTitle>Why choose Polymarbles?</CardTitle>
+                    <CardDescription>
+                      Fast quotes. Expert guidance. Proven installations.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-3 text-sm">
+                      <li className="flex gap-2">
+                        <span className="mt-1">
+                          <MessageSquare className="w-4 h-4 text-brand-teal" />
+                        </span>
+                        <span>
+                          <span className="font-medium">Consultative approach</span> for
+                          the right material selection and finish.
+                        </span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-1">
+                          <Building2 className="w-4 h-4 text-brand-teal" />
+                        </span>
+                        <span>
+                          <span className="font-medium">Residential & Commercial</span>{" "}
+                          expertise across South India.
+                        </span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-1">
+                          <Clock className="w-4 h-4 text-brand-teal" />
+                        </span>
+                        <span>
+                          <span className="font-medium">Quick turnaround</span> on quotes
+                          and deliveries.
+                        </span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-light-silver/60">
+                  <CardHeader>
+                    <CardTitle>Need an instant quote?</CardTitle>
+                    <CardDescription>
+                      Prefer something lighter? Use our quick quote widget.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <a
+                      href="#quick-quote"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-warm-cream hover:bg-brand-teal/10 transition"
+                    >
+                      Go to Quick Quote <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
-
-            <Tabs defaultValue="resources" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 bg-dark-forest">
-                <TabsTrigger value="resources" className="data-[state=active]:bg-metallic-gold data-[state=active]:text-rich-black">
-                  Resources
-                </TabsTrigger>
-                <TabsTrigger value="login" className="data-[state=active]:bg-metallic-gold data-[state=active]:text-rich-black">
-                  Portal Access
-                </TabsTrigger>
-                <TabsTrigger value="faqs" className="data-[state=active]:bg-metallic-gold data-[state=active]:text-rich-black">
-                  Technical FAQs
-                </TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="resources" className="mt-8">
-                <div className="grid md:grid-cols-3 gap-8">
-                  {builderResources.map((resource, index) => (
-                    <Card key={index} className="bg-dark-forest/50 backdrop-blur-sm border-metallic-gold/20">
-                      <CardHeader>
-                        <div className="w-12 h-12 bg-metallic-gold/20 rounded-full flex items-center justify-center mb-4">
-                          <div className="text-metallic-gold">{resource.icon}</div>
-                        </div>
-                        <CardTitle className="text-metallic-gold">{resource.title}</CardTitle>
-                        <CardDescription className="text-cool-grey">{resource.description}</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <ul className="space-y-2">
-                          {resource.items.map((item, idx) => (
-                            <li key={idx} className="text-cool-grey text-sm flex items-center">
-                              <div className="w-1.5 h-1.5 bg-metallic-gold rounded-full mr-3"></div>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                        <Button className="w-full mt-4 bg-metallic-gold text-rich-black hover:bg-yellow-400">
-                          <Download className="w-4 h-4 mr-2" />
-                          Access Resources
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </TabsContent>
-
-              <TabsContent value="login" className="mt-8">
-                <div className="max-w-md mx-auto">
-                  {!isLoggedIn ? (
-                    <Card className="bg-dark-forest/50 backdrop-blur-sm border-metallic-gold/20">
-                      <CardHeader>
-                        <CardTitle className="text-metallic-gold flex items-center">
-                          <Lock className="w-5 h-5 mr-2" />
-                          Professional Access
-                        </CardTitle>
-                        <CardDescription className="text-cool-grey">
-                          Login to access bulk pricing, technical resources, and CAD downloads.
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <form onSubmit={handleLogin} className="space-y-4">
-                          <div>
-                            <Label htmlFor="email" className="text-deep-charcoal">Email</Label>
-                            <Input
-                              id="email"
-                              type="email"
-                              placeholder="your@company.com"
-                              value={loginForm.email}
-                              onChange={(e) => setLoginForm({...loginForm, email: e.target.value})}
-                              className="bg-slate-800 border-slate-600 text-deep-charcoal mt-1"
-                              required
-                            />
-                          </div>
-                          <div>
-                            <Label htmlFor="password" className="text-deep-charcoal">Password</Label>
-                            <Input
-                              id="password"
-                              type="password"
-                              placeholder="••••••••"
-                              value={loginForm.password}
-                              onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}
-                              className="bg-slate-800 border-slate-600 text-deep-charcoal mt-1"
-                              required
-                            />
-                          </div>
-                          <Button type="submit" className="w-full bg-metallic-gold text-rich-black hover:bg-yellow-400">
-                            Login to Portal
-                          </Button>
-                        </form>
-                        <div className="mt-4 text-center">
-                          <a href="#" className="text-metallic-gold text-sm hover:underline">
-                            Request Professional Access
-                          </a>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ) : (
-                    <Card className="bg-dark-forest/50 backdrop-blur-sm border-metallic-gold/20">
-                      <CardHeader>
-                        <CardTitle className="text-green-400">Welcome to the Professional Portal</CardTitle>
-                        <CardDescription className="text-cool-grey">
-                          Access to exclusive resources and bulk pricing is now available.
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-4">
-                        <Button className="w-full bg-metallic-gold text-rich-black hover:bg-yellow-400">
-                          <Download className="w-4 h-4 mr-2" />
-                          Download CAD Files
-                        </Button>
-                        <Button className="w-full bg-metallic-gold text-rich-black hover:bg-yellow-400">
-                          <Users className="w-4 h-4 mr-2" />
-                          Get Bulk Pricing
-                        </Button>
-                        <Button variant="outline" className="w-full border-metallic-gold text-metallic-gold hover:bg-metallic-gold hover:text-rich-black">
-                          <Building className="w-4 h-4 mr-2" />
-                          Technical Support
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  )}
-                </div>
-              </TabsContent>
-
-              <TabsContent value="faqs" className="mt-8">
-                <div className="max-w-4xl mx-auto space-y-6">
-                  {faqs.map((faq, index) => (
-                    <Card key={index} className="bg-dark-forest/50 backdrop-blur-sm border-metallic-gold/20">
-                      <CardContent className="pt-6">
-                        <h4 className="font-bold text-metallic-gold mb-3">{faq.question}</h4>
-                        <p className="text-cool-grey">{faq.answer}</p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </TabsContent>
-            </Tabs>
           </div>
-          </section>
-        </div>
+        </section>
+
+        {/* Offices */}
+        <section className="py-10 bg-warm-cream/40">
+          <div className="container mx-auto px-6">
+            <h2 className="text-2xl font-bold mb-6">Our Offices</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="border-light-silver/60">
+                <CardHeader>
+                  <CardTitle>Chennai (Head Office)</CardTitle>
+                  <CardDescription>Primary support & dispatch</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-4 h-4 mt-1 text-brand-teal" />
+                    <p>Chennai, Tamil Nadu, India</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Phone className="w-4 h-4 mt-0.5 text-brand-teal" />
+                    <a href="tel:+919842106768" className="text-brand-teal hover:underline">
+                      +91 98421 06768
+                    </a>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Mail className="w-4 h-4 mt-0.5 text-brand-teal" />
+                    <a href="mailto:hello@polymarbles.in" className="text-brand-teal hover:underline">
+                      hello@polymarbles.in
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-light-silver/60">
+                <CardHeader>
+                  <CardTitle>Warehouse & Logistics</CardTitle>
+                  <CardDescription>Order processing & large consignments</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-4 h-4 mt-1 text-brand-teal" />
+                    <p>Greater Chennai Region, Tamil Nadu, India</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Clock className="w-4 h-4 mt-0.5 text-brand-teal" />
+                    <p>Mon–Sat: 9:30 AM – 7:00 PM</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Map */}
+        <section className="py-10">
+          <div className="container mx-auto px-6">
+            <Card className="overflow-hidden border-light-silver/60">
+              <div className="aspect-video w-full">
+                <iframe
+                  title="Polymarbles Location"
+                  src="https://www.google.com/maps?q=Chennai%20India&output=embed"
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                />
+              </div>
+            </Card>
+          </div>
+        </section>
+
+        {/* FAQs (lightweight) */}
+        <section className="py-10 bg-light-silver/20">
+          <div className="container mx-auto px-6">
+            <h2 className="text-2xl font-bold mb-6">FAQs</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="border-light-silver/60">
+                <CardContent className="pt-6">
+                  <h4 className="font-semibold mb-2">
+                    How soon will I get a quote?
+                  </h4>
+                  <p className="text-cool-grey">
+                    Most quotes go out within 1 business hour during working time.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="border-light-silver/60">
+                <CardContent className="pt-6">
+                  <h4 className="font-semibold mb-2">
+                    Do you offer site visits?
+                  </h4>
+                  <p className="text-cool-grey">
+                    Yes—available in and around Chennai, and on request for other cities.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="border-light-silver/60">
+                <CardContent className="pt-6">
+                  <h4 className="font-semibold mb-2">Do you install as well?</h4>
+                  <p className="text-cool-grey">
+                    We work with vetted installation partners for turnkey delivery.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="border-light-silver/60">
+                <CardContent className="pt-6">
+                  <h4 className="font-semibold mb-2">
+                    Can I get free samples?
+                  </h4>
+                  <p className="text-cool-grey">
+                    Absolutely. Tell us your preferred finishes and we’ll arrange samples.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Quick Quote Anchor */}
+        <div id="quick-quote" className="scroll-mt-24" />
+        <QuickQuote />
       </main>
 
       <Footer />
-      <QuickQuote />
     </div>
   );
 }
