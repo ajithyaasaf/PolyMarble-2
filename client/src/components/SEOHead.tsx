@@ -11,8 +11,8 @@ interface SEOHeadProps {
 
 export default function SEOHead({
   title = "Polymarble Sheets India | Premium Interior & Exterior Solutions | Tamil Nadu",
-  description = "Transform your spaces with premium polymarble sheets. Fire-resistant, water-proof, 15+ year warranty. Serving Tamil Nadu since 2017.",
-  keywords = "polymarble sheets, marble sheets, interior design, exterior cladding, fire resistant sheets, water resistant sheets, Tamil Nadu, Madurai, Chennai, premium marble",
+  description = "Transform your spaces with premium polymarble sheets. 80% less cost than natural marble. Fire-resistant, water-proof, 15+ year warranty. Serving Tamil Nadu since 2017.",
+  keywords = "polymarble sheets, marble sheets, interior design, exterior cladding, fire resistant sheets, water resistant sheets, Tamil Nadu, Madurai, Chennai, affordable marble",
   canonicalUrl = "https://polymarblesheets.com",
   ogImage = "/attached_assets/generated_images/High-gloss_polymarble_product_showcase_f795ab21.png",
   ogType = "website"
@@ -96,6 +96,7 @@ export default function SEOHead({
         "longitude": "78.1198"
       },
       "openingHours": "Mo-Sa 09:00-19:00",
+      "priceRange": "$$",
       "areaServed": [
         {
           "@type": "State",
@@ -169,7 +170,7 @@ export const generatePageSEO = (pageName: string, customDescription?: string) =>
   const pageTitle = `${pageName} | ${baseTitle}`;
   
   const descriptions: Record<string, string> = {
-    'Products': 'Explore our complete range of polymarble sheets - High-Gloss, Woody Panels, Solid Colors, Textured Finishes, and Mirror Sheets. Premium quality guaranteed.',
+    'Products': 'Explore our complete range of polymarble sheets - High-Gloss, Woody Panels, Solid Colors, Textured Finishes, and Mirror Sheets. Premium quality at affordable prices.',
     'Inspiration': 'Get inspired with our portfolio of stunning polymarble installations across Tamil Nadu. See how we transform spaces with premium design solutions.',
     'Support': 'Expert support for your polymarble projects. DIY guides, professional resources, technical FAQs, and direct access to our engineering team.',
     'Chennai': 'Lightweight stone walling solutions in Chennai. Premium polymarble sheets with same-day installation. Serving Chennai and surrounding areas.',

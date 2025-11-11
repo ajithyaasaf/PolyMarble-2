@@ -45,7 +45,7 @@ export default function Products() {
     {
       name: "Solid Color Range",
       size: "8×4 ft", 
-      features: ["Water Resistant", "Stain Resistant", "Easy Maintenance", "Highly Durable"],
+      features: ["Water Resistant", "Stain Resistant", "Easy Maintenance", "Cost Effective"],
       thickness: "10-12mm",
       description: "Clean, contemporary colors for modern architectural applications"
     },

@@ -479,7 +479,25 @@ export default function Contact() {
                         </select>
                       </div>
 
-                      <div className="md:col-span-2">
+                      <div className="md:col-span-1">
+                        <Label htmlFor="budget">Approx. Budget</Label>
+                        <select
+                          id="budget"
+                          className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm"
+                          value={form.budget}
+                          onChange={(e) =>
+                            setForm((f) => ({ ...f, budget: e.target.value }))
+                          }
+                        >
+                          <option value="">Select</option>
+                          <option value="<2L">{`< ₹2 Lakhs`}</option>
+                          <option value="2-5L">₹2–5 Lakhs</option>
+                          <option value="5-10L">₹5–10 Lakhs</option>
+                          <option value="10L+">{`> ₹10 Lakhs`}</option>
+                        </select>
+                      </div>
+
+                      <div className="md:col-span-1">
                         <Label htmlFor="file">Attachment (Optional)</Label>
                         <div className="flex items-center gap-3">
                           <label

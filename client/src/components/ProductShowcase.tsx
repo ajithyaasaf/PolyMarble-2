@@ -54,7 +54,7 @@ export default function ProductShowcase() {
       tagline: "Modern Minimalism", 
       description: "Clean, contemporary colors perfect for modern architectural applications.",
       image: solidColorImage,
-      features: ["Pure colors", "Stain resistant", "Highly durable", "Versatile"],
+      features: ["Pure colors", "Stain resistant", "Cost effective", "Versatile"],
       specifications: {
         thickness: "10-12mm",
         size: "8×4 ft",
@@ -232,7 +232,7 @@ export default function ProductShowcase() {
                       variant="outline" 
                       className="flex-1 border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-pure-white font-bold"
                     >
-                      Request Quote
+                      Calculate Cost
                       <ChevronRight className="w-4 h-4 ml-2" />
                     </Button>
                   </div>

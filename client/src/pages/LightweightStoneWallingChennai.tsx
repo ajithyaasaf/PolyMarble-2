@@ -13,7 +13,7 @@ export default function LightweightStoneWallingChennai() {
     "No structural reinforcement needed",
     "Faster installation process",
     "Weather-resistant for Chennai climate",
-    "Highly efficient solution"
+    "Cost-effective alternative"
   ];
 
   const projects = [
@@ -100,7 +100,7 @@ export default function LightweightStoneWallingChennai() {
                     <div className="bg-warm-cream/50 rounded-lg p-4 border border-metallic-gold/20 shadow-lg">
                       <h4 className="font-bold text-deep-charcoal mb-2">Thermal Efficiency</h4>
                       <p className="text-cool-grey text-sm">
-                        Superior insulation properties help reduce Chennai's heat gain and improve energy efficiency.
+                        Superior insulation properties help reduce Chennai's heat gain and air conditioning costs.
                       </p>
                     </div>
                   </div>
@@ -175,14 +175,14 @@ export default function LightweightStoneWallingChennai() {
 
                 <div className="bg-light-silver/30/50 rounded-lg p-6 border border-metallic-gold/20 shadow-lg">
                   <Timer className="w-10 h-10 text-metallic-gold mb-4" />
-                  <h3 className="text-xl font-bold text-deep-charcoal mb-3">Efficient Solution</h3>
+                  <h3 className="text-xl font-bold text-deep-charcoal mb-3">Cost-Effective Solution</h3>
                   <p className="text-cool-grey mb-4">
-                    Streamlined structural engineering, foundation work, and installation process. 
-                    Enhanced project efficiency and timeline optimization.
+                    Significant cost savings on structural engineering, foundation work, and installation labor. 
+                    Total project cost reduction of 30-40%.
                   </p>
                   <ul className="text-sm text-cool-grey space-y-1">
                     <li>• Lower structural requirements</li>
-                    <li>• Optimized installation process</li>
+                    <li>• Reduced labor costs</li>
                     <li>• Faster project completion</li>
                   </ul>
                 </div>

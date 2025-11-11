@@ -154,8 +154,8 @@ export default function Hero() {
             {/* Value Proposition */}
             <div className="space-y-3 reveal-fade">
               <p className="text-xl text-deep-charcoal/80 font-medium leading-relaxed">
-                Experience the luxury of Italian marble with{" "}
-                <span className="text-brand-teal font-bold">premium quality</span>
+                Experience the luxury of Italian marble at{" "}
+                <span className="text-brand-teal font-bold">80% less cost</span>
                 .
               </p>
               <div className="flex flex-wrap gap-3">
@@ -331,6 +331,12 @@ export default function Hero() {
               {/* Decorative Elements */}
               <div className="absolute -top-4 -right-4 w-32 h-32 bg-brand-peach/20 rounded-full blur-2xl" />
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-brand-teal/20 rounded-full blur-2xl" />
+
+              {/* Floating Badge */}
+              <div className="absolute top-8 right-8 px-4 py-3 bg-pure-white/90 backdrop-blur-md rounded-2xl shadow-xl">
+                <div className="text-3xl font-black text-brand-teal">80%</div>
+                <div className="text-xs text-deep-charcoal">Cost Savings</div>
+              </div>
             </div>
           </div>
         </div>
