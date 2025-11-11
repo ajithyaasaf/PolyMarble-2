@@ -174,23 +174,32 @@ export default function Header() {
                 </span>
                 <div className="flex items-center gap-3">
                   <a
-                    href="#"
+                    href="https://www.instagram.com/polymarblesheet_india?igsh=MXZoczNwcWxleWl6bw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-pure-white hover:text-brand-peach transition-colors"
                     aria-label="Instagram"
+                    data-testid="link-header-social-instagram"
                   >
                     <Instagram className="w-3.5 h-3.5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.facebook.com/polymarblesheets"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-pure-white hover:text-brand-peach transition-colors"
                     aria-label="Facebook"
+                    data-testid="link-header-social-facebook"
                   >
                     <Facebook className="w-3.5 h-3.5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-pure-white hover:text-brand-peach transition-colors"
                     aria-label="Youtube"
+                    data-testid="link-header-social-youtube"
                   >
                     <Youtube className="w-3.5 h-3.5" />
                   </a>

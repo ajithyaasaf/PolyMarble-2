@@ -37,12 +37,12 @@ export default function TrustIndicators() {
 
   const stats = [
     {
-      value: "2000+",
+      value: "2,00,000+",
       label: "Happy Customers",
       icon: <Users className="w-5 h-5" />,
     },
     {
-      value: "15",
+      value: "15+",
       label: "Years Warranty",
       icon: <Shield className="w-5 h-5" />,
     },
@@ -91,11 +91,11 @@ export default function TrustIndicators() {
           </div>
 
           <h2 className="text-5xl md:text-6xl font-display text-deep-charcoal mb-6">
-            Why Choose <span className="text-shimmer">Polymarbles?</span>
+            Trusted <span className="text-shimmer">Excellence</span>
           </h2>
           <p className="text-xl text-cool-grey max-w-3xl mx-auto font-body">
-            Join thousands of satisfied customers who trust our certified
-            excellence and global expertise
+            Join 2 lakh+ satisfied customers who trust our certified
+            quality and global expertise
           </p>
         </div>
 
