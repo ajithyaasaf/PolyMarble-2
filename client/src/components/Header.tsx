@@ -226,17 +226,10 @@ export default function Header() {
                 <img
                   src="/logo.png"
                   alt="Polymarble"
-                  className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+                  className="h-20 w-auto transition-transform duration-300 group-hover:scale-105"
+                  data-testid="img-logo"
                 />
                 <div className="absolute -inset-2 bg-gradient-to-r from-brand-teal/20 to-brand-peach/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <div className="hidden lg:block">
-                <div className="text-xs text-cool-grey uppercase tracking-wider">
-                  Premium
-                </div>
-                <div className="text-lg font-bold text-deep-charcoal">
-                  Polymarbles
-                </div>
               </div>
             </Link>
 

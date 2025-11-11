@@ -5,7 +5,7 @@ import { Link } from "wouter";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-br from-deep-charcoal via-deep-charcoal to-brand-teal/20 text-pure-white overflow-hidden">
+    <footer className="relative bg-deep-charcoal text-pure-white overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-brand-peach rounded-full blur-3xl" />
@@ -17,13 +17,12 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-peach to-brand-teal flex items-center justify-center shadow-lg">
-                <Shield className="w-7 h-7 text-pure-white" />
-              </div>
-              <div>
-                <div className="text-xs text-brand-peach uppercase tracking-wider font-medium">Premium</div>
-                <div className="text-2xl font-bold">Polymarbles</div>
-              </div>
+              <img
+                src="/logo.png"
+                alt="Polymarble"
+                className="h-16 w-auto"
+                data-testid="img-footer-logo"
+              />
             </div>
             
             <p className="text-warm-cream mb-8 text-lg leading-relaxed">
