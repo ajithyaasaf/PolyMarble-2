@@ -62,7 +62,7 @@ export default function ProductShowcase() {
 
         <div className="max-w-6xl mx-auto reveal-up">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative group order-2 lg:order-1">
+            <div className="relative group order-2 lg:order-1" key={currentProduct.id}>
               <div className="aspect-[4/3] rounded-md overflow-hidden border">
                 <img
                   src={currentProduct.images[0]}
