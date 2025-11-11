@@ -161,12 +161,12 @@ export default function About() {
     {
       icon: Award,
       text: "ISO 9001:2015 certified",
-      highlight: "ISO certified",
+      highlight: "ISO 9001:2015 certified",
     },
-    { icon: Shield, text: "Fire & water resistant", highlight: "resistant" },
+    { icon: Shield, text: "Fire & water resistant", highlight: "water resistant" },
     { icon: Clock, text: "48-hour installation", highlight: "48-hour" },
-    { icon: Palette, text: "500+ design options", highlight: "500+ designs" },
-    { icon: Users, text: "24/7 customer support", highlight: "24/7 support" },
+    { icon: Palette, text: "500+ design options", highlight: "500+ design" },
+    { icon: Users, text: "24/7 customer support", highlight: "24/7 customer" },
   ];
 
   const leadership = [

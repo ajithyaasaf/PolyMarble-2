@@ -1,11 +1,4 @@
-import {
-  Award,
-  Shield,
-  Users,
-  Clock,
-  Star,
-  CheckCircle2,
-} from "lucide-react";
+import { Award, Shield, Users, Clock, Star, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import testimonialVideo from "@assets/customer_testimonial_1762845564449.mp4";
@@ -94,8 +87,8 @@ export default function TrustIndicators() {
             Trusted <span className="text-shimmer">Excellence</span>
           </h2>
           <p className="text-xl text-cool-grey max-w-3xl mx-auto font-body">
-            Join 2 lakh+ satisfied customers who trust our certified
-            quality and global expertise
+            Join 2 lakh+ satisfied customers who trust our certified quality and
+            global expertise
           </p>
         </div>
 
@@ -106,17 +99,22 @@ export default function TrustIndicators() {
               <div
                 key={index}
                 className={`text-center stagger-delay-${index + 1}`}
-                data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
+                data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 <div className="flex items-center justify-center gap-3 mb-2 group">
                   <div className="text-brand-teal group-hover:scale-110 transition-transform">
                     {stat.icon}
                   </div>
-                  <div className="text-4xl md:text-5xl font-bold text-deep-charcoal" data-testid={`stat-value-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <div
+                    className="text-4xl md:text-5xl font-bold text-deep-charcoal"
+                    data-testid={`stat-value-${stat.label.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
                     {stat.value}
                   </div>
                 </div>
-                <p className="text-cool-grey text-sm font-medium">{stat.label}</p>
+                <p className="text-cool-grey text-sm font-medium">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </div>
