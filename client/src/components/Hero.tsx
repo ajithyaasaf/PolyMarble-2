@@ -113,8 +113,10 @@ export default function Hero() {
                     Spaces
                   </span>
                 </span>
-                <span className="block text-2xl sm:text-4xl lg:text-5xl font-light text-cool-grey mt-3 sm:mt-4">
+                <span className="block text-2xl sm:text-4xl lg:text-5xl font-light text-cool-grey mt-6 sm:mt-8">
                   with{" "}
+                </span>
+                <span className="block text-2xl sm:text-4xl lg:text-5xl font-black text-brand-teal mt-3 sm:mt-4">
                   <RotatingText
                     texts={[
                       "Premium Polymarble",
@@ -163,7 +165,7 @@ export default function Hero() {
             {/* CTA Buttons with Premium Design */}
             <div className="flex flex-wrap gap-3 sm:gap-4 items-center reveal-up">
               <Link href="/contact">
-                <Button className="group relative px-6 sm:px-8 py-4 sm:py-6 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg overflow-hidden hover-lift">
+                <Button className="group relative px-6 sm:px-8 py-4 sm:py-6 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg overflow-hidden hover-lift min-h-[3.5rem] sm:min-h-[4rem]">
                   <span className="relative z-10 flex items-center gap-2 sm:gap-3">
                     Get Quote
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform" />
@@ -174,7 +176,7 @@ export default function Hero() {
 
               <Link
                 href="/products"
-                className="group px-6 sm:px-8 py-4 sm:py-6 bg-pure-white border-2 border-brand-teal/20 rounded-xl sm:rounded-2xl font-bold text-brand-teal hover:bg-brand-teal hover:text-pure-white transition-all duration-300 inline-flex text-base sm:text-lg"
+                className="group px-6 sm:px-8 py-4 sm:py-6 bg-pure-white border-2 border-brand-teal/20 rounded-xl sm:rounded-2xl font-bold text-brand-teal hover:bg-brand-teal hover:text-pure-white transition-all duration-300 inline-flex items-center text-base sm:text-lg min-h-[3.5rem] sm:min-h-[4rem]"
               >
                 <span className="flex items-center gap-2 sm:gap-3">
                   <Play className="w-4 h-4 sm:w-5 sm:h-5" />

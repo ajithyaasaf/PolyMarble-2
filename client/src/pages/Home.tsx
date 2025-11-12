@@ -33,11 +33,11 @@ export default function Home() {
         <Hero />
         
         {/* Content Sections with Proper Spacing and Enhanced Backgrounds */}
-        <div className="section-spacing bg-pure-white relative">
+        <div className="section-spacing bg-pure-white relative pb-0">
           <TrustIndicators />
         </div>
         
-        <div className="section-spacing bg-gradient-to-br from-warm-cream via-pure-white to-warm-cream relative overflow-hidden">
+        <div className="section-spacing bg-gradient-to-br from-warm-cream via-pure-white to-warm-cream relative overflow-hidden pt-20">
           <div className="absolute inset-0 opacity-30">
             <div className="absolute top-10 right-10 w-40 h-40 bg-brand-teal/10 rounded-full blur-2xl"></div>
             <div className="absolute bottom-10 left-10 w-60 h-60 bg-brand-peach/10 rounded-full blur-2xl"></div>

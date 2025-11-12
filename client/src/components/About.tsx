@@ -248,21 +248,21 @@ export default function About() {
               <div className="grid sm:grid-cols-2 gap-6 auto-rows-fr">
                 {[
                   {
-                    title: "Lasting durability",
+                    title: "Lasting Durability",
                     desc: "Scratch & stain resistant reinforced resins.",
                     Icon: ShieldCheck,
                   },
                   {
-                    title: "Design freedom",
+                    title: "Design Freedom",
                     desc: "Veins & textures that emulate rare marbles.",
                     Icon: Sparkles,
                   },
                   {
-                    title: "Easy install",
+                    title: "Easy Install",
                     desc: "Lightweight panels simplify transport & fitting.",
                     Icon: Wrench,
                   },
-                  { title: "Global trust", desc: "Serving projects across regions.", Icon: Globe },
+                  { title: "Global Trust", desc: "Serving projects across regions.", Icon: Globe },
                 ].map(({ title, desc, Icon }) => (
                   <div
                     key={title}

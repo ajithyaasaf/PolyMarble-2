@@ -12,10 +12,8 @@ import {
   Lightbulb,
   HeadphonesIcon,
   Mail,
-  Instagram,
-  Facebook,
-  Youtube,
 } from "lucide-react";
+import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { Link, useLocation } from "wouter";
 
 interface NavItem {
@@ -164,8 +162,8 @@ export default function Header() {
                 href="tel:+919842106768"
                 className="flex items-center gap-1.5 hover:text-brand-peach transition-colors"
               >
-                <Phone className="w-4 h-4 sm:w-3 sm:h-3 flex-shrink-0" />
-                <span className="font-medium text-[11px] sm:text-xs whitespace-nowrap leading-4">
+                <Phone className="w-4 h-4 sm:w-3 sm:h-3 flex-shrink-0" fill="currentColor" />
+                <span className="font-medium text-[12px] sm:text-sm whitespace-nowrap leading-4">
                   +91 98421 06768
                 </span>
               </a>
@@ -182,7 +180,7 @@ export default function Header() {
                   aria-label="Instagram"
                   data-testid="link-header-social-instagram"
                 >
-                  <Instagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                  <FaInstagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
                 </a>
                 <a
                   href="https://www.facebook.com/polymarblesheets"
@@ -192,7 +190,7 @@ export default function Header() {
                   aria-label="Facebook"
                   data-testid="link-header-social-facebook"
                 >
-                  <Facebook className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                  <FaFacebook className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
                 </a>
                 <a
                   href="https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca"
@@ -202,7 +200,7 @@ export default function Header() {
                   aria-label="Youtube"
                   data-testid="link-header-social-youtube"
                 >
-                  <Youtube className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                  <FaYoutube className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
                 </a>
               </div>
             </div>
@@ -433,22 +431,28 @@ export default function Header() {
               </Link>
               <div className="flex items-center justify-center gap-4 mt-4">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/polymarblesheet_india?igsh=MXZoczNwcWxleWl6bw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-cool-grey hover:text-brand-teal transition-colors"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <FaInstagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/polymarblesheets"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-cool-grey hover:text-brand-teal transition-colors"
                 >
-                  <Facebook className="w-5 h-5" />
+                  <FaFacebook className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-cool-grey hover:text-brand-teal transition-colors"
                 >
-                  <Youtube className="w-5 h-5" />
+                  <FaYoutube className="w-5 h-5" />
                 </a>
               </div>
             </div>

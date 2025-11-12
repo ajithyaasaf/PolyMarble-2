@@ -272,6 +272,18 @@ export default function EnhancedContact() {
 
                 <div className="flex items-start gap-4 hover-lift p-4 rounded-lg transition-all duration-300">
                   <div className="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center glow-effect">
+                    <MapPin className="w-6 h-6 text-brand-teal" />
+                  </div>
+                  <div>
+                    <div className="text-deep-charcoal font-bold mb-1">Chennai Office</div>
+                    <div className="text-cool-grey">Dr. Kannan Tower, Arcot Road,</div>
+                    <div className="text-cool-grey">Opp to Naidu Hall, Porur, Chennai - 116</div>
+                    <div className="text-brand-teal text-sm mt-1">Open: Mon-Sat 9AM-7PM</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 hover-lift p-4 rounded-lg transition-all duration-300">
+                  <div className="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center glow-effect">
                     <Phone className="w-6 h-6 text-brand-teal" />
                   </div>
                   <div>
@@ -289,7 +301,7 @@ export default function EnhancedContact() {
                   <div>
                     <div className="text-deep-charcoal font-bold mb-1">Email Us</div>
                     <div className="text-brand-teal">polymarblesheet@gmail.com</div>
-                    <div className="text-cool-grey text-sm">Chennai Office: Dr. Kannan Tower, Arcot Road, Opp to Naidu Hall, Porur - 116</div>
+                    <div className="text-brand-teal text-sm mt-1">We reply within 2 hours</div>
                   </div>
                 </div>
               </div>

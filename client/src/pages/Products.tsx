@@ -36,6 +36,7 @@ export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [showDetailsDialog, setShowDetailsDialog] = useState(false);
+  const [showQuoteDialog, setShowQuoteDialog] = useState(false);
   const [query, setQuery] = useState("");
 
   const displayProducts = useMemo(() => {
@@ -428,25 +429,96 @@ export default function Products() {
                     </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                  <div className="pt-4">
                     <Button
-                      className="flex-1 bg-brand-teal text-white"
+                      className="w-full bg-brand-teal text-white"
                       data-testid="button-dialog-get-quote"
+                      onClick={() => {
+                        setShowDetailsDialog(false);
+                        setShowQuoteDialog(true);
+                      }}
                     >
                       Get Quote
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="flex-1 border-brand-teal text-brand-teal"
-                      data-testid="button-dialog-request-sample"
-                    >
-                      Request Sample
                     </Button>
                   </div>
                 </div>
               </div>
             </>
           )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Quote Request Dialog */}
+      <Dialog open={showQuoteDialog} onOpenChange={setShowQuoteDialog}>
+        <DialogContent className="max-w-2xl" data-testid="dialog-quote-form">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">Request a Quote</DialogTitle>
+            <DialogDescription>
+              Fill in the details below and we'll get back to you within 2 hours.
+            </DialogDescription>
+          </DialogHeader>
+
+          <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); setShowQuoteDialog(false); }}>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <label htmlFor="quote-name" className="text-sm font-medium">Full Name *</label>
+                <input
+                  id="quote-name"
+                  type="text"
+                  required
+                  className="w-full rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="quote-phone" className="text-sm font-medium">Phone Number *</label>
+                <input
+                  id="quote-phone"
+                  type="tel"
+                  required
+                  className="w-full rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal"
+                  placeholder="+91 98421 06768"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="quote-email" className="text-sm font-medium">Email Address *</label>
+              <input
+                id="quote-email"
+                type="email"
+                required
+                className="w-full rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal"
+                placeholder="john@example.com"
+              />
+            </div>
+
+            {selectedProduct && (
+              <div className="bg-muted/50 rounded-md p-3">
+                <p className="text-sm text-muted-foreground mb-1">Product Selected:</p>
+                <p className="font-medium">{selectedProduct.name}</p>
+              </div>
+            )}
+
+            <div className="space-y-2">
+              <label htmlFor="quote-message" className="text-sm font-medium">Project Details</label>
+              <textarea
+                id="quote-message"
+                rows={4}
+                className="w-full rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal resize-none"
+                placeholder="Tell us about your project requirements, dimensions, timeline, etc."
+              />
+            </div>
+
+            <div className="flex gap-3">
+              <Button type="submit" className="flex-1 bg-brand-teal text-white">
+                Submit Request
+              </Button>
+              <Button type="button" variant="outline" onClick={() => setShowQuoteDialog(false)}>
+                Cancel
+              </Button>
+            </div>
+          </form>
         </DialogContent>
       </Dialog>
 
