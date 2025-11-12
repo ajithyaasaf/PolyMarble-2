@@ -159,28 +159,26 @@ export default function Header() {
       >
         <div className="bg-brand-teal text-pure-white">
           <div className="container mx-auto px-3 sm:px-6">
-            <div className="grid grid-cols-[1fr_auto] sm:grid-cols-[max-content_1fr_max-content] items-center w-full gap-2 sm:gap-4 h-10 text-xs">
-              <div className="flex items-center gap-2">
-                <a
-                  href="tel:+919842106768"
-                  className="flex items-center gap-1.5 hover:text-brand-peach transition-colors"
-                >
-                  <Phone className="w-3.5 h-3.5 sm:w-3 sm:h-3 flex-shrink-0" />
-                  <span className="font-medium text-[11px] sm:text-xs whitespace-nowrap">
-                    +91 98421 06768
-                  </span>
-                </a>
-              </div>
+            <div className="flex items-center justify-between w-full gap-2 sm:gap-4 h-10 text-xs">
+              <a
+                href="tel:+919842106768"
+                className="flex items-center gap-1.5 hover:text-brand-peach transition-colors"
+              >
+                <Phone className="w-4 h-4 sm:w-3 sm:h-3 flex-shrink-0" />
+                <span className="font-medium text-[11px] sm:text-xs whitespace-nowrap leading-4">
+                  +91 98421 06768
+                </span>
+              </a>
               <span className="hidden sm:flex items-center gap-2">
                 <MapPin className="w-3 h-3" />
                 <span className="whitespace-nowrap">Madurai, India</span>
               </span>
-              <div className="flex items-center gap-2 sm:gap-3 justify-self-end">
+              <div className="flex items-center gap-2 sm:gap-3">
                 <a
                   href="https://www.instagram.com/polymarblesheet_india?igsh=MXZoczNwcWxleWl6bw=="
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-pure-white hover:text-brand-peach transition-colors"
+                  className="flex items-center text-pure-white hover:text-brand-peach transition-colors"
                   aria-label="Instagram"
                   data-testid="link-header-social-instagram"
                 >
@@ -190,7 +188,7 @@ export default function Header() {
                   href="https://www.facebook.com/polymarblesheets"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-pure-white hover:text-brand-peach transition-colors"
+                  className="flex items-center text-pure-white hover:text-brand-peach transition-colors"
                   aria-label="Facebook"
                   data-testid="link-header-social-facebook"
                 >
@@ -200,7 +198,7 @@ export default function Header() {
                   href="https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-pure-white hover:text-brand-peach transition-colors"
+                  className="flex items-center text-pure-white hover:text-brand-peach transition-colors"
                   aria-label="Youtube"
                   data-testid="link-header-social-youtube"
                 >
