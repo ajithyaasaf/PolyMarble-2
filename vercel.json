@@ -1,6 +1,7 @@
 {
   "version": 2,
   "buildCommand": "npm run build",
+  "outputDirectory": "dist/public",
   "functions": {
     "api/index.js": {
       "includeFiles": "dist/**"
@@ -8,7 +9,7 @@
   },
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "/api/index.js"
     }
   ]
