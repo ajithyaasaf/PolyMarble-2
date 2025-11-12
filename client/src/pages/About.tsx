@@ -242,18 +242,13 @@ export default function About() {
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center reveal-up">
-                <Button className="px-8 py-6 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white rounded-2xl font-bold text-lg hover-lift">
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Explore Our Journey
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <Button
-                  variant="outline"
-                  className="px-8 py-6 border-2 border-brand-teal/20 rounded-2xl font-bold text-lg"
-                >
-                  <MapPin className="w-5 h-5 mr-2" />
-                  Visit Showroom
-                </Button>
+                <Link href="/gallery">
+                  <Button className="px-8 py-6 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white rounded-2xl font-bold text-lg hover-lift" data-testid="button-visit-gallery">
+                    <Sparkles className="w-5 h-5 mr-2" />
+                    Visit Gallery
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -557,16 +552,21 @@ export default function About() {
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center reveal-up">
-                <Button className="px-8 py-6 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white rounded-2xl font-bold text-lg hover-lift group">
-                  Get Free Consultation
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button
-                  variant="outline"
-                  className="px-8 py-6 border-2 border-brand-teal/20 rounded-2xl font-bold text-lg"
-                >
-                  Download Catalog
-                </Button>
+                <Link href="/contact">
+                  <Button className="px-8 py-6 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white rounded-2xl font-bold text-lg hover-lift group" data-testid="button-get-consultation">
+                    Get Free Consultation
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    className="px-8 py-6 border-2 border-brand-teal/20 rounded-2xl font-bold text-lg"
+                    data-testid="button-download-catalog"
+                  >
+                    Download Catalog
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
