@@ -167,9 +167,9 @@ export default function Header() {
                   +91 98421 06768
                 </span>
               </a>
-              <span className="hidden sm:flex items-center gap-2">
-                <MapPin className="w-3 h-3" />
-                <span className="whitespace-nowrap">Madurai, India</span>
+              <span className="hidden sm:flex items-center gap-1.5 font-medium text-[12px] sm:text-sm">
+                <MapPin className="w-4 h-4 sm:w-3 sm:h-3 flex-shrink-0" />
+                <span className="whitespace-nowrap leading-4">Madurai, India</span>
               </span>
               <div className="flex items-center gap-2 sm:gap-3">
                 <a
@@ -180,7 +180,7 @@ export default function Header() {
                   aria-label="Instagram"
                   data-testid="link-header-social-instagram"
                 >
-                  <FaInstagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                  <FaInstagram className="w-4 h-4 sm:w-4 sm:h-4" />
                 </a>
                 <a
                   href="https://www.facebook.com/polymarblesheets"
@@ -190,7 +190,7 @@ export default function Header() {
                   aria-label="Facebook"
                   data-testid="link-header-social-facebook"
                 >
-                  <FaFacebook className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                  <FaFacebook className="w-4 h-4 sm:w-4 sm:h-4" />
                 </a>
                 <a
                   href="https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca"
@@ -200,7 +200,7 @@ export default function Header() {
                   aria-label="Youtube"
                   data-testid="link-header-social-youtube"
                 >
-                  <FaYoutube className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                  <FaYoutube className="w-4 h-4 sm:w-4 sm:h-4" />
                 </a>
               </div>
             </div>

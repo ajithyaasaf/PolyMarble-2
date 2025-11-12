@@ -335,34 +335,34 @@ export default function About() {
               </div>
 
               <div className="relative">
-                {/* Timeline Line */}
-                <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-teal/20 via-brand-teal/40 to-brand-teal/20 transform lg:-translate-x-1/2" />
+                {/* Timeline Line - Horizontal */}
+                <div className="absolute left-0 right-0 top-16 h-0.5 bg-gradient-to-r from-brand-teal/20 via-brand-teal/40 to-brand-teal/20 hidden lg:block" />
 
-                {milestones.map((milestone, index) => {
-                  const Icon = milestone.icon;
-                  return (
-                    <div
-                      key={index}
-                      className={`relative flex items-center mb-16 last:mb-0 reveal-up ${
-                        index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                      }`}
-                      style={{ animationDelay: `${index * 0.2}s` }}
-                    >
-                      {/* Content Card */}
+                {/* Horizontal Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {milestones.map((milestone, index) => {
+                    const Icon = milestone.icon;
+                    return (
                       <div
-                        className={`w-full lg:w-5/12 ${index % 2 === 0 ? "lg:text-right lg:pr-16" : "lg:text-left lg:pl-16"} pl-20 lg:pl-0`}
+                        key={index}
+                        className="relative reveal-up"
+                        style={{ animationDelay: `${index * 0.2}s` }}
                       >
-                        <div className="bg-pure-white rounded-2xl p-8 shadow-xl border border-light-silver/20 hover-lift">
-                          <div
-                            className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? "lg:justify-end" : ""}`}
-                          >
+                        {/* Timeline Dot */}
+                        <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-brand-teal to-brand-teal/80 rounded-full flex items-center justify-center shadow-lg z-10 hidden lg:flex">
+                          <div className="w-6 h-6 bg-pure-white rounded-full animate-pulse" />
+                        </div>
+
+                        {/* Content Card */}
+                        <div className="bg-pure-white rounded-2xl p-6 shadow-xl border border-light-silver/20 hover-lift mt-8 lg:mt-8">
+                          <div className="flex items-center gap-3 mb-4">
                             <div
-                              className={`w-12 h-12 rounded-xl bg-gradient-to-br ${milestone.color} flex items-center justify-center`}
+                              className={`w-12 h-12 rounded-xl bg-gradient-to-br ${milestone.color} flex items-center justify-center flex-shrink-0`}
                             >
                               <Icon className="w-6 h-6 text-brand-teal" />
                             </div>
                             <div>
-                              <div className="text-3xl font-black text-deep-charcoal">
+                              <div className="text-2xl font-black text-deep-charcoal">
                                 {milestone.year}
                               </div>
                               <div className="text-xs text-cool-grey uppercase tracking-wider">
@@ -370,22 +370,17 @@ export default function About() {
                               </div>
                             </div>
                           </div>
-                          <h3 className="text-2xl font-bold text-deep-charcoal mb-2">
+                          <h3 className="text-xl font-bold text-deep-charcoal mb-2">
                             {milestone.title}
                           </h3>
-                          <p className="text-cool-grey">
+                          <p className="text-cool-grey text-sm">
                             {milestone.description}
                           </p>
                         </div>
                       </div>
-
-                      {/* Timeline Dot */}
-                      <div className="absolute left-8 lg:left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-brand-teal to-brand-teal/80 rounded-full flex items-center justify-center shadow-lg">
-                        <div className="w-8 h-8 bg-pure-white rounded-full animate-pulse" />
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
