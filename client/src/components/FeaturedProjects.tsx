@@ -11,6 +11,7 @@ import {
   Building2,
   Hospital,
   Layers,
+  ArrowUpRight,
 } from "lucide-react";
 
 type CaseStudy = {
@@ -105,99 +106,111 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section id="projects" className="relative overflow-hidden">
-      <div className="container mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h3 className="text-4xl lg:text-5xl font-bold mb-3 reveal-up">
-            Case <span className="text-brand-teal">Studies</span>
-          </h3>
-          <p className="text-lg text-cool-grey max-w-2xl mx-auto reveal-up">
-            Real projects. Real transformations. Real savings.
-          </p>
+    <section id="projects" className="relative py-24 bg-deep-charcoal text-white overflow-hidden">
+      {/* Background Gradients */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-teal/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-brown/5 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4" />
+
+      <div className="container mx-auto px-6 relative z-10">
+
+        {/* HEADER */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 reveal-up">
+          <div>
+            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9]">
+              <span className="block text-transparent stroke-text" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.3)" }}>Case</span>
+              <span className="block text-white">Studies</span>
+            </h2>
+            <p className="mt-6 text-xl text-white/50 max-w-lg">
+              Real projects. Real transformations. See how we deliver value across sectors.
+            </p>
+          </div>
+
+          {/* Filters - Dark Mode */}
+          <div className="flex flex-wrap gap-2">
+            {filters.map((f) => {
+              const active = activeFilter === f;
+              return (
+                <button
+                  key={f}
+                  onClick={() => setActiveFilter(f)}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border ${active
+                      ? "bg-brand-teal text-white border-brand-teal"
+                      : "bg-transparent text-white/60 border-white/10 hover:border-brand-teal/50 hover:text-white"
+                    }`}
+                >
+                  {f}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {filters.map((f) => {
-            const active = activeFilter === f;
+
+        {/* Project Cards - Horizontal Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-up">
+          {filteredProjects.map((p, idx) => {
+            // Make the first item 'featured' visually if showing 'All', or just styling
+            const isFeatured = idx === 0 && activeFilter === 'All';
+
             return (
-              <button
-                key={f}
-                onClick={() => setActiveFilter(f)}
-                className={`px-4 py-2 rounded-full text-sm transition-all ${
-                  active
-                    ? "bg-brand-teal text-white"
-                    : "bg-white text-deep-charcoal border border-brand-teal/20 hover:bg-brand-teal/10 hover:text-brand-teal"
-                }`}
-                aria-pressed={active}
+              <article
+                key={p.id}
+                className={`group rounded-[2rem] p-8 md:p-10 flex flex-col justify-between transition-all duration-500 border ${isFeatured
+                    ? 'bg-brand-teal text-white border-brand-teal shadow-2xl shadow-brand-teal/20 scale-100 md:scale-105 z-10'
+                    : 'bg-white/5 backdrop-blur-sm text-white border-white/10 hover:border-white/30 hover:bg-white/10'
+                  }`}
               >
-                <Filter className="w-3.5 h-3.5 inline mr-2" />
-                {f}
-              </button>
+                <div>
+                  {/* Header */}
+                  <div className="flex flex-col gap-4 mb-8">
+                    <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider w-max ${isFeatured ? 'bg-white/20 text-white' : 'bg-brand-teal/20 text-brand-teal'
+                      }`}>
+                      <CategoryIcon category={p.category} />
+                      {p.category}
+                    </span>
+                    <h4 className="text-2xl font-bold leading-tight">{p.title}</h4>
+                  </div>
+
+                  {/* Key Stats */}
+                  <div className={`grid grid-cols-2 gap-4 mb-8 pb-8 border-b ${isFeatured ? 'border-white/20' : 'border-white/10'}`}>
+                    <div>
+                      <div className={`text-xs font-bold uppercase tracking-wider mb-1 ${isFeatured ? 'text-white/60' : 'text-white/40'}`}>ROI Savings</div>
+                      <div className="text-xl font-bold">{p.roiSavings}<span className="text-sm font-normal opacity-70">/sq.ft</span></div>
+                    </div>
+                    <div>
+                      <div className={`text-xs font-bold uppercase tracking-wider mb-1 ${isFeatured ? 'text-white/60' : 'text-white/40'}`}>Area</div>
+                      <div className="text-xl font-bold">{p.sqft}<span className="text-sm font-normal opacity-70"> sq.ft</span></div>
+                    </div>
+                  </div>
+
+                  {/* Transformation Summary */}
+                  <div className="space-y-3 mb-8">
+                    <div className="flex gap-3 text-sm">
+                      <span className={`shrink-0 font-bold uppercase text-xs mt-1 ${isFeatured ? 'text-white/60' : 'text-white/40'}`}>Before</span>
+                      <p className="opacity-80">{p.before}</p>
+                    </div>
+                    <div className="flex gap-3 text-sm">
+                      <span className={`shrink-0 font-bold uppercase text-xs mt-1 ${isFeatured ? 'text-white/60' : 'text-brand-teal'}`}>After</span>
+                      <p className={isFeatured ? "font-medium" : "text-white"}>{p.after}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer */}
+                <div className="mt-auto flex items-center justify-between">
+                  <span className={`flex items-center gap-2 text-xs font-bold uppercase tracking-widest ${isFeatured ? 'text-white/60' : 'text-white/40'}`}>
+                    <MapPin className="w-3 h-3" /> {p.location}
+                  </span>
+                  <button className={`p-2 rounded-full transition-transform group-hover:translate-x-1 ${isFeatured ? 'bg-white text-brand-teal' : 'bg-white/10 text-white hover:bg-white/20'}`}>
+                    <ArrowUpRight className="w-5 h-5" />
+                  </button>
+                </div>
+
+              </article>
             );
           })}
         </div>
 
-        {/* Project Cards */}
-        <div className="grid lg:grid-cols-1 gap-8">
-          {filteredProjects.map((p) => (
-            <article
-              key={p.id}
-              className="rounded-2xl border border-brand-teal/20 bg-white p-6 shadow-sm reveal-up"
-            >
-              {/* Header */}
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-3">
-                <h4 className="text-xl font-bold text-deep-charcoal">{p.title}</h4>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-teal/10 text-brand-teal px-3 py-1 text-xs font-semibold w-max">
-                  <CategoryIcon category={p.category} />
-                  {p.category}
-                </span>
-              </div>
-
-              {/* Meta */}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-cool-grey mb-4">
-                <span className="inline-flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-brand-teal" />
-                  {p.location}
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <CalendarDays className="w-3.5 h-3.5 text-brand-teal" />
-                  {p.year}
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <Ruler className="w-3.5 h-3.5 text-brand-teal" />
-                  {p.sqft} sq.ft.
-                </span>
-              </div>
-
-              {/* Summary */}
-              <ul className="space-y-2 text-sm text-deep-charcoal/90 mb-4">
-                <li>
-                  <strong className="text-deep-charcoal">Before:</strong> {p.before}
-                </li>
-                <li>
-                  <strong className="text-deep-charcoal">During:</strong> {p.during}
-                </li>
-                <li>
-                  <strong className="text-deep-charcoal">After:</strong> {p.after}
-                </li>
-              </ul>
-
-              {/* Savings */}
-              <div className="flex items-center justify-between pt-4 border-t border-brand-teal/15">
-                <span className="inline-flex items-center gap-2 text-brand-teal font-semibold text-sm">
-                  <TrendingUp className="w-4 h-4" />
-                  Saved {p.roiSavings}/sq.ft vs natural marble
-                </span>
-                <button className="inline-flex items-center text-sm text-brand-teal hover:text-brand-peach transition">
-                  View full case study
-                  <ArrowRight className="w-4 h-4 ml-1.5" />
-                </button>
-              </div>
-            </article>
-          ))}
-        </div>
       </div>
     </section>
   );
