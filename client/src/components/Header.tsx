@@ -210,8 +210,8 @@ export default function Header() {
       {/* Main Header */}
       <header
         className={`fixed left-0 right-0 z-40 transition-all duration-500 ${isScrolled
-            ? "top-0 bg-pure-white/95 backdrop-blur-xl shadow-lg"
-            : "top-10 sm:top-9 bg-pure-white/80 backdrop-blur-md"
+          ? "top-0 bg-pure-white/95 backdrop-blur-xl shadow-lg"
+          : "top-10 sm:top-9 bg-pure-white/80 backdrop-blur-md"
           }`}
       >
         <div className="container mx-auto px-4 sm:px-6">
@@ -245,8 +245,8 @@ export default function Header() {
                       <Link
                         href={item.href}
                         className={`group px-4 py-2 flex items-center gap-2 text-sm font-medium transition-all duration-300 rounded-lg ${location === item.href
-                            ? "text-brand-teal bg-brand-teal/10"
-                            : "text-deep-charcoal hover:text-brand-teal hover:bg-warm-cream"
+                          ? "text-brand-teal bg-brand-teal/10"
+                          : "text-deep-charcoal hover:text-brand-teal hover:bg-warm-cream"
                           }`}
                       >
                         {item.icon && (
@@ -357,8 +357,8 @@ export default function Header() {
         {/* Mobile Menu */}
         <div
           className={`lg:hidden fixed inset-x-0 bg-pure-white shadow-2xl transition-all duration-500 ${isMobileMenuOpen
-              ? "top-[104px] sm:top-20 opacity-100 translate-y-0"
-              : "top-[104px] sm:top-20 opacity-0 -translate-y-full pointer-events-none"
+            ? "top-[104px] sm:top-20 opacity-100 translate-y-0"
+            : "top-[104px] sm:top-20 opacity-0 -translate-y-full pointer-events-none"
             }`}
           style={{ maxHeight: "calc(100vh - 104px)" }}
         >
@@ -375,8 +375,8 @@ export default function Header() {
                     <Link
                       href={item.href}
                       className={`flex items-center justify-between py-4 text-base font-medium transition-colors ${location === item.href
-                          ? "text-brand-teal"
-                          : "text-deep-charcoal"
+                        ? "text-brand-teal"
+                        : "text-deep-charcoal"
                         }`}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
@@ -454,28 +454,6 @@ export default function Header() {
           </div>
         </div>
       </header>
-
-      {/* Progress Indicator */}
-      <div
-        className={`fixed top-0 left-0 right-0 z-50 h-1 bg-transparent transition-all duration-300 ${isScrolled ? "opacity-100" : "opacity-0"
-          }`}
-      >
-        <div
-          className="h-full bg-gradient-to-r from-brand-teal to-brand-peach transition-all duration-300"
-          style={{
-            width: `${typeof window !== "undefined"
-                ? Math.min(
-                  (window.scrollY /
-                    (document.documentElement.scrollHeight -
-                      window.innerHeight)) *
-                  100,
-                  100,
-                )
-                : 0
-              }%`,
-          }}
-        />
-      </div>
     </>
   );
 }
