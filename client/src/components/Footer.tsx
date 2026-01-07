@@ -17,12 +17,14 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-6">
-              <img
-                src="/logo.png"
-                alt="Polymarble"
-                className="h-24 w-auto"
-                data-testid="img-footer-logo"
-              />
+              <div className="bg-white rounded-xl p-3 inline-block">
+                <img
+                  src="/logo.png"
+                  alt="Polymarble"
+                  className="h-24 w-auto"
+                  data-testid="img-footer-logo"
+                />
+              </div>
             </div>
 
             <p className="text-white/90 mb-8 text-lg leading-relaxed">
