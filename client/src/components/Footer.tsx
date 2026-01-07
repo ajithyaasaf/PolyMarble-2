@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-deep-charcoal text-pure-white overflow-hidden">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-brand-peach rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-teal rounded-full blur-3xl" />
       </div>
@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 mb-12">
           {/* Brand Section */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-6">
               <img
                 src="/logo.png"
@@ -25,29 +25,29 @@ export default function Footer() {
               />
             </div>
 
-            <p className="text-warm-cream mb-8 text-lg leading-relaxed">
+            <p className="text-white/90 mb-8 text-lg leading-relaxed">
               10 Years of Excellence Since 2017. Leading manufacturer of premium
               polymarble sheets, combining innovative technology with timeless
               aesthetics for residential and commercial spaces.
             </p>
 
             {/* Newsletter Signup */}
-            <div className="bg-brand-teal/30 backdrop-blur-sm rounded-2xl p-6 border border-brand-peach/40">
-              <h6 className="text-brand-peach font-bold mb-3 text-lg flex items-center gap-2">
-                <Mail className="w-5 h-5" />
-                Stay Updated
+            <div className="space-y-3">
+              <h6 className="text-brand-peach font-bold text-sm uppercase tracking-wider flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                Newsletter
               </h6>
-              <p className="text-warm-cream text-sm mb-4">
-                Get our 12-page guide on choosing the perfect polymarble finish + exclusive offers
+              <p className="text-white/70 text-sm">
+                Get exclusive offers and design tips
               </p>
               <div className="flex gap-2">
                 <Input
                   type="email"
-                  placeholder="Enter your email"
-                  className="bg-deep-charcoal/50 border-brand-peach/30 text-pure-white placeholder:text-cool-grey flex-1"
+                  placeholder="your@email.com"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-white/40 flex-1 h-11"
                   data-testid="input-newsletter-email"
                 />
-                <Button className="bg-gradient-to-r from-brand-peach to-brand-teal text-pure-white hover:shadow-lg hover:shadow-brand-peach/50 font-bold" data-testid="button-subscribe">
+                <Button className="bg-brand-teal hover:bg-brand-teal/90 text-white font-semibold" data-testid="button-subscribe">
                   Subscribe
                 </Button>
               </div>
@@ -68,7 +68,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-warm-cream hover:text-brand-peach transition-colors flex items-center gap-2 group"
+                    className="text-white/90 hover:text-brand-peach transition-colors flex items-center gap-2 group"
                     data-testid={`link-footer-${link.label.toLowerCase()}`}
                   >
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -82,7 +82,7 @@ export default function Footer() {
           {/* Services */}
           <div className="lg:col-span-2">
             <h6 className="text-brand-peach font-bold mb-6 text-lg">Our Services</h6>
-            <ul className="space-y-3 text-warm-cream">
+            <ul className="space-y-3 text-white/90">
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
                 <span>Residential Installation</span>
@@ -107,7 +107,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-4">
             <h6 className="text-brand-peach font-bold mb-6 text-lg">Get In Touch</h6>
             <div className="space-y-4">
               <div className="flex items-start gap-3 group">
@@ -116,10 +116,24 @@ export default function Footer() {
                 </div>
                 <div className="text-sm">
                   <div className="font-medium text-pure-white mb-1">Madurai Office</div>
-                  <div className="text-warm-cream">
+                  <div className="text-white/90">
                     No:46, Sivagangai Main Road<br />
                     Melamadai, Gomathipuram<br />
                     Madurai - 625020
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 group">
+                <div className="w-10 h-10 rounded-lg bg-brand-peach/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-peach/20 transition-colors">
+                  <MapPin className="w-5 h-5 text-brand-peach" />
+                </div>
+                <div className="text-sm">
+                  <div className="font-medium text-pure-white mb-1">Chennai Office</div>
+                  <div className="text-white/90">
+                    Dr. Kannan Tower, Arcot Road<br />
+                    Opp to Naidu Hall<br />
+                    Porur - 116
                   </div>
                 </div>
               </div>
@@ -141,7 +155,7 @@ export default function Footer() {
                     href="https://wa.me/919842126565"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-warm-cream hover:text-brand-peach transition-colors text-sm block mt-1"
+                    className="text-white/70 hover:text-brand-peach transition-colors text-sm block mt-1"
                     data-testid="link-whatsapp"
                   >
                     WhatsApp: +91 98421 26565
@@ -206,23 +220,18 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-brand-peach/20 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-sm text-warm-cream text-center md:text-left">
+        <div className="border-t border-white/10 pt-8">
+          <div className="text-center space-y-2">
+            <div className="text-sm text-white/70">
               © 2025 Polymarble Sheet India. All rights reserved.
             </div>
-            <div className="text-sm text-warm-cream text-center md:text-right">
-              Chennai Office: Dr. Kannan Tower, Arcot Road, Opp to Naidu Hall, Porur - 116
-            </div>
-          </div>
-          <div className="text-center mt-4">
-            <div className="text-sm text-warm-cream">
+            <div className="text-xs text-white/40">
               Designed & Developed by{" "}
               <a
                 href="https://www.godivatech.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-brand-peach font-semibold hover:text-brand-teal transition-colors"
+                className="text-brand-peach hover:text-brand-teal transition-colors font-medium"
               >
                 GodivaTech
               </a>
