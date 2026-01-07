@@ -26,6 +26,7 @@ import {
   Rocket,
   Diamond,
   Gauge,
+  Leaf,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -144,8 +145,8 @@ export default function About() {
       icon: Zap,
       title: "Innovation",
       description: "Leading with cutting-edge technology",
-      stat: "50+",
-      statLabel: "Patents",
+      stat: "2L+",
+      statLabel: "Successful Projects",
     },
     {
       icon: Shield,
@@ -159,13 +160,13 @@ export default function About() {
   const achievements = [
     { icon: Globe, text: "Presence in 5 countries", highlight: "5 countries" },
     { icon: Shield, text: "Fire & water resistant", highlight: "water resistant" },
-    { icon: Clock, text: "48-hour installation", highlight: "48-hour" },
-    { icon: Palette, text: "50+ design options", highlight: "50+ design" },
+    { icon: Star, text: "Made in India", highlight: "Made in India" },
+    { icon: Leaf, text: "100% Eco-Friendly", highlight: "Eco-Friendly" },
   ];
 
   const leadership = [
     {
-      name: "Riyas",
+      name: "Reyas",
       role: "Founder & CEO",
       quote: "We're not just creating products, we're crafting dreams",
       image: "/api/placeholder/200/200",
@@ -445,7 +446,7 @@ export default function About() {
                 the dreams of families building their perfect spaces."
               </blockquote>
               <div className="reveal-fade">
-                <div className="text-xl font-bold text-pure-white">Riyas</div>
+                <div className="text-xl font-bold text-pure-white">Reyas</div>
                 <div className="text-pure-white/80">Founder & CEO</div>
               </div>
             </div>
@@ -466,7 +467,7 @@ export default function About() {
                     {achievements.map((achievement, index) => (
                       <div
                         key={index}
-                        className="flex items-start gap-4 p-4 rounded-xl hover:bg-warm-cream transition-colors group"
+                        className="flex items-center gap-4 p-4 rounded-xl hover:bg-warm-cream transition-colors group"
                         style={{ animationDelay: `${index * 0.1}s` }}
                       >
                         <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-teal/10 to-brand-teal/5 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
