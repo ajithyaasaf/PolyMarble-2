@@ -78,36 +78,7 @@ export default function Products() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 reveal-fade">
-              <Card className="hover-elevate">
-                <CardContent className="p-6 text-center">
-                  <Package className="w-8 h-8 text-brand-teal mx-auto mb-3" />
-                  <h3 className="font-bold text-2xl mb-1">{products.length}+</h3>
-                  <p className="text-sm text-muted-foreground">Product Varieties</p>
-                </CardContent>
-              </Card>
-              <Card className="hover-elevate">
-                <CardContent className="p-6 text-center">
-                  <Ruler className="w-8 h-8 text-brand-teal mx-auto mb-3" />
-                  <h3 className="font-bold text-2xl mb-1">Custom</h3>
-                  <p className="text-sm text-muted-foreground">Sizes Available</p>
-                </CardContent>
-              </Card>
-              <Card className="hover-elevate">
-                <CardContent className="p-6 text-center">
-                  <Award className="w-8 h-8 text-brand-teal mx-auto mb-3" />
-                  <h3 className="font-bold text-2xl mb-1">15+</h3>
-                  <p className="text-sm text-muted-foreground">Years Durability</p>
-                </CardContent>
-              </Card>
-              <Card className="hover-elevate">
-                <CardContent className="p-6 text-center">
-                  <Shield className="w-8 h-8 text-brand-teal mx-auto mb-3" />
-                  <h3 className="font-bold text-2xl mb-1">100%</h3>
-                  <p className="text-sm text-muted-foreground">Quality Assured</p>
-                </CardContent>
-              </Card>
-            </div>
+
           </div>
         </section>
 
