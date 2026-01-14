@@ -1,17 +1,17 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Shield, Droplets, Clock, Zap, Leaf, Flame, Bug } from "lucide-react";
+import { Shield, Clock, Zap, Leaf, Bug } from "lucide-react";
 import waterResistanceDemo from "@assets/generated_images/Water_resistance_demonstration_c8332fac.png";
-import fireResistanceDemo from "@assets/generated_images/Fire_resistance_testing_demonstration_d6e65ec5.png";
+
 
 export default function Benefits() {
   useScrollReveal();
 
   const benefits = [
     {
-      icon: Droplets,
-      title: "Water & Stain Resistant",
-      description: "Non-porous surface prevents water damage and staining",
-      color: "text-brand-teal",
+      icon: Bug,
+      title: "100% Borer Proof",
+      description: "Complete protection against borer and other wood-boring insects.",
+      color: "text-brand-brown",
     },
     {
       icon: Clock,
@@ -45,12 +45,7 @@ export default function Benefits() {
       description: "Prevents termite entry and moisture build up",
       color: "text-brand-brown",
     },
-    {
-      icon: Flame,
-      title: "Fire Resistant",
-      description: "Doesn't allow transit of heat for enhanced safety",
-      color: "text-brand-brown",
-    },
+
   ];
 
   return (
@@ -73,48 +68,31 @@ export default function Benefits() {
         </div>
 
         {/* Demo Images Section */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-brand-teal/20 group">
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="relative aspect-[21/9] rounded-2xl overflow-hidden border border-brand-teal/20 group">
             <img
               src={waterResistanceDemo}
               alt="Water resistance testing demonstration"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/60 via-transparent to-transparent"></div>
-            <div className="absolute bottom-4 left-4 right-4">
-              <h4 className="text-xl font-bold text-pure-white mb-2">
+            <div className="absolute bottom-6 left-6 right-6">
+              <h4 className="text-2xl font-bold text-pure-white mb-2">
                 Water & Stain Resistance
               </h4>
-              <p className="text-warm-cream text-sm">
+              <p className="text-warm-cream/90 text-lg">
                 Professional testing demonstrates superior water resistance
                 properties
               </p>
             </div>
           </div>
-
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-brand-teal/20 group">
-            <img
-              src={fireResistanceDemo}
-              alt="Fire resistance testing demonstration"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/60 via-transparent to-transparent"></div>
-            <div className="absolute bottom-4 left-4 right-4">
-              <h4 className="text-xl font-bold text-pure-white mb-2">
-                Fire Resistance Testing
-              </h4>
-              <p className="text-warm-cream text-sm">
-                Class A fire rating ensures maximum safety for your spaces
-              </p>
-            </div>
-          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 stagger-group">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-group max-w-6xl mx-auto">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-pure-white backdrop-blur-sm rounded-2xl p-6 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-300 stagger-item reveal-up group hover:transform hover:scale-105 shadow-lg"
+              className="bg-pure-white backdrop-blur-sm rounded-2xl p-6 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-300 stagger-item reveal-up group hover-scale hover:border-brand-teal/40 shadow-card-custom"
             >
               <div
                 className="w-12 h-12 rounded-full bg-brand-teal/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"

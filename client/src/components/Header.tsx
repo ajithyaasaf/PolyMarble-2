@@ -50,6 +50,18 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Keyboard navigation: close dropdown on Escape key
+  useEffect(() => {
+    const handleEscKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && activeDropdown) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscKey);
+    return () => document.removeEventListener('keydown', handleEscKey);
+  }, [activeDropdown]);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -57,6 +69,28 @@ export default function Header() {
     }
     setIsMobileMenuOpen(false);
     setActiveDropdown(null);
+  };
+
+  // Keyboard navigation handler for menu items
+  const handleMenuKeyDown = (e: React.KeyboardEvent, item: NavItem) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (item.submenu) {
+        setActiveDropdown(activeDropdown === item.label ? null : item.label);
+      }
+    } else if (e.key === 'Escape') {
+      setActiveDropdown(null);
+    } else if (e.key === 'ArrowDown' && item.submenu) {
+      e.preventDefault();
+      setActiveDropdown(item.label);
+      // Focus first submenu item after a short delay
+      setTimeout(() => {
+        const firstLink = document.querySelector(
+          `[data-dropdown="${item.label}"] a`
+        ) as HTMLElement;
+        firstLink?.focus();
+      }, 50);
+    }
   };
 
   const navigationItems: NavItem[] = [
@@ -248,6 +282,10 @@ export default function Header() {
                           ? "text-brand-teal bg-brand-teal/10"
                           : "text-deep-charcoal hover:text-brand-teal hover:bg-warm-cream"
                           }`}
+                        onKeyDown={(e) => handleMenuKeyDown(e, item)}
+                        onFocus={() => item.submenu && setActiveDropdown(item.label)}
+                        aria-haspopup={item.submenu ? "true" : undefined}
+                        aria-expanded={item.submenu ? activeDropdown === item.label : undefined}
                       >
                         {item.icon && (
                           <item.icon className="w-4 h-4 opacity-60 group-hover:opacity-100" />
@@ -258,12 +296,14 @@ export default function Header() {
                             {item.badge}
                           </span>
                         )}
-                        {/* Chevron for submenu REMOVED as requested */}
                       </Link>
                     ) : (
                       <button
                         onClick={item.action}
+                        onKeyDown={(e) => handleMenuKeyDown(e, item)}
                         className="group px-4 py-2 flex items-center gap-2 text-sm font-medium text-deep-charcoal hover:text-brand-teal hover:bg-warm-cream transition-all duration-300 rounded-lg"
+                        aria-haspopup={item.submenu ? "true" : undefined}
+                        aria-expanded={item.submenu ? activeDropdown === item.label : undefined}
                       >
                         {item.icon && (
                           <item.icon className="w-4 h-4 opacity-60 group-hover:opacity-100" />
@@ -274,19 +314,26 @@ export default function Header() {
 
                     {/* Mega Menu Dropdown */}
                     {item.submenu && activeDropdown === item.label && (
-                      <div className="absolute top-full left-0 mt-2 w-[600px] bg-pure-white rounded-2xl shadow-2xl border border-light-silver/20 overflow-hidden reveal-fade">
+                      <div
+                        className="absolute top-full left-0 mt-2 w-[600px] bg-pure-white rounded-2xl shadow-2xl border border-light-silver/20 overflow-hidden reveal-fade"
+                        data-dropdown={item.label}
+                        role="menu"
+                        aria-label={`${item.label} submenu`}
+                      >
                         <div className="grid grid-cols-2 gap-6 p-6">
                           {item.submenu.map((section) => (
                             <div key={section.title}>
                               <h3 className="text-xs uppercase tracking-wider text-cool-grey font-bold mb-4">
                                 {section.title}
                               </h3>
-                              <ul className="space-y-2">
+                              <ul className="space-y-2" role="none">
                                 {section.items.map((subItem) => (
-                                  <li key={subItem.label}>
+                                  <li key={subItem.label} role="none">
                                     <Link
                                       href={subItem.href}
                                       className="group flex items-start gap-3 p-2 rounded-lg hover:bg-warm-cream transition-colors"
+                                      role="menuitem"
+                                      onClick={() => setActiveDropdown(null)}
                                     >
                                       {subItem.icon && (
                                         <subItem.icon className="w-4 h-4 text-brand-teal mt-0.5" />
@@ -312,6 +359,8 @@ export default function Header() {
                           <Link
                             href="/products"
                             className="flex items-center justify-between group"
+                            role="menuitem"
+                            onClick={() => setActiveDropdown(null)}
                           >
                             <span className="text-sm font-medium text-deep-charcoal">
                               View All Products

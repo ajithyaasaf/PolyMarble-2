@@ -15,10 +15,10 @@ export default function Hero() {
       videoRef.current.play().catch(console.error);
     }
 
-    // Rotate through metrics
+    // Rotate through metrics - slowed from 3s to 5s for better readability
     const interval = setInterval(() => {
       setActiveMetric((prev) => (prev + 1) % 3);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -105,11 +105,9 @@ export default function Hero() {
             {/* Main Headline with Creative Typography */}
             <div className="space-y-3 sm:space-y-4">
               <h1 className="reveal-up">
-                <span className="block text-4xl sm:text-6xl lg:text-7xl font-black text-deep-charcoal leading-none">
-                  Transform
-                </span>
-                <span className="block text-4xl sm:text-6xl lg:text-7xl font-black leading-none mt-1 sm:mt-2">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-brand-brown to-brand-peach animate-gradient">
+                <span className="text-4xl sm:text-6xl lg:text-7xl font-black text-deep-charcoal leading-tight sm:leading-tight lg:leading-none">
+                  Transform{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-brown animate-gradient">
                     Spaces
                   </span>
                 </span>
@@ -131,7 +129,7 @@ export default function Hero() {
                     exit={{ scale: 0, opacity: 0 }}
                     staggerDuration={0.03}
                     elementLevelClassName="inline-block"
-                    rotationInterval={3000}
+                    rotationInterval={5000}
                   />
                 </span>
               </h1>
@@ -142,7 +140,6 @@ export default function Hero() {
               <p className="text-lg sm:text-2xl text-deep-charcoal/80 font-medium leading-relaxed">
                 Experience the luxury of Italian marble at{" "}
                 <span className="text-brand-teal font-extrabold text-xl sm:text-3xl">80% less cost</span>
-                .
               </p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 {["Fire Resistant", "Waterproof"].map(

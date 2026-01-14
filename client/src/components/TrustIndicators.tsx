@@ -1,4 +1,4 @@
-import { Award, Shield, Users, Clock, Star, CheckCircle2 } from "lucide-react";
+import { Award, Shield, Users, Clock, Star, CheckCircle2, Truck } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import testimonialVideo from "@assets/customer_testimonial_1762845564449.mp4";
@@ -48,16 +48,16 @@ export default function TrustIndicators() {
 
   const certifications = [
     {
-      icon: <Shield className="w-12 h-12" />,
-      title: "ISI Certified",
+      icon: <Users className="w-12 h-12" />,
+      title: "2 Lakh+ Installations",
       description:
-        "Meeting highest quality standards with official ISI certification",
+        "Trusted by over 2,00,000 satisfied customers across South India",
       delay: "stagger-delay-1",
     },
     {
-      icon: <Award className="w-12 h-12" />,
-      title: "Fire Resistant Class A",
-      description: "Superior fire safety rating for complete peace of mind",
+      icon: <Truck className="w-12 h-12" />,
+      title: "Express Delivery",
+      description: "Fast shipping and installation support across South India",
       delay: "stagger-delay-2",
     },
   ];
@@ -101,7 +101,6 @@ export default function TrustIndicators() {
             ))}
           </div>
         </div>
-
         {/* Reference Design Implementation - Layered Floating Layout */}
         <div className="relative py-8 md:py-12 lg:py-20 mb-12">
           {/* Dark Background Section - Hidden on mobile, visible on lg+ */}

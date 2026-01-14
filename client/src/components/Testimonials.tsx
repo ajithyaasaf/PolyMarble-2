@@ -57,7 +57,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className="bg-pure-white backdrop-blur-sm rounded-2xl p-8 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-300 stagger-item reveal-up group hover:transform hover:scale-105 shadow-lg"
+              className="bg-pure-white backdrop-blur-sm rounded-2xl p-8 border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-300 stagger-item reveal-up group hover-glow shadow-card-custom"
             >
               {/* Quote Icon */}
               <div className="w-12 h-12 bg-brand-teal/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">

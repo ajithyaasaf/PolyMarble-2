@@ -59,18 +59,7 @@ export default function FeaturedProjects() {
       sqft: "800",
       year: "2023",
     },
-    {
-      id: 3,
-      title: "Tirunelveli Hospital Wing",
-      location: "Tirunelveli, Tamil Nadu",
-      category: "Healthcare",
-      before: "White walls showing wear from constant cleaning.",
-      during: "Antimicrobial polymarble with hygienic installation.",
-      after: "Clean, elegant walls built for healthcare standards.",
-      roiSavings: "₹950",
-      sqft: "2,000",
-      year: "2024",
-    },
+
     {
       id: 4,
       title: "Coimbatore Restaurant Exterior",
@@ -134,8 +123,8 @@ export default function FeaturedProjects() {
                   key={f}
                   onClick={() => setActiveFilter(f)}
                   className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border ${active
-                      ? "bg-brand-teal text-white border-brand-teal"
-                      : "bg-transparent text-white/60 border-white/10 hover:border-brand-teal/50 hover:text-white"
+                    ? "bg-brand-teal text-white border-brand-teal"
+                    : "bg-transparent text-white/60 border-white/10 hover:border-brand-teal/50 hover:text-white"
                     }`}
                 >
                   {f}
@@ -156,8 +145,8 @@ export default function FeaturedProjects() {
               <article
                 key={p.id}
                 className={`group rounded-[2rem] p-8 md:p-10 flex flex-col justify-between transition-all duration-500 border ${isFeatured
-                    ? 'bg-brand-teal text-white border-brand-teal shadow-2xl shadow-brand-teal/20 scale-100 md:scale-105 z-10'
-                    : 'bg-white/5 backdrop-blur-sm text-white border-white/10 hover:border-white/30 hover:bg-white/10'
+                  ? 'bg-brand-teal text-white border-brand-teal shadow-2xl shadow-brand-teal/20 scale-100 md:scale-105 z-10'
+                  : 'bg-white/5 backdrop-blur-sm text-white border-white/10 hover:border-white/30 hover:bg-white/10'
                   }`}
               >
                 <div>

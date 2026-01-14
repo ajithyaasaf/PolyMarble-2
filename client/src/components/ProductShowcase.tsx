@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight, Zap, Shield, Droplets, Thermometer, Sparkles, Clock, ArrowRight } from "lucide-react";
+import { ChevronRight, ArrowRight } from "lucide-react";
 import { getFeaturedProducts } from "@shared/productData";
 import { Link } from "wouter";
 
@@ -16,14 +16,7 @@ export default function ProductShowcase() {
     return null;
   }
 
-  const coreFeatures = [
-    { icon: <Droplets className="w-5 h-5" />, label: "Water Resistant" },
-    { icon: <Zap className="w-5 h-5" />, label: "Fire Resistant" },
-    { icon: <Shield className="w-5 h-5" />, label: "Termite Proof" },
-    { icon: <Thermometer className="w-5 h-5" />, label: "Heat Resistant" },
-    { icon: <Sparkles className="w-5 h-5" />, label: "Stain Resistant" },
-    { icon: <Clock className="w-5 h-5" />, label: "15+ Year Life" }
-  ];
+
 
   const currentProduct = featuredProducts[activeProduct];
 
@@ -35,10 +28,10 @@ export default function ProductShowcase() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 reveal-up">
-          <h3 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h3 className="text-4xl lg:text-5xl font-bold mb-4">
             Our <span className="text-brand-teal text-shimmer">Product Range</span>
           </h3>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-cool-grey max-w-3xl mx-auto">
             Premium polymarble solutions designed for every space and style. Each engineered for superior performance.
           </p>
         </div>
@@ -92,56 +85,7 @@ export default function ProductShowcase() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-3 gap-3">
-                {coreFeatures.map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <div className="text-brand-teal">{feature.icon}</div>
-                    <span className="hidden sm:inline">{feature.label}</span>
-                  </div>
-                ))}
-              </div>
 
-              <div className="bg-card/50 backdrop-blur-sm rounded-md p-4 border">
-                <h5 className="font-bold text-brand-teal mb-3">Specifications:</h5>
-                <div className="grid grid-cols-2 gap-3 text-sm">
-                  {currentProduct.material && (
-                    <div className="flex justify-between gap-2">
-                      <span className="text-muted-foreground">Material:</span>
-                      <span className="font-medium text-right">{currentProduct.material}</span>
-                    </div>
-                  )}
-                  {currentProduct.size && (
-                    <div className="flex justify-between gap-2">
-                      <span className="text-muted-foreground">Size:</span>
-                      <span className="font-medium text-right">{currentProduct.size}</span>
-                    </div>
-                  )}
-                  {currentProduct.thickness && (
-                    <div className="flex justify-between gap-2">
-                      <span className="text-muted-foreground">Thickness:</span>
-                      <span className="font-medium text-right">{currentProduct.thickness}</span>
-                    </div>
-                  )}
-                  {currentProduct.height && (
-                    <div className="flex justify-between gap-2">
-                      <span className="text-muted-foreground">Height:</span>
-                      <span className="font-medium text-right">{currentProduct.height}</span>
-                    </div>
-                  )}
-                  {currentProduct.width && (
-                    <div className="flex justify-between gap-2">
-                      <span className="text-muted-foreground">Width:</span>
-                      <span className="font-medium text-right">{currentProduct.width}</span>
-                    </div>
-                  )}
-                  {currentProduct.warranty && (
-                    <div className="flex justify-between gap-2">
-                      <span className="text-muted-foreground">Durability:</span>
-                      <span className="font-medium text-right">{currentProduct.warranty}</span>
-                    </div>
-                  )}
-                </div>
-              </div>
 
               <div>
                 <h5 className="font-bold mb-3">Key Features:</h5>

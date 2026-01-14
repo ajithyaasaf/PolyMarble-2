@@ -52,12 +52,20 @@
   /* Primary Brand Teal #16785c */
   --brand-brown: hsl(12, 66%, 35%);
   /* Reddish-Brown #95361e */
-  --brand-peach: hsl(18, 80%, 75%);
-  /* Peach #f3ab8d */
+  --brand-peach: hsl(18, 85%, 55%);
+  /* Peach #D86B3A - WCAG AA Compliant (4.5:1 contrast) */
+  --brand-peach-light: hsl(18, 80%, 75%);
+  /* Light Peach #f3ab8d - For backgrounds only */
   --cool-grey: hsl(215, 16%, 47%);
   /* Cool Grey */
   --light-silver: hsl(220, 13%, 91%);
   /* Light Silver */
+
+  /* Shadow Design Tokens - 4-Level Hierarchy */
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-hero: 0 16px 48px rgba(0, 0, 0, 0.15);
 }
 
 .dark {

@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send, CheckCircle, Star, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { FaInstagram } from "react-icons/fa";
+
 
 export default function EnhancedContact() {
   useScrollReveal();
@@ -85,7 +85,7 @@ export default function EnhancedContact() {
             <MessageCircle className="w-4 h-4 text-brand-teal mr-2" />
             <span className="text-brand-teal font-medium">Ready to Transform Your Space?</span>
           </div>
-          <h3 className="text-4xl lg:text-5xl font-bold mb-6 reveal-up">
+          <h3 className="text-4xl lg:text-5xl font-bold mb-4 reveal-up">
             Let's <span className="text-brand-teal text-shimmer">Start Your Project</span>
           </h3>
           <p className="text-xl text-cool-grey reveal-fade max-w-3xl mx-auto">
@@ -107,9 +107,11 @@ export default function EnhancedContact() {
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-start max-w-6xl mx-auto">
           {/* Enhanced Contact Form */}
-          <div className="glass-effect rounded-2xl p-8 hover-lift">
+          <div className="glass-effect rounded-2xl p-8 hover-lift shadow-card-custom relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-teal/5 rounded-full -mr-16 -mt-16 blur-2xl pointer-events-none" />
+
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-brand-teal/20 rounded-full flex items-center justify-center">
                 <Send className="w-5 h-5 text-brand-teal" />
@@ -258,7 +260,7 @@ export default function EnhancedContact() {
             <div>
               <h4 className="text-2xl font-bold text-brand-teal mb-6 text-shimmer">Get in Touch</h4>
               <div className="space-y-6">
-                <div className="flex items-start gap-4 hover-lift p-4 rounded-lg transition-all duration-300">
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-pure-white border border-black/[0.03] shadow-sm hover:shadow-md hover:border-brand-teal/20 transition-all duration-300 max-w-md">
                   <div className="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center glow-effect">
                     <MapPin className="w-6 h-6 text-brand-teal" />
                   </div>
@@ -270,7 +272,7 @@ export default function EnhancedContact() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 hover-lift p-4 rounded-lg transition-all duration-300">
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-pure-white border border-black/[0.03] shadow-sm hover:shadow-md hover:border-brand-teal/20 transition-all duration-300 max-w-md">
                   <div className="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center glow-effect">
                     <MapPin className="w-6 h-6 text-brand-teal" />
                   </div>
@@ -282,7 +284,7 @@ export default function EnhancedContact() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 hover-lift p-4 rounded-lg transition-all duration-300">
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-pure-white border border-black/[0.03] shadow-sm hover:shadow-md hover:border-brand-teal/20 transition-all duration-300 max-w-md">
                   <div className="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center glow-effect">
                     <Phone className="w-6 h-6 text-brand-teal" />
                   </div>
@@ -293,7 +295,7 @@ export default function EnhancedContact() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 hover-lift p-4 rounded-lg transition-all duration-300">
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-pure-white border border-black/[0.03] shadow-sm hover:shadow-md hover:border-brand-teal/20 transition-all duration-300 max-w-md">
                   <div className="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center glow-effect">
                     <Mail className="w-6 h-6 text-brand-teal" />
                   </div>
@@ -305,95 +307,82 @@ export default function EnhancedContact() {
               </div>
             </div>
 
-            {/* Social Media */}
-            <div className="pt-8 border-t border-light-silver/30">
-              <h5 className="text-lg font-medium text-deep-charcoal mb-4">Follow Our Journey</h5>
-              <div className="flex gap-4">
-                <a href="https://www.youtube.com/@polymarblesheet3386" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center hover:bg-brand-teal/30 transition-all duration-300 magnetic">
-                  <svg className="w-6 h-6 text-brand-teal" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                  </svg>
-                </a>
-                <a href="https://www.instagram.com/polymarblesheet_india" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center hover:bg-brand-teal/30 transition-all duration-300 magnetic">
-                  <FaInstagram className="w-6 h-6 text-brand-teal" />
-                </a>
-                <a href="https://www.facebook.com/share/19aJmaJ7Nc/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center hover:bg-brand-teal/30 transition-all duration-300 magnetic">
-                  <svg className="w-6 h-6 text-brand-teal" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                  </svg>
+
+
+          </div>
+        </div>
+
+        {/* Google Maps - Full Width below the grid */}
+        <div className="mt-16 pt-16 border-t border-light-silver/30 reveal-up">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h5 className="text-3xl font-bold text-brand-teal mb-4 text-shimmer">Visit Our Showrooms</h5>
+            <p className="text-cool-grey">Experience our premium polymarble sheets in person at our dedicated display centers.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            {/* Madurai Map */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <MapPin className="w-5 h-5 text-brand-teal" />
+                <span className="text-xl font-bold text-deep-charcoal">Madurai Experience Center</span>
+              </div>
+              <div className="rounded-2xl overflow-hidden border-2 border-brand-teal/10 shadow-xl h-[400px] hover:border-brand-teal/30 transition-all duration-300">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.2074839862524!2d78.10638647501712!3d9.90901899012835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5bd87f8e87d%3A0x4c4c4c4c4c4c4c4c!2sGomathipuram%2C%20Madurai%2C%20Tamil%20Nadu%20625020!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Polymarble Sheet India - Madurai Office Location"
+                ></iframe>
+              </div>
+              <div className="text-center pt-2">
+                <a
+                  href="https://maps.app.goo.gl/MZTH5XRDhkxR1MMN7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-brand-teal/10 text-brand-teal hover:bg-brand-teal hover:text-white px-6 py-2 rounded-full transition-all duration-300 font-bold"
+                >
+                  Get Directions to Madurai <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
 
-            {/* Google Maps - Side by Side */}
-            <div className="pt-8 border-t border-light-silver/30">
-              <h5 className="text-lg font-medium text-deep-charcoal mb-4">Visit Our Showrooms</h5>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* Madurai Map */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <MapPin className="w-4 h-4 text-brand-teal" />
-                    <span className="font-semibold text-deep-charcoal">Madurai</span>
-                  </div>
-                  <div className="rounded-xl overflow-hidden border border-brand-teal/20 shadow-lg h-[300px]">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.2074839862524!2d78.10638647501712!3d9.90901899012835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5bd87f8e87d%3A0x4c4c4c4c4c4c4c4c!2sGomathipuram%2C%20Madurai%2C%20Tamil%20Nadu%20625020!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Polymarble Sheet India - Madurai Office Location"
-                    ></iframe>
-                  </div>
-                  <div className="text-center">
-                    <a
-                      href="https://maps.app.goo.gl/MZTH5XRDhkxR1MMN7"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-brand-teal hover:text-brand-teal/80 transition-colors text-sm font-medium"
-                    >
-                      Open Madurai Location <ArrowRight className="w-3 h-3" />
-                    </a>
-                  </div>
-                </div>
-
-                {/* Chennai Map */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <MapPin className="w-4 h-4 text-brand-teal" />
-                    <span className="font-semibold text-deep-charcoal">Chennai</span>
-                  </div>
-                  <div className="rounded-xl overflow-hidden border border-brand-teal/20 shadow-lg h-[300px]">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15546.72151624883!2d80.14856064999999!3d13.0398686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52612f6e624cbf%3A0x7d97960100416972!2sPorur%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Polymarble Sheet India - Chennai Office Location"
-                    ></iframe>
-                  </div>
-                  <div className="text-center">
-                    <a
-                      href="https://www.google.com/maps/search/Dr.+Kannan+Tower,+Arcot+Road,+Porur,+Chennai+-+116"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-brand-teal hover:text-brand-teal/80 transition-colors text-sm font-medium"
-                    >
-                      Open Chennai Location <ArrowRight className="w-3 h-3" />
-                    </a>
-                  </div>
-                </div>
+            {/* Chennai Map */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <MapPin className="w-5 h-5 text-brand-teal" />
+                <span className="text-xl font-bold text-deep-charcoal">Chennai Experience Center</span>
+              </div>
+              <div className="rounded-2xl overflow-hidden border-2 border-brand-teal/10 shadow-xl h-[400px] hover:border-brand-teal/30 transition-all duration-300">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15546.72151624883!2d80.14856064999999!3d13.0398686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52612f6e624cbf%3A0x7d97960100416972!2sPorur%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Polymarble Sheet India - Chennai Office Location"
+                ></iframe>
+              </div>
+              <div className="text-center pt-2">
+                <a
+                  href="https://www.google.com/maps/search/Dr.+Kannan+Tower,+Arcot+Road,+Porur,+Chennai+-+116"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-brand-teal/10 text-brand-teal hover:bg-brand-teal hover:text-white px-6 py-2 rounded-full transition-all duration-300 font-bold"
+                >
+                  Get Directions to Chennai <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </section>
   );
 }

@@ -1,0 +1,125 @@
+Application Forms Analysis Report
+Summary
+The PolyMarble application contains 5 forms across 4 different components. All forms are designed for lead generation and customer engagement.
+
+Forms Inventory
+1. Contact Form (
+Contact.tsx
+)
+Location: 
+/client/src/components/Contact.tsx
+ (Line 65)
+Purpose: Main contact/inquiry form for project submissions
+Form Fields:
+
+First Name (text)
+Last Name (text)
+Email Address (email, required)
+Project Type (select dropdown)
+Residential (Kitchen/Bathroom)
+Commercial Office
+Restaurant/Hotel
+Retail Store
+Dealership Inquiry
+Project Details (textarea)
+Submit Button: "Send Message"
+
+2. Enhanced Contact Form (
+EnhancedContact.tsx
+)
+Location: 
+/client/src/components/EnhancedContact.tsx
+ (Line 120)
+Purpose: Advanced contact form with additional project details for qualified leads
+Form Fields:
+
+First Name* (text, required)
+Last Name* (text, required)
+Email Address* (email, required)
+Phone Number (tel)
+Project Type* (select dropdown) - 8 options including residential, commercial, healthcare, dealership
+Budget Range (select dropdown)
+Under ₹50,000
+₹50,000 - ₹1,00,000
+₹1,00,000 - ₹2,00,000
+₹2,00,000 - ₹5,00,000
+Above ₹5,00,000
+Project Timeline (select dropdown)
+Immediately
+Within 1 month
+Within 3 months
+Within 6 months
+Just planning
+Project Details (textarea)
+Submit Button: "Get Quote"
+Special Features: Loading state with spinner during submission
+
+3. Quick Enquiry Form (
+QuickQuote.tsx
+)
+Location: 
+/client/src/components/QuickQuote.tsx
+ (Line 31)
+Purpose: Floating sidebar form for quick pricing inquiries
+Form Fields:
+
+Area (sq.ft.) (number)
+Contact (Email/Phone) (text)
+Submit Button: "Get Pricing"
+Special Features:
+
+Fixed position floating button with slide-in animation
+Always visible on right side of screen
+Smooth expand/collapse interaction
+Mobile-friendly
+4. Product Quote Request Form (
+Products.tsx
+)
+Location: 
+/client/src/pages/Products.tsx
+ (Line 432)
+Purpose: Product-specific quote request triggered from product detail dialog
+Form Fields:
+
+Full Name* (text, required)
+Phone Number* (tel, required)
+Email Address* (email, required)
+Product Selected (auto-populated from selection)
+Project Details (textarea)
+Submit Buttons: "Submit Request" | "Cancel"
+Special Features: Opens in a dialog modal, pre-fills selected product name
+
+5. Newsletter Signup Form (
+Footer.tsx
+)
+Location: 
+/client/src/components/Footer.tsx
+ (Line 45)
+Purpose: Email collection for marketing/newsletters
+Form Fields:
+
+Email Address (email)
+Submit Button: "Subscribe"
+Special Features: Inline form in footer, simple one-field subscription
+
+Forms by Type
+Lead Generation Forms (4)
+Contact Form
+Enhanced Contact Form
+Quick Enquiry Form
+Product Quote Request Form
+Marketing Forms (1)
+Newsletter Signup Form
+Technical Implementation Notes
+Form Libraries: All forms use custom React components with shadcn/ui library components
+Validation: Mix of HTML5 validation (required attributes) and controlled components
+State Management: Local useState hooks in each component
+Submission: Currently using preventDefault() - forms show toast notifications but don't submit to backend
+UI Framework: shadcn/ui components (Input, Button, Select, Textarea, Label)
+Styling: Tailwind CSS with custom brand colors (brand-teal, brand-peach)
+Recommendations
+Backend Integration: Currently all forms prevent default submission - needs API integration
+Form Validation: Consider adding more robust client-side validation beyond HTML5
+Form State Management: Could consolidate duplicated logic across contact forms
+Analytics: Add tracking for form views, interactions, and submissions
+Accessibility: Ensure all form labels are properly associated with inputs

@@ -74,11 +74,11 @@ export default function VideoGallery() {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-12 reveal-up">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+        <div className="text-center mb-16 reveal-up">
+          <h3 className="text-4xl lg:text-5xl font-bold mb-4">
             Customer{" "}
             <span className="text-brand-teal text-shimmer">Installations</span>
-          </h2>
+          </h3>
           <p className="text-xl text-cool-grey max-w-3xl mx-auto">
             Real installations from our valued customers. See how polymarble
             transforms spaces.

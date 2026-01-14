@@ -1,6 +1,5 @@
 import { Shield, Mail, Phone, MapPin, Instagram, Facebook, Youtube, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Link } from "wouter";
 
 export default function Footer() {
@@ -33,25 +32,28 @@ export default function Footer() {
               aesthetics for residential and commercial spaces.
             </p>
 
-            {/* Newsletter Signup */}
-            <div className="space-y-3">
-              <h6 className="text-brand-peach font-bold text-sm uppercase tracking-wider flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                Newsletter
-              </h6>
-              <p className="text-white/70 text-sm">
-                Get exclusive offers and design tips
-              </p>
-              <div className="flex gap-2">
-                <Input
-                  type="email"
-                  placeholder="your@email.com"
-                  className="bg-white/5 border-white/10 text-white placeholder:text-white/40 flex-1 h-11"
-                  data-testid="input-newsletter-email"
-                />
-                <Button className="bg-brand-teal hover:bg-brand-teal/90 text-white font-semibold" data-testid="button-subscribe">
-                  Subscribe
-                </Button>
+            {/* Social Media - Repositioned here to fill space */}
+            <div className="pt-6 border-t border-white/10 mt-2">
+              <h6 className="text-brand-peach font-bold text-xs uppercase tracking-[0.2em] mb-4">Follow Our Journey</h6>
+              <div className="flex items-center gap-3">
+                {[
+                  { icon: <Instagram className="w-5 h-5" />, label: "Instagram", href: "https://www.instagram.com/polymarblesheet_india?igsh=MXZoczNwcWxleWl6bw==" },
+                  { icon: <Facebook className="w-5 h-5" />, label: "Facebook", href: "https://www.facebook.com/polymarblesheets" },
+                  { icon: <Youtube className="w-5 h-5" />, label: "Youtube", href: "https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca" }
+                ].map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-peach hover:text-white transition-all duration-300 group shadow-lg border border-white/5 hover:border-brand-peach/50"
+                    aria-label={social.label}
+                  >
+                    <span className="text-white/70 group-hover:text-white group-hover:scale-110 transition-transform">
+                      {social.icon}
+                    </span>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -181,42 +183,6 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Social Media */}
-              <div className="pt-4 border-t border-brand-peach/20">
-                <div className="text-sm font-medium text-pure-white mb-3">Follow Us</div>
-                <div className="flex items-center gap-3">
-                  <a
-                    href="https://www.instagram.com/polymarblesheet_india?igsh=MXZoczNwcWxleWl6bw=="
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-lg bg-brand-peach/10 flex items-center justify-center hover:bg-gradient-to-br hover:from-brand-peach hover:to-brand-teal transition-all group"
-                    aria-label="Instagram"
-                    data-testid="link-social-instagram"
-                  >
-                    <Instagram className="w-5 h-5 text-brand-peach group-hover:text-pure-white transition-colors" />
-                  </a>
-                  <a
-                    href="https://www.facebook.com/polymarblesheets"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-lg bg-brand-peach/10 flex items-center justify-center hover:bg-gradient-to-br hover:from-brand-peach hover:to-brand-teal transition-all group"
-                    aria-label="Facebook"
-                    data-testid="link-social-facebook"
-                  >
-                    <Facebook className="w-5 h-5 text-brand-peach group-hover:text-pure-white transition-colors" />
-                  </a>
-                  <a
-                    href="https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-lg bg-brand-peach/10 flex items-center justify-center hover:bg-gradient-to-br hover:from-brand-peach hover:to-brand-teal transition-all group"
-                    aria-label="Youtube"
-                    data-testid="link-social-youtube"
-                  >
-                    <Youtube className="w-5 h-5 text-brand-peach group-hover:text-pure-white transition-colors" />
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>

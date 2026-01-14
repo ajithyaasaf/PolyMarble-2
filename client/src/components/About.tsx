@@ -19,18 +19,18 @@ export default function About() {
     useScrollProgress();
 
     return (
-        <section id="about" className="py-24 bg-white text-deep-charcoal">
-            <div className="container mx-auto px-6 max-w-[1240px]">
+        <section id="about" className="py-24 bg-white text-deep-charcoal border-t border-gray-100">
+            <div className="container mx-auto px-6 max-w-6xl">
 
                 {/* 1. EDITORIAL HEADER */}
-                <div className="max-w-4xl mb-16 reveal-up">
-                    <h4 className="text-brand-teal font-bold tracking-widest uppercase text-sm mb-4">Who We Are</h4>
-                    <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-8">
+                <div className="max-w-4xl mx-auto mb-20 text-center reveal-up">
+                    <h4 className="text-brand-teal font-bold tracking-widest uppercase text-xs mb-4">Who We Are</h4>
+                    <h3 className="text-4xl md:text-5xl font-bold leading-[1.15] mb-8">
                         We deliver the <span className="text-brand-teal">elegance of stone</span> <br className="hidden md:block" />
-                        with the <span className="text-brand-brown">resilience of engineering.</span>
-                    </h2>
-                    <div className="h-1 w-24 bg-deep-charcoal mb-8" />
-                    <p className="text-xl text-cool-grey leading-relaxed max-w-2xl">
+                        with the <span className="text-brand-brown">resilience of engineering</span>
+                    </h3>
+                    <div className="h-1 w-20 bg-brand-teal mb-10 mx-auto rounded-full" />
+                    <p className="text-xl text-cool-grey leading-relaxed max-w-2xl mx-auto">
                         Founded in 2017, Polymarble Sheet has evolved from a local manufacturer to a global innovator,
                         redefining how the world builds interiors.
                     </p>
@@ -91,7 +91,7 @@ export default function About() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                         <div className="absolute bottom-0 left-0 p-8 md:p-12">
                             <h3 className="text-white text-2xl font-bold mb-2">Made in Madurai, for the World</h3>
-                            <p className="text-white/90 max-w-md">Our state-of-the-art facility combines traditional craftsmanship with ISO-grade precision technology.</p>
+                            <p className="text-white/90 max-w-md">Our state-of-the-art facility combines traditional craftsmanship with precision technology.</p>
                         </div>
                     </div>
 
