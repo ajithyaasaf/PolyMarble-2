@@ -290,7 +290,7 @@ export default function EnhancedContact() {
                   <div>
                     <div className="text-deep-charcoal font-bold mb-1">Call or WhatsApp</div>
                     <div className="text-brand-teal font-bold">+91 98421 06768</div>
-                    <div className="text-cool-grey">WhatsApp: +91 98421 26565</div>
+                    <div className="text-brand-teal font-bold">+91 98421 26565</div>
                   </div>
                 </div>
 

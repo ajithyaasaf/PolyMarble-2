@@ -147,22 +147,20 @@ export default function Footer() {
                   <Phone className="w-5 h-5 text-brand-peach" />
                 </div>
                 <div className="text-sm">
-                  <div className="font-medium text-pure-white mb-1">Call Us</div>
+                  <div className="font-medium text-pure-white mb-1">Call or WhatsApp</div>
                   <a
                     href="tel:+919842106768"
                     className="text-brand-peach hover:text-brand-teal transition-colors font-medium block"
-                    data-testid="link-phone"
+                    data-testid="link-phone-1"
                   >
                     +91 98421 06768
                   </a>
                   <a
-                    href="https://wa.me/919842126565"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/70 hover:text-brand-peach transition-colors text-sm block mt-1"
-                    data-testid="link-whatsapp"
+                    href="tel:+919842126565"
+                    className="text-white/90 hover:text-brand-peach transition-colors font-medium block mt-1"
+                    data-testid="link-phone-2"
                   >
-                    WhatsApp: +91 98421 26565
+                    +91 98421 26565
                   </a>
                 </div>
               </div>

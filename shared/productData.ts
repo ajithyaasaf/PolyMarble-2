@@ -7,9 +7,6 @@ import puPanel1 from "@assets/image_1762858118936.png";
 import puPanel2 from "@assets/image_1762858130551.png";
 import exteriorSheet from "@assets/image_1762858166702.png";
 import exteriorWoody from "@assets/image_1762858205538.png";
-import decorativeWoody1 from "@assets/image_1762858236232.png";
-import decorativeWoody2 from "@assets/image_1762858250745.png";
-import decorativeWoody3 from "@assets/image_1762858261588.png";
 
 export const products: Product[] = [
   {
@@ -43,7 +40,7 @@ export const products: Product[] = [
   },
   {
     id: "interior-sheets",
-    name: "Interior Marble Sheets",
+    name: "Interior Sheets",
     category: "Interior Sheets",
     tagline: "Luxury Italian Marble at 80% Less Cost",
     description: "Experience authentic marble patterns with our premium interior sheets. These panels replicate the elegance of Italian marble with stunning veining and natural stone aesthetics.",
@@ -152,93 +149,6 @@ export const products: Product[] = [
     warranty: "15+ Years",
     isFeatured: false
   },
-  {
-    id: "decorative-woody-classic",
-    name: "Decorative Woody Panel - Classic",
-    category: "Decorative Panels",
-    tagline: "Timeless Wood Patterns",
-    description: "Classic wood grain patterns that add warmth and sophistication to any space. Perfect for creating traditional and contemporary interior designs.",
-    images: [decorativeWoody1],
-    material: "High-density composite",
-    height: "8 ft to 10 ft",
-    width: "6 inch to 8 inch",
-    finish: "Premium wood grain",
-    features: [
-      "Realistic Wood Grain",
-      "Multiple Color Options",
-      "Easy Installation",
-      "Durable Finish",
-      "Moisture Resistant",
-      "Cost Effective"
-    ],
-    useCases: [
-      "Residential Interiors",
-      "Office Spaces",
-      "Retail Stores",
-      "Hospitality Projects",
-      "Educational Institutions"
-    ],
-    warranty: "12+ Years",
-    isFeatured: false
-  },
-  {
-    id: "decorative-woody-contemporary",
-    name: "Decorative Woody Panel - Contemporary",
-    category: "Decorative Panels",
-    tagline: "Modern Wood Aesthetics",
-    description: "Contemporary wood finishes designed for modern architectural applications. Features sleek profiles and refined textures for sophisticated interiors.",
-    images: [decorativeWoody2],
-    material: "Advanced composite",
-    height: "8 ft to 10 ft",
-    width: "5 inch to 7 inch",
-    finish: "Modern matte/satin wood",
-    features: [
-      "Contemporary Designs",
-      "Scratch Resistant",
-      "Fade Resistant",
-      "Low VOC",
-      "Fire Retardant",
-      "Easy Maintenance"
-    ],
-    useCases: [
-      "Modern Homes",
-      "Designer Offices",
-      "Boutique Hotels",
-      "Premium Showrooms",
-      "Corporate Headquarters"
-    ],
-    warranty: "12+ Years",
-    isFeatured: false
-  },
-  {
-    id: "decorative-woody-premium",
-    name: "Decorative Woody Panel - Premium",
-    category: "Decorative Panels",
-    tagline: "Luxury Wood Finishes",
-    description: "Premium grade decorative panels with exotic wood patterns and superior finishing. Ideal for high-end residential and commercial projects.",
-    images: [decorativeWoody3],
-    material: "Premium composite",
-    height: "8 ft to 10 ft",
-    width: "6 inch to 9 inch",
-    finish: "Luxury wood finish",
-    features: [
-      "Exotic Wood Patterns",
-      "Superior Durability",
-      "Premium Quality",
-      "Stain Resistant",
-      "Anti-Bacterial Coating",
-      "Acoustic Properties"
-    ],
-    useCases: [
-      "Luxury Residences",
-      "Five-Star Hotels",
-      "Executive Boardrooms",
-      "Premium Restaurants",
-      "High-End Retail"
-    ],
-    warranty: "15+ Years",
-    isFeatured: false
-  }
 ];
 
 export const productCategories = [
@@ -267,19 +177,14 @@ export const productCategories = [
     name: "Exterior Solutions",
     count: products.filter(p => p.category === "Exterior Solutions").length
   },
-  {
-    id: "decorative-panels",
-    name: "Decorative Panels",
-    count: products.filter(p => p.category === "Decorative Panels").length
-  }
 ];
 
 export function getProductsByCategory(categoryId: string): Product[] {
   if (categoryId === "all") return products;
-  
+
   const categoryName = productCategories.find(c => c.id === categoryId)?.name;
   if (!categoryName) return [];
-  
+
   return products.filter(p => p.category === categoryName);
 }
 
