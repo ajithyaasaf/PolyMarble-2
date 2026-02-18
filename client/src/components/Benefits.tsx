@@ -1,5 +1,5 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Shield, Clock, Zap, Leaf, Bug } from "lucide-react";
+import { Shield, Clock, Zap, Leaf, Bug, Flame } from "lucide-react";
 import waterResistanceDemo from "@assets/generated_images/Water_resistance_demonstration_c8332fac.png";
 
 
@@ -8,9 +8,9 @@ export default function Benefits() {
 
   const benefits = [
     {
-      icon: Bug,
-      title: "100% Borer Proof",
-      description: "Complete protection against borer and other wood-boring insects.",
+      icon: Flame,
+      title: "Fire Retardant",
+      description: "Self-extinguishing material that ensures safety for your interiors.",
       color: "text-brand-brown",
     },
     {

@@ -26,13 +26,13 @@ export default function About() {
                 <div className="max-w-4xl mx-auto mb-20 text-center reveal-up">
                     <h4 className="text-brand-teal font-bold tracking-widest uppercase text-xs mb-4">Who We Are</h4>
                     <h3 className="text-4xl md:text-5xl font-bold leading-[1.15] mb-8">
-                        We deliver the <span className="text-brand-teal">elegance of stone</span> <br className="hidden md:block" />
-                        with the <span className="text-brand-brown">resilience of engineering</span>
+                        The <span className="text-brand-teal">Elegance of Marble</span>. <br className="hidden md:block" />
+                        In <span className="text-brand-brown">Polymarble Sheets</span>.
                     </h3>
                     <div className="h-1 w-20 bg-brand-teal mb-10 mx-auto rounded-full" />
                     <p className="text-xl text-cool-grey leading-relaxed max-w-2xl mx-auto">
-                        Founded in 2017, Polymarble Sheet has evolved from a local manufacturer to a global innovator,
-                        redefining how the world builds interiors.
+                        Founded in 2017, Polymarble Sheet has established itself as a trusted leader in interior design,
+                        delivering premium quality surfaces for modern spaces.
                     </p>
                 </div>
 
@@ -90,7 +90,7 @@ export default function About() {
                         <img src={facilityOverview} alt="Factory" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                         <div className="absolute bottom-0 left-0 p-8 md:p-12">
-                            <h3 className="text-white text-2xl font-bold mb-2">Made in Madurai, for the World</h3>
+                            <h3 className="text-white text-2xl font-bold mb-2">World-Class Manufacturing</h3>
                             <p className="text-white/90 max-w-md">Our state-of-the-art facility combines traditional craftsmanship with precision technology.</p>
                         </div>
                     </div>
@@ -102,7 +102,7 @@ export default function About() {
                             <Lightbulb className="w-8 h-8 text-brand-teal mb-6" />
                             <h4 className="text-xl font-bold mb-3">Our Philosophy</h4>
                             <p className="text-white/70 leading-relaxed">
-                                We don’t just look for customers for our products — we look for problems to solve.
+                                Our philosophy is simple: We don’t just make products; we create solutions for better living.
                                 <span className="text-white block mt-2 font-medium">We create products that perform.</span>
                             </p>
                             <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl pointer-events-none" />

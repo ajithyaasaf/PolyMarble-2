@@ -1,4 +1,4 @@
-import { Award, Shield, Users, Clock, Star, CheckCircle2, Truck } from "lucide-react";
+import { Award, Shield, Users, Clock, Star, CheckCircle2, Truck, Flame } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import testimonialVideo from "@assets/customer_testimonial_1762845564449.mp4";
@@ -148,7 +148,7 @@ export default function TrustIndicators() {
               <div className="w-16 md:w-24 h-px bg-white/20 mb-6 md:mb-8" />
 
               <p className="text-gray-300 md:text-gray-400 mb-6 md:mb-8 leading-relaxed max-w-lg text-sm md:text-base">
-                We adhere to the strictest quality controls and safety certifications. Our polymarble sheets are engineered for durability, safety, and timeless elegance.
+                We follow strict quality controls and safety standards. Our polymarble sheets are engineered for durability, safety, and timeless elegance.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
@@ -169,8 +169,8 @@ export default function TrustIndicators() {
                   <span className="text-xs md:text-sm font-medium tracking-wide">100% QUALITY</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 md:w-5 h-4 md:h-5 text-brand-teal" />
-                  <span className="text-xs md:text-sm font-medium tracking-wide">LIFETIME SUPPORT</span>
+                  <Flame className="w-4 md:w-5 h-4 md:h-5 text-brand-teal" />
+                  <span className="text-xs md:text-sm font-medium tracking-wide">HEAT RESISTANCE</span>
                 </div>
               </div>
             </div>

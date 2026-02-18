@@ -1,249 +1,218 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Play, Star, Shield, Globe, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { ChevronLeft, ChevronRight, Play, Sparkles, ArrowDown } from "lucide-react";
 import heroBackgroundVideo from "@assets/1_1755841607772.mp4";
-import RotatingText from "./RotatingText";
+
+const slides = [
+  {
+    id: 1,
+    titleLine1: "The Elegance",
+    titleLine2: "Of Stone",
+    description: "Capturing the raw beauty of Italian marble with superior engineering. Indistinguishable aesthetics, waterproof durability, and fire resistance.",
+    tag: "Architectural Grade",
+    color: "from-[#F3EAC2] via-[#D4AF37] to-[#996515]" // Rich Gold Gradient
+  },
+  {
+    id: 2,
+    titleLine1: "Luxury",
+    titleLine2: "Reimagined",
+    description: "Seamless perfection for interiors that demand distinction. A sustainable, lightweight alternative to traditional stone that lasts a lifetime.",
+    tag: "Next-Gen Surface",
+    color: "from-[#a8e0d3] via-[#16785c] to-[#0d4e3b]" // Premium Teal Gradient
+  }
+];
 
 export default function Hero() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [activeMetric, setActiveMetric] = useState(0);
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+
+  const nextSlide = () => {
+    setDirection(1);
+    setCurrent((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setDirection(-1);
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(console.error);
-    }
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 8000);
+    return () => clearInterval(timer);
+  }, [current]);
 
-    // Rotate through metrics - slowed from 3s to 5s for better readability
-    const interval = setInterval(() => {
-      setActiveMetric((prev) => (prev + 1) % 3);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleVideoLoad = () => {
-    setVideoLoaded(true);
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0
+    })
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const textReveal = {
+    hidden: { y: 100 },
+    visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1] } }
   };
-
-  const metrics = [
-    { value: "200K+", label: "Happy Customers", icon: Star },
-    { value: "5", label: "Countries Served", icon: Globe },
-    { value: "15+", label: "Years Durability", icon: Shield },
-  ];
 
   return (
-    <section className="relative min-h-screen flex overflow-hidden bg-gradient-to-br from-warm-cream via-pure-white to-warm-cream pt-20 sm:pt-28">
-      {/* Architectural Grid Pattern Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 opacity-5">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute h-px bg-brand-teal"
-              style={{
-                top: `${i * 5}%`,
-                left: 0,
-                right: 0,
-                transform: `rotate(${i % 2 === 0 ? 0.5 : -0.5}deg)`,
-              }}
-            />
-          ))}
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={`v-${i}`}
-              className="absolute w-px bg-brand-brown"
-              style={{
-                left: `${i * 5}%`,
-                top: 0,
-                bottom: 0,
-                transform: `rotate(${i % 2 === 0 ? 0.5 : -0.5}deg)`,
-              }}
-            />
-          ))}
-        </div>
-      </div>
+    <section className="relative h-screen w-full overflow-hidden bg-deep-charcoal text-white">
+      {/* Dynamic Background */}
+      <motion.div style={{ y: y1 }} className="absolute inset-0 z-0">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-50 scale-105"
+        >
+          <source src={heroBackgroundVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay" />
+      </motion.div>
 
-      {/* Floating Shapes */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-brand-teal/5 rounded-full blur-3xl float-slow" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-brand-peach/10 rounded-full blur-3xl float-animation" />
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-brand-brown/5 rounded-full blur-2xl float-fast" />
-      </div>
-
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-8 sm:pt-16 pb-12 sm:pb-20">
-        <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 items-center">
-          {/* Left Content - 7 columns */}
-          <div className="lg:col-span-7 space-y-5 sm:space-y-8">
-            {/* Premium Badge with Animation */}
-            <div className="inline-flex items-center group">
-              <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-brand-teal/10 to-brand-peach/10 border border-brand-teal/20 rounded-full backdrop-blur-sm reveal-scale">
-                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-teal animate-pulse flex-shrink-0" />
-                <span className="text-sm sm:text-base font-bold text-deep-charcoal">
-                  India's Most Trusted Interior Brand
-                </span>
-                <div className="hidden sm:flex -space-x-2">
-                  {[...Array(5)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="w-2 h-2 rounded-full bg-brand-teal opacity-60"
-                      style={{ animationDelay: `${i * 0.1}s` }}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Main Headline with Creative Typography */}
-            <div className="space-y-3 sm:space-y-4">
-              <h1 className="reveal-up">
-                <span className="text-4xl sm:text-6xl lg:text-7xl font-black text-deep-charcoal leading-tight sm:leading-tight lg:leading-none">
-                  Transform{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-brown animate-gradient">
-                    Spaces
-                  </span>
-                </span>
-                <span className="block text-2xl sm:text-4xl lg:text-5xl font-light text-cool-grey mt-6 sm:mt-8">
-                  with{" "}
-                </span>
-                <span className="block text-2xl sm:text-4xl lg:text-5xl font-black text-brand-teal mt-3 sm:mt-4">
-                  <RotatingText
-                    texts={[
-                      "Premium Polymarble",
-                      "Luxury Finishes",
-                      "Timeless Beauty",
-                      "Modern Innovation",
-                    ]}
-                    mainClassName="inline-block font-black text-brand-teal"
-                    staggerFrom="random"
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0, opacity: 0 }}
-                    staggerDuration={0.03}
-                    elementLevelClassName="inline-block"
-                    rotationInterval={5000}
-                  />
-                </span>
-              </h1>
-            </div>
-
-            {/* Value Proposition */}
-            <div className="space-y-2 sm:space-y-3 reveal-fade">
-              <p className="text-lg sm:text-2xl text-deep-charcoal/80 font-medium leading-relaxed">
-                Experience the luxury of Italian marble at{" "}
-                <span className="text-brand-teal font-extrabold text-xl sm:text-3xl">80% less cost</span>
-              </p>
-              <div className="flex flex-wrap gap-2 sm:gap-3">
-                {["Fire Resistant", "Waterproof"].map(
-                  (feature, i) => (
-                    <div
-                      key={feature}
-                      className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-pure-white border border-light-silver rounded-full stagger-item"
-                      style={{ animationDelay: `${i * 0.1}s` }}
-                    >
-                      <div className="w-1.5 h-1.5 rounded-full bg-brand-teal flex-shrink-0" />
-                      <span className="text-sm sm:text-base font-medium text-deep-charcoal whitespace-nowrap">
-                        {feature}
-                      </span>
-                    </div>
-                  ),
-                )}
-              </div>
-            </div>
-
-            {/* CTA Buttons with Premium Design */}
-            <div className="flex flex-wrap gap-3 sm:gap-4 items-center reveal-up">
-              <Link href="/contact">
-                <Button className="group relative px-6 sm:px-8 py-4 sm:py-6 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg overflow-hidden hover-lift min-h-[3.5rem] sm:min-h-[4rem]">
-                  <span className="relative z-10 flex items-center gap-2 sm:gap-3">
-                    Get Enquiry
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform" />
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-brand-brown to-brand-teal opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </Button>
-              </Link>
-
-              <Link
-                href="/products"
-                className="group px-6 sm:px-8 py-4 sm:py-6 bg-pure-white border-2 border-brand-teal/20 rounded-xl sm:rounded-2xl font-bold text-brand-teal hover:bg-brand-teal hover:text-pure-white transition-all duration-300 inline-flex items-center text-base sm:text-lg min-h-[3.5rem] sm:min-h-[4rem]"
+      {/* Main Content Area */}
+      <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-12 lg:px-24 max-w-[1920px] mx-auto">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={current}
+            custom={direction}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            variants={slideVariants}
+            transition={{ x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
+            className="w-full"
+          >
+            {/* Tag */}
+            <div className="overflow-hidden mb-6">
+              <motion.div
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
               >
-                <span className="flex items-center gap-2 sm:gap-3">
-                  <Play className="w-4 h-4 sm:w-5 sm:h-5" />
-                  View Portfolio
+                <Sparkles className="w-4 h-4 text-brand-peach" />
+                <span className="text-sm font-medium tracking-widest uppercase text-brand-peach">
+                  {slides[current].tag}
                 </span>
-              </Link>
+              </motion.div>
             </div>
 
-            {/* Animated Metrics */}
-            <div className="flex flex-wrap items-center gap-4 sm:gap-8 pt-3 sm:pt-4 reveal-fade">
-              {metrics.map((metric, index) => {
-                const Icon = metric.icon;
-                return (
-                  <div
-                    key={index}
-                    className={`flex items-center gap-2 sm:gap-3 transition-all duration-500 ${activeMetric === index
-                      ? "scale-110 opacity-100"
-                      : "scale-100 opacity-60"
-                      }`}
-                  >
-                    <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-brand-teal flex-shrink-0" />
-                    <div>
-                      <div className="text-lg sm:text-2xl font-black text-deep-charcoal">
-                        {metric.value}
-                      </div>
-                      <div className="text-[10px] sm:text-xs text-cool-grey uppercase tracking-wider whitespace-nowrap">
-                        {metric.label}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Right Visual Element - 5 columns */}
-          <div className="lg:col-span-5 relative mt-6 sm:mt-0">
-            <div className="relative aspect-[4/5] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden reveal-scale">
-              {/* Video Container with Premium Frame */}
-              <div className="absolute inset-2 sm:inset-4 rounded-xl sm:rounded-2xl overflow-hidden glassmorphism">
-                <video
-                  ref={videoRef}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  onLoadedData={handleVideoLoad}
-                  className="w-full h-full object-cover"
+            {/* Huge Typography */}
+            <div className="flex flex-col gap-2 mb-8 select-none">
+              <div className="overflow-hidden">
+                <motion.h1
+                  variants={textReveal}
+                  initial="hidden"
+                  animate="visible"
+                  className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-light tracking-tight leading-[0.9] text-white/90"
                 >
-                  <source src={heroBackgroundVideo} type="video/mp4" />
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/20 via-transparent to-transparent" />
+                  {slides[current].titleLine1}
+                </motion.h1>
               </div>
-
-              {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 bg-brand-peach/20 rounded-full blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 sm:w-32 sm:h-32 bg-brand-teal/20 rounded-full blur-2xl" />
-
-              {/* Floating Badge */}
-              <div className="absolute top-4 right-4 sm:top-8 sm:right-8 px-3 py-2 sm:px-4 sm:py-3 bg-pure-white/90 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-xl">
-                <div className="text-2xl sm:text-3xl font-black text-brand-teal">80%</div>
-                <div className="text-[10px] sm:text-xs text-deep-charcoal">Cost Savings</div>
+              <div className="overflow-hidden">
+                <motion.h1
+                  variants={textReveal}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ delay: 0.1 }}
+                  className={`text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold tracking-tight leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r ${slides[current].color}`}
+                >
+                  {slides[current].titleLine2}
+                </motion.h1>
               </div>
             </div>
-          </div>
-        </div>
+
+            {/* Description and CTA */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-8 max-w-6xl border-t border-white/10 pt-8 mt-4">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 0.8, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-lg sm:text-xl text-gray-300 max-w-md font-light leading-relaxed"
+              >
+                {slides[current].description}
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5 }}
+                className="flex items-center gap-4"
+              >
+                <button className="group relative px-8 py-4 bg-white text-deep-charcoal rounded-full font-bold overflow-hidden transition-transform hover:scale-105">
+                  <span className="relative z-10 flex items-center gap-2">
+                    Explore Collection
+                    <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <div className="absolute inset-0 bg-brand-peach scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out" />
+                </button>
+
+              </motion.div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
+      {/* Navigation Controls */}
+      <div className="absolute bottom-12 right-6 sm:right-12 flex items-center gap-4 z-20">
+        <button
+          onClick={prevSlide}
+          className="p-4 rounded-full border border-white/10 hover:bg-white hover:text-deep-charcoal transition-all duration-300 backdrop-blur-md group"
+        >
+          <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
+        </button>
+        <div className="h-[2px] w-12 bg-white/20 overflow-hidden">
+          <motion.div
+            initial={{ x: "-100%" }}
+            animate={{ x: "0%" }}
+            key={current}
+            transition={{ duration: 8, ease: "linear" }}
+            className="h-full w-full bg-brand-peach"
+          />
+        </div>
+        <button
+          onClick={nextSlide}
+          className="p-4 rounded-full border border-white/10 hover:bg-white hover:text-deep-charcoal transition-all duration-300 backdrop-blur-md group"
+        >
+          <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
+        </button>
+      </div>
 
+      {/* Scroll Indicator */}
+      <motion.div
+        style={{ opacity }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 pointer-events-none"
+      >
+        <span className="text-[10px] uppercase tracking-[0.2em] text-white/50">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ArrowDown className="w-4 h-4 text-white/50" />
+        </motion.div>
+      </motion.div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-black/80 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
     </section>
   );
 }

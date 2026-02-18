@@ -31,8 +31,9 @@ interface Video {
 export default function VideoGallery() {
   useScrollReveal();
 
+
+
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
-  const [activeFilter, setActiveFilter] = useState<string>("All");
 
   const videos: Video[] = [
     { id: "1", src: video1, location: "Achampathu" },
@@ -55,12 +56,7 @@ export default function VideoGallery() {
     { id: "18", src: video18, location: "Maathur" },
   ];
 
-  const filteredVideos =
-    activeFilter === "All"
-      ? videos
-      : videos.filter((video) => video.location === activeFilter);
 
-  const locations = ["All", "Achampathu", "Maathur"];
 
   return (
     <section className="relative overflow-hidden py-20">
@@ -86,31 +82,10 @@ export default function VideoGallery() {
         </div>
 
         {/* Location Filters */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12 reveal-fade">
-          {locations.map((location) => (
-            <button
-              key={location}
-              onClick={() => setActiveFilter(location)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeFilter === location
-                ? "bg-brand-teal text-pure-white shadow-lg scale-105"
-                : "bg-pure-white/80 backdrop-blur-sm text-deep-charcoal hover:bg-brand-teal/20 hover:text-brand-teal border border-brand-teal/20"
-                }`}
-              data-testid={`filter-${location.toLowerCase()}`}
-            >
-              <Filter className="w-4 h-4 inline mr-2" />
-              {location}
-              {location !== "All" && (
-                <span className="ml-2 text-xs opacity-75">
-                  ({videos.filter((v) => v.location === location).length})
-                </span>
-              )}
-            </button>
-          ))}
-        </div>
 
         {/* Video Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 stagger-group">
-          {filteredVideos.map((video, index) => (
+          {videos.map((video, index) => (
             <div
               key={video.id}
               className="group relative bg-pure-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-brand-teal/20 hover:border-brand-teal/40 transition-all duration-500 hover:shadow-2xl hover:scale-105 stagger-item reveal-scale cursor-pointer"
@@ -180,17 +155,6 @@ export default function VideoGallery() {
           ))}
         </div>
 
-        {/* Empty State */}
-        {filteredVideos.length === 0 && (
-          <div className="text-center py-20">
-            <div className="w-20 h-20 bg-brand-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Play className="w-10 h-10 text-brand-teal" />
-            </div>
-            <p className="text-xl text-cool-grey">
-              No videos found for this location
-            </p>
-          </div>
-        )}
 
 
       </div>

@@ -93,6 +93,9 @@ export default function Header() {
     }
   };
 
+  // Determine if the header should be transparent (only on home page when not scrolled)
+  const isTransparent = location === "/" && !isScrolled;
+
   const navigationItems: NavItem[] = [
     {
       label: "Home",
@@ -243,9 +246,10 @@ export default function Header() {
 
       {/* Main Header */}
       <header
-        className={`fixed left-0 right-0 z-40 transition-all duration-500 ${isScrolled
-          ? "top-0 bg-pure-white/95 backdrop-blur-xl shadow-lg"
-          : "top-10 sm:top-9 bg-pure-white/80 backdrop-blur-md"
+        className={`fixed left-0 right-0 z-40 transition-all duration-500 ${isScrolled ? "top-0" : "top-10 sm:top-9"
+          } ${isTransparent
+            ? "bg-transparent"
+            : "bg-pure-white/95 backdrop-blur-xl shadow-lg"
           }`}
       >
         <div className="container mx-auto px-4 sm:px-6">
@@ -256,10 +260,10 @@ export default function Header() {
                 <img
                   src="/logo.png"
                   alt="Polymarble"
-                  className="h-11 sm:h-20 w-auto transition-transform duration-300 group-hover:scale-105"
+                  className={`h-11 sm:h-20 w-auto transition-all duration-300 group-hover:scale-105 ${isTransparent ? "brightness-0 invert drop-shadow-md" : ""
+                    }`}
                   data-testid="img-logo"
                 />
-                <div className="absolute -inset-2 bg-gradient-to-r from-brand-teal/20 to-brand-peach/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             </Link>
 
@@ -278,9 +282,13 @@ export default function Header() {
                     {item.href ? (
                       <Link
                         href={item.href}
-                        className={`group px-4 py-2 flex items-center gap-2 text-sm font-medium transition-all duration-300 rounded-lg ${location === item.href
-                          ? "text-brand-teal bg-brand-teal/10"
-                          : "text-deep-charcoal hover:text-brand-teal hover:bg-warm-cream"
+                        className={`group px-4 py-2 flex items-center gap-2 text-sm font-medium transition-all duration-300 rounded-lg ${!isTransparent
+                          ? location === item.href
+                            ? "text-brand-teal bg-brand-teal/10"
+                            : "text-deep-charcoal hover:text-brand-teal hover:bg-warm-cream"
+                          : location === item.href
+                            ? "text-white bg-white/20 backdrop-blur-sm"
+                            : "text-white/90 hover:text-white hover:bg-white/10 backdrop-blur-sm"
                           }`}
                         onKeyDown={(e) => handleMenuKeyDown(e, item)}
                         onFocus={() => item.submenu && setActiveDropdown(item.label)}
@@ -301,7 +309,10 @@ export default function Header() {
                       <button
                         onClick={item.action}
                         onKeyDown={(e) => handleMenuKeyDown(e, item)}
-                        className="group px-4 py-2 flex items-center gap-2 text-sm font-medium text-deep-charcoal hover:text-brand-teal hover:bg-warm-cream transition-all duration-300 rounded-lg"
+                        className={`group px-4 py-2 flex items-center gap-2 text-sm font-medium transition-all duration-300 rounded-lg ${!isTransparent
+                          ? "text-deep-charcoal hover:text-brand-teal hover:bg-warm-cream"
+                          : "text-white/90 hover:text-white hover:bg-white/10 backdrop-blur-sm"
+                          }`}
                         aria-haspopup={item.submenu ? "true" : undefined}
                         aria-expanded={item.submenu ? activeDropdown === item.label : undefined}
                       >
@@ -380,7 +391,10 @@ export default function Header() {
               {/* CTA Button — routes to contact page */}
               <Link
                 href="/contact"
-                className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-brand-teal text-pure-white rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 hover-lift"
+                className={`hidden md:flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 hover-lift ${!isTransparent
+                  ? "bg-brand-teal text-pure-white"
+                  : "bg-white text-brand-teal hover:bg-brand-teal hover:text-white"
+                  }`}
               >
                 <Mail className="w-4 h-4" />
                 Get Enquiry
@@ -388,15 +402,18 @@ export default function Header() {
 
               {/* Mobile Menu Button (fixed placement & alignment) */}
               <button
-                className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-xl bg-warm-cream hover:bg-brand-teal/10 transition-colors"
+                className={`lg:hidden relative w-10 h-10 flex items-center justify-center rounded-xl transition-colors ${!isTransparent
+                  ? "bg-warm-cream hover:bg-brand-teal/10 text-deep-charcoal"
+                  : "bg-white/10 hover:bg-white/20 text-white backdrop-blur-md"
+                  }`}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label="Toggle navigation"
                 aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-6 h-6 text-deep-charcoal" />
+                  <X className="w-6 h-6" />
                 ) : (
-                  <Menu className="w-6 h-6 text-deep-charcoal" />
+                  <Menu className="w-6 h-6" />
                 )}
               </button>
             </div>

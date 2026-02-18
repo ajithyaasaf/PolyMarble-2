@@ -71,7 +71,6 @@ export default function EnhancedContact() {
       description: "10 years of industry experience"
     }
   ];
-
   return (
     <section id="contact" className="relative overflow-hidden py-20">
       {/* Animated Background */}
