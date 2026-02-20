@@ -9,7 +9,7 @@ const slides = [
   {
     id: 1,
     titleLine1: "The Elegance",
-    titleLine2: "Of Stone",
+    titleLine2: "Of Polymarble",
     description: "Capturing the raw beauty of Italian marble with superior engineering. Indistinguishable aesthetics, waterproof durability, and fire resistance.",
     tag: "Architectural Grade",
     color: "from-[#F3EAC2] via-[#D4AF37] to-[#996515]", // Rich Gold Gradient
@@ -19,7 +19,7 @@ const slides = [
     id: 2,
     titleLine1: "Luxury",
     titleLine2: "Reimagined",
-    description: "Seamless perfection for interiors that demand distinction. A sustainable, lightweight alternative to traditional stone that lasts a lifetime.",
+    description: "Seamless perfection for interiors that demand distinction. A sustainable, lightweight alternative to traditional materials that lasts a lifetime.",
     tag: "Next-Gen Surface",
     color: "from-[#a8e0d3] via-[#16785c] to-[#0d4e3b]", // Premium Teal Gradient
     image: banner2
