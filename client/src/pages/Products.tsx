@@ -22,6 +22,8 @@ import {
   Award,
   Shield,
   Filter,
+  Search,
+  X,
 } from "lucide-react";
 import {
   products,
@@ -81,79 +83,29 @@ export default function Products() {
 
           </div>
         </section>
-
-        {/* Filter Bar (replaces Tabs) */}
+        {/* Search Bar */}
         <section className="py-6 border-y bg-background/50">
           <div className="container mx-auto px-6">
-            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between reveal-up">
-              {/* Category chips */}
-              <div className="flex flex-wrap gap-2 items-center">
-                <div className="inline-flex items-center gap-2 text-muted-foreground">
-                  <Filter className="w-4 h-4" />
-                  <span className="text-sm">Filter by category:</span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {productCategories.map((category) => {
-                    const active = selectedCategory === category.id;
-                    return (
-                      <button
-                        key={category.id}
-                        type="button"
-                        onClick={() => setSelectedCategory(category.id)}
-                        aria-pressed={active}
-                        className={[
-                          "inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition",
-                          active
-                            ? "bg-brand-teal text-white border-brand-teal"
-                            : "bg-card text-foreground border-border hover:bg-muted/60",
-                        ].join(" ")}
-                      >
-                        {category.name}
-                        <Badge
-                          variant={active ? "secondary" : "outline"}
-                          className={active ? "bg-white/20 text-white" : "text-muted-foreground"}
-                        >
-                          {category.count}
-                        </Badge>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Search + Reset */}
-              <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <div className="w-full max-w-md mx-auto reveal-up">
+              <div className="relative group">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground group-focus-within:text-brand-teal transition-colors" />
                 <input
                   type="search"
-                  placeholder="Search by name, feature, description..."
-                  className="w-full sm:w-80 rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal"
+                  placeholder="Search products by name, feature, or use case..."
+                  className="w-full rounded-full border border-input bg-background pl-10 pr-10 py-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:border-transparent transition-shadow shadow-sm hover:shadow-md [&::-webkit-search-cancel-button]:appearance-none"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                 />
-                <Button
-                  variant="outline"
-                  className="border-brand-teal text-brand-teal"
-                  onClick={() => {
-                    setSelectedCategory("all");
-                    setQuery("");
-                  }}
-                >
-                  Reset
-                </Button>
+                {query && (
+                  <button
+                    onClick={() => setQuery("")}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label="Clear search"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
               </div>
-            </div>
-
-            {/* Result count */}
-            <div className="mt-3 text-sm text-muted-foreground">
-              Showing <span className="font-medium text-foreground">{displayProducts.length}</span> result{displayProducts.length === 1 ? "" : "s"}
-              {selectedCategory !== "all" && (
-                <>
-                  {" "}in <span className="font-medium text-foreground">
-                    {productCategories.find((c) => c.id === selectedCategory)?.name}
-                  </span>
-                </>
-              )}
-              {query && <> for “{query}”</>}
             </div>
           </div>
         </section>
