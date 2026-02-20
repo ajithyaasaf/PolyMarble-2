@@ -160,7 +160,7 @@ export default function About() {
   const achievements = [
     { icon: Globe, text: "Presence in 5 countries", highlight: "5 countries" },
     { icon: Shield, text: "Fire & water resistant", highlight: "water resistant" },
-    { icon: Star, text: "Made in India", highlight: "Made in India" },
+    { icon: Award, text: "Premium Quality Assured", highlight: "Premium Quality" },
     { icon: Leaf, text: "100% Eco-Friendly", highlight: "Eco-Friendly" },
   ];
 
