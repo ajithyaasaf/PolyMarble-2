@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play, Sparkles, ArrowDown } from "lucide-react";
-import heroBackgroundVideo from "@assets/1_1755841607772.mp4";
+import banner1 from "/assets/images/Banner_1.png";
+import banner2 from "/assets/images/Banner_2.png";
+import banner3 from "/assets/images/Banner_3.png";
 
 const slides = [
   {
@@ -10,7 +12,8 @@ const slides = [
     titleLine2: "Of Stone",
     description: "Capturing the raw beauty of Italian marble with superior engineering. Indistinguishable aesthetics, waterproof durability, and fire resistance.",
     tag: "Architectural Grade",
-    color: "from-[#F3EAC2] via-[#D4AF37] to-[#996515]" // Rich Gold Gradient
+    color: "from-[#F3EAC2] via-[#D4AF37] to-[#996515]", // Rich Gold Gradient
+    image: banner1
   },
   {
     id: 2,
@@ -18,14 +21,23 @@ const slides = [
     titleLine2: "Reimagined",
     description: "Seamless perfection for interiors that demand distinction. A sustainable, lightweight alternative to traditional stone that lasts a lifetime.",
     tag: "Next-Gen Surface",
-    color: "from-[#a8e0d3] via-[#16785c] to-[#0d4e3b]" // Premium Teal Gradient
+    color: "from-[#a8e0d3] via-[#16785c] to-[#0d4e3b]", // Premium Teal Gradient
+    image: banner2
+  },
+  {
+    id: 3,
+    titleLine1: "Timeless",
+    titleLine2: "Beauty",
+    description: "Experience the perfect blend of modern innovation and classic design. Transform your space with surfaces that embody true elegance.",
+    tag: "Premium Finish",
+    color: "from-[#e0c3fc] via-[#8ec5fc] to-[#4facfe]", // Custom gradient
+    image: banner3
   }
 ];
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
@@ -72,19 +84,21 @@ export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-deep-charcoal text-white">
       {/* Dynamic Background */}
-      <motion.div style={{ y: y1 }} className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover opacity-50 scale-105"
-        >
-          <source src={heroBackgroundVideo} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
-        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay" />
+      <motion.div style={{ y: y1 }} className="absolute inset-0 z-0 bg-deep-charcoal">
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={current}
+            src={slides[current].image}
+            alt="Hero Background"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.5 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2 }}
+            className="absolute inset-0 w-full h-full object-cover scale-105"
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay z-10 pointer-events-none" />
       </motion.div>
 
       {/* Main Content Area */}

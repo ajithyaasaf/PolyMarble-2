@@ -150,13 +150,13 @@ export default function Testimonials() {
           {/* Stats Summary */}
           <div className="flex gap-8 reveal-up delay-200">
             <div>
-              <div className="text-3xl font-bold text-brand-teal mb-1">500+</div>
-              <div className="text-sm text-white/60">Projects Completed</div>
+              <div className="text-3xl font-bold text-brand-teal mb-1">2,00,000+</div>
+              <div className="text-sm text-white/60">Happy Customers</div>
             </div>
             <div className="w-px h-12 bg-white/10 self-center" />
             <div>
-              <div className="text-3xl font-bold text-brand-peach mb-1">100%</div>
-              <div className="text-sm text-white/60">Satisfaction Rate</div>
+              <div className="text-3xl font-bold text-brand-peach mb-1">4.8/5</div>
+              <div className="text-sm text-white/60">Customer Rating</div>
             </div>
           </div>
         </div>
