@@ -57,7 +57,7 @@ export default function TrustIndicators() {
     {
       icon: <Truck className="w-12 h-12" />,
       title: "Express Delivery",
-      description: "Fast shipping and installation support across South India",
+      description: "Fast shipping across South India",
       delay: "stagger-delay-2",
     },
   ];

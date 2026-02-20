@@ -95,13 +95,10 @@ export default function Footer() {
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
                 <span>Commercial Projects</span>
               </li>
+
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
-                <span>Custom Patterns</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
-                <span>Maintenance Support</span>
+                <span>Easy Installation</span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
@@ -205,6 +202,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 }

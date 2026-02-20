@@ -88,7 +88,7 @@ export default function EnhancedContact() {
             Let's <span className="text-brand-teal text-shimmer">Start Your Project</span>
           </h3>
           <p className="text-xl text-cool-grey reveal-fade max-w-3xl mx-auto">
-            Get a personalized quote and expert consultation.
+            Get a detailed quote and expert consultation.
             Our team will guide you through every step of your transformation.
           </p>
         </div>
