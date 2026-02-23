@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play, Sparkles, ArrowDown } from "lucide-react";
+import { Link } from "wouter";
 import banner1 from "/assets/images/Banner_1.png";
 import banner2 from "/assets/images/Banner_2.png";
 import banner3 from "/assets/images/Banner_3.png";
@@ -171,13 +172,15 @@ export default function Hero() {
                 transition={{ delay: 0.5 }}
                 className="flex items-center gap-4"
               >
-                <button className="group relative px-8 py-4 bg-white text-deep-charcoal rounded-full font-bold overflow-hidden transition-transform hover:scale-105">
-                  <span className="relative z-10 flex items-center gap-2">
-                    Explore Collection
-                    <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                  <div className="absolute inset-0 bg-brand-peach scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out" />
-                </button>
+                <Link href="/products">
+                  <button className="group relative px-8 py-4 bg-white text-deep-charcoal rounded-full font-bold overflow-hidden transition-transform hover:scale-105">
+                    <span className="relative z-10 flex items-center gap-2">
+                      Explore Collection
+                      <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                    <div className="absolute inset-0 bg-brand-peach scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out" />
+                  </button>
+                </Link>
 
               </motion.div>
             </div>
