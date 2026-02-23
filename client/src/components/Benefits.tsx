@@ -9,8 +9,8 @@ export default function Benefits() {
   const benefits = [
     {
       icon: Flame,
-      title: "Fire Retardant",
-      description: "Self-extinguishing material that ensures safety for your interiors.",
+      title: "Heat Resistant",
+      description: "Maintains room temperature and provides excellent thermal insulation.",
       color: "text-brand-brown",
     },
     {

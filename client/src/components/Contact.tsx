@@ -70,7 +70,7 @@ export default function Contact() {
                     id="firstName"
                     value={formData.firstName}
                     onChange={(e) => handleInputChange("firstName", e.target.value)}
-                    placeholder="John"
+                    placeholder="Enter your first name"
                     className="bg-pure-white border-light-silver text-deep-charcoal placeholder:text-cool-grey focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300"
                   />
                 </div>
@@ -80,7 +80,7 @@ export default function Contact() {
                     id="lastName"
                     value={formData.lastName}
                     onChange={(e) => handleInputChange("lastName", e.target.value)}
-                    placeholder="Smith"
+                    placeholder="Enter your last name"
                     className="bg-pure-white border-light-silver text-deep-charcoal placeholder:text-cool-grey focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300"
                   />
                 </div>
@@ -93,14 +93,14 @@ export default function Contact() {
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
-                  placeholder="john@example.com"
+                  placeholder="Enter your email address"
                   className="bg-pure-white border-light-silver text-deep-charcoal placeholder:text-cool-grey focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300"
                 />
               </div>
 
               <div className="space-y-2 stagger-item">
                 <Label htmlFor="projectType" className="text-cool-grey">Project Type</Label>
-                <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
+                <Select value={formData.projectType || undefined} onValueChange={(value) => handleInputChange("projectType", value)}>
                   <SelectTrigger className="bg-pure-white border-light-silver text-deep-charcoal focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300">
                     <SelectValue placeholder="Select Project Type" />
                   </SelectTrigger>
@@ -177,7 +177,7 @@ export default function Contact() {
               <div className="flex gap-4">
                 <a href="https://www.youtube.com/@polymarblesheet3386" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center hover:bg-brand-teal/30 transition-colors">
                   <svg className="w-6 h-6 text-brand-teal" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                   </svg>
                 </a>
                 <a href="https://www.instagram.com/polymarblesheet_india" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center hover:bg-brand-teal/30 transition-colors">
@@ -185,7 +185,7 @@ export default function Contact() {
                 </a>
                 <a href="https://www.facebook.com/share/19aJmaJ7Nc/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-brand-teal/20 rounded-lg flex items-center justify-center hover:bg-brand-teal/30 transition-colors">
                   <svg className="w-6 h-6 text-brand-teal" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                   </svg>
                 </a>
               </div>

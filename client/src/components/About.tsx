@@ -161,7 +161,7 @@ export default function About() {
                                 },
                                 {
                                     title: "Seamless Install",
-                                    desc: "Lightweight and easy to cut, reducing project time.",
+                                    desc: "Effortless to cut and install, reducing project time.",
                                     icon: Wrench
                                 },
                                 {

@@ -126,7 +126,7 @@ export default function EnhancedContact() {
                     id="firstName"
                     value={formData.firstName}
                     onChange={(e) => handleInputChange("firstName", e.target.value)}
-                    placeholder="John"
+                    placeholder="Enter your first name"
                     className="bg-pure-white border-light-silver text-deep-charcoal placeholder:text-cool-grey focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300"
                     required
                   />
@@ -137,7 +137,7 @@ export default function EnhancedContact() {
                     id="lastName"
                     value={formData.lastName}
                     onChange={(e) => handleInputChange("lastName", e.target.value)}
-                    placeholder="Smith"
+                    placeholder="Enter your last name"
                     className="bg-pure-white border-light-silver text-deep-charcoal placeholder:text-cool-grey focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300"
                     required
                   />
@@ -152,7 +152,7 @@ export default function EnhancedContact() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
-                    placeholder="john@example.com"
+                    placeholder="Enter your email address"
                     className="bg-pure-white border-light-silver text-deep-charcoal placeholder:text-cool-grey focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300"
                     required
                   />
@@ -164,7 +164,7 @@ export default function EnhancedContact() {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleInputChange("phone", e.target.value)}
-                    placeholder="+91 98421 06768"
+                    placeholder="Enter your phone number"
                     className="bg-pure-white border-light-silver text-deep-charcoal placeholder:text-cool-grey focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300"
                   />
                 </div>
@@ -173,7 +173,7 @@ export default function EnhancedContact() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="projectType" className="text-cool-grey font-medium">Project Type *</Label>
-                  <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
+                  <Select value={formData.projectType || undefined} onValueChange={(value) => handleInputChange("projectType", value)}>
                     <SelectTrigger className="bg-pure-white border-light-silver text-deep-charcoal focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300">
                       <SelectValue placeholder="Select Project Type" />
                     </SelectTrigger>
@@ -191,7 +191,7 @@ export default function EnhancedContact() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="budget" className="text-cool-grey font-medium">Budget Range</Label>
-                  <Select value={formData.budget} onValueChange={(value) => handleInputChange("budget", value)}>
+                  <Select value={formData.budget || undefined} onValueChange={(value) => handleInputChange("budget", value)}>
                     <SelectTrigger className="bg-pure-white border-light-silver text-deep-charcoal focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300">
                       <SelectValue placeholder="Select Budget Range" />
                     </SelectTrigger>
@@ -208,7 +208,7 @@ export default function EnhancedContact() {
 
               <div className="space-y-2">
                 <Label htmlFor="timeline" className="text-cool-grey font-medium">Project Timeline</Label>
-                <Select value={formData.timeline} onValueChange={(value) => handleInputChange("timeline", value)}>
+                <Select value={formData.timeline || undefined} onValueChange={(value) => handleInputChange("timeline", value)}>
                   <SelectTrigger className="bg-pure-white border-light-silver text-deep-charcoal focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300">
                     <SelectValue placeholder="When do you want to start?" />
                   </SelectTrigger>

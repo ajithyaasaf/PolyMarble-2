@@ -10,35 +10,6 @@ import exteriorWoody from "@assets/image_1762858205538.png";
 
 export const products: Product[] = [
   {
-    id: "interior-woody-panel",
-    name: "Interior Woody Panel",
-    category: "Interior Panels",
-    tagline: "Natural Wood Aesthetics with WPC Durability",
-    description: "Premium WPC material panels that bring the warmth of natural wood to your interiors. These panels combine authentic wood grain textures with superior water resistance and durability.",
-    images: [woodyPanel1],
-    material: "WPC (Wood Plastic Composite)",
-    height: "9.5 ft",
-    width: "5 inch to 8 inch (varies by pattern)",
-    finish: "Wood grain texture",
-    features: [
-      "100% Water Resistant",
-      "Termite Proof",
-      "Zero Maintenance",
-      "Easy Installation",
-      "Natural Wood Look",
-      "UV Stable"
-    ],
-    useCases: [
-      "Living Room Feature Walls",
-      "Bedroom Accent Walls",
-      "Restaurant Interiors",
-      "Cafe Ambience",
-      "Office Reception Areas"
-    ],
-    warranty: "15+ Years",
-    isFeatured: true
-  },
-  {
     id: "interior-sheets",
     name: "Interior Sheets",
     category: "Interior Sheets",
@@ -52,8 +23,6 @@ export const products: Product[] = [
       "Authentic Marble Patterns",
       "Fire Resistant",
       "Waterproof",
-      "Lightweight",
-      "Scratch Resistant",
       "Easy to Clean"
     ],
     useCases: [
@@ -62,6 +31,32 @@ export const products: Product[] = [
       "Hotel Lobbies",
       "Corporate Offices",
       "Showrooms"
+    ],
+    warranty: "15+ Years",
+    isFeatured: true
+  },
+  {
+    id: "interior-woody-panel",
+    name: "Interior Woody Panel",
+    category: "Interior Panels",
+    tagline: "Natural Wood Aesthetics with WPC Durability",
+    description: "Premium WPC material panels that bring the warmth of natural wood to your interiors. These panels combine authentic wood grain textures with superior water resistance and durability.",
+    images: [woodyPanel1],
+    material: "WPC (Wood Plastic Composite)",
+    height: "9.5 ft",
+    width: "5 inch to 8 inch (varies by pattern)",
+    finish: "Wood grain texture",
+    features: [
+      "Natural Wood Look",
+      "Easy Installation",
+      "Water Resistant"
+    ],
+    useCases: [
+      "Living Room Feature Walls",
+      "Bedroom Accent Walls",
+      "Restaurant Interiors",
+      "Cafe Ambience",
+      "Office Reception Areas"
     ],
     warranty: "15+ Years",
     isFeatured: true
@@ -80,8 +75,6 @@ export const products: Product[] = [
       "Authentic Marble Patterns",
       "Fire Resistant",
       "Waterproof",
-      "Lightweight",
-      "Scratch Resistant",
       "Easy to Clean"
     ],
     useCases: [
@@ -106,10 +99,8 @@ export const products: Product[] = [
     features: [
       "Real Stone Appearance",
       "3D Textured Surface",
-      "Lightweight",
-      "Impact Resistant",
-      "Moisture Resistant",
-      "Thermal Insulation"
+      "Easy Installation",
+      "Long Durable"
     ],
     useCases: [
       "Feature Walls",
