@@ -89,7 +89,7 @@ export default function Footer() {
             <ul className="space-y-3 text-white/90">
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
-                <span>Residential Installation</span>
+                <span>Residential Project</span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
@@ -103,6 +103,10 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
                 <span>Free Consultation</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
+                <span>Installation Support</span>
               </li>
             </ul>
           </div>

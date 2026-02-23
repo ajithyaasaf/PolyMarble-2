@@ -32,7 +32,7 @@ export default function FeaturedProjects() {
 
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const filters = ["All", "Residential", "Commercial", "Exterior", "Healthcare"];
+  const filters = ["All", "Residential", "Commercial", "Exterior"];
 
   const caseStudies: CaseStudy[] = [
     {
@@ -161,11 +161,7 @@ export default function FeaturedProjects() {
                   </div>
 
                   {/* Key Stats */}
-                  <div className={`grid grid-cols-2 gap-4 mb-8 pb-8 border-b ${isFeatured ? 'border-white/20' : 'border-white/10'}`}>
-                    <div>
-                      <div className={`text-xs font-bold uppercase tracking-wider mb-1 ${isFeatured ? 'text-white/60' : 'text-white/40'}`}>ROI Savings</div>
-                      <div className="text-xl font-bold">{p.roiSavings}<span className="text-sm font-normal opacity-70">/sq.ft</span></div>
-                    </div>
+                  <div className={`mb-8 pb-8 border-b ${isFeatured ? 'border-white/20' : 'border-white/10'}`}>
                     <div>
                       <div className={`text-xs font-bold uppercase tracking-wider mb-1 ${isFeatured ? 'text-white/60' : 'text-white/40'}`}>Area</div>
                       <div className="text-xl font-bold">{p.sqft}<span className="text-sm font-normal opacity-70"> sq.ft</span></div>

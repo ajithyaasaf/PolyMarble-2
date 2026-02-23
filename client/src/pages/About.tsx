@@ -159,7 +159,7 @@ export default function About() {
 
   const achievements = [
     { icon: Globe, text: "Presence in 5 countries", highlight: "5 countries" },
-    { icon: Shield, text: "Fire & water resistant", highlight: "water resistant" },
+    { icon: Shield, text: "Fire resistant and Water proof", highlight: "Water proof" },
     { icon: Award, text: "Premium Quality Assured", highlight: "Premium Quality" },
     { icon: Leaf, text: "100% Eco-Friendly", highlight: "Eco-Friendly" },
   ];
@@ -441,8 +441,7 @@ export default function About() {
             <div className="max-w-4xl mx-auto text-center">
               <Quote className="w-16 h-16 text-pure-white/20 mx-auto mb-8" />
               <blockquote className="text-3xl lg:text-4xl font-light text-pure-white mb-8 leading-relaxed reveal-up">
-                "We don't just sell products, we deliver promises. Every sheet
-                of polymarble carries our commitment to quality, innovation, and
+                "We don't just sell products, we deliver promises. Every product of Polymarble sheet carries our commitment to quality, innovation, and
                 the dreams of families building their perfect spaces."
               </blockquote>
               <div className="reveal-fade">
@@ -496,8 +495,7 @@ export default function About() {
                           Industry-Leading Standards
                         </h3>
                         <p className="text-center text-cool-grey mb-8">
-                          Every product undergoes 25+ quality checks before
-                          reaching you
+                          Single alternative for all your exterior and interior product needs
                         </p>
                         <Link href="/products">
                           <Button className="w-full py-6 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-pure-white rounded-xl font-bold text-lg">

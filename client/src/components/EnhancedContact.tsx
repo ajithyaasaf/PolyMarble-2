@@ -173,7 +173,7 @@ export default function EnhancedContact() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="projectType" className="text-cool-grey font-medium">Project Type *</Label>
-                  <Select value={formData.projectType || undefined} onValueChange={(value) => handleInputChange("projectType", value)}>
+                  <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
                     <SelectTrigger className="bg-pure-white border-light-silver text-deep-charcoal focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300">
                       <SelectValue placeholder="Select Project Type" />
                     </SelectTrigger>
@@ -191,7 +191,7 @@ export default function EnhancedContact() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="budget" className="text-cool-grey font-medium">Budget Range</Label>
-                  <Select value={formData.budget || undefined} onValueChange={(value) => handleInputChange("budget", value)}>
+                  <Select value={formData.budget} onValueChange={(value) => handleInputChange("budget", value)}>
                     <SelectTrigger className="bg-pure-white border-light-silver text-deep-charcoal focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300">
                       <SelectValue placeholder="Select Budget Range" />
                     </SelectTrigger>
@@ -208,7 +208,7 @@ export default function EnhancedContact() {
 
               <div className="space-y-2">
                 <Label htmlFor="timeline" className="text-cool-grey font-medium">Project Timeline</Label>
-                <Select value={formData.timeline || undefined} onValueChange={(value) => handleInputChange("timeline", value)}>
+                <Select value={formData.timeline} onValueChange={(value) => handleInputChange("timeline", value)}>
                   <SelectTrigger className="bg-pure-white border-light-silver text-deep-charcoal focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300">
                     <SelectValue placeholder="When do you want to start?" />
                   </SelectTrigger>

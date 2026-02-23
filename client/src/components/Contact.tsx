@@ -100,7 +100,7 @@ export default function Contact() {
 
               <div className="space-y-2 stagger-item">
                 <Label htmlFor="projectType" className="text-cool-grey">Project Type</Label>
-                <Select value={formData.projectType || undefined} onValueChange={(value) => handleInputChange("projectType", value)}>
+                <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
                   <SelectTrigger className="bg-pure-white border-light-silver text-deep-charcoal focus:border-brand-teal focus:ring-metallic-gold/50 transition-all duration-300">
                     <SelectValue placeholder="Select Project Type" />
                   </SelectTrigger>
