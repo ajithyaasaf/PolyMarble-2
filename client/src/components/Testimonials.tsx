@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Star, Play, Pause, Volume2, VolumeX } from "lucide-react";
 
@@ -43,12 +43,34 @@ const VideoCard = ({ testimonial }: { testimonial: Testimonial }) => {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  // Expose a global pause event to stop other videos when one plays
+  React.useEffect(() => {
+    const handlePauseOthers = (e: Event) => {
+      const customEvent = e as CustomEvent<{ sourceId: number }>;
+      if (customEvent.detail.sourceId !== testimonial.id && isPlaying) {
+        if (videoRef.current) {
+          videoRef.current.pause();
+        }
+        setIsPlaying(false);
+      }
+    };
+
+    window.addEventListener('pauseOtherVideos', handlePauseOthers);
+    return () => {
+      window.removeEventListener('pauseOtherVideos', handlePauseOthers);
+    };
+  }, [testimonial.id, isPlaying]);
+
   const togglePlay = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
       } else {
+        // Dispatch event to pause other videos
+        window.dispatchEvent(new CustomEvent('pauseOtherVideos', {
+          detail: { sourceId: testimonial.id }
+        }));
         videoRef.current.play();
       }
       setIsPlaying(!isPlaying);
@@ -76,7 +98,8 @@ const VideoCard = ({ testimonial }: { testimonial: Testimonial }) => {
         loop
         playsInline
         muted={isMuted}
-        preload="metadata"
+        preload="none"
+        poster={testimonial.video.replace(/\.(mp4|mov)$/i, '.jpg')}
       />
 
       {/* Gradient Overlays for Readability */}
