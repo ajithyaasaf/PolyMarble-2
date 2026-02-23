@@ -23,7 +23,9 @@ export const products: Product[] = [
       "Authentic Marble Patterns",
       "Fire Resistant",
       "Waterproof",
-      "Easy to Clean"
+      "Easy to Clean",
+      "Easy Installation",
+      "Eco Friendly"
     ],
     useCases: [
       "Luxury Living Rooms",
@@ -49,7 +51,8 @@ export const products: Product[] = [
     features: [
       "Natural Wood Look",
       "Easy Installation",
-      "Water Resistant"
+      "Water Resistant",
+      "Eco Friendly"
     ],
     useCases: [
       "Living Room Feature Walls",
@@ -100,7 +103,8 @@ export const products: Product[] = [
       "Real Stone Appearance",
       "3D Textured Surface",
       "Easy Installation",
-      "Long Durable"
+      "Long Durable",
+      "Eco Friendly"
     ],
     useCases: [
       "Feature Walls",
@@ -124,7 +128,8 @@ export const products: Product[] = [
     features: [
       "Easy Installation",
       "Fade-Proof Technology",
-      "Low Maintenance"
+      "Low Maintenance",
+      "Eco Friendly"
     ],
     useCases: [
       "Building Facades",
@@ -153,7 +158,8 @@ export const products: Product[] = [
       "Color Stability",
       "No Warping",
       "Termite & Rot Proof",
-      "Easy Installation"
+      "Easy Installation",
+      "Eco Friendly"
     ],
     useCases: [
       "Outdoor Decking",
