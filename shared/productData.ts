@@ -14,7 +14,7 @@ export const products: Product[] = [
     name: "Interior Sheets",
     category: "Interior Sheets",
     tagline: "Luxury Italian Marble at 80% Less Cost",
-    description: "Experience authentic marble patterns with our premium interior sheets. These panels replicate the elegance of Italian marble with stunning veining and natural stone aesthetics.",
+    description: "Experience authentic marble patterns with our premium interior Polymarble sheets. These panels replicate the elegance of Italian marble with stunning veining and natural stone aesthetics.",
     images: [interiorSheet1, interiorSheet2, interiorSheet3],
     size: "8 ft x 4 ft",
     thickness: "3.2mm",
@@ -66,7 +66,7 @@ export const products: Product[] = [
     name: "Interior Sheets (Golden Edition)",
     category: "Interior Sheets",
     tagline: "Luxury Italian Marble at 80% Less Cost",
-    description: "Experience authentic marble patterns with our premium interior sheets. These panels replicate the elegance of Italian marble with stunning veining and natural stone aesthetics.",
+    description: "Experience authentic marble patterns with our premium interior Polymarble sheets. These panels replicate the elegance of Italian marble with stunning veining and natural stone aesthetics.",
     images: [interiorSheet1, interiorSheet2, interiorSheet3],
     size: "8 ft x 4 ft",
     thickness: "3.2mm",
@@ -122,11 +122,8 @@ export const products: Product[] = [
     size: "6.5 ft x 1.25 ft",
     finish: "Weather-resistant finish",
     features: [
+      "Easy Installation",
       "Fade-Proof Technology",
-      "Interlock Installation",
-      "UV Protected",
-      "Rain Resistant",
-      "Heat Resistant",
       "Low Maintenance"
     ],
     useCases: [
@@ -156,7 +153,7 @@ export const products: Product[] = [
       "Color Stability",
       "No Warping",
       "Termite & Rot Proof",
-      "Eco-Friendly"
+      "Easy Installation"
     ],
     useCases: [
       "Outdoor Decking",
