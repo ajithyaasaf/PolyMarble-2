@@ -67,6 +67,34 @@ export const products: Product[] = [
     isFeatured: true
   },
   {
+    id: "interior-sheets-golden-edition",
+    name: "Interior Sheets (Golden Edition)",
+    category: "Interior Sheets",
+    tagline: "Luxury Italian Marble at 80% Less Cost",
+    description: "Experience authentic marble patterns with our premium interior sheets. These panels replicate the elegance of Italian marble with stunning veining and natural stone aesthetics.",
+    images: [interiorSheet1, interiorSheet2, interiorSheet3],
+    size: "8 ft x 4 ft",
+    thickness: "3.2mm",
+    finish: "High-gloss marble finish",
+    features: [
+      "Authentic Marble Patterns",
+      "Fire Resistant",
+      "Waterproof",
+      "Lightweight",
+      "Scratch Resistant",
+      "Easy to Clean"
+    ],
+    useCases: [
+      "Luxury Living Rooms",
+      "Premium Bedrooms",
+      "Hotel Lobbies",
+      "Corporate Offices",
+      "Showrooms"
+    ],
+    warranty: "15+ Years",
+    isFeatured: true
+  },
+  {
     id: "pu-panel",
     name: "PU Stone Panel",
     category: "Premium Panels",
