@@ -9,7 +9,7 @@ const slides = [
   {
     id: 1,
     titleLine1: "The Elegance",
-    titleLine2: "Of Polymarble",
+    titleLine2: "Of Polymarble Sheet",
     description: "Single alternative for all your exterior and interior product needs. Capturing the raw beauty of Italian marble with superior engineering, waterproof durability, and fire resistance.",
     tag: "Architectural Grade",
     color: "from-[#F3EAC2] via-[#D4AF37] to-[#996515]", // Rich Gold Gradient
