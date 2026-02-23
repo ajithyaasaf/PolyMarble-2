@@ -435,18 +435,56 @@ export default function About() {
           </div>
         </section>
 
-        {/* Leadership Quote Section */}
-        <section className="py-20 bg-gradient-to-r from-brand-teal to-brand-teal/90">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <Quote className="w-16 h-16 text-pure-white/20 mx-auto mb-8" />
-              <blockquote className="text-3xl lg:text-4xl font-light text-pure-white mb-8 leading-relaxed reveal-up">
-                "We don't just sell products, we deliver promises. Every product of Polymarble sheet carries our commitment to quality, innovation, and
-                the dreams of families building their perfect spaces."
-              </blockquote>
-              <div className="reveal-fade">
-                <div className="text-xl font-bold text-pure-white">Reyas</div>
-                <div className="text-pure-white/80">Founder & CEO</div>
+        {/* Premium Leadership Quote Section */}
+        <section className="py-24 relative overflow-hidden bg-deep-charcoal">
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-teal/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-brand-peach/10 blur-[100px] rounded-full mix-blend-screen pointer-events-none" />
+          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-6xl mx-auto bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-3xl p-8 lg:p-16 backdrop-blur-md shadow-2xl reveal-up">
+              <div className="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-center">
+
+                {/* Founder Image Column */}
+                <div className="relative group mx-auto lg:mx-0 select-none">
+                  {/* Glowing background on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-teal to-brand-peach opacity-0 group-hover:opacity-100 rounded-2xl blur-xl transition-opacity duration-500 pointer-events-none z-0"></div>
+
+                  {/* Image Container */}
+                  <div className="relative aspect-[3/4] w-64 lg:w-full max-w-[320px] rounded-2xl overflow-hidden border border-white/20 shadow-2xl z-10 group-hover:scale-[1.02] transition-transform duration-500">
+                    <img
+                      src="/assets/images/reyas.png"
+                      alt="Reyas - Founder & CEO"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent pointer-events-none"></div>
+                  </div>
+
+                  {/* Floating Badge */}
+                  <div className="absolute -bottom-6 -right-6 md:-right-10 bg-brand-teal text-white p-4 md:p-5 rounded-2xl shadow-[0_20px_40px_rgba(22,120,92,0.4)] z-20 transform group-hover:-translate-y-2 transition-transform duration-500 border border-white/10 backdrop-blur-md">
+                    <div className="font-bold text-2xl md:text-3xl">15+</div>
+                    <div className="text-[10px] md:text-xs font-semibold uppercase tracking-widest opacity-90 mt-1">Years<br />Excellence</div>
+                  </div>
+                </div>
+
+                {/* Quote Column */}
+                <div className="relative z-10">
+                  <Quote className="w-16 h-16 md:w-24 md:h-24 text-brand-teal/20 mb-8 transform -rotate-12 group-hover:rotate-0 transition-transform duration-700" />
+
+                  <blockquote className="text-2xl md:text-4xl lg:text-[40px] font-light text-white leading-[1.3] mb-12 tracking-tight">
+                    "We don't just sell products, we deliver promises. Every product of Polymarble sheet carries our commitment to quality, innovation, and the dreams of families building their perfect spaces."
+                  </blockquote>
+
+                  <div className="flex items-center gap-6">
+                    <div className="h-px w-16 bg-gradient-to-r from-brand-peach to-transparent"></div>
+                    <div>
+                      <div className="text-2xl lg:text-3xl font-bold text-white tracking-wide mb-1">Reyas</div>
+                      <div className="text-brand-peach font-medium uppercase tracking-widest text-sm">Founder & CEO</div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
