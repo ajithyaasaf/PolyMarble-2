@@ -7,6 +7,7 @@ import puPanel1 from "@assets/image_1762858118936.png";
 import puPanel2 from "@assets/image_1762858130551.png";
 import exteriorSheet from "@assets/image_1762858166702.png";
 import exteriorWoody from "@assets/image_1762858205538.png";
+const woodyPanel2 = "/assets/images/products images/woody panel sub image.jpeg";
 
 export const products: Product[] = [
   {
@@ -43,7 +44,7 @@ export const products: Product[] = [
     category: "Interior Panels",
     tagline: "Natural Wood Aesthetics with WPC Durability",
     description: "Premium WPC material panels that bring the warmth of natural wood to your interiors. These panels combine authentic wood grain textures with superior water resistance and durability.",
-    images: [woodyPanel1],
+    images: [woodyPanel1, woodyPanel2],
     material: "WPC (Wood Plastic Composite)",
     height: "9.5 ft",
     width: "5 inch to 8 inch (varies by pattern)",
