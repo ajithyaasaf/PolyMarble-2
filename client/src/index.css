@@ -893,12 +893,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, hsl(163, 69%, 28%), hsl(12, 66%, 35%));
+    background: white;
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, hsl(163, 69%, 38%), hsl(12, 66%, 45%));
+    background: rgba(255, 255, 255, 0.8);
   }
 
   /* Mobile-specific optimizations */
