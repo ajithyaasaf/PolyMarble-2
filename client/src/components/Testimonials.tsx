@@ -14,25 +14,25 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Residential Customer",
+    name: "Restaurant",
     location: "Madurai",
-    type: "Home Interior",
+    type: "Commercial Space",
     rating: 5,
     video: "https://res.cloudinary.com/doeodacsg/video/upload/v1771570730/polymarble/videos/IMG_4517.mov",
   },
   {
     id: 2,
-    name: "Commercial Client",
-    location: "Chennai",
-    type: "Office Space",
+    name: "Luxury Villa Owner",
+    location: "Madurai",
+    type: "Residential Project",
     rating: 5,
     video: "https://res.cloudinary.com/doeodacsg/video/upload/v1771578707/Model2_zxdgwg.mp4",
   },
   {
     id: 3,
-    name: "Independent Architect",
-    location: "Coimbatore",
-    type: "Luxury Projects",
+    name: "Residential Customer",
+    location: "Chennai",
+    type: "Home Interior",
     rating: 5,
     video: "https://res.cloudinary.com/doeodacsg/video/upload/v1771578775/Model_1_fiqfyf.mp4",
   }
