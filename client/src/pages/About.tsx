@@ -166,7 +166,7 @@ export default function About() {
 
   const leadership = [
     {
-      name: "Reyas",
+      name: "Dr.A.S.Reyas",
       role: "Founder & CEO",
       quote: "We're not just creating products, we're crafting dreams",
       image: "/api/placeholder/200/200",
@@ -479,7 +479,7 @@ export default function About() {
                   <div className="flex items-center gap-6">
                     <div className="h-px w-16 bg-gradient-to-r from-brand-peach to-transparent"></div>
                     <div>
-                      <div className="text-2xl lg:text-3xl font-bold text-white tracking-wide mb-1">Reyas</div>
+                      <div className="text-2xl lg:text-3xl font-bold text-white tracking-wide mb-1">Dr.A.S.Reyas</div>
                       <div className="text-brand-peach font-medium uppercase tracking-widest text-sm">Founder & CEO</div>
                     </div>
                   </div>
