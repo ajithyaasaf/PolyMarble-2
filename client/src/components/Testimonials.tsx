@@ -34,7 +34,7 @@ const testimonials: Testimonial[] = [
     location: "Chennai",
     type: "Home Interior",
     rating: 5,
-    video: "https://res.cloudinary.com/doeodacsg/video/upload/v1771578775/Model_1_fiqfyf.mp4",
+    video: "https://res.cloudinary.com/doeodacsg/video/upload/v1773223800/Model_1_iejjb0.mp4",
   }
 ];
 
