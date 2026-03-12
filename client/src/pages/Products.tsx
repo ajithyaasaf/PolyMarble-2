@@ -390,7 +390,7 @@ export default function Products() {
                   type="text"
                   required
                   className="w-full rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal"
-                  placeholder="John Doe"
+                  placeholder="Enter your name"
                 />
               </div>
               <div className="space-y-2">
@@ -400,7 +400,7 @@ export default function Products() {
                   type="tel"
                   required
                   className="w-full rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal"
-                  placeholder="+91 98421 06768"
+                  placeholder="Enter your phone number"
                 />
               </div>
             </div>
@@ -412,7 +412,7 @@ export default function Products() {
                 type="email"
                 required
                 className="w-full rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal"
-                placeholder="john@example.com"
+                placeholder="Enter your email address"
               />
             </div>
 
