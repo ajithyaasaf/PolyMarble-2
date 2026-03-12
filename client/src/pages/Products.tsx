@@ -121,7 +121,7 @@ export default function Products() {
                   onClick={() => handleProductClick(product)}
                   data-testid={`card-product-${product.id}`}
                 >
-                  <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <div className="aspect-[4/5] overflow-hidden bg-muted">
                     <img
                       src={product.images[0]}
                       alt={product.name}
@@ -252,7 +252,7 @@ export default function Products() {
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   {selectedProduct.images.map((image: string, idx: number) => (
-                    <div key={idx} className="aspect-[4/3] rounded-md overflow-hidden border">
+                    <div key={idx} className="aspect-[4/5] rounded-md overflow-hidden border">
                       <img
                         src={image}
                         alt={`${selectedProduct.name} - View ${idx + 1}`}
