@@ -94,7 +94,7 @@ export default function TrustIndicators() {
                     {stat.value}
                   </div>
                 </div>
-                <p className="text-cool-grey text-sm font-medium">
+                <p className="text-cool-grey text-base md:text-lg font-medium">
                   {stat.label}
                 </p>
               </div>
@@ -147,7 +147,7 @@ export default function TrustIndicators() {
 
               <div className="w-16 md:w-24 h-px bg-white/20 mb-6 md:mb-8" />
 
-              <p className="text-gray-300 md:text-gray-400 mb-6 md:mb-8 leading-relaxed max-w-lg text-sm md:text-base">
+              <p className="text-gray-300 md:text-gray-400 mb-6 md:mb-8 leading-relaxed max-w-lg text-base md:text-lg">
                 We follow strict quality controls and safety standards. Our polymarble sheets are engineered for durability, safety, and timeless elegance.
               </p>
 
@@ -158,19 +158,19 @@ export default function TrustIndicators() {
                       {cert.icon}
                     </div>
                     <h4 className="text-base md:text-lg font-bold uppercase tracking-wider">{cert.title}</h4>
-                    <p className="text-xs text-gray-300 md:text-gray-400 leading-relaxed">{cert.description}</p>
+                    <p className="text-sm md:text-base text-gray-300 md:text-gray-400 leading-relaxed">{cert.description}</p>
                   </div>
                 ))}
               </div>
 
               <div className="mt-8 md:mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pt-6 md:pt-8 border-t border-white/10">
-                <div className="flex items-center gap-2">
-                  <Shield className="w-4 md:w-5 h-4 md:h-5 text-brand-teal" />
-                  <span className="text-xs md:text-sm font-medium tracking-wide">100% QUALITY</span>
+                <div className="flex items-center gap-3">
+                  <Shield className="w-6 md:w-7 h-6 md:h-7 text-brand-teal" />
+                  <span className="text-base md:text-lg font-medium tracking-wide">100% QUALITY</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Flame className="w-4 md:w-5 h-4 md:h-5 text-brand-teal" />
-                  <span className="text-xs md:text-sm font-medium tracking-wide">HEAT RESISTANCE</span>
+                <div className="flex items-center gap-3">
+                  <Flame className="w-6 md:w-7 h-6 md:h-7 text-brand-teal" />
+                  <span className="text-base md:text-lg font-medium tracking-wide">HEAT RESISTANCE</span>
                 </div>
               </div>
             </div>

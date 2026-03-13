@@ -26,8 +26,8 @@ export default function About() {
                 <div className="max-w-4xl mx-auto mb-20 text-center reveal-up">
                     <h4 className="text-brand-teal font-bold tracking-widest uppercase text-xs mb-4">Who We Are</h4>
                     <h3 className="text-4xl md:text-5xl font-bold leading-[1.15] mb-8">
-                        The <span className="text-brand-teal">Elegance of Marble</span>. <br className="hidden md:block" />
-                        In <span className="text-brand-brown">Polymarble Sheets</span>.
+                        The <span className="text-brand-teal">Elegance of Marble</span> <br className="hidden md:block" />
+                        in <span className="text-brand-brown">polymarble sheet</span>.
                     </h3>
                     <div className="h-1 w-20 bg-brand-teal mb-10 mx-auto rounded-full" />
                     <p className="text-xl text-cool-grey leading-relaxed max-w-2xl mx-auto">

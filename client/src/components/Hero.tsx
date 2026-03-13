@@ -132,23 +132,23 @@ export default function Hero() {
 
             {/* Huge Typography */}
             <div className="flex flex-col gap-2 mb-8 select-none">
-              <div className="overflow-hidden">
+              <div className="overflow-hidden pb-12 -mb-12">
                 <motion.h1
                   variants={textReveal}
                   initial="hidden"
                   animate="visible"
-                  className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-light tracking-tight leading-[0.9] text-white/90"
+                  className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-light tracking-tight leading-tight text-white/90"
                 >
                   {slides[current].titleLine1}
                 </motion.h1>
               </div>
-              <div className="overflow-hidden">
+              <div className="overflow-hidden pb-12 -mb-12">
                 <motion.h1
                   variants={textReveal}
                   initial="hidden"
                   animate="visible"
                   transition={{ delay: 0.1 }}
-                  className={`text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold tracking-tight leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r ${slides[current].color}`}
+                  className={`text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r ${slides[current].color}`}
                 >
                   {slides[current].titleLine2}
                 </motion.h1>

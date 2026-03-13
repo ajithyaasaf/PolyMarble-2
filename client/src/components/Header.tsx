@@ -199,11 +199,11 @@ export default function Header() {
                 className="flex items-center gap-1.5 hover:text-brand-peach transition-colors"
               >
                 <Phone className="w-4 h-4 sm:w-3 sm:h-3 flex-shrink-0" fill="currentColor" />
-                <span className="font-medium text-[12px] sm:text-sm whitespace-nowrap leading-4">
+                <span className="font-medium text-sm sm:text-base whitespace-nowrap leading-4">
                   +91 98421 06768
                 </span>
               </a>
-              <span className="hidden sm:flex items-center gap-1.5 font-medium text-[12px] sm:text-sm">
+              <span className="hidden sm:flex items-center gap-1.5 font-medium text-sm sm:text-base">
                 <MapPin className="w-4 h-4 sm:w-3 sm:h-3 flex-shrink-0" />
                 <span className="whitespace-nowrap leading-4">Madurai, India</span>
               </span>
@@ -253,14 +253,14 @@ export default function Header() {
           }`}
       >
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16 sm:h-20">
+          <div className="flex items-center justify-between h-20 sm:h-24">
             {/* Logo */}
             <Link href="/" className="group flex items-center gap-3 relative">
               <div className="relative">
                 <img
                   src="/logo.png"
                   alt="Polymarble"
-                  className={`h-11 sm:h-20 w-auto transition-all duration-300 group-hover:scale-105 ${isTransparent ? "brightness-0 invert drop-shadow-md" : ""
+                  className={`h-14 sm:h-24 w-auto transition-all duration-300 group-hover:scale-105 ${isTransparent ? "brightness-0 invert drop-shadow-md" : ""
                     }`}
                   data-testid="img-logo"
                 />
@@ -282,7 +282,7 @@ export default function Header() {
                     {item.href ? (
                       <Link
                         href={item.href}
-                        className={`group px-4 py-2 flex items-center gap-2 text-sm font-medium transition-all duration-300 rounded-lg ${!isTransparent
+                        className={`group px-4 py-2 flex items-center gap-2 text-base font-medium transition-all duration-300 rounded-lg ${!isTransparent
                           ? location === item.href
                             ? "text-brand-teal bg-brand-teal/10"
                             : "text-deep-charcoal hover:text-brand-teal hover:bg-warm-cream"
@@ -309,7 +309,7 @@ export default function Header() {
                       <button
                         onClick={item.action}
                         onKeyDown={(e) => handleMenuKeyDown(e, item)}
-                        className={`group px-4 py-2 flex items-center gap-2 text-sm font-medium transition-all duration-300 rounded-lg ${!isTransparent
+                        className={`group px-4 py-2 flex items-center gap-2 text-base font-medium transition-all duration-300 rounded-lg ${!isTransparent
                           ? "text-deep-charcoal hover:text-brand-teal hover:bg-warm-cream"
                           : "text-white/90 hover:text-white hover:bg-white/10 backdrop-blur-sm"
                           }`}
@@ -350,7 +350,7 @@ export default function Header() {
                                         <subItem.icon className="w-4 h-4 text-brand-teal mt-0.5" />
                                       )}
                                       <div>
-                                        <div className="text-sm font-medium text-deep-charcoal group-hover:text-brand-teal transition-colors">
+                                        <div className="text-base font-medium text-deep-charcoal group-hover:text-brand-teal transition-colors">
                                           {subItem.label}
                                         </div>
                                         {subItem.description && (
@@ -373,7 +373,7 @@ export default function Header() {
                             role="menuitem"
                             onClick={() => setActiveDropdown(null)}
                           >
-                            <span className="text-sm font-medium text-deep-charcoal">
+                            <span className="text-base font-medium text-deep-charcoal">
                               View All Products
                             </span>
                             <ArrowRight className="w-4 h-4 text-brand-teal group-hover:translate-x-1 transition-transform" />
@@ -391,7 +391,7 @@ export default function Header() {
               {/* CTA Button — routes to contact page */}
               <Link
                 href="/contact"
-                className={`hidden md:flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 hover-lift ${!isTransparent
+                className={`hidden md:flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-base hover:shadow-lg transition-all duration-300 hover-lift ${!isTransparent
                   ? "bg-brand-teal text-pure-white"
                   : "bg-white text-brand-teal hover:bg-brand-teal hover:text-white"
                   }`}
@@ -423,10 +423,10 @@ export default function Header() {
         {/* Mobile Menu */}
         <div
           className={`lg:hidden fixed inset-x-0 bg-pure-white shadow-2xl transition-all duration-500 ${isMobileMenuOpen
-            ? "top-[104px] sm:top-20 opacity-100 translate-y-0"
-            : "top-[104px] sm:top-20 opacity-0 -translate-y-full pointer-events-none"
+            ? "top-[120px] sm:top-24 opacity-100 translate-y-0"
+            : "top-[120px] sm:top-24 opacity-0 -translate-y-full pointer-events-none"
             }`}
-          style={{ maxHeight: "calc(100vh - 104px)" }}
+          style={{ maxHeight: "calc(100vh - 120px)" }}
         >
           <div className="overflow-y-auto">
             {/* Mobile Navigation */}
