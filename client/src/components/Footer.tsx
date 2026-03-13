@@ -66,7 +66,7 @@ export default function Footer() {
                 { label: "Home", href: "/" },
                 { label: "Products", href: "/products" },
                 { label: "Gallery", href: "/gallery" },
-                { label: "Inspiration", href: "/inspiration" },
+                // { label: "Inspiration", href: "/inspiration" },
                 { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
@@ -189,10 +189,10 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className="border-t border-white/10 pt-8">
           <div className="text-center space-y-2">
-            <div className="text-sm text-white/70">
+            <div className="text-base text-white/70">
               © 2025 Polymarble Sheet India. All rights reserved.
             </div>
-            <div className="text-xs text-white/40">
+            <div className="text-sm text-white/40">
               Designed & Developed by{" "}
               <a
                 href="https://www.godivatech.com"
