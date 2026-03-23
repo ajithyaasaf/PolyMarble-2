@@ -451,14 +451,13 @@ export default function About() {
                   {/* Glowing background on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-teal to-brand-peach opacity-0 group-hover:opacity-100 rounded-2xl blur-xl transition-opacity duration-500 pointer-events-none z-0"></div>
 
-                  {/* Image Container */}
                   <div className="relative aspect-[3/4] w-64 lg:w-full max-w-[320px] rounded-2xl overflow-hidden border border-white/20 shadow-2xl z-10 group-hover:scale-[1.02] transition-transform duration-500">
                     <img
                       src="/assets/images/reyas.png"
                       alt="Reyas - Founder & CEO"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[170%] max-w-none h-auto translate-y-[28%] transition-all duration-700 group-hover:scale-105 group-hover:translate-y-[30%]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-x-0 bottom-0 h-1/6 bg-gradient-to-t from-deep-charcoal to-transparent pointer-events-none"></div>
                   </div>
 
                   {/* Floating Badge */}
