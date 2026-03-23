@@ -126,7 +126,7 @@ export default function About() {
 
                     {/* Left: Defined Timeline List */}
                     <div className="reveal-up">
-                        <h3 className="text-2xl font-bold mb-8">History of Innovation</h3>
+                        <h3 className="text-3xl font-bold mb-8">History of Innovation</h3>
                         <div className="space-y-0 divide-y divide-gray-100">
                             {[
                                 { year: "2017", title: "Inception", desc: "Founded in Madurai with a clear vision for accessible luxury surfaces." },
@@ -134,10 +134,10 @@ export default function About() {
                                 { year: "2023", title: "Global Reach", desc: "Operations launched in Malaysia and New York, proving our quality on the world stage." },
                             ].map((item, i) => (
                                 <div key={i} className="py-6 flex gap-6 md:gap-12 group hover:bg-gray-50 transition-colors px-4 -mx-4 rounded-xl">
-                                    <span className="text-lg font-bold text-brand-teal shrink-0 w-16">{item.year}</span>
+                                    <span className="text-xl font-bold text-brand-teal shrink-0 w-16">{item.year}</span>
                                     <div>
-                                        <h4 className="font-bold text-deep-charcoal text-lg mb-1">{item.title}</h4>
-                                        <p className="text-cool-grey text-sm">{item.desc}</p>
+                                        <h4 className="font-bold text-deep-charcoal text-xl mb-1">{item.title}</h4>
+                                        <p className="text-cool-grey text-base">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
@@ -146,7 +146,7 @@ export default function About() {
 
                     {/* Right: Feature Grid (Compact) */}
                     <div className="reveal-up delay-100">
-                        <h3 className="text-2xl font-bold mb-8">Why Polymarble?</h3>
+                        <h3 className="text-3xl font-bold mb-8">Why Polymarble?</h3>
                         <div className="grid sm:grid-cols-2 gap-6">
                             {[
                                 {
@@ -172,8 +172,8 @@ export default function About() {
                             ].map((feat, idx) => (
                                 <div key={idx} className="bg-gray-50 p-6 rounded-xl border border-transparent hover:border-brand-teal/20 transition-all">
                                     <feat.icon className="w-6 h-6 text-brand-teal mb-4" />
-                                    <h4 className="font-bold text-deep-charcoal mb-2">{feat.title}</h4>
-                                    <p className="text-sm text-cool-grey leading-relaxed">{feat.desc}</p>
+                                    <h4 className="font-bold text-deep-charcoal text-xl mb-2">{feat.title}</h4>
+                                    <p className="text-base text-cool-grey leading-relaxed">{feat.desc}</p>
                                 </div>
                             ))}
                         </div>
