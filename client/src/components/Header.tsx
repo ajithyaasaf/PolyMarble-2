@@ -194,51 +194,30 @@ export default function Header() {
         <div className="bg-brand-teal text-pure-white">
           <div className="container mx-auto px-3 sm:px-6">
             <div className="flex items-center justify-between w-full gap-2 sm:gap-4 h-10 text-xs">
-              <a
-                href="tel:+919842106768"
-                className="flex items-center gap-1.5 hover:text-brand-peach transition-colors"
-              >
-                <Phone className="w-4 h-4 sm:w-3 sm:h-3 flex-shrink-0" fill="currentColor" />
-                <span className="font-medium text-sm sm:text-base whitespace-nowrap leading-4">
-                  +91 98421 06768
-                </span>
-              </a>
-              <span className="hidden sm:flex items-center gap-1.5 font-medium text-sm sm:text-base">
-                <MapPin className="w-4 h-4 sm:w-3 sm:h-3 flex-shrink-0" />
-                <span className="whitespace-nowrap leading-4">Madurai, India</span>
-              </span>
-              <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center gap-4 sm:gap-6">
                 <a
-                  href="https://www.instagram.com/polymarblesheet_india?igsh=MXZoczNwcWxleWl6bw=="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-pure-white hover:text-brand-peach transition-colors"
-                  aria-label="Instagram"
-                  data-testid="link-header-social-instagram"
+                  href="tel:+919842106768"
+                  className="flex items-center gap-1.5 hover:text-brand-peach transition-colors"
                 >
-                  <FaInstagram className="w-4 h-4 sm:w-4 sm:h-4" />
+                  <Phone className="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" />
+                  <span className="font-medium text-xs sm:text-sm whitespace-nowrap leading-4">
+                    +91 98421 06768
+                  </span>
                 </a>
                 <a
-                  href="https://www.facebook.com/polymarblesheets"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-pure-white hover:text-brand-peach transition-colors"
-                  aria-label="Facebook"
-                  data-testid="link-header-social-facebook"
+                  href="mailto:polymarblesheet@gmail.com"
+                  className="hidden md:flex items-center gap-1.5 hover:text-brand-peach transition-colors"
                 >
-                  <FaFacebook className="w-4 h-4 sm:w-4 sm:h-4" />
-                </a>
-                <a
-                  href="https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-pure-white hover:text-brand-peach transition-colors"
-                  aria-label="Youtube"
-                  data-testid="link-header-social-youtube"
-                >
-                  <FaYoutube className="w-4 h-4 sm:w-4 sm:h-4" />
+                  <Mail className="w-3.5 h-3.5 flex-shrink-0" />
+                  <span className="font-medium text-xs sm:text-sm whitespace-nowrap leading-4">
+                    polymarblesheet@gmail.com
+                  </span>
                 </a>
               </div>
+              <span className="flex items-center gap-1.5 font-medium text-xs sm:text-sm">
+                <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
+                <span className="whitespace-nowrap leading-4">Madurai, India</span>
+              </span>
             </div>
           </div>
         </div>
@@ -387,7 +366,50 @@ export default function Header() {
             </nav>
 
             {/* Right Side Actions */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
+              {/* Social Media Icons (Big & Highlighted) */}
+              <div className="hidden lg:flex items-center gap-3 mr-2">
+                <a
+                  href="https://www.instagram.com/polymarblesheet_india?igsh=MXZoczNwcWxleWl6bw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${
+                    isTransparent
+                      ? "text-pure-white hover:bg-white/10 hover:text-brand-peach"
+                      : "text-deep-charcoal hover:bg-brand-teal/10 hover:text-brand-teal"
+                  }`}
+                  aria-label="Instagram"
+                >
+                  <FaInstagram className="w-6 h-6" />
+                </a>
+                <a
+                  href="https://www.facebook.com/polymarblesheets"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${
+                    isTransparent
+                      ? "text-pure-white hover:bg-white/10 hover:text-brand-peach"
+                      : "text-deep-charcoal hover:bg-brand-teal/10 hover:text-brand-teal"
+                  }`}
+                  aria-label="Facebook"
+                >
+                  <FaFacebook className="w-6 h-6" />
+                </a>
+                <a
+                  href="https://youtube.com/@polymarblesheet3386?si=XSU8vu8ighly_sca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${
+                    isTransparent
+                      ? "text-pure-white hover:bg-white/10 hover:text-brand-peach"
+                      : "text-deep-charcoal hover:bg-brand-teal/10 hover:text-brand-teal"
+                  }`}
+                  aria-label="Youtube"
+                >
+                  <FaYoutube className="w-6 h-6" />
+                </a>
+              </div>
+
               {/* CTA Button — routes to contact page */}
               <Link
                 href="/contact"
