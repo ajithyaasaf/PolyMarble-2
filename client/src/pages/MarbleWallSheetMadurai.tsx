@@ -1,7 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import QuickQuote from "@/components/QuickQuote";
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Star, Clock, Shield, Award } from "lucide-react";
 import { Link } from "wouter";
@@ -229,7 +228,6 @@ export default function MarbleWallSheetMadurai() {
       </main>
 
       <Footer />
-      <QuickQuote />
     </div>
   );
 }

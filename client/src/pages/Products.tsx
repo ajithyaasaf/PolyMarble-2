@@ -2,8 +2,8 @@ import { useState, useMemo } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import QuickQuote from "@/components/QuickQuote";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -34,12 +34,48 @@ import { Product } from "@shared/schema";
 
 export default function Products() {
   useScrollReveal();
+  const { toast } = useToast();
 
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [showDetailsDialog, setShowDetailsDialog] = useState(false);
   const [showQuoteDialog, setShowQuoteDialog] = useState(false);
   const [query, setQuery] = useState("");
+  const [quoteData, setQuoteData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const handleQuoteSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const formattedText = `*Product Pricing Request*
+----------------------------------
+*Product:* ${selectedProduct ? selectedProduct.name : 'N/A'}
+*Name:* ${quoteData.name}
+*Phone:* ${quoteData.phone}
+*Email:* ${quoteData.email}
+*Details:* ${quoteData.message || "N/A"}`;
+
+    const whatsappUrl = `https://wa.me/919842106768?text=${encodeURIComponent(formattedText)}`;
+
+    toast({
+      title: "Pricing Request Submitted!",
+      description: "Redirecting you to WhatsApp to send your request...",
+    });
+
+    window.open(whatsappUrl, "_blank");
+
+    setQuoteData({
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+    setShowQuoteDialog(false);
+  };
 
   const displayProducts = useMemo(() => {
     const base = getProductsByCategory(selectedCategory);
@@ -381,7 +417,7 @@ export default function Products() {
             </DialogDescription>
           </DialogHeader>
 
-          <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); setShowQuoteDialog(false); }}>
+          <form className="space-y-4" onSubmit={handleQuoteSubmit}>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label htmlFor="quote-name" className="text-sm font-medium">Full Name *</label>
@@ -389,6 +425,8 @@ export default function Products() {
                   id="quote-name"
                   type="text"
                   required
+                  value={quoteData.name}
+                  onChange={(e) => setQuoteData({ ...quoteData, name: e.target.value })}
                   className="w-full rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal"
                   placeholder="Enter your name"
                 />
@@ -399,6 +437,8 @@ export default function Products() {
                   id="quote-phone"
                   type="tel"
                   required
+                  value={quoteData.phone}
+                  onChange={(e) => setQuoteData({ ...quoteData, phone: e.target.value })}
                   className="w-full rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal"
                   placeholder="Enter your phone number"
                 />
@@ -411,6 +451,8 @@ export default function Products() {
                 id="quote-email"
                 type="email"
                 required
+                value={quoteData.email}
+                onChange={(e) => setQuoteData({ ...quoteData, email: e.target.value })}
                 className="w-full rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal"
                 placeholder="Enter your email address"
               />
@@ -428,6 +470,8 @@ export default function Products() {
               <textarea
                 id="quote-message"
                 rows={4}
+                value={quoteData.message}
+                onChange={(e) => setQuoteData({ ...quoteData, message: e.target.value })}
                 className="w-full rounded-md border bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal resize-none"
                 placeholder="Tell us about your project requirements, dimensions, timeline, etc."
               />
@@ -446,7 +490,6 @@ export default function Products() {
       </Dialog>
 
       <Footer />
-      <QuickQuote />
     </div>
   );
 }

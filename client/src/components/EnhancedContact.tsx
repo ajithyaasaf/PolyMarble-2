@@ -29,13 +29,58 @@ export default function EnhancedContact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    const projectTypeLabels: Record<string, string> = {
+      "residential-kitchen": "Residential Kitchen",
+      "residential-bathroom": "Residential Bathroom",
+      "residential-walls": "Residential Accent Walls",
+      "commercial-office": "Commercial Office",
+      "hospitality": "Restaurant/Hotel",
+      "retail": "Retail Store",
+      "healthcare": "Healthcare Facility",
+      "dealership": "Dealership Inquiry",
+    };
+
+    const budgetLabels: Record<string, string> = {
+      "under-50k": "Under ₹50,000",
+      "50k-1l": "₹50,000 - ₹1,00,000",
+      "1l-2l": "₹1,00,000 - ₹2,00,000",
+      "2l-5l": "₹2,00,000 - ₹5,00,000",
+      "above-5l": "Above ₹5,00,000",
+    };
+
+    const timelineLabels: Record<string, string> = {
+      "immediate": "Immediately",
+      "1-month": "Within 1 month",
+      "3-months": "Within 3 months",
+      "6-months": "Within 6 months",
+      "planning": "Just planning",
+    };
+
+    const projectTypeLabel = projectTypeLabels[formData.projectType] || formData.projectType || "N/A";
+    const budgetLabel = budgetLabels[formData.budget] || formData.budget || "N/A";
+    const timelineLabel = timelineLabels[formData.timeline] || formData.timeline || "N/A";
+
+    const formattedText = `*New PolyMarble Inquiry*
+----------------------------------
+*Name:* ${formData.firstName} ${formData.lastName}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone || "N/A"}
+*Project Type:* ${projectTypeLabel}
+*Budget:* ${budgetLabel}
+*Timeline:* ${timelineLabel}
+*Message:* ${formData.message || "N/A"}`;
+
+    const whatsappUrl = `https://wa.me/919842106768?text=${encodeURIComponent(formattedText)}`;
+
+    // Simulate short delay for UI feedback
+    await new Promise(resolve => setTimeout(resolve, 800));
 
     toast({
-      title: "Message Sent Successfully!",
-      description: "We'll get back to you soon.",
+      title: "Inquiry Form Submitted!",
+      description: "Redirecting you to WhatsApp to send your inquiry...",
     });
+
+    window.open(whatsappUrl, "_blank");
 
     setFormData({
       firstName: "",

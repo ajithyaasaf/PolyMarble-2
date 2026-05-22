@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import QuickQuote from "@/components/QuickQuote";
 import { Play, Pause, Eye } from "lucide-react";
 import beforeImage from "@assets/generated_images/Before_renovation_plain_walls_0c93cace.png";
 import afterImage from "@assets/generated_images/After_renovation_luxury_walls_63ec8e29.png";
@@ -299,7 +298,6 @@ export default function Inspiration() {
       </main>
 
       <Footer />
-      <QuickQuote />
     </div>
   );
 }

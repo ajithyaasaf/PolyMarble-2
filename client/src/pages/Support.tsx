@@ -1,7 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import QuickQuote from "@/components/QuickQuote";
 import EnhancedContact from "@/components/EnhancedContact";
 
 export default function Contact() {
@@ -14,7 +13,6 @@ export default function Contact() {
         <EnhancedContact />
       </main>
       <Footer />
-      <QuickQuote />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import QuickQuote from "@/components/QuickQuote";
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Star, Truck, Timer, Users } from "lucide-react";
 
@@ -234,7 +233,6 @@ export default function LightweightStoneWallingChennai() {
       </main>
 
       <Footer />
-      <QuickQuote />
     </div>
   );
 }

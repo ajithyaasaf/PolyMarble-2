@@ -9,7 +9,6 @@ import Testimonials from "@/components/Testimonials";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import EnhancedContact from "@/components/EnhancedContact";
 import Footer from "@/components/Footer";
-import QuickQuote from "@/components/QuickQuote";
 import SEOHead from "@/components/SEOHead";
 import { Link } from "wouter";
 import { Play, ArrowRight } from "lucide-react";
@@ -77,7 +76,6 @@ export default function Home() {
         </div>
       </main>
       <Footer />
-      <QuickQuote />
     </div>
   );
 }

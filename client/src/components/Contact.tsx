@@ -23,10 +23,33 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const projectTypeLabels: Record<string, string> = {
+      "residential": "Residential (Kitchen/Bathroom)",
+      "commercial": "Commercial Office",
+      "hospitality": "Restaurant/Hotel",
+      "retail": "Retail Store",
+      "dealership": "Dealership Inquiry",
+    };
+
+    const projectTypeLabel = projectTypeLabels[formData.projectType] || formData.projectType || "N/A";
+
+    const formattedText = `*New PolyMarble Inquiry*
+----------------------------------
+*Name:* ${formData.firstName} ${formData.lastName}
+*Email:* ${formData.email}
+*Project Type:* ${projectTypeLabel}
+*Message:* ${formData.message || "N/A"}`;
+
+    const whatsappUrl = `https://wa.me/919842106768?text=${encodeURIComponent(formattedText)}`;
+
     toast({
-      title: "Message Sent!",
-      description: "Thank you for your interest. We'll respond within 24 hours.",
+      title: "Inquiry Form Submitted!",
+      description: "Redirecting you to WhatsApp to send your inquiry...",
     });
+
+    window.open(whatsappUrl, "_blank");
+
     setFormData({
       firstName: "",
       lastName: "",
