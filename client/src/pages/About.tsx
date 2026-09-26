@@ -2,6 +2,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useEffect, useState, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import {
   Award,
   Users,
@@ -181,6 +182,22 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-pure-white via-warm-cream/30 to-pure-white">
+      <SEOHead 
+        title="About Us | 10+ Years of Excellence | Polymarble Sheets India"
+        description="Founded in 2017 in Madurai and expanded to Chennai, Polymarble Sheets India is the pioneer in affordable, luxury marble wall solutions with over 2,00,000+ happy clients."
+        canonicalUrl="https://www.polymarblesheet.in/about"
+        breadcrumbs={[
+          { name: "Home", url: "https://www.polymarblesheet.in/" },
+          { name: "About Us", url: "https://www.polymarblesheet.in/about" }
+        ]}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About Polymarble Sheets India",
+          "description": "Pioneering premium polymarble sheets, PVC wall panels, and interior architectural solutions in Tamil Nadu since 2017.",
+          "url": "https://www.polymarblesheet.in/about"
+        }}
+      />
       <Header />
 
       <main className="pt-20">

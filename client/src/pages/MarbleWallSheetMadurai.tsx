@@ -1,6 +1,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Star, Clock, Shield, Award } from "lucide-react";
 import { Link } from "wouter";
@@ -37,6 +38,37 @@ export default function MarbleWallSheetMadurai() {
 
   return (
     <div className="relative min-h-screen bg-warm-cream text-deep-charcoal">
+      <SEOHead 
+        title="Marble Wall Sheet in Madurai | Best Prices & Local Installation"
+        description="Top manufacturer of marble wall sheets in Madurai. 80% less cost than natural marble, 100% waterproof, and fire-resistant. Visit our Gomathipuram showroom or call +91 98421 06768."
+        canonicalUrl="https://www.polymarblesheet.in/marble-wall-sheet-madurai"
+        breadcrumbs={[
+          { name: "Home", url: "https://www.polymarblesheet.in/" },
+          { name: "Marble Wall Sheet Madurai", url: "https://www.polymarblesheet.in/marble-wall-sheet-madurai" }
+        ]}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "HomeAndConstructionBusiness",
+          "name": "Polymarble Sheets India - Madurai Head Office",
+          "description": "Premium polymarble wall sheets, PVC panels, and interior solutions in Madurai, Tamil Nadu.",
+          "url": "https://www.polymarblesheet.in/marble-wall-sheet-madurai",
+          "telephone": "+91-98421-06768",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "No:46, Sivagangai Main Road, Melamadai, Gomathipuram",
+            "addressLocality": "Madurai",
+            "addressRegion": "Tamil Nadu",
+            "postalCode": "625020",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 9.9252,
+            "longitude": 78.1198
+          },
+          "areaServed": "Madurai"
+        }}
+      />
       <Header />
 
       <main className="pt-20 scroll-smooth">

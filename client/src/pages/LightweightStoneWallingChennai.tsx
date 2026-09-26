@@ -1,6 +1,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Star, Truck, Timer, Users } from "lucide-react";
 
@@ -38,6 +39,37 @@ export default function LightweightStoneWallingChennai() {
 
   return (
     <div className="relative min-h-screen bg-warm-cream text-deep-charcoal">
+      <SEOHead 
+        title="Lightweight Stone Walling in Chennai | Exterior & Interior Panels"
+        description="Premium lightweight stone walling & polymarble sheets in Chennai. 75% lighter than natural stone, weatherproof, and easy to install. Visit our Porur showroom or call +91 98421 06768."
+        canonicalUrl="https://www.polymarblesheet.in/lightweight-stone-walling-chennai"
+        breadcrumbs={[
+          { name: "Home", url: "https://www.polymarblesheet.in/" },
+          { name: "Lightweight Stone Walling Chennai", url: "https://www.polymarblesheet.in/lightweight-stone-walling-chennai" }
+        ]}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "HomeAndConstructionBusiness",
+          "name": "Polymarble Sheets India - Chennai Branch",
+          "description": "Premium lightweight stone walling, polymarble exterior cladding, and interior panels in Chennai, Tamil Nadu.",
+          "url": "https://www.polymarblesheet.in/lightweight-stone-walling-chennai",
+          "telephone": "+91-98421-06768",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Dr. Kannan Tower, Arcot Road, Opp to Naidu Hall, Porur",
+            "addressLocality": "Chennai",
+            "addressRegion": "Tamil Nadu",
+            "postalCode": "600116",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 13.0339,
+            "longitude": 80.1582
+          },
+          "areaServed": "Chennai"
+        }}
+      />
       <Header />
 
       <main className="pt-20 scroll-smooth">

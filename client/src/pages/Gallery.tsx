@@ -10,6 +10,18 @@ export default function Gallery() {
       <SEOHead 
         title="Customer Gallery - Real Polymarble Installations | Polymarble Sheets India"
         description="Browse our gallery of real customer installations featuring polymarble sheets in Achampathu and Maathur. See how our premium polymarble transforms spaces with beautiful, durable wall solutions."
+        canonicalUrl="https://www.polymarblesheet.in/gallery"
+        breadcrumbs={[
+          { name: "Home", url: "https://www.polymarblesheet.in/" },
+          { name: "Gallery", url: "https://www.polymarblesheet.in/gallery" }
+        ]}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ImageGallery",
+          "name": "Polymarble Installation Gallery",
+          "description": "Visual portfolio of real client polymarble installations across residential and commercial properties in Tamil Nadu.",
+          "url": "https://www.polymarblesheet.in/gallery"
+        }}
       />
 
       <Header />

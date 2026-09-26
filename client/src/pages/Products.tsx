@@ -1,7 +1,9 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useLocation } from "wouter";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
@@ -95,8 +97,56 @@ export default function Products() {
     setShowDetailsDialog(true);
   };
 
+  const [location] = useLocation();
+
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get("category");
+      if (cat && productCategories.some((c) => c.id === cat)) {
+        setSelectedCategory(cat);
+      }
+    } catch {
+      // ignore
+    }
+  }, [location]);
+
   return (
     <div className="relative min-h-screen">
+      <SEOHead 
+        title="Polymarble Sheets Catalog | Interior Sheets, Woody & PU Stone Panels"
+        description="Browse our full catalog of premium polymarble sheets: High-Gloss Marble Sheets, Interior Woody Panels, PU 3D Stone Panels, and Exterior Cladding. 15+ years warranty."
+        canonicalUrl="https://www.polymarblesheet.in/products"
+        breadcrumbs={[
+          { name: "Home", url: "https://www.polymarblesheet.in/" },
+          { name: "Products", url: "https://www.polymarblesheet.in/products" }
+        ]}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Polymarble Sheets Catalog",
+          "description": "Complete collection of premium polymarble sheets, woody panels, and exterior cladding.",
+          "url": "https://www.polymarblesheet.in/products",
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": products.map((p, idx) => ({
+              "@type": "ListItem",
+              "position": idx + 1,
+              "item": {
+                "@type": "Product",
+                "name": p.name,
+                "description": p.description,
+                "category": p.category,
+                "offers": {
+                  "@type": "AggregateOffer",
+                  "priceCurrency": "INR",
+                  "availability": "https://schema.org/InStock"
+                }
+              }
+            }))
+          }
+        }}
+      />
       <Header />
 
       <main className="pt-20 scroll-smooth">

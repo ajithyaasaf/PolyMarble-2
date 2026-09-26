@@ -16,7 +16,49 @@ import { Play, ArrowRight } from "lucide-react";
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-pure-white text-deep-charcoal overflow-hidden">
-      <SEOHead />
+      <SEOHead 
+        title="Polymarble Sheets India | Premium PVC Marble Wall Panels & Cladding"
+        description="Transform your walls with premium polymarble sheets. 80% less cost than natural marble, 100% waterproof, fire-resistant, and 15+ years durability. Madurai & Chennai showrooms."
+        canonicalUrl="https://www.polymarblesheet.in"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a Polymarble Sheet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Polymarble sheets are high-tech composite architectural panels engineered with stone polymer composite and authentic marble veining. They replicate the luxurious look of Italian marble at 80% lower cost while being 100% waterproof, fire-resistant, and termite-proof."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much do polymarble sheets cost compared to natural marble?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Polymarble sheets cost approximately 70% to 80% less than natural marble, including both material and installation costs, without requiring heavy structural reinforcement or messy wet masonry."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are polymarble sheets waterproof and fire-resistant?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our polymarble sheets are 100% waterproof and fire-resistant, making them ideal for bathrooms, kitchens, living rooms, and commercial building interiors."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where can I buy Polymarble sheets in Tamil Nadu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Polymarble Sheets India operates direct showrooms in Madurai (Sivagangai Main Road, Melamadai) and Chennai (Arcot Road, Porur), delivering across Tamil Nadu and South India."
+              }
+            }
+          ]
+        }}
+      />
 
       {/* Global Ambient Background Effects */}
       <div className="fixed inset-0 pointer-events-none z-0">

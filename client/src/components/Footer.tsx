@@ -64,16 +64,17 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { label: "Home", href: "/" },
+                { label: "About Us", href: "/about" },
                 { label: "Products", href: "/products" },
                 { label: "Gallery", href: "/gallery" },
-                // { label: "Inspiration", href: "/inspiration" },
+                { label: "Inspiration", href: "/inspiration" },
                 { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
                     className="text-white/90 hover:text-brand-peach transition-colors flex items-center gap-2 group"
-                    data-testid={`link-footer-${link.label.toLowerCase()}`}
+                    data-testid={`link-footer-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
                   >
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     {link.label}
@@ -83,30 +84,43 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Locations & Solutions */}
           <div className="lg:col-span-2">
-            <h6 className="text-brand-peach font-bold mb-6 text-lg">Our Services</h6>
+            <h6 className="text-brand-peach font-bold mb-6 text-lg">Locations & Range</h6>
             <ul className="space-y-3 text-white/90">
-              <li className="flex items-start gap-2">
+              <li>
+                <Link
+                  href="/marble-wall-sheet-madurai"
+                  className="hover:text-brand-peach transition-colors flex items-center gap-2 group"
+                >
+                  <ArrowRight className="w-3.5 h-3.5 text-brand-peach group-hover:translate-x-1 transition-transform" />
+                  <span>Madurai Wall Sheets</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/lightweight-stone-walling-chennai"
+                  className="hover:text-brand-peach transition-colors flex items-center gap-2 group"
+                >
+                  <ArrowRight className="w-3.5 h-3.5 text-brand-peach group-hover:translate-x-1 transition-transform" />
+                  <span>Chennai Stone Walling</span>
+                </Link>
+              </li>
+              <li className="flex items-start gap-2 pt-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
-                <span>Residential Project</span>
+                <span>Interior PVC Sheets</span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
-                <span>Commercial Projects</span>
-              </li>
-
-              <li className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
-                <span>Easy Installation</span>
+                <span>Woody WPC Panels</span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
-                <span>Free Consultation</span>
+                <span>PU 3D Stone Panels</span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-peach mt-2" />
-                <span>Installation Support</span>
+                <span>Exterior Cladding</span>
               </li>
             </ul>
           </div>
@@ -190,7 +204,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="text-center space-y-2">
             <div className="text-base text-white/70">
-              © 2025 Polymarble Sheet India. All rights reserved.
+              © 2026 Polymarble Sheet India. All rights reserved.
             </div>
             <div className="text-sm text-white/40">
               Designed & Developed by{" "}

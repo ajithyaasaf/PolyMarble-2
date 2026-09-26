@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Play, Pause, Eye } from "lucide-react";
 import beforeImage from "@assets/generated_images/Before_renovation_plain_walls_0c93cace.png";
 import afterImage from "@assets/generated_images/After_renovation_luxury_walls_63ec8e29.png";
@@ -117,6 +118,22 @@ export default function Inspiration() {
 
   return (
     <div className="relative min-h-screen bg-pure-white text-deep-charcoal">
+      <SEOHead 
+        title="Interior Design Inspiration & Lookbook | Polymarble Sheets India"
+        description="Discover luxury living room, bedroom, office, and restaurant interior designs crafted with polymarble sheets. Curated design ideas for modern architecture in Tamil Nadu."
+        canonicalUrl="https://www.polymarblesheet.in/inspiration"
+        breadcrumbs={[
+          { name: "Home", url: "https://www.polymarblesheet.in/" },
+          { name: "Inspiration", url: "https://www.polymarblesheet.in/inspiration" }
+        ]}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Polymarble Interior Design Inspiration & Lookbook",
+          "description": "Curated interior design spaces and styling concepts using polymarble sheets.",
+          "url": "https://www.polymarblesheet.in/inspiration"
+        }}
+      />
       <Header />
       
       <main className="pt-20 scroll-smooth">

@@ -1,0 +1,35 @@
+# robots.txt for Polymarble Sheets India (https://www.polymarblesheet.in)
+# Configured for modern SEO (2026 standards) - Google Search Console, Bing, and AI Crawlers
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Explicitly allow major search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Allow modern AI and answer engine search bots for Generative Engine Optimization (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# XML Sitemap location for Google Search Console
+Sitemap: https://www.polymarblesheet.in/sitemap.xml
