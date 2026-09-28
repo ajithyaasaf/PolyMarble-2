@@ -39,8 +39,9 @@ export default function MarbleWallSheetMadurai() {
   return (
     <div className="relative min-h-screen bg-warm-cream text-deep-charcoal">
       <SEOHead 
-        title="Marble Wall Sheet in Madurai | Best Prices & Local Installation"
-        description="Top manufacturer of marble wall sheets in Madurai. 80% less cost than natural marble, 100% waterproof, and fire-resistant. Visit our Gomathipuram showroom or call +91 98421 06768."
+        title="Marble Wall Sheet in Madurai | Polymarble & PVC UV Marble Sheet Dealers"
+        description="Top manufacturer of marble wall sheets & PVC polymarble sheets in Madurai. 80% less cost than natural marble, 100% waterproof, and fire-resistant. Visit our Gomathipuram showroom or call +91 98421 06768."
+        keywords="polymarble madurai, marble wall sheet madurai, pvc marble sheet madurai, uv marble sheet madurai, polymarble sheet price madurai, wall panel dealers madurai, interior wall panels melamadai gomathipuram"
         canonicalUrl="https://www.polymarblesheet.in/marble-wall-sheet-madurai"
         breadcrumbs={[
           { name: "Home", url: "https://www.polymarblesheet.in/" },
@@ -50,9 +51,10 @@ export default function MarbleWallSheetMadurai() {
           "@context": "https://schema.org",
           "@type": "HomeAndConstructionBusiness",
           "name": "Polymarble Sheets India - Madurai Head Office",
-          "description": "Premium polymarble wall sheets, PVC panels, and interior solutions in Madurai, Tamil Nadu.",
+          "description": "Leading manufacturer & supplier of premium polymarble wall sheets, PVC marble panels, UV marble sheets, and interior cladding in Madurai, Tamil Nadu.",
           "url": "https://www.polymarblesheet.in/marble-wall-sheet-madurai",
           "telephone": "+91-98421-06768",
+          "priceRange": "₹₹",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "No:46, Sivagangai Main Road, Melamadai, Gomathipuram",
@@ -66,7 +68,14 @@ export default function MarbleWallSheetMadurai() {
             "latitude": 9.9252,
             "longitude": 78.1198
           },
-          "areaServed": "Madurai"
+          "areaServed": [
+            "Madurai", "Melamadai", "Gomathipuram", "Anna Nagar", "KK Nagar", "Tallakulam", "Mattuthavani", "Villapuram", "Thirunagar", "Tamil Nadu"
+          ],
+          "sameAs": [
+            "https://www.facebook.com/polymarblesheets",
+            "https://www.instagram.com/polymarblesheet_india",
+            "https://youtube.com/@polymarblesheet3386"
+          ]
         }}
       />
       <Header />
